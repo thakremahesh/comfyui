@@ -1,15 +1,15 @@
 {
   "id": "f6f470d7-c13d-4bf3-8988-3adcef8ad17a",
   "revision": 0,
-  "last_node_id": 258,
-  "last_link_id": 420,
+  "last_node_id": 233,
+  "last_link_id": 337,
   "nodes": [
     {
       "id": 101,
       "type": "Note",
       "pos": [
-        -47.16914530665247,
-        2922.896245237972
+        -47.16934883660838,
+        2922.8961211572723
       ],
       "size": [
         471.109375,
@@ -22,7 +22,7 @@
       "mode": 0,
       "inputs": [],
       "outputs": [],
-      "title": "🔥Wu Yangfeng Notes",
+      "title": "🔥吴杨峰 笔记",
       "properties": {
         "ue_properties": {
           "widget_ue_connectable": {},
@@ -33,7 +33,7 @@
         "text": ""
       },
       "widgets_values": [
-        "🔥WeChat Group\n🔥Learn the latest knowledge, solve complex problems, share solutions\n🔥Subscribe to view Wu Yangfeng's Notes content | Provide your Notion registration email in the WeChat group\n🔥WeChat Group: Wu Yangfeng Design Group 'Accompaniment' | Add WeChat: wuyangfeng369\n🔥Non-members, please don't add me | Membership fee: 369 RMB/year\n\n---\n\n🔥Wu Yangfeng | ComfyUI Designer's Toolbox (DuanNao Cloud Online Mirror) - Deploys only high-quality, practical workflows suitable for design\n🔥Don't want to install ComfyUI locally? Just learn ComfyUI usage tips\n🔥This is the only place collecting hundreds of workflows in one ComfyUI, with real-time updates of the latest mainstream workflows\n🔥Wu Yangfeng | ComfyUI Designer's Toolbox (Mirror) | Ready to use: https://bit.ly/49Yc7V8\n🔥Biggest advantage: Deploy hundreds of workflows in one ComfyUI, freely combine other workflow node functions\nAll workflows in the DuanNao Cloud Online ComfyUI mirror correspond one-to-one with my Notes' workflow tutorials and video tutorials\n🔥Wu Yangfeng Notes | ComfyUI Tutorial: https://bit.ly/3YFFJVE\nFollow the workflows in the notes in reverse order - that's my learning path\n\n🔥Sharing only | High-quality, practical tools | Latest | World-class | ComfyUI practical workflows | AI tools: https://bit.ly/4blcJ7X\n\n🔥Top Calligrapher | Calligraphy Customization\n🔥Wu Yangfan Calligraphy Douyin: https://bit.ly/44UzCfA"
+        "🔥微信群\n🔥一起学习最新知识要点，解决复杂问题，分享解决方案\n🔥开通可查看吴杨峰 笔记内容｜在微信群内提供你notion笔记注册邮箱即可\n🔥微信群：吴杨峰设计群《陪伴》｜入群加微信号：wuyangfeng369\n🔥非入群者，勿加我微信｜ 入群赞助費369元/1年\n\n---\n\n🔥吴杨峰｜ComfyUI 设计师的工具箱（端脑云在线镜像）仅部署适合设计的高质量、实用性工作流\n🔥不想本地部署安装ComfyUI ，直接学习ComfyUI 使用技巧即可\n🔥目前就这一处集合上百个工作流在一个 ComfyUI中，实时新增最新主流工作流\n🔥吴杨峰｜ComfyUI 设计师的工具箱（镜像）｜即开即用：https://bit.ly/49Yc7V8\n🔥最大优点：在一个ComfyUI内部署上百几个工作流，可自由调用其他工作流节点功能组合使用\n端脑云在线ComfyUI镜像内所有工作流都一一对应我笔记内工作流教程及视频教程\n🔥吴杨峰 笔记｜ComfyUI教程：https://bit.ly/3YFFJVE\n按笔记中工作流，倒序学，也就我的学习路程\n\n🔥仅分享｜高质量、实用性工具｜最新｜全球顶尖｜ComfyUI 实用工作流｜AI工具：https://bit.ly/4blcJ7X\n\n🔥顶尖书法家｜书法定制\n🔥吴扬帆大书法抖音号：https://bit.ly/44UzCfA"
       ],
       "color": "#432",
       "bgcolor": "#653"
@@ -42,15 +42,15 @@
       "id": 130,
       "type": "LTXVPreprocess",
       "pos": [
-        1071.93540751755,
-        4932.442522588015
+        878.1257396655867,
+        4561.0208697779035
       ],
       "size": [
         225,
         104
       ],
       "flags": {},
-      "order": 63,
+      "order": 57,
       "mode": 0,
       "inputs": [
         {
@@ -74,7 +74,8 @@
           "name": "output_image",
           "type": "IMAGE",
           "links": [
-            404
+            169,
+            316
           ]
         }
       ],
@@ -103,8 +104,8 @@
       "id": 131,
       "type": "ResizeImagesByLongerEdge",
       "pos": [
-        1082.1531744669949,
-        4791.499794748098
+        851.0979144160208,
+        4458.506763875125
       ],
       "size": [
         243.609375,
@@ -113,7 +114,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 54,
+      "order": 50,
       "mode": 0,
       "inputs": [
         {
@@ -166,15 +167,15 @@
       "id": 132,
       "type": "LTXVPreprocess",
       "pos": [
-        1854.336298530375,
-        4942.802061746557
+        1621.0968632549966,
+        4562.025779717139
       ],
       "size": [
         225,
         104
       ],
       "flags": {},
-      "order": 69,
+      "order": 62,
       "mode": 0,
       "inputs": [
         {
@@ -198,7 +199,7 @@
           "name": "output_image",
           "type": "IMAGE",
           "links": [
-            390
+            317
           ]
         }
       ],
@@ -227,8 +228,8 @@
       "id": 133,
       "type": "ResizeImagesByLongerEdge",
       "pos": [
-        1848.536030990058,
-        4799.823510590575
+        1596.0578007549966,
+        4461.666892998389
       ],
       "size": [
         243.609375,
@@ -237,7 +238,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 65,
+      "order": 59,
       "mode": 0,
       "inputs": [
         {
@@ -290,34 +291,34 @@
       "id": 144,
       "type": "LTXVCropGuides",
       "pos": [
-        2156.505469385457,
-        3396.292737334325
+        2206.811924018886,
+        3474.5428695608903
       ],
       "size": [
         225,
         120
       ],
       "flags": {},
-      "order": 80,
+      "order": 76,
       "mode": 0,
       "inputs": [
         {
           "label": "positive",
           "name": "positive",
           "type": "CONDITIONING",
-          "link": 391
+          "link": 165
         },
         {
           "label": "negative",
           "name": "negative",
           "type": "CONDITIONING",
-          "link": 392
+          "link": 166
         },
         {
           "label": "latent",
           "name": "latent",
           "type": "LATENT",
-          "link": 397
+          "link": 167
         }
       ],
       "outputs": [
@@ -342,9 +343,7 @@
           "name": "latent",
           "type": "LATENT",
           "slot_index": 2,
-          "links": [
-            399
-          ]
+          "links": []
         }
       ],
       "properties": {
@@ -370,15 +369,15 @@
       "id": 145,
       "type": "LTXVImgToVideoInplace",
       "pos": [
-        2656.197928688541,
-        3702.4795305113494
+        2425.3389422480527,
+        3532.2668007674874
       ],
       "size": [
         225,
         180
       ],
       "flags": {},
-      "order": 88,
+      "order": 77,
       "mode": 0,
       "inputs": [
         {
@@ -391,7 +390,7 @@
           "label": "image",
           "name": "image",
           "type": "IMAGE",
-          "link": 404
+          "link": 169
         },
         {
           "label": "latent",
@@ -422,7 +421,7 @@
           "name": "latent",
           "type": "LATENT",
           "links": [
-            402
+            171
           ]
         }
       ],
@@ -445,8 +444,8 @@
       "id": 152,
       "type": "KSamplerSelect",
       "pos": [
-        2566.03748778241,
-        3009.8022195970907
+        1942.1827465015244,
+        3451.0883475339806
       ],
       "size": [
         225,
@@ -500,15 +499,15 @@
       "id": 155,
       "type": "LTXVEmptyLatentAudio",
       "pos": [
-        2159.723839916493,
-        3702.6491727014863
+        1943.1999991056914,
+        3765.4152653942238
       ],
       "size": [
         225,
         168
       ],
       "flags": {},
-      "order": 59,
+      "order": 55,
       "mode": 0,
       "inputs": [
         {
@@ -584,11 +583,11 @@
       "id": 169,
       "type": "Note",
       "pos": [
-        3024.2235817422675,
-        4529.222448149181
+        2821.1692172641706,
+        4225.445184203029
       ],
       "size": [
-        609.765625,
+        439.859375,
         8
       ],
       "flags": {
@@ -598,7 +597,7 @@
       "mode": 0,
       "inputs": [],
       "outputs": [],
-      "title": "AI Task Settings | Image-to-Video | Auto Write Prompt | Static Version (More Stable)",
+      "title": "AI任务设定｜图生视频｜自动写提示词｜静态态版（更稳定）",
       "properties": {
         "ue_properties": {
           "widget_ue_connectable": {},
@@ -617,11 +616,11 @@
       "id": 177,
       "type": "Note",
       "pos": [
-        2733.1879372110175,
-        4528.050573149181
+        2530.1335727329206,
+        4224.273309203029
       ],
       "size": [
-        487.96875,
+        311.90625,
         8
       ],
       "flags": {
@@ -631,7 +630,7 @@
       "mode": 0,
       "inputs": [],
       "outputs": [],
-      "title": "AI Task Settings | Multi-Image Continuous Frame Prompt Reverse",
+      "title": "AI任务设定｜多张图像连续帧反推提示词",
       "properties": {
         "ue_properties": {
           "widget_ue_connectable": {},
@@ -650,11 +649,11 @@
       "id": 179,
       "type": "Note",
       "pos": [
-        2732.2260231485175,
-        4491.749303617931
+        2529.1716586704206,
+        4187.972039671779
       ],
       "size": [
-        402.53125,
+        254.78125,
         8
       ],
       "flags": {
@@ -664,7 +663,7 @@
       "mode": 0,
       "inputs": [],
       "outputs": [],
-      "title": "AI Task Settings | First & Last Frame Prompt Reverse",
+      "title": "AI任务设定｜首尾帧反推提示词",
       "properties": {
         "ue_properties": {
           "widget_ue_connectable": {},
@@ -683,11 +682,11 @@
       "id": 184,
       "type": "Note",
       "pos": [
-        2195.3888649453925,
-        4793.591100492931
+        1992.3345004672954,
+        4489.813836546779
       ],
       "size": [
-        309.609375,
+        225,
         8
       ],
       "flags": {
@@ -697,7 +696,7 @@
       "mode": 0,
       "inputs": [],
       "outputs": [],
-      "title": "English Mainly, Dialog Can Be Chinese",
+      "title": "英文为主，对白可写中文",
       "properties": {
         "ue_properties": {
           "widget_ue_connectable": {},
@@ -707,7 +706,7 @@
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "For best results, use English as the main prompt.\nIf there is Chinese dialogue, use Chinese in the prompt."
+        "效果最佳需要用英文作为主提示词\n如有中文对白在提示词中用中文即可"
       ],
       "color": "#432",
       "bgcolor": "#653"
@@ -716,11 +715,11 @@
       "id": 183,
       "type": "Note",
       "pos": [
-        2195.0626930703925,
-        4828.243932524181
+        1992.0083285922954,
+        4524.466668578029
       ],
       "size": [
-        241.609375,
+        225,
         8
       ],
       "flags": {
@@ -730,7 +729,7 @@
       "mode": 0,
       "inputs": [],
       "outputs": [],
-      "title": "Leave Empty or Add Prompt",
+      "title": "留空或增加提示词",
       "properties": {
         "ue_properties": {
           "widget_ue_connectable": {},
@@ -740,7 +739,7 @@
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "Leave empty or add prompt manually"
+        "留空或手动增加提示词"
       ],
       "color": "#432",
       "bgcolor": "#653"
@@ -749,8 +748,8 @@
       "id": 186,
       "type": "Note",
       "pos": [
-        623.6170412404097,
-        3891.239391306293
+        385.65123542059797,
+        3614.4539569946555
       ],
       "size": [
         225,
@@ -763,7 +762,7 @@
       "mode": 0,
       "inputs": [],
       "outputs": [],
-      "title": "Video Duration",
+      "title": "视频时长",
       "properties": {
         "ue_properties": {
           "widget_ue_connectable": {},
@@ -773,7 +772,7 @@
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "Video Duration"
+        "视频时长"
       ],
       "color": "#432",
       "bgcolor": "#653"
@@ -782,8 +781,8 @@
       "id": 189,
       "type": "Note",
       "pos": [
-        865.0977272500797,
-        3702.9011590866817
+        620.1782129596604,
+        3430.6060566040305
       ],
       "size": [
         225,
@@ -796,7 +795,7 @@
       "mode": 0,
       "inputs": [],
       "outputs": [],
-      "title": "Total Video Frames",
+      "title": "视频总帧数",
       "properties": {
         "ue_properties": {
           "widget_ue_connectable": {},
@@ -806,7 +805,7 @@
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "Total Video Frames"
+        "视频总帧数"
       ],
       "color": "#432",
       "bgcolor": "#653"
@@ -815,8 +814,8 @@
       "id": 192,
       "type": "Note",
       "pos": [
-        629.427866410236,
-        3740.2646844773067
+        384.5083521198167,
+        3467.9695819946555
       ],
       "size": [
         225,
@@ -829,7 +828,7 @@
       "mode": 0,
       "inputs": [],
       "outputs": [],
-      "title": "Video Longest Edge",
+      "title": "视频最长边",
       "properties": {
         "ue_properties": {
           "widget_ue_connectable": {},
@@ -839,7 +838,7 @@
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "Video Longest Edge"
+        "视频最长边"
       ],
       "color": "#432",
       "bgcolor": "#653"
@@ -848,8 +847,8 @@
       "id": 193,
       "type": "PrimitiveFloat",
       "pos": [
-        630.2487462341659,
-        4102.295790900964
+        386.29707128315414,
+        3809.9941228160988
       ],
       "size": [
         225,
@@ -905,8 +904,8 @@
       "id": 194,
       "type": "Note",
       "pos": [
-        631.2165626992985,
-        4033.8393915085567
+        386.2970484088792,
+        3761.5442890259055
       ],
       "size": [
         225,
@@ -919,7 +918,7 @@
       "mode": 0,
       "inputs": [],
       "outputs": [],
-      "title": "Starting at 24 FPS",
+      "title": "每秒24帧起",
       "properties": {
         "ue_properties": {
           "widget_ue_connectable": {},
@@ -929,7 +928,7 @@
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "Default: 24 FPS"
+        "默认：每秒24帧"
       ],
       "color": "#432",
       "bgcolor": "#653"
@@ -938,15 +937,15 @@
       "id": 166,
       "type": "ImageResizeKJv2",
       "pos": [
-        1833.7536724209456,
-        4338.516426804347
+        1560.9718090015244,
+        4069.292489786584
       ],
       "size": [
         270,
-        478.65625
+        479.3125
       ],
       "flags": {},
-      "order": 57,
+      "order": 53,
       "mode": 0,
       "inputs": [
         {
@@ -1035,7 +1034,8 @@
           "name": "IMAGE",
           "type": "IMAGE",
           "links": [
-            149
+            149,
+            222
           ]
         },
         {
@@ -1082,8 +1082,8 @@
       "id": 157,
       "type": "ComfyMathExpression",
       "pos": [
-        865.097367945599,
-        3541.0759095467884
+        620.1782163365938,
+        3268.7809473603697
       ],
       "size": [
         225,
@@ -1092,7 +1092,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 56,
+      "order": 52,
       "mode": 0,
       "inputs": [
         {
@@ -1167,11 +1167,11 @@
       "id": 199,
       "type": "Note",
       "pos": [
-        1163.0080055703922,
-        3326.9355829148067
+        918.0884912799729,
+        3054.6404804321555
       ],
       "size": [
-        333.0625,
+        225,
         8
       ],
       "flags": {
@@ -1181,7 +1181,7 @@
       "mode": 0,
       "inputs": [],
       "outputs": [],
-      "title": "VBVR LoRA Understands Complex Motion",
+      "title": "VBVR LoRA 理解复杂运动",
       "properties": {
         "ue_properties": {
           "widget_ue_connectable": {},
@@ -1191,7 +1191,7 @@
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "VBVR LoRA\nFunction:\nCorrectly understands complex motion and physical movement\nCharacter limb movements won't have errors\nGenerated video better follows the prompt\n\nLTX2.3_VBVR_Reasoning_l2V_V2.safetensors\nstrength_model: (Default: 0.5)\n\n0.5: Effective\n0.75: Medium\n1: Prone to breaking"
+        "VBVR LoRA\n功能：\n正确理解复杂运动，理解物理运动\n人物运动四肢不会出错\n生成视频增强遵循提示词\n\nLTX2.3_VBVR_Reasoning_l2V_V2.safetensors\nstrength_model：（默认值：0.5）\n\n0.5 起作用\n0.75：中等\n1：容易崩坏"
       ],
       "color": "#432",
       "bgcolor": "#653"
@@ -1200,22 +1200,22 @@
       "id": 143,
       "type": "LTXVSeparateAVLatent",
       "pos": [
-        2425.0829331438476,
-        3417.6998448404684
+        2206.848178666732,
+        3331.8921990271797
       ],
       "size": [
         225,
         96
       ],
       "flags": {},
-      "order": 84,
+      "order": 74,
       "mode": 0,
       "inputs": [
         {
           "label": "av_latent",
           "name": "av_latent",
           "type": "LATENT",
-          "link": 405
+          "link": 335
         }
       ],
       "outputs": [
@@ -1224,7 +1224,8 @@
           "name": "video_latent",
           "type": "LATENT",
           "links": [
-            161
+            161,
+            167
           ]
         },
         {
@@ -1259,8 +1260,8 @@
       "id": 121,
       "type": "LTXVAudioVAELoader",
       "pos": [
-        1184.682852018572,
-        3936.595967207391
+        941.0511335936841,
+        3693.8487941904905
       ],
       "size": [
         256.140625,
@@ -1316,15 +1317,15 @@
         }
       },
       "widgets_values": [
-        "ltx-2.3-22b-dev.safetensors"
+        "ltx-2.3-22b-dev_audio_vae.safetensors"
       ]
     },
     {
       "id": 123,
       "type": "CheckpointLoaderSimple",
       "pos": [
-        1173.9219966379617,
-        3788.2719183919917
+        943.3563169225313,
+        3512.2069863143624
       ],
       "size": [
         295.609375,
@@ -1366,8 +1367,7 @@
             160,
             163,
             168,
-            316,
-            353
+            314
           ]
         }
       ],
@@ -1396,29 +1396,29 @@
         }
       },
       "widgets_values": [
-        "ltx-2.3-22b-dev.safetensors"
+        "ltx-2.3-22b-distilled.safetensors"
       ]
     },
     {
       "id": 209,
       "type": "ShowText|pysssss",
       "pos": [
-        3244.8974567940477,
-        4666.090020665506
+        3072.408602989983,
+        4360.837203520369
       ],
       "size": [
         225,
         248.46875
       ],
       "flags": {},
-      "order": 75,
+      "order": 69,
       "mode": 0,
       "inputs": [
         {
           "label": "text",
           "name": "text",
           "type": "STRING",
-          "link": 419
+          "link": 334
         }
       ],
       "outputs": [
@@ -1442,22 +1442,22 @@
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "Cinematic wide-angle shot with a shallow depth of field, capturing the vastness of the rolling green hills at sunset. The lighting is warm and golden, with soft orange and purple hues in the sky, casting long shadows across the grassy landscape. The color palette is rich and natural, evoking a sense of peace and nostalgia. The emotions conveyed are playful and curious, with a touch of mystery as the boy and man interact.\n\nThe boy, dressed in a maroon shirt and white dhoti, initially faces the camera with a bright, cheerful smile, holding a long wooden stick. He then turns his head and body to the right, looking toward the approaching man with a curious and slightly surprised expression. The man, muscular and shirtless with a red turban and green dhoti, walks confidently toward the boy, his arms slightly outstretched as if welcoming or questioning him. He stops near the boy and begins to speak, his expression animated and engaging.\n\nThe camera remains mostly static, with a slight pan to the right as the man approaches, keeping both characters in the frame. The shot switches to a medium close-up of the man as he speaks, emphasizing his facial expression and gestures. The boy’s expression shifts from curiosity to attentiveness as he listens.\n\nThe ambient sounds are gentle and natural: the soft rustling of grass, the distant bleating of sheep, and the subtle wind. A light, folk-inspired musical score plays in the background, adding warmth and cultural texture. The man’s dialogue is spoken in a clear, friendly, and slightly teasing tone, with a regional accent that suggests a rural, possibly South Asian setting: \"Boy, it's you again. Where is the wolf?\"zhuanchang"
+        "A cinematic wide-angle shot, establishing the scene with a sweeping view of a lush green valley at sunset, golden light casting long shadows, warm orange and purple hues dominating the sky. The atmosphere is serene yet slightly tense, evoking a sense of impending weather change. \n\nIn the first frame, a young boy in a maroon shirt and white dhoti stands in the foreground, holding a wooden staff, smiling cheerfully with his hand near his mouth. Behind him, a muscular man wearing a red turban and green dhoti runs toward the camera, bare-chested, with a red cloth draped over his shoulder. His expression is serious and focused.\n\nIn the second frame, the boy has turned slightly to his right, gesturing with his free hand as if explaining something. The muscular man has stopped, now facing the boy with open arms, palms outward, as if questioning or reacting to the boy’s words. His expression is now more expressive, conveying surprise or concern.\n\nCamera movement: The shot remains static in both frames, but the camera subtly zooms in slightly on the boy’s face in the first frame and then pans slightly to the right in the second frame to emphasize the interaction between the two characters.\n\nAudio: Ambient sounds of wind rustling through grass and distant sheep bleating. A soft, traditional Indian instrumental track with a slight percussion undertone. The dialogue is in Mandarin Chinese, with the boy speaking in a cheerful, youthful tone and the man speaking in a serious, authoritative tone. \n\nBoy: “下面现在怎样了？”\nMan: “下面有点湿，龙王雨下太猛了。”"
       ]
     },
     {
       "id": 211,
       "type": "JoinStrings",
       "pos": [
-        3003.2582334312037,
-        4586.517331520277
+        2800.205394143708,
+        4282.740883878639
       ],
       "size": [
         225,
-        132
+        132.65625
       ],
       "flags": {},
-      "order": 73,
+      "order": 67,
       "mode": 0,
       "inputs": [
         {
@@ -1489,8 +1489,8 @@
           "name": "STRING",
           "type": "STRING",
           "links": [
-            417,
-            419
+            332,
+            334
           ]
         }
       ],
@@ -1513,15 +1513,15 @@
       "id": 212,
       "type": "easy showAnything",
       "pos": [
-        2971.6088080572267,
-        4728.680820621392
+        2768.5563598555136,
+        4424.903969816139
       ],
       "size": [
         243.484375,
         160.203125
       ],
       "flags": {},
-      "order": 72,
+      "order": 65,
       "mode": 0,
       "inputs": [
         {
@@ -1554,22 +1554,22 @@
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "Cinematic wide shot, establishing the pastoral landscape at golden hour. Warm, soft lighting bathes the scene in amber and rose tones, with long shadows stretching across the grassy hills. The atmosphere is serene yet subtly tense, evoking a sense of quiet anticipation. The boy, in a maroon shirt and white dhoti, stands in the foreground, smiling at the camera with a mischievous glint in his eyes. Behind him, a muscular man in a red turban and green dhoti emerges from the path, bare-chested and slightly out of breath. The camera remains static as the boy turns his head sharply to the right, his expression shifting from playful to curious as he locks eyes with the man. The man, now fully in frame, gestures with open arms and begins to speak, his voice deep and gravelly. The audio features the distant rustle of sheep grazing, the gentle wind through the trees, and the man’s dialogue: “Boy, it’s you again. Where is the wolf?” — spoken in a slow, deliberate accent, hinting at a familiar, almost mythical relationship between the two. The camera stays fixed, allowing the emotional weight of the moment to settle as the boy’s gaze lingers on the man, his expression now a mix of innocence and apprehension."
+        "A cinematic wide shot, establishing the scene with a sweeping horizon at sunset, warm golden hues blending into soft purples, lush green hills and grazing sheep in the distance. The atmosphere is serene yet slightly tense, as if nature is about to shift. \n\nIn the first frame, a young boy in a maroon shirt and white dhoti stands on a dirt path, holding a wooden staff, smiling cheerfully with one finger to his lips. Behind him, a muscular man in a red turban and green dhoti runs toward him, shirtless, with a red cloth draped over his shoulder. The camera remains static, focusing on the boy’s joyful expression.\n\nIn the second frame, the camera cuts to a medium shot as the boy turns slightly to his right, gesturing with his free hand, while the man stops abruptly, arms wide open, face serious and weathered, as if he’s just arrived from a storm. The background remains unchanged, but the mood shifts from lighthearted to urgent.\n\nAudio: Gentle ambient sounds of wind and distant sheep bleating, with a subtle, low-pitched orchestral swell building tension. A soft, traditional Indian flute melody plays in the background. \n\nDialogue:\nMan (serious, slightly weathered accent): “现在下面怎么样了？”\nBoy (gentle, youthful tone): “有点湿，龙王雨下太猛了。”"
       ]
     },
     {
       "id": 124,
       "type": "LoraLoaderModelOnly",
       "pos": [
-        1144.7243233293002,
-        3466.9530608493774
+        921.5240415319063,
+        3211.0990625947447
       ],
       "size": [
         317.4375,
         138.65625
       ],
       "flags": {},
-      "order": 53,
+      "order": 49,
       "mode": 0,
       "inputs": [
         {
@@ -1639,8 +1639,8 @@
       "id": 196,
       "type": "Note",
       "pos": [
-        631.2165626992985,
-        4296.194616117931
+        386.2970484088792,
+        4023.8995136352805
       ],
       "size": [
         225,
@@ -1653,7 +1653,7 @@
       "mode": 0,
       "inputs": [],
       "outputs": [],
-      "title": "Upload Image",
+      "title": "上传图像",
       "properties": {
         "ue_properties": {
           "widget_ue_connectable": {},
@@ -1663,7 +1663,7 @@
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "Upload Image"
+        "上传图像"
       ],
       "color": "#432",
       "bgcolor": "#653"
@@ -1672,11 +1672,11 @@
       "id": 197,
       "type": "Note",
       "pos": [
-        1687.7029518594547,
-        3202.3061883835567
+        1442.7834375690354,
+        2930.0110859009055
       ],
       "size": [
-        258.484375,
+        225,
         8
       ],
       "flags": {
@@ -1686,7 +1686,7 @@
       "mode": 0,
       "inputs": [],
       "outputs": [],
-      "title": "Can Remove Chinese Subtitles",
+      "title": "可去中文字幕",
       "properties": {
         "ue_properties": {
           "widget_ue_connectable": {},
@@ -1696,7 +1696,7 @@
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "To make the negative prompt work and remove Chinese subtitles\n\n2 conditions must be met\n\nCondition 1:\n\nThe (positive prompt) must use Chinese only for Chinese dialogue,\nall other parts must use English prompts\nExample: her finger at the guest, she shouts with exaggerated enthusiasm: \"眼神给出去，是什么意思？\" \n\nCondition 2:\n\nAdd subtitle removal prompts to (negative prompt)\nNegative prompt (subtitle removal prompt):\nOily skin, reflective skin, strained expression, contorted expression, blurry, oversaturated, pixelated, low resolution, grainy, distorted, noise, compression artifacts, jpeg artifacts, glitches, watermark, text, logo, signature, copyright, subtitles, distorted sound, saturated sound, loud"
+        "让反向提示词起作用，可去中文字幕\n\n需满足 2个条件\n\n条件 1:\n\n需要（正向提示词）除中文对白用中文，\n其他都必须用英文提示词\n例： her finger at the guest, she shouts with exaggerated enthusiasm: \"眼神给出去，是什么意思？\" \n\n条件 2：\n需在（反向提示词）加入去字幕提示词\n反向提示词（去字幕提示词）：\nOily skin, reflective skin, strained expression, contorted expression, blurry, oversaturated, pixelated, low resolution, grainy, distorted, noise, compression artifacts, jpeg artifacts, glitches, watermark, text, logo, signature, copyright, subtitles, distorted sound, saturated sound, loud"
       ],
       "color": "#432",
       "bgcolor": "#653"
@@ -1705,15 +1705,15 @@
       "id": 150,
       "type": "RandomNoise",
       "pos": [
-        2318.334664349884,
-        3002.3620616824005
+        1942.1827465015244,
+        3181.1815956893624
       ],
       "size": [
         225,
         104
       ],
       "flags": {},
-      "order": 47,
+      "order": 45,
       "mode": 0,
       "inputs": [
         {
@@ -1754,7 +1754,7 @@
         }
       },
       "widgets_values": [
-        468063434740007,
+        176003591487616,
         "randomize"
       ]
     },
@@ -1762,8 +1762,8 @@
       "id": 218,
       "type": "Note",
       "pos": [
-        1379.1473350269694,
-        4291.7935036440185
+        1130.0673731159104,
+        4021.0723651977805
       ],
       "size": [
         225,
@@ -1776,7 +1776,7 @@
       "mode": 0,
       "inputs": [],
       "outputs": [],
-      "title": "Upload Image",
+      "title": "上传图像",
       "properties": {
         "ue_properties": {
           "widget_ue_connectable": {},
@@ -1786,7 +1786,7 @@
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "Upload Image"
+        "上传图像"
       ],
       "color": "#432",
       "bgcolor": "#653"
@@ -1795,12 +1795,12 @@
       "id": 153,
       "type": "ManualSigmas",
       "pos": [
-        2825.223223559491,
-        3011.1588615531405
+        1942.1827465015244,
+        3554.1510916746056
       ],
       "size": [
         225,
-        108
+        108.65625
       ],
       "flags": {},
       "order": 18,
@@ -1850,22 +1850,22 @@
       "id": 154,
       "type": "LTXVConcatAVLatent",
       "pos": [
-        2164.522981990184,
-        3568.0797642621487
+        1953.1591346421021,
+        3670.177751444304
       ],
       "size": [
         225,
         96
       ],
       "flags": {},
-      "order": 82,
+      "order": 66,
       "mode": 0,
       "inputs": [
         {
           "label": "video_latent",
           "name": "video_latent",
           "type": "LATENT",
-          "link": 399
+          "link": 318
         },
         {
           "label": "audio_latent",
@@ -1907,15 +1907,15 @@
       "id": 142,
       "type": "LTXVLatentUpsampler",
       "pos": [
-        2667.7246342598314,
-        3906.737350338324
+        2454.8512035327744,
+        3700.2187321910988
       ],
       "size": [
         225,
         120
       ],
       "flags": {},
-      "order": 86,
+      "order": 75,
       "mode": 0,
       "inputs": [
         {
@@ -1970,15 +1970,15 @@
       "id": 148,
       "type": "CFGGuider",
       "pos": [
-        2671.5592264917755,
-        3212.4573583575225
+        2440.1509037652777,
+        3073.297522235476
       ],
       "size": [
         225,
         152
       ],
       "flags": {},
-      "order": 81,
+      "order": 78,
       "mode": 0,
       "inputs": [
         {
@@ -2043,8 +2043,8 @@
       "id": 135,
       "type": "LoadImage",
       "pos": [
-        591.7806234004777,
-        4340.197355978966
+        348.0850771874262,
+        4142.24212133877
       ],
       "size": [
         411.046875,
@@ -2097,7 +2097,7 @@
         }
       },
       "widgets_values": [
-        "ComfyUI_00007_.png",
+        "ComfyUI_00008_.png",
         "image"
       ],
       "color": "#323",
@@ -2107,8 +2107,8 @@
       "id": 136,
       "type": "LoadImage",
       "pos": [
-        1376.5266381134559,
-        4341.5871824540245
+        1131.6077953296494,
+        4069.292489786584
       ],
       "size": [
         409.390625,
@@ -2171,15 +2171,15 @@
       "id": 188,
       "type": "CM_FloatToInt",
       "pos": [
-        876.9639893822407,
-        4184.387428061624
+        619.5155101733992,
+        3813.4100570608907
       ],
       "size": [
         225,
         104
       ],
       "flags": {},
-      "order": 43,
+      "order": 41,
       "mode": 0,
       "inputs": [
         {
@@ -2223,15 +2223,15 @@
       "id": 138,
       "type": "CreateVideo",
       "pos": [
-        2949.3752123943696,
-        3774.3650415587226
+        2663.460687039719,
+        3570.1085976424874
       ],
       "size": [
         225,
         128
       ],
       "flags": {},
-      "order": 94,
+      "order": 86,
       "mode": 0,
       "inputs": [
         {
@@ -2294,15 +2294,15 @@
       "id": 125,
       "type": "LoraLoaderModelOnly",
       "pos": [
-        1171.3481407587826,
-        3649.8542550953116
+        944.654530541409,
+        3363.641734903742
       ],
       "size": [
         250.859375,
         138.65625
       ],
       "flags": {},
-      "order": 44,
+      "order": 42,
       "mode": 0,
       "inputs": [
         {
@@ -2372,8 +2372,8 @@
       "id": 213,
       "type": "Note",
       "pos": [
-        1230.7097877969547,
-        3608.7507684616817
+        985.7902735065354,
+        3336.4556659790305
       ],
       "size": [
         225,
@@ -2386,7 +2386,7 @@
       "mode": 0,
       "inputs": [],
       "outputs": [],
-      "title": "Transition LoRA",
+      "title": "转场 LoRA",
       "properties": {
         "ue_properties": {
           "widget_ue_connectable": {},
@@ -2396,7 +2396,7 @@
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "\nTransition LoRA\nltx2.3-transition.safetensors\n\nTrigger word: zhuanchang\nPlace the trigger word at the end of the prompt\n\nMakes first/last frames and transitions more perfectly coherent, enhancing transformational motion, visual continuity, and scene-to-scene continuity.\n\nThis LoRA needs to be used with the model \"ltx-2.3-22b-distilled_transformer_only_fp8_input_scaled_v3.safetensors\" for perfect compatibility"
+        "\n转场 LoRA\nltx2.3-transition.safetensors\n\n触发词：zhuanchang\n触发词放提示词末尾即可\n\n让首尾帧、转场更完美连贯，增强了变换式运动、视觉连贯性和场景间的连续性。\n\n该lora需要配合该模型“ltx-2.3-22b-distilled_transformer_only_fp8_input_scaled_v3.safetensors”使用才完美适配"
       ],
       "color": "#432",
       "bgcolor": "#653"
@@ -2405,8 +2405,8 @@
       "id": 206,
       "type": "CR Text",
       "pos": [
-        2975.7394321960464,
-        4990.30618978139
+        2772.685862893708,
+        4686.530895814403
       ],
       "size": [
         240.71875,
@@ -2454,7 +2454,7 @@
         }
       },
       "widgets_values": [
-        "zhuanchang"
+        ""
       ],
       "color": "#232",
       "bgcolor": "#353"
@@ -2463,15 +2463,15 @@
       "id": 134,
       "type": "ImageResizeKJv2",
       "pos": [
-        978.4986809397869,
-        4346.683212862572
+        815.7874828296492,
+        4069.292489786584
       ],
       "size": [
         270,
-        478.65625
+        479.3125
       ],
       "flags": {},
-      "order": 45,
+      "order": 43,
       "mode": 0,
       "inputs": [
         {
@@ -2561,8 +2561,7 @@
           "type": "IMAGE",
           "links": [
             147,
-            223,
-            317
+            223
           ]
         },
         {
@@ -2617,19 +2616,16 @@
       "id": 185,
       "type": "ImageStitch",
       "pos": [
-        2204.0610142370642,
-        4473.66406657812
+        2000.7736951083891,
+        4278.565618124623
       ],
       "size": [
         225,
-        253.328125
+        186.65625
       ],
-      "flags": {
-        "collapsed": false
-      },
-      "order": 70,
+      "flags": {},
+      "order": 60,
       "mode": 0,
-      "showAdvanced": true,
       "inputs": [
         {
           "label": "image1",
@@ -2642,7 +2638,7 @@
           "name": "image2",
           "shape": 7,
           "type": "IMAGE",
-          "link": 390
+          "link": 222
         },
         {
           "label": "direction",
@@ -2708,15 +2704,15 @@
       "id": 178,
       "type": "ttN concat",
       "pos": [
-        2494.6726528372715,
-        4585.609171023038
+        2291.6193752635,
+        4281.832273852598
       ],
       "size": [
-        225,
-        312
+        231.28125,
+        472.484375
       ],
       "flags": {},
-      "order": 50,
+      "order": 48,
       "mode": 0,
       "inputs": [
         {
@@ -2782,7 +2778,7 @@
       },
       "widgets_values": [
         "",
-        "You are a master prompt writer for the LTX-2 video large model. The prompt writing rules are:\n\nFirst, determine the camera composition. It is best to use cinematic terminology to describe the style you want.\n\nSecond, describe the atmosphere of the video, such as lighting, color style, and the emotions to be conveyed.\n\nThird, describe the actions. Write the main character’s movements in chronological order, making them as natural and fluid as possible.\n\nFourth, determine the camera movements. Clearly explain when the shots switch, including the main character’s state after the camera movement.\n\nFifth, describe the audio. Use clear wording to describe the environmental sounds, music, audio effects, and the main character’s dialogue. For the main character’s dialogue, place the lines inside quotation marks and specify the language and accent you want the character to use.\n\nGenerate the prompts for me in English. Output only the final prompt results",
+        "你是LTX-2视频大模型的prompt撰写大师，提示词撰写规则是：\n\n第一、需要确定镜头构图，最好是使用电影术语进行描述你想要的风格。\n第二、描述视频氛围，比如视频光线、色彩风格、要表达的感情\n第三、描述动作，将主角动作按照时间顺序写出来，尽量的自然流畅\n第四，确定运镜，说清楚镜头何时切换。包括镜头移动后主角的状态\n第五，描述配音，请使用清晰的文案描述出视频环境音、音乐、音频和主角对话。对于主角对话，请将台词放在引号内，并注明你希望角色使用的语言和口音。\n\n你给我生成出英文提示词，仅台词用中文简体。只要最终提示词结果。",
         "",
         ""
       ]
@@ -2791,11 +2787,11 @@
       "id": 207,
       "type": "Note",
       "pos": [
-        2973.5275368203925,
-        4936.109655180431
+        2770.4731723422956,
+        4632.332391234279
       ],
       "size": [
-        280.484375,
+        225,
         8
       ],
       "flags": {
@@ -2805,7 +2801,7 @@
       "mode": 0,
       "inputs": [],
       "outputs": [],
-      "title": "Leave Empty or Add Trigger Word",
+      "title": "留空或增加触发词",
       "properties": {
         "ue_properties": {
           "widget_ue_connectable": {},
@@ -2815,7 +2811,7 @@
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "Leave empty or add prompt manually"
+        "留空或手动增加提示词"
       ],
       "color": "#432",
       "bgcolor": "#653"
@@ -2824,11 +2820,11 @@
       "id": 220,
       "type": "Note",
       "pos": [
-        2401.7645973672675,
-        4526.422643461681
+        2198.71023288917,
+        4222.645379515529
       ],
       "size": [
-        529.0625,
+        340.171875,
         8
       ],
       "flags": {
@@ -2838,7 +2834,7 @@
       "mode": 0,
       "inputs": [],
       "outputs": [],
-      "title": "AI Task Settings | Multi-Image Sequential Frame Video | Expand Prompt",
+      "title": "AI任务设定｜多图顺序帧生视频｜扩写提示词",
       "properties": {
         "ue_properties": {
           "widget_ue_connectable": {},
@@ -2857,15 +2853,15 @@
       "id": 172,
       "type": "Qwen3_VQA",
       "pos": [
-        2730.2400004468923,
-        4584.389371117342
+        2527.187002216625,
+        4280.612520163361
       ],
       "size": [
         225,
         455.984375
       ],
       "flags": {},
-      "order": 71,
+      "order": 63,
       "mode": 0,
       "inputs": [
         {
@@ -3004,7 +3000,7 @@
         2048,
         200704,
         1003520,
-        322,
+        411,
         "randomize",
         "eager"
       ]
@@ -3013,8 +3009,8 @@
       "id": 156,
       "type": "ComfyMathExpression",
       "pos": [
-        865.5580174568136,
-        3374.2445990636625
+        620.6386926820799,
+        3101.9496892223488
       ],
       "size": [
         225,
@@ -3023,7 +3019,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 55,
+      "order": 51,
       "mode": 0,
       "inputs": [
         {
@@ -3098,8 +3094,8 @@
       "id": 191,
       "type": "INTConstant",
       "pos": [
-        626.0798756664199,
-        3742.828218289015
+        383.5758531567577,
+        3485.075496866859
       ],
       "size": [
         225,
@@ -3131,7 +3127,6 @@
           ]
         }
       ],
-      "title": "Image width/height",
       "properties": {
         "cnr_id": "comfyui-kjnodes",
         "ver": "c6ce76d00bb8177d1b0286cad891df08eff5226e",
@@ -3155,8 +3150,8 @@
       "id": 187,
       "type": "INTConstant",
       "pos": [
-        629.0257893753551,
-        3960.677623777035
+        385.6512557517413,
+        3659.5189980331124
       ],
       "size": [
         225,
@@ -3185,7 +3180,6 @@
           ]
         }
       ],
-      "title": "Video Duration",
       "properties": {
         "cnr_id": "comfyui-kjnodes",
         "ver": "c6ce76d00bb8177d1b0286cad891df08eff5226e",
@@ -3200,7 +3194,7 @@
         }
       },
       "widgets_values": [
-        5
+        10
       ],
       "color": "#323",
       "bgcolor": "#535"
@@ -3209,15 +3203,15 @@
       "id": 190,
       "type": "easy showAnything",
       "pos": [
-        869.5691130615933,
-        3712.24621797372
+        620.1782163365938,
+        3470.5431679549874
       ],
       "size": [
         225,
         140
       ],
       "flags": {},
-      "order": 58,
+      "order": 54,
       "mode": 0,
       "inputs": [
         {
@@ -3254,8 +3248,8 @@
       "id": 195,
       "type": "SimpleCalculatorKJ",
       "pos": [
-        866.2840010864875,
-        3891.1624881293997
+        619.4010692554305,
+        3597.4184392223488
       ],
       "size": [
         225,
@@ -3264,7 +3258,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 46,
+      "order": 44,
       "mode": 0,
       "inputs": [
         {
@@ -3356,15 +3350,15 @@
       "id": 201,
       "type": "LoraLoaderModelOnly",
       "pos": [
-        1150.186383447823,
-        3316.390144233739
+        917.7050718053438,
+        3092.5351180960465
       ],
       "size": [
         320.453125,
         138.65625
       ],
       "flags": {},
-      "order": 62,
+      "order": 56,
       "mode": 0,
       "inputs": [
         {
@@ -3396,8 +3390,7 @@
           "name": "MODEL",
           "type": "MODEL",
           "links": [
-            245,
-            411
+            322
           ]
         }
       ],
@@ -3424,8 +3417,8 @@
       "id": 214,
       "type": "SeedGenerator",
       "pos": [
-        2068.8055396929317,
-        2998.0299382221788
+        1943.6372820918027,
+        3035.7736434866715
       ],
       "size": [
         225,
@@ -3478,7 +3471,7 @@
         }
       },
       "widgets_values": [
-        318133389948215,
+        581078277030314,
         "randomize"
       ]
     },
@@ -3486,15 +3479,15 @@
       "id": 149,
       "type": "RandomNoise",
       "pos": [
-        3064.651462542745,
-        3005.7716704053632
+        2424.25685674458,
+        2962.0912907848488
       ],
       "size": [
         225,
         104
       ],
       "flags": {},
-      "order": 48,
+      "order": 46,
       "mode": 0,
       "inputs": [
         {
@@ -3535,7 +3528,7 @@
         }
       },
       "widgets_values": [
-        810782246004525,
+        436086949194748,
         "randomize"
       ]
     },
@@ -3543,8 +3536,8 @@
       "id": 147,
       "type": "KSamplerSelect",
       "pos": [
-        3567.865786396084,
-        3003.97776953266
+        2424.013529921663,
+        3232.590083645092
       ],
       "size": [
         225,
@@ -3598,12 +3591,12 @@
       "id": 141,
       "type": "ManualSigmas",
       "pos": [
-        3318.2555088485865,
-        3000.4670336801773
+        2424.013529921663,
+        3337.0189980331124
       ],
       "size": [
         225,
-        108
+        108.65625
       ],
       "flags": {},
       "order": 29,
@@ -3653,22 +3646,22 @@
       "id": 146,
       "type": "LTXVConcatAVLatent",
       "pos": [
-        2672.060530866233,
-        3569.497150454005
+        2438.04671071768,
+        3432.291072860216
       ],
       "size": [
         225,
         96
       ],
       "flags": {},
-      "order": 89,
+      "order": 79,
       "mode": 0,
       "inputs": [
         {
           "label": "video_latent",
           "name": "video_latent",
           "type": "LATENT",
-          "link": 402
+          "link": 171
         },
         {
           "label": "audio_latent",
@@ -3710,15 +3703,15 @@
       "id": 164,
       "type": "SamplerCustomAdvanced",
       "pos": [
-        2930.8934511178686,
-        3229.081048283152
+        2671.0247061369414,
+        2964.9413613143624
       ],
       "size": [
         225,
         168
       ],
       "flags": {},
-      "order": 90,
+      "order": 80,
       "mode": 0,
       "inputs": [
         {
@@ -3758,7 +3751,8 @@
           "name": "output",
           "type": "LATENT",
           "links": [
-            407
+            326,
+            337
           ]
         },
         {
@@ -3791,15 +3785,15 @@
       "id": 137,
       "type": "LTXVAudioVAEDecode",
       "pos": [
-        2946.3925528106424,
-        3636.781292406382
+        2676.881097195969,
+        3477.8026894393624
       ],
       "size": [
         225,
         96
       ],
       "flags": {},
-      "order": 93,
+      "order": 84,
       "mode": 0,
       "inputs": [
         {
@@ -3848,15 +3842,15 @@
       "id": 140,
       "type": "VAEDecodeTiled",
       "pos": [
-        2945.4285332345594,
-        3441.0990909102406
+        2663.868401883469,
+        3281.0883475339806
       ],
       "size": [
         225,
         150
       ],
       "flags": {},
-      "order": 92,
+      "order": 83,
       "mode": 0,
       "inputs": [
         {
@@ -3942,22 +3936,22 @@
       "id": 139,
       "type": "LTXVSeparateAVLatent",
       "pos": [
-        2668.9314760392185,
-        3416.1740659216334
+        2686.336663602219,
+        3187.9972559541197
       ],
       "size": [
         225,
         96
       ],
       "flags": {},
-      "order": 91,
+      "order": 81,
       "mode": 0,
       "inputs": [
         {
           "label": "av_latent",
           "name": "av_latent",
           "type": "LATENT",
-          "link": 407
+          "link": 326
         }
       ],
       "outputs": [
@@ -4001,15 +3995,15 @@
       "id": 219,
       "type": "SaveVideo",
       "pos": [
-        3193.4903989673853,
-        3212.9359075133166
+        2988.2465971876286,
+        2886.9512588820317
       ],
       "size": [
-        621.875,
-        540.984375
+        609.453125,
+        1085.625
       ],
       "flags": {},
-      "order": 95,
+      "order": 87,
       "mode": 0,
       "inputs": [
         {
@@ -4072,8 +4066,8 @@
       "id": 163,
       "type": "LatentUpscaleModelLoader",
       "pos": [
-        2393.156019412808,
-        3937.292836053484
+        2424.8335711543027,
+        3813.4149398733907
       ],
       "size": [
         225,
@@ -4135,11 +4129,11 @@
       "id": 221,
       "type": "Note",
       "pos": [
-        2191.6068825235175,
-        4547.311803617931
+        1988.5525180454204,
+        4243.534539671779
       ],
       "size": [
-        351.28125,
+        264.5625,
         8
       ],
       "flags": {
@@ -4149,7 +4143,7 @@
       "mode": 0,
       "inputs": [],
       "outputs": [],
-      "title": "For 3+ Images, Copy This Node to Add More",
+      "title": "3张图以上，复制该节点即可增加",
       "properties": {
         "ue_properties": {
           "widget_ue_connectable": {},
@@ -4159,7 +4153,7 @@
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "For 3+ images, copy this node to add more"
+        "3张图以上，复制该节点即可增加"
       ],
       "color": "#432",
       "bgcolor": "#653"
@@ -4168,11 +4162,11 @@
       "id": 170,
       "type": "Note",
       "pos": [
-        3024.3478493203925,
-        4492.692174711681
+        2821.2934848422956,
+        4188.914910765529
       ],
       "size": [
-        702.828125,
+        439.859375,
         8
       ],
       "flags": {
@@ -4182,7 +4176,7 @@
       "mode": 0,
       "inputs": [],
       "outputs": [],
-      "title": "AI Task Settings | Image-to-Video | Auto Write Prompt | High Dynamic Version (Prone to Breaking)",
+      "title": "AI任务设定｜图生视频｜自动写提示词｜高动态版（容易崩）",
       "properties": {
         "ue_properties": {
           "widget_ue_connectable": {},
@@ -4201,11 +4195,11 @@
       "id": 171,
       "type": "Note",
       "pos": [
-        3023.3090309610175,
-        4456.023717680431
+        2820.2546664829206,
+        4152.246453734279
       ],
       "size": [
-        310.625,
+        240.5,
         8
       ],
       "flags": {
@@ -4215,7 +4209,7 @@
       "mode": 0,
       "inputs": [],
       "outputs": [],
-      "title": "AI Task Settings | Auto Expand Prompt",
+      "title": "AI任务设定｜自动扩写提示词",
       "properties": {
         "ue_properties": {
           "widget_ue_connectable": {},
@@ -4234,11 +4228,11 @@
       "id": 168,
       "type": "Note",
       "pos": [
-        2732.3227028360175,
-        4456.123327055431
+        2529.2683383579206,
+        4152.346063109279
       ],
       "size": [
-        331.765625,
+        269.921875,
         8
       ],
       "flags": {
@@ -4248,7 +4242,7 @@
       "mode": 0,
       "inputs": [],
       "outputs": [],
-      "title": "Settings | Image or Video Prompt Reverse",
+      "title": "设置说明｜图像或视频反推提示词",
       "properties": {
         "ue_properties": {
           "widget_ue_connectable": {},
@@ -4258,7 +4252,7 @@
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "Reverse prompt for video or image\n\nOllama is installed in the mirror,\nonly download the \"qwen3.5:9b(6.6GB)\" model\n\nOllama application address in the mirror:\nhttp://wp08.unicorn.org.cn:43434\n\nDefault settings are fine\nmodel: qwen3.5:9b(6.6GB)\napi_host: http://wp08.unicorn.org.cn:43434\n\nNote: Need to set 2 sentences for the task: AI persona + task (refer to AI Task Settings)\nExample:\nsystem_context:\nYou are an AI assistant skilled at analyzing video frame sequences and generating detailed, accurate text descriptions of events.\n\nprompt:\nPlease describe only the actions and expressions of people in this video; do not describe their gender or appearance. Output a coherent but concise English paragraph describing only the actions and expressions of people in the video.\n"
+        "反推视频或图像提示词\n\n镜像内已安装ollama，\n仅下载“qwen3.5:9b(6.6GB)”模型\n\n镜像内ollama应用地址：\nhttp://wp08.unicorn.org.cn:43434\n\n默认设置即可\nImodel：qwen3.5:9b(6.6GB)\napi_host：http://wp08.unicorn.org.cn:43434\n\n注意：要设置2 句任务，AI人设 + 任务（参考AI任务设定）\n例如：\nsystem_context：\n您是一位擅长分析视频帧序列并生成事件详细准确文本描述的AI助手。\n\nprompt：\n请仅描述此视频中人物的动作和表情；请勿描述其性别或外貌。请输出一段连贯但简洁的英文段落，仅描述视频中人物的动作和表情。\n"
       ],
       "color": "#432",
       "bgcolor": "#653"
@@ -4267,22 +4261,22 @@
       "id": 122,
       "type": "LTX2_NAG",
       "pos": [
-        1525.5235959625732,
-        3235.4604059125227
+        1445.639167399962,
+        2976.9015731741715
       ],
       "size": [
         225,
         244
       ],
       "flags": {},
-      "order": 77,
+      "order": 71,
       "mode": 0,
       "inputs": [
         {
           "label": "model",
           "name": "model",
           "type": "MODEL",
-          "link": 415
+          "link": 306
         },
         {
           "label": "nag_cond_video",
@@ -4354,7 +4348,7 @@
         }
       },
       "widgets_values": [
-        15,
+        11,
         0.25,
         2.5,
         false
@@ -4364,15 +4358,15 @@
       "id": 160,
       "type": "SamplerCustomAdvanced",
       "pos": [
-        2424.0713373196854,
-        3214.785837982581
+        2172.4468252775664,
+        3035.4255057371056
       ],
       "size": [
         225,
         196
       ],
       "flags": {},
-      "order": 83,
+      "order": 73,
       "mode": 0,
       "inputs": [
         {
@@ -4412,8 +4406,7 @@
           "name": "output",
           "type": "LATENT",
           "links": [
-            405,
-            410
+            335
           ]
         },
         {
@@ -4446,15 +4439,15 @@
       "id": 151,
       "type": "CFGGuider",
       "pos": [
-        2147.7313952307927,
-        3192.5974887368757
+        1942.1827465015244,
+        3309.0810368785988
       ],
       "size": [
         225,
         152
       ],
       "flags": {},
-      "order": 79,
+      "order": 72,
       "mode": 0,
       "inputs": [
         {
@@ -4467,13 +4460,13 @@
           "label": "positive",
           "name": "positive",
           "type": "CONDITIONING",
-          "link": 395
+          "link": 177
         },
         {
           "label": "negative",
           "name": "negative",
           "type": "CONDITIONING",
-          "link": 396
+          "link": 178
         },
         {
           "label": "cfg",
@@ -4519,8 +4512,8 @@
       "id": 198,
       "type": "Note",
       "pos": [
-        1513.0484108438297,
-        3589.4643915085567
+        1268.1288965534104,
+        3317.1692890259055
       ],
       "size": [
         225,
@@ -4533,7 +4526,7 @@
       "mode": 0,
       "inputs": [],
       "outputs": [],
-      "title": "VBVR Prompt Rules",
+      "title": "VBVR 提示词规则",
       "properties": {
         "ue_properties": {
           "widget_ue_connectable": {},
@@ -4543,25 +4536,97 @@
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "VBVR Prompt Rules\nVBVR makes the model execute more according to your action logic.\nDon't use fancy adjectives; instead use specific, literal, sequential action descriptions.\n\n1. Always write clearly in three parts\nBest to include these three sections every time:\nStarting State + Action Process + Ending State\n\n2. Write in order, step by step\nWhat happens first, what happens next, what state it ends in.\n\n3. Describe what moves clearly, keep what doesn't move stable\nDO: Specify the main subject's action\nDON'T: Let the whole frame change\n\n4. Be specific, not vague\nDon't just write \"a ball is bouncing\"\nInstead write \"a red ball first moves right, hits the wall, then bounces back to center\"\n\n5. The more it sounds like a \"command\", the better\nDO: Write like \"character raises head, looks at camera, lifts right hand, mouth speaks, then slightly turns sideways\"\nDON'T: Descriptions like \"beautiful, dreamy, very dynamic\""
+        "VBVR 提示词规则\nVBVR 是让模型更按你的动作逻辑执行。 \n不要华丽形容词，而是具体、字面、按顺序的动作描述\n\n1、一定要写清三段\n最好每次都带上这三个部分:\n起始状态 + 动作过程 + 结束状态\n\n2、要按顺序写，分步写\n先发生什么，随后发生什么，最后停在什么状态。\n\n3、该动的写清，不动的也要默认稳\n要：明确主体动作，\n不要：不让整个画面都变化\n\n4、要具体，不要虚\n不要只写\"一个球在弹跳\"，\n而要写成“一个红球先向右移动，撞到墙，再弹回中心\"\n\n5.越像\"指令\"，越好\n要：\"人物抬头，看向镜头，右手抬起，嘴巴说话，随后轻微侧身\"这种写法。\n不要：\"唯美、梦幻、动态感很强\"等描述"
       ],
       "color": "#432",
       "bgcolor": "#653"
     },
     {
+      "id": 215,
+      "type": "LTXVChunkFeedForward",
+      "pos": [
+        1376.4332347827744,
+        2801.641817721698
+      ],
+      "size": [
+        279.203125,
+        136
+      ],
+      "flags": {},
+      "order": 61,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "model",
+          "name": "model",
+          "type": "MODEL",
+          "link": 322
+        },
+        {
+          "label": "chunks",
+          "name": "chunks",
+          "type": "INT",
+          "widget": {
+            "name": "chunks"
+          }
+        },
+        {
+          "label": "dim_threshold",
+          "name": "dim_threshold",
+          "type": "INT",
+          "widget": {
+            "name": "dim_threshold"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "label": "model",
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            305
+          ]
+        }
+      ],
+      "title": "LTXV Chunk FeedForward (optional)",
+      "properties": {
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "4cb4ede5c3a4cebc14bb63b49b62f03cd16d44a5",
+        "Node name for S&R": "LTXVChunkFeedForward",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "chunks": true,
+            "dim_threshold": true
+          },
+          "input_ue_unconnectable": {},
+          "version": "7.5.2"
+        },
+        "widget_ue_connectable": {
+          "chunks": true,
+          "dim_threshold": true
+        }
+      },
+      "widgets_values": [
+        2,
+        4096
+      ]
+    },
+    {
       "id": 117,
       "type": "LTXAVTextEncoderLoader",
       "pos": [
-        1157.6952079804848,
-        4081.090604878899
+        925.7328565935347,
+        3833.668615744357
       ],
       "size": [
         310.703125,
-        169.328125
+        203.984375
       ],
       "flags": {},
       "order": 36,
       "mode": 0,
+      "showAdvanced": true,
       "inputs": [
         {
           "label": "text_encoder",
@@ -4594,8 +4659,8 @@
           "name": "CLIP",
           "type": "CLIP",
           "links": [
-            413,
-            420
+            330,
+            331
           ]
         }
       ],
@@ -4630,7 +4695,7 @@
       },
       "widgets_values": [
         "gemma/gemma_3_12B_it.safetensors",
-        "ltx-2.3-22b-dev.safetensors",
+        "ltx-2.3-22b-distilled.safetensors",
         "default"
       ]
     },
@@ -4638,22 +4703,22 @@
       "id": 225,
       "type": "CLIPTextEncode",
       "pos": [
-        1509.0323498448454,
-        4034.265542007475
+        1283.6521674745227,
+        3771.0043909363
       ],
       "size": [
         392.90625,
         140
       ],
       "flags": {},
-      "order": 49,
+      "order": 47,
       "mode": 0,
       "inputs": [
         {
           "label": "clip",
           "name": "clip",
           "type": "CLIP",
-          "link": 420
+          "link": 331
         },
         {
           "label": "text",
@@ -4692,7 +4757,7 @@
         }
       },
       "widgets_values": [
-        "blurry, oversaturated, pixelated, low resolution, grainy, distorted, noise, compression artifacts, jpeg artifacts, glitches, watermark, text, logo, signature, copyright, subtitles, distorted sound, saturated sound, loud, characters not shown in the reference image"
+        "blurry, oversaturated, pixelated, low resolution, grainy, distorted, noise, compression artifacts, jpeg artifacts, glitches, watermark, text, logo, signature, copyright, subtitles, distorted sound, saturated sound, loud"
       ],
       "color": "#322",
       "bgcolor": "#533"
@@ -4701,22 +4766,22 @@
       "id": 119,
       "type": "LTXVConditioning",
       "pos": [
-        1903.5723795661931,
-        3366.9283989776754
+        1445.639167399962,
+        3199.789790676342
       ],
       "size": [
         225,
         128
       ],
       "flags": {},
-      "order": 76,
+      "order": 70,
       "mode": 0,
       "inputs": [
         {
           "label": "positive",
           "name": "positive",
           "type": "CONDITIONING",
-          "link": 416
+          "link": 303
         },
         {
           "label": "negative",
@@ -4740,8 +4805,8 @@
           "name": "positive",
           "type": "CONDITIONING",
           "links": [
-            346,
-            395
+            165,
+            177
           ]
         },
         {
@@ -4749,10 +4814,10 @@
           "name": "negative",
           "type": "CONDITIONING",
           "links": [
+            166,
+            178,
             311,
-            312,
-            347,
-            396
+            312
           ]
         }
       ],
@@ -4783,11 +4848,11 @@
       "id": 226,
       "type": "Note",
       "pos": [
-        1689.7323708047672,
-        3589.4885614304317
+        1444.812856514348,
+        3317.1934589477805
       ],
       "size": [
-        285.875,
+        225,
         8
       ],
       "flags": {
@@ -4797,7 +4862,7 @@
       "mode": 0,
       "inputs": [],
       "outputs": [],
-      "title": "PromptRelay Prompt Enhancement",
+      "title": "PromptRelay 提示词增强",
       "properties": {
         "ue_properties": {
           "widget_ue_connectable": {},
@@ -4807,7 +4872,7 @@
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "PromptRelay Prompt Enhancement\nFunction: Enhances prompt adherence for video generation with precise time-based shot control\n\nExample: (Time control follows the format below)\n[0.0-2.5] Girl stands in a sea of flowers, gentle breeze, soft sunlight\n[2.5-5.0] Girl slowly turns, hair flowing, gentle expression\n[5.0-7.5] Camera slowly zooms in, focusing on face, beautiful light and shadow\n[7.5-10.0] Girl raises hand to gently touch a flower, natural and elegant movement\n\n----\n[0.0-3.0] Man says with a serious expression: \"下面现在怎样了\"\n[3.0-7.0] Woman replies: \"下面有点湿\"\n[7.0-10.0] Man says: \"龙王雨下太猛了\"\nA halo of Buddha light gently glows above the character's head, classical palace architecture with flickering candlelight, swirling steam, the scene is beautiful and dreamlike, emphasizing Eastern aesthetics and atmosphere."
+        "PromptRelay 提示词增强\n功能：可以增强遵循提示词实现视频生成，且可以精准控制时间分镜\n\n案例：（时间控制参考下面规范即可）\n[0.0-2.5]少女站在花海中，微风轻拂，阳光柔和\n[2.5-5.0]少女缓缓转身，发丝飘动，表情温柔\n[5.0-7.5]镜头缓慢拉近，聚焦面部，光影唯美\n[7.5-10.0]少女抬手轻触花朵，动作自然优雅\n\n----\n[0.0-3.0]男人表情严肃的说“下面现在怎样了”\n[3.0-7.0]女人回答说：“下面有点湿”\n[7.0-10.0]男人说：“龙王雨下太猛了”\n人物头上一圈佛光微微发光，古典宫廷建筑与摇曳的烛光，蒸汽缭绕，画面唯美梦幻，强调东方美学与氛围感。 "
       ],
       "color": "#432",
       "bgcolor": "#653"
@@ -4816,15 +4881,15 @@
       "id": 159,
       "type": "EmptyLTXVLatentVideo",
       "pos": [
-        1917.115394675839,
-        3545.137351360215
+        1698.1718284585017,
+        3198.253267729801
       ],
       "size": [
         225,
         200
       ],
       "flags": {},
-      "order": 64,
+      "order": 58,
       "mode": 0,
       "inputs": [
         {
@@ -4869,7 +4934,8 @@
           "name": "LATENT",
           "type": "LATENT",
           "links": [
-            318
+            304,
+            315
           ]
         }
       ],
@@ -4898,8 +4964,8 @@
       "id": 227,
       "type": "Note",
       "pos": [
-        1921.2077126016422,
-        3706.3713739304317
+        1676.288198311223,
+        3434.0762714477805
       ],
       "size": [
         225,
@@ -4912,7 +4978,7 @@
       "mode": 0,
       "inputs": [],
       "outputs": [],
-      "title": "Multi-Image Control Tips",
+      "title": "多图控制技巧",
       "properties": {
         "ue_properties": {
           "widget_ue_connectable": {},
@@ -4922,21 +4988,131 @@
         "widget_ue_connectable": {}
       },
       "widgets_values": [
-        "Multi-Image Control Weights and Appearance Timing/Position\n\nNumber of images: num_images=2 (e.g., for first/last frame, set to 2)\nImage 1 weight: strength_1 = 1 (can set 0~1)\nImage 1 frame: index_1 = 124 (can set the frame position where image 1 appears, e.g., 124 means image 1 appears at frame 124; set -1 for the last frame)\n"
+        "多图控制权重及出现时长位置\n\n图像数量：num_images=2（例：首尾帧的话设置2）\n图像1权重：strength_1 = 1（可设置0～1）\n图像1帧数：index_1 = 124（可设置图像1出现的帧数位置例：124，就是124帧时出现这图1，如果设置最后一帧，就是设置-1）\n"
       ],
       "color": "#432",
       "bgcolor": "#653"
     },
     {
+      "id": 222,
+      "type": "PromptRelayEncode",
+      "pos": [
+        1265.203376384337,
+        3371.7675331893624
+      ],
+      "size": [
+        392.96875,
+        348.65625
+      ],
+      "flags": {},
+      "order": 68,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "model",
+          "name": "model",
+          "type": "MODEL",
+          "link": 305
+        },
+        {
+          "label": "clip",
+          "name": "clip",
+          "type": "CLIP",
+          "link": 330
+        },
+        {
+          "label": "latent",
+          "name": "latent",
+          "type": "LATENT",
+          "link": 304
+        },
+        {
+          "label": "relay_options",
+          "name": "relay_options",
+          "shape": 7,
+          "type": "RELAY_OPTIONS"
+        },
+        {
+          "label": "global_prompt",
+          "name": "global_prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "global_prompt"
+          }
+        },
+        {
+          "label": "local_prompts",
+          "name": "local_prompts",
+          "type": "STRING",
+          "widget": {
+            "name": "local_prompts"
+          },
+          "link": 332
+        },
+        {
+          "label": "segment_lengths",
+          "name": "segment_lengths",
+          "type": "STRING",
+          "widget": {
+            "name": "segment_lengths"
+          }
+        },
+        {
+          "label": "epsilon",
+          "name": "epsilon",
+          "type": "FLOAT",
+          "widget": {
+            "name": "epsilon"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "label": "model",
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            306
+          ]
+        },
+        {
+          "label": "positive",
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            303
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "kijai/ComfyUI-PromptRelay",
+        "ver": "5cae3c00186ff2eb79771070f05a2c4e02f329bb",
+        "Node name for S&R": "PromptRelayEncode",
+        "ue_properties": {
+          "version": "7.8",
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "",
+        "[0.0-2.5] 少女站在花海中，微风轻拂，阳光柔和\n[2.5-5.0] 少女缓缓转身，发丝飘动，表情温柔\n[5.0-7.5] 镜头缓慢拉近，聚焦面部，光影唯美\n[7.5-10.0] 少女抬手轻触花朵，动作自然优雅",
+        "",
+        0.001
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
       "id": 173,
       "type": "CR Text",
       "pos": [
-        2196.03333437809,
-        4877.385372555834
+        1992.9804592478747,
+        4573.609075067875
       ],
       "size": [
-        418.40625,
-        234.265625
+        270.46875,
+        230.234375
       ],
       "flags": {},
       "order": 39,
@@ -4980,687 +5156,143 @@
         }
       },
       "widgets_values": [
-        "[0.0-1.0] Boy is looking at the camera\n[1.0-2.0] Boy turns around to look at the man\n[2.0-5.0] Man talks to the boy \"Boy, it's you again. Where is the wolf?\""
+        "[0.0-4.0]男人表情严肃的说“下面现在怎样了”\n[4.0-10.0]女人表情温柔的回答说：“下面有点湿，龙王雨下太猛了”"
       ],
       "color": "#232",
       "bgcolor": "#353"
     },
     {
-      "id": 228,
-      "type": "EmptyLTXVLatentVideo",
+      "id": 229,
+      "type": "LTXVImgToVideoInplaceKJ",
       "pos": [
-        1714.5901606995258,
-        3716.9464179543215
+        1640.9914781622654,
+        3537.1864381646137
       ],
       "size": [
-        225,
-        200
+        294.96875,
+        306.65625
       ],
       "flags": {},
-      "order": 40,
+      "order": 64,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 314
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": 315
+        },
+        {
+          "label": "image_1",
+          "name": "num_images.image_1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 316
+        },
+        {
+          "label": "image_2",
+          "name": "num_images.image_2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 317
+        }
+      ],
       "outputs": [
         {
-          "name": "LATENT",
+          "name": "latent",
           "type": "LATENT",
-          "links": []
+          "links": [
+            318
+          ]
         }
       ],
       "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.43",
-        "Node name for S&R": "EmptyLTXVLatentVideo",
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "1.4.0",
+        "Node name for S&R": "LTXVImgToVideoInplaceKJ",
         "ue_properties": {
           "widget_ue_connectable": {},
-          "version": "7.7",
-          "input_ue_unconnectable": {}
+          "input_ue_unconnectable": {},
+          "version": "7.8"
         }
       },
       "widgets_values": [
-        512,
-        512,
-        97,
-        1
+        "2",
+        1,
+        1,
+        0,
+        0
       ]
     },
     {
       "id": 230,
-      "type": "LTXVImgToVideoInplace",
+      "type": "ttN debugInput",
       "pos": [
-        1887.3204542660735,
-        3780.1510080899166
+        1747.0677250535352,
+        2524.614554219628
       ],
       "size": [
         270,
-        180
+        239.328125
       ],
       "flags": {},
-      "order": 68,
+      "order": 40,
       "mode": 0,
       "inputs": [
         {
-          "name": "vae",
-          "type": "VAE",
-          "link": 316
-        },
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 317
-        },
-        {
-          "name": "latent",
-          "type": "LATENT",
-          "link": 318
-        }
-      ],
-      "outputs": [
-        {
-          "name": "latent",
-          "type": "LATENT",
-          "links": [
-            345,
-            414
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.20.1",
-        "Node name for S&R": "LTXVImgToVideoInplace",
-        "ue_properties": {
-          "widget_ue_connectable": {},
-          "input_ue_unconnectable": {},
-          "version": "7.8"
-        }
-      },
-      "widgets_values": [
-        1,
-        false
-      ]
-    },
-    {
-      "id": 242,
-      "type": "LTXVAddGuidesFromBatch",
-      "pos": [
-        1922.7416357184818,
-        3982.992494305843
-      ],
-      "size": [
-        278.078125,
-        200
-      ],
-      "flags": {},
-      "order": 78,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "positive",
-          "type": "CONDITIONING",
-          "link": 346
-        },
-        {
-          "name": "negative",
-          "type": "CONDITIONING",
-          "link": 347
-        },
-        {
-          "name": "vae",
-          "type": "VAE",
-          "link": 353
-        },
-        {
-          "name": "latent",
-          "type": "LATENT",
-          "link": 345
-        },
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 375
-        }
-      ],
-      "outputs": [
-        {
-          "name": "positive",
-          "type": "CONDITIONING",
-          "links": [
-            391
-          ]
-        },
-        {
-          "name": "negative",
-          "type": "CONDITIONING",
-          "links": [
-            392
-          ]
-        },
-        {
-          "name": "latent",
-          "type": "LATENT",
-          "links": [
-            397
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-kjnodes",
-        "ver": "1.4.0",
-        "Node name for S&R": "LTXVAddGuidesFromBatch",
-        "ue_properties": {
-          "widget_ue_connectable": {},
-          "input_ue_unconnectable": {},
-          "version": "7.8"
-        }
-      },
-      "widgets_values": [
-        1
-      ]
-    },
-    {
-      "id": 248,
-      "type": "PreviewImage",
-      "pos": [
-        1981.4842328061352,
-        5389.843729322493
-      ],
-      "size": [
-        225,
-        304
-      ],
-      "flags": {},
-      "order": 66,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 371
+          "name": "debug",
+          "shape": 7,
+          "type": "*",
+          "link": null
         }
       ],
       "outputs": [],
       "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.20.1",
-        "Node name for S&R": "PreviewImage",
+        "cnr_id": "comfyui_tinyterranodes",
+        "ver": "2.0.10",
+        "Node name for S&R": "ttN debugInput",
+        "ttNnodeVersion": null,
         "ue_properties": {
-          "widget_ue_connectable": {},
-          "input_ue_unconnectable": {},
-          "version": "7.8"
-        }
-      },
-      "widgets_values": []
-    },
-    {
-      "id": 249,
-      "type": "easy imageRemBg",
-      "pos": [
-        1672.9152661465353,
-        5379.216708807611
-      ],
-      "size": [
-        270,
-        515.984375
-      ],
-      "flags": {},
-      "order": 61,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 387
-        }
-      ],
-      "outputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "links": [
-            371,
-            372
-          ]
-        },
-        {
-          "name": "mask",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-easy-use",
-        "ver": "1.3.6",
-        "Node name for S&R": "easy imageRemBg",
-        "ue_properties": {
-          "widget_ue_connectable": {},
-          "input_ue_unconnectable": {},
-          "version": "7.8"
+          "widget_ue_connectable": {
+            "print_to_console": true,
+            "console_title": true,
+            "console_color": true
+          },
+          "version": "7.8",
+          "input_ue_unconnectable": {}
         }
       },
       "widgets_values": [
-        "RMBG-1.4",
-        "Preview",
-        "ComfyUI",
-        false,
-        "none",
-        false
+        true,
+        "ttN debug:",
+        "Red",
+        "None"
       ]
     },
     {
-      "id": 250,
-      "type": "BatchImagesNode",
-      "pos": [
-        1502.8769803502948,
-        5122.2952123707255
-      ],
-      "size": [
-        225,
-        120
-      ],
-      "flags": {},
-      "order": 67,
-      "mode": 0,
-      "inputs": [
-        {
-          "label": "image0",
-          "name": "images.image0",
-          "type": "IMAGE",
-          "link": 372
-        },
-        {
-          "label": "image1",
-          "name": "images.image1",
-          "type": "IMAGE",
-          "link": 386
-        },
-        {
-          "label": "image2",
-          "name": "images.image2",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            375
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.20.1",
-        "Node name for S&R": "BatchImagesNode",
-        "ue_properties": {
-          "widget_ue_connectable": {},
-          "input_ue_unconnectable": {},
-          "version": "7.8"
-        }
-      },
-      "widgets_values": []
-    },
-    {
-      "id": 251,
-      "type": "ImageResizeKJv2",
-      "pos": [
-        367.43425976661365,
-        5349.880525020883
-      ],
-      "size": [
-        270,
-        478.65625
-      ],
-      "flags": {},
-      "order": 51,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 388
-        },
-        {
-          "name": "mask",
-          "shape": 7,
-          "type": "MASK",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            384
-          ]
-        },
-        {
-          "name": "width",
-          "type": "INT",
-          "links": null
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "links": null
-        },
-        {
-          "name": "mask",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-kjnodes",
-        "ver": "1.4.0",
-        "Node name for S&R": "ImageResizeKJv2",
-        "ue_properties": {
-          "widget_ue_connectable": {},
-          "input_ue_unconnectable": {},
-          "version": "7.8"
-        }
-      },
-      "widgets_values": [
-        1920,
-        1080,
-        "nearest-exact",
-        "pad",
-        "0, 0, 0",
-        "center",
-        2,
-        "cpu"
-      ]
-    },
-    {
-      "id": 252,
-      "type": "ImageResizeKJv2",
-      "pos": [
-        1322.3294553971396,
-        5383.275511931143
-      ],
-      "size": [
-        270,
-        478.65625
-      ],
-      "flags": {},
-      "order": 52,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 389
-        },
-        {
-          "name": "mask",
-          "shape": 7,
-          "type": "MASK",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            387
-          ]
-        },
-        {
-          "name": "width",
-          "type": "INT",
-          "links": null
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "links": null
-        },
-        {
-          "name": "mask",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-kjnodes",
-        "ver": "1.4.0",
-        "Node name for S&R": "ImageResizeKJv2",
-        "ue_properties": {
-          "widget_ue_connectable": {},
-          "input_ue_unconnectable": {},
-          "version": "7.8"
-        }
-      },
-      "widgets_values": [
-        1920,
-        1080,
-        "nearest-exact",
-        "pad",
-        "0, 0, 0",
-        "center",
-        2,
-        "cpu"
-      ]
-    },
-    {
-      "id": 253,
-      "type": "easy imageRemBg",
-      "pos": [
-        679.2396089842318,
-        5352.644203537674
-      ],
-      "size": [
-        270,
-        515.984375
-      ],
-      "flags": {},
-      "order": 60,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 384
-        }
-      ],
-      "outputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "links": [
-            386
-          ]
-        },
-        {
-          "name": "mask",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-easy-use",
-        "ver": "1.3.6",
-        "Node name for S&R": "easy imageRemBg",
-        "ue_properties": {
-          "widget_ue_connectable": {},
-          "input_ue_unconnectable": {},
-          "version": "7.8"
-        }
-      },
-      "widgets_values": [
-        "RMBG-1.4",
-        "Preview",
-        "ComfyUI",
-        false,
-        "none",
-        false
-      ]
-    },
-    {
-      "id": 254,
-      "type": "VHS_LoadImagesPath",
-      "pos": [
-        23.230515626350382,
-        5350.7958341022895
-      ],
-      "size": [
-        252.578125,
-        417.0782930107527
-      ],
-      "flags": {},
-      "order": 41,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "meta_batch",
-          "shape": 7,
-          "type": "VHS_BatchManager",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            388
-          ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        },
-        {
-          "name": "frame_count",
-          "type": "INT",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-videohelpersuite",
-        "ver": "1.7.9",
-        "Node name for S&R": "VHS_LoadImagesPath",
-        "ue_properties": {
-          "widget_ue_connectable": {},
-          "input_ue_unconnectable": {},
-          "version": "7.8"
-        }
-      },
-      "widgets_values": {
-        "directory": "output/232BLACSD3KSMITH_dataset/",
-        "image_load_cap": 0,
-        "skip_first_images": 0,
-        "select_every_nth": 1,
-        "videopreview": {
-          "hidden": false,
-          "paused": false,
-          "params": {
-            "image_load_cap": 0,
-            "skip_first_images": 0,
-            "select_every_nth": 1,
-            "filename": "output/232BLACSD3KSMITH_dataset/",
-            "type": "path",
-            "format": "folder"
-          }
-        }
-      }
-    },
-    {
-      "id": 255,
-      "type": "VHS_LoadImagesPath",
-      "pos": [
-        1041.4484509773356,
-        5374.26788106889
-      ],
-      "size": [
-        252.578125,
-        417.0782930107527
-      ],
-      "flags": {},
-      "order": 42,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "meta_batch",
-          "shape": 7,
-          "type": "VHS_BatchManager",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            389
-          ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        },
-        {
-          "name": "frame_count",
-          "type": "INT",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-videohelpersuite",
-        "ver": "1.7.9",
-        "Node name for S&R": "VHS_LoadImagesPath",
-        "ue_properties": {
-          "widget_ue_connectable": {},
-          "input_ue_unconnectable": {},
-          "version": "7.8"
-        }
-      },
-      "widgets_values": {
-        "directory": "output/BOY33SDKFUFJ_dataset/dynamic_dataset/images/",
-        "image_load_cap": 0,
-        "skip_first_images": 0,
-        "select_every_nth": 1,
-        "videopreview": {
-          "hidden": false,
-          "paused": false,
-          "params": {
-            "image_load_cap": 0,
-            "skip_first_images": 0,
-            "select_every_nth": 1,
-            "filename": "output/BOY33SDKFUFJ_dataset/dynamic_dataset/images/",
-            "type": "path",
-            "format": "folder"
-          }
-        }
-      }
-    },
-    {
-      "id": 256,
+      "id": 232,
       "type": "ExecutePython1fc966db537431435b5b03e19f5ebb51da48a9dbe413ce8e0aa856c72f3d6d08",
       "pos": [
-        2310.925218200061,
-        2542.744601439084
+        2084.6869588519376,
+        2519.5938173046957
       ],
       "size": [
-        400,
-        200
+        468.203125,
+        239.625
       ],
       "flags": {},
-      "order": 85,
+      "order": 82,
       "mode": 0,
       "inputs": [
         {
           "name": "arg0",
           "shape": 7,
           "type": "*",
-          "link": 410
+          "link": 337
         },
         {
           "name": "arg1",
@@ -5673,7 +5305,7 @@
           "name": "res0",
           "type": "*",
           "links": [
-            408
+            328
           ]
         }
       ],
@@ -5681,6 +5313,7 @@
         "cnr_id": "execute-python",
         "ver": "f6a4a844eb72601dcd9766b10dfd7148415dffbc",
         "Node name for S&R": "ExecutePython1fc966db537431435b5b03e19f5ebb51da48a9dbe413ce8e0aa856c72f3d6d08",
+        "aux_id": "mozhaa/ComfyUI-Execute-Python",
         "ue_properties": {
           "widget_ue_connectable": {},
           "input_ue_unconnectable": {},
@@ -5693,24 +5326,24 @@
       ]
     },
     {
-      "id": 257,
+      "id": 233,
       "type": "PreviewAny",
       "pos": [
-        2790.1220410023625,
-        2531.973297953651
+        2629.483571088147,
+        2519.333832318047
       ],
       "size": [
-        478.40625,
-        267.0625
+        490.046875,
+        330.953125
       ],
       "flags": {},
-      "order": 87,
+      "order": 85,
       "mode": 0,
       "inputs": [
         {
           "name": "source",
           "type": "*",
-          "link": 408
+          "link": 328
         }
       ],
       "outputs": [
@@ -5735,120 +5368,6 @@
         null,
         null
       ]
-    },
-    {
-      "id": 258,
-      "type": "PromptRelayEncode",
-      "pos": [
-        1490.3011363158014,
-        3526.12900542574
-      ],
-      "size": [
-        392.96875,
-        348.65625
-      ],
-      "flags": {},
-      "order": 74,
-      "mode": 0,
-      "inputs": [
-        {
-          "label": "model",
-          "name": "model",
-          "type": "MODEL",
-          "link": 411
-        },
-        {
-          "label": "clip",
-          "name": "clip",
-          "type": "CLIP",
-          "link": 413
-        },
-        {
-          "label": "latent",
-          "name": "latent",
-          "type": "LATENT",
-          "link": 414
-        },
-        {
-          "label": "relay_options",
-          "name": "relay_options",
-          "shape": 7,
-          "type": "RELAY_OPTIONS",
-          "link": null
-        },
-        {
-          "label": "global_prompt",
-          "name": "global_prompt",
-          "type": "STRING",
-          "widget": {
-            "name": "global_prompt"
-          },
-          "link": null
-        },
-        {
-          "label": "local_prompts",
-          "name": "local_prompts",
-          "type": "STRING",
-          "widget": {
-            "name": "local_prompts"
-          },
-          "link": 417
-        },
-        {
-          "label": "segment_lengths",
-          "name": "segment_lengths",
-          "type": "STRING",
-          "widget": {
-            "name": "segment_lengths"
-          },
-          "link": null
-        },
-        {
-          "label": "epsilon",
-          "name": "epsilon",
-          "type": "FLOAT",
-          "widget": {
-            "name": "epsilon"
-          },
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "label": "model",
-          "name": "model",
-          "type": "MODEL",
-          "links": [
-            415
-          ]
-        },
-        {
-          "label": "positive",
-          "name": "positive",
-          "type": "CONDITIONING",
-          "links": [
-            416
-          ]
-        }
-      ],
-      "properties": {
-        "aux_id": "kijai/ComfyUI-PromptRelay",
-        "ver": "5cae3c00186ff2eb79771070f05a2c4e02f329bb",
-        "Node name for S&R": "PromptRelayEncode",
-        "ue_properties": {
-          "version": "7.8",
-          "widget_ue_connectable": {},
-          "input_ue_unconnectable": {}
-        }
-      },
-      "widgets_values": [
-        "",
-        "",
-        "",
-        0.001
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
     }
   ],
   "links": [
@@ -5981,6 +5500,30 @@
       "VAE"
     ],
     [
+      165,
+      119,
+      0,
+      144,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      166,
+      119,
+      1,
+      144,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      167,
+      143,
+      0,
+      144,
+      2,
+      "LATENT"
+    ],
+    [
       168,
       123,
       2,
@@ -5989,11 +5532,27 @@
       "VAE"
     ],
     [
+      169,
+      130,
+      0,
+      145,
+      1,
+      "IMAGE"
+    ],
+    [
       170,
       142,
       0,
       145,
       2,
+      "LATENT"
+    ],
+    [
+      171,
+      145,
+      0,
+      146,
+      0,
       "LATENT"
     ],
     [
@@ -6035,6 +5594,22 @@
       151,
       0,
       "MODEL"
+    ],
+    [
+      177,
+      119,
+      0,
+      151,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      178,
+      119,
+      1,
+      151,
+      2,
+      "CONDITIONING"
     ],
     [
       180,
@@ -6169,6 +5744,14 @@
       185,
       0,
       172,
+      1,
+      "IMAGE"
+    ],
+    [
+      222,
+      166,
+      0,
+      185,
       1,
       "IMAGE"
     ],
@@ -6365,6 +5948,38 @@
       "STRING"
     ],
     [
+      303,
+      222,
+      1,
+      119,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      304,
+      159,
+      0,
+      222,
+      2,
+      "LATENT"
+    ],
+    [
+      305,
+      215,
+      0,
+      222,
+      0,
+      "MODEL"
+    ],
+    [
+      306,
+      222,
+      0,
+      122,
+      0,
+      "MODEL"
+    ],
+    [
       307,
       225,
       0,
@@ -6389,207 +6004,55 @@
       "CONDITIONING"
     ],
     [
-      316,
+      314,
       123,
       2,
-      230,
+      229,
       0,
       "VAE"
     ],
     [
-      317,
-      134,
+      315,
+      159,
       0,
-      230,
+      229,
       1,
+      "LATENT"
+    ],
+    [
+      316,
+      130,
+      0,
+      229,
+      2,
+      "IMAGE"
+    ],
+    [
+      317,
+      132,
+      0,
+      229,
+      3,
       "IMAGE"
     ],
     [
       318,
-      159,
+      229,
       0,
-      230,
-      2,
-      "LATENT"
-    ],
-    [
-      345,
-      230,
-      0,
-      242,
-      3,
-      "LATENT"
-    ],
-    [
-      346,
-      119,
-      0,
-      242,
-      0,
-      "CONDITIONING"
-    ],
-    [
-      347,
-      119,
-      1,
-      242,
-      1,
-      "CONDITIONING"
-    ],
-    [
-      353,
-      123,
-      2,
-      242,
-      2,
-      "VAE"
-    ],
-    [
-      371,
-      249,
-      0,
-      248,
-      0,
-      "IMAGE"
-    ],
-    [
-      372,
-      249,
-      0,
-      250,
-      0,
-      "IMAGE"
-    ],
-    [
-      375,
-      250,
-      0,
-      242,
-      4,
-      "IMAGE"
-    ],
-    [
-      384,
-      251,
-      0,
-      253,
-      0,
-      "IMAGE"
-    ],
-    [
-      386,
-      253,
-      0,
-      250,
-      1,
-      "IMAGE"
-    ],
-    [
-      387,
-      252,
-      0,
-      249,
-      0,
-      "IMAGE"
-    ],
-    [
-      388,
-      254,
-      0,
-      251,
-      0,
-      "IMAGE"
-    ],
-    [
-      389,
-      255,
-      0,
-      252,
-      0,
-      "IMAGE"
-    ],
-    [
-      390,
-      132,
-      0,
-      185,
-      1,
-      "IMAGE"
-    ],
-    [
-      391,
-      242,
-      0,
-      144,
-      0,
-      "CONDITIONING"
-    ],
-    [
-      392,
-      242,
-      1,
-      144,
-      1,
-      "CONDITIONING"
-    ],
-    [
-      395,
-      119,
-      0,
-      151,
-      1,
-      "CONDITIONING"
-    ],
-    [
-      396,
-      119,
-      1,
-      151,
-      2,
-      "CONDITIONING"
-    ],
-    [
-      397,
-      242,
-      2,
-      144,
-      2,
-      "LATENT"
-    ],
-    [
-      399,
-      144,
-      2,
       154,
       0,
       "LATENT"
     ],
     [
-      402,
-      145,
+      322,
+      201,
       0,
-      146,
+      215,
       0,
-      "LATENT"
+      "MODEL"
     ],
     [
-      404,
-      130,
-      0,
-      145,
-      1,
-      "IMAGE"
-    ],
-    [
-      405,
-      160,
-      0,
-      143,
-      0,
-      "LATENT"
-    ],
-    [
-      407,
+      326,
       164,
       0,
       139,
@@ -6597,71 +6060,39 @@
       "LATENT"
     ],
     [
-      408,
-      256,
+      328,
+      232,
       0,
-      257,
+      233,
       0,
       "*"
     ],
     [
-      410,
-      160,
-      0,
-      256,
-      0,
-      "LATENT"
-    ],
-    [
-      411,
-      201,
-      0,
-      258,
-      0,
-      "MODEL"
-    ],
-    [
-      413,
+      330,
       117,
       0,
-      258,
+      222,
       1,
       "CLIP"
     ],
     [
-      414,
-      230,
+      331,
+      117,
       0,
-      258,
-      2,
-      "LATENT"
+      225,
+      0,
+      "CLIP"
     ],
     [
-      415,
-      258,
-      0,
-      122,
-      0,
-      "MODEL"
-    ],
-    [
-      416,
-      258,
-      1,
-      119,
-      0,
-      "CONDITIONING"
-    ],
-    [
-      417,
+      332,
       211,
       0,
-      258,
+      222,
       5,
       "STRING"
     ],
     [
-      419,
+      334,
       211,
       0,
       209,
@@ -6669,12 +6100,20 @@
       "STRING"
     ],
     [
-      420,
-      117,
+      335,
+      160,
       0,
-      225,
+      143,
       0,
-      "CLIP"
+      "LATENT"
+    ],
+    [
+      337,
+      164,
+      0,
+      232,
+      0,
+      "LATENT"
     ]
   ],
   "groups": [
@@ -6682,8 +6121,8 @@
       "id": 1,
       "title": "LTX 2.3 多图生视频 （V1版 增强人脸一致性，+转场 +VBVR 理解复杂运动，正确物理运动）",
       "bounding": [
-        566.5162147989079,
-        2834.4084833054317,
+        321.59670050848865,
+        2562.1133808227805,
         3255.567138671875,
         2358.140625
       ],
@@ -6692,10 +6131,10 @@
     },
     {
       "id": 3,
-      "title": "Image or video prompt reverse-engineering + automatic prompt expansion",
+      "title": "图像或视频反推提示词+提示词自动扩写",
       "bounding": [
-        2148.3590797891425,
-        4311.151647367931,
+        1945.3047153110454,
+        4007.374383421776,
         1332.4527587890625,
         830.8001098632812
       ],
@@ -6718,10 +6157,10 @@
     "frontendVersion": "1.43.18",
     "VHS_latentpreview": false,
     "ds": {
-      "scale": 0.6588450000000005,
+      "scale": 0.740024994425817,
       "offset": [
-        -1767.7015218821632,
-        -2460.0714011092755
+        -633.5714374904749,
+        -2902.391240221513
       ]
     }
   },
