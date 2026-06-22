@@ -1,0 +1,1510 @@
+{
+  "last_node_id": 54,
+  "last_link_id": 63,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "UltimateSDUpscale",
+      "pos": [
+        1005,
+        615
+      ],
+      "size": [
+        315,
+        1095
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 30
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 53
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 45
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 6
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 52
+        },
+        {
+          "name": "upscale_model",
+          "type": "UPSCALE_MODEL",
+          "link": 10
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": 29,
+          "widget": {
+            "name": "seed"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            32,
+            43
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UltimateSDUpscale"
+      },
+      "widgets_values": [
+        2,
+        108482027017988,
+        "randomize",
+        20,
+        1,
+        "euler",
+        "simple",
+        0.15,
+        "Linear",
+        512,
+        512,
+        8,
+        32,
+        "None",
+        1,
+        64,
+        8,
+        8,
+        true,
+        false
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 3,
+      "type": "CLIPTextEncodeFlux",
+      "pos": [
+        735,
+        1215
+      ],
+      "size": [
+        270,
+        105
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 54
+        },
+        {
+          "name": "clip_l",
+          "type": "STRING",
+          "link": 62,
+          "widget": {
+            "name": "clip_l"
+          }
+        },
+        {
+          "name": "t5xxl",
+          "type": "STRING",
+          "link": 63,
+          "widget": {
+            "name": "t5xxl"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            38
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncodeFlux"
+      },
+      "widgets_values": [
+        "",
+        "",
+        3.5,
+        true,
+        true
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 4,
+      "type": "CLIPTextEncodeFlux",
+      "pos": [
+        420,
+        1740
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 55
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            6,
+            40
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "title": "MANUAL PROMPT",
+      "properties": {
+        "Node name for S&R": "CLIPTextEncodeFlux"
+      },
+      "widgets_values": [
+        "",
+        "",
+        3.5,
+        true,
+        true
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 5,
+      "type": "Image Comparer (rgthree)",
+      "pos": [
+        1320,
+        525
+      ],
+      "size": [
+        630,
+        1185
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 25,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image_a",
+          "type": "IMAGE",
+          "link": 32,
+          "dir": 3
+        },
+        {
+          "name": "image_b",
+          "type": "IMAGE",
+          "link": 31,
+          "dir": 3
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "comparer_mode": "Slide"
+      },
+      "widgets_values": [
+        [
+          {
+            "name": "A",
+            "selected": true,
+            "url": "/api/view?filename=rgthree.compare._temp_xriyp_00003_.png&type=temp&subfolder=&rand=0.8126833040401258"
+          },
+          {
+            "name": "B",
+            "selected": true,
+            "url": "/api/view?filename=rgthree.compare._temp_xriyp_00004_.png&type=temp&subfolder=&rand=0.7844551178092165"
+          }
+        ]
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 6,
+      "type": "LoadImage",
+      "pos": [
+        344,
+        525
+      ],
+      "size": [
+        390,
+        555
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            30,
+            31,
+            44
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "Ffx-art.webp",
+        "image"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 7,
+      "type": "UpscaleModelLoader",
+      "pos": [
+        1005,
+        525
+      ],
+      "size": [
+        315,
+        58
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "UPSCALE_MODEL",
+          "type": "UPSCALE_MODEL",
+          "links": [
+            10
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UpscaleModelLoader"
+      },
+      "widgets_values": [
+        "4x_foolhardy_Remacri.pth"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 12,
+      "type": "FluxGuidance",
+      "pos": [
+        735,
+        1350
+      ],
+      "size": [
+        270,
+        60
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 46
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            45
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FluxGuidance"
+      },
+      "widgets_values": [
+        3.5
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 15,
+      "type": "Florence2Run",
+      "pos": [
+        345,
+        1110
+      ],
+      "size": [
+        390,
+        270
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 18
+        },
+        {
+          "name": "florence2_model",
+          "type": "FL2MODEL",
+          "link": 19
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": 28,
+          "widget": {
+            "name": "seed"
+          }
+        },
+        {
+          "name": "text_input",
+          "type": "STRING",
+          "link": 41,
+          "widget": {
+            "name": "text_input"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "links": null,
+          "slot_index": 1,
+          "shape": 3
+        },
+        {
+          "name": "caption",
+          "type": "STRING",
+          "links": [
+            20,
+            60
+          ],
+          "slot_index": 2,
+          "shape": 3
+        },
+        {
+          "name": "data",
+          "type": "JSON",
+          "links": [],
+          "slot_index": 3,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Florence2Run"
+      },
+      "widgets_values": [
+        "",
+        "more_detailed_caption",
+        true,
+        true,
+        1024,
+        3,
+        false,
+        "",
+        434505123480421,
+        "randomize",
+        true
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 16,
+      "type": "Reroute",
+      "pos": [
+        345,
+        1710
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 44
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "IMAGE",
+          "links": [
+            18
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      },
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 17,
+      "type": "DownloadAndLoadFlorence2Model",
+      "pos": [
+        735,
+        1605
+      ],
+      "size": [
+        270,
+        106
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "lora",
+          "type": "PEFTLORA",
+          "link": null,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "florence2_model",
+          "type": "FL2MODEL",
+          "links": [
+            19
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DownloadAndLoadFlorence2Model"
+      },
+      "widgets_values": [
+        "gokaygokay/Florence-2-Flux-Large",
+        "fp16",
+        "sdpa"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 18,
+      "type": "ShowText|pysssss",
+      "pos": [
+        345,
+        1410
+      ],
+      "size": [
+        390,
+        300
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 20,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 0,
+          "shape": 6
+        }
+      ],
+      "title": "AUTO PROMPT",
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "The image is a digital illustration of a young man standing in the middle of a body of water. He is wearing a yellow and white striped shirt, blue overalls, and black gloves. He has blonde hair that is styled in a messy yet fashionable manner. He appears to be looking off into the distance with a serious expression on his face.\n\nIn the background, there is a vast expanse of blue water with white clouds scattered across the sky. The water is a deep blue-green color and there are small waves crashing against the shore. On the right side of the image, there are several buildings and structures that appear to be made of stone or concrete. The buildings are of different sizes and shapes, with some having intricate designs and others having more simple designs. The sky is a bright blue with a few wispy clouds. The overall mood of the illustration is peaceful and serene."
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 26,
+      "type": "Seed",
+      "pos": [
+        735,
+        1440
+      ],
+      "size": [
+        270,
+        142
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "seed",
+          "type": "SEED",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "number",
+          "type": "NUMBER",
+          "links": null,
+          "slot_index": 1,
+          "shape": 3
+        },
+        {
+          "name": "float",
+          "type": "FLOAT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "int",
+          "type": "INT",
+          "links": [
+            28,
+            29
+          ],
+          "slot_index": 3,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Seed"
+      },
+      "widgets_values": [
+        523879142222960,
+        "fixed"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 34,
+      "type": "ImpactSwitch",
+      "pos": [
+        735,
+        1065
+      ],
+      "size": [
+        270,
+        122
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input1",
+          "type": "CONDITIONING",
+          "link": 38,
+          "shape": 7
+        },
+        {
+          "name": "input2",
+          "type": "CONDITIONING",
+          "link": 40
+        },
+        {
+          "name": "input3",
+          "type": "CONDITIONING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            46
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "CONDITIONING"
+        },
+        {
+          "name": "selected_label",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "selected_index",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "title": "1: AUTO │ 2: Manual",
+      "properties": {
+        "Node name for S&R": "ImpactSwitch"
+      },
+      "widgets_values": [
+        1,
+        false
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 35,
+      "type": "Note",
+      "pos": [
+        345,
+        435
+      ],
+      "size": [
+        390,
+        60
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "STEP 1",
+      "properties": {},
+      "widgets_values": [
+        "LOAD IMAGE"
+      ],
+      "color": "#ff3a19",
+      "bgcolor": "#ff2605"
+    },
+    {
+      "id": 37,
+      "type": "Note",
+      "pos": [
+        1320,
+        435
+      ],
+      "size": [
+        630,
+        60
+      ],
+      "flags": {
+        "collapsed": false,
+        "pinned": true
+      },
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "STEP 4",
+      "properties": {},
+      "widgets_values": [
+        "COMPARE + SAVE"
+      ],
+      "color": "#75ff19",
+      "bgcolor": "#61ff05"
+    },
+    {
+      "id": 38,
+      "type": "Note",
+      "pos": [
+        1005,
+        435
+      ],
+      "size": [
+        315,
+        60
+      ],
+      "flags": {
+        "collapsed": false,
+        "pinned": true
+      },
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "STEP 3",
+      "properties": {},
+      "widgets_values": [
+        "UPSCALE SETTINGS"
+      ],
+      "color": "#3a19ff",
+      "bgcolor": "#2605ff"
+    },
+    {
+      "id": 39,
+      "type": "Note",
+      "pos": [
+        1005,
+        1740
+      ],
+      "size": [
+        435,
+        465
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Workflow Details",
+      "properties": {},
+      "widgets_values": [
+        "Auto Upscaler + Auto Caption V1.1 (GGUF & LORA)\n\nVersion: 1.1\nPublished:12/04/24\nAuthor:Nate Dwarika\nOrg: Black Mixture\n\nThanks for downloading! \n\nNeed help? Check out our YT channel and Discord:\n\nhttps://www.youtube.com/@BlackMixture/videos\n\nhttps://discord.gg/n2N7Hgvn7n\n\nHope you enjoy and have fun with this workflow!\n\n"
+      ],
+      "color": "#194bff",
+      "bgcolor": "#0537ff"
+    },
+    {
+      "id": 40,
+      "type": "Note",
+      "pos": [
+        1155,
+        1740
+      ],
+      "size": [
+        1365,
+        465
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "by Black Mixture 🤙🏽",
+      "properties": {},
+      "widgets_values": [
+        "\n\n  ███████████  ████                     █████         ██████   ██████  ███               █████                                 \n ░░███░░░░░███░░███                    ░░███         ░░██████ ██████  ░░░               ░░███                                  \n  ░███    ░███ ░███   ██████    ██████  ░███ █████    ░███░█████░███  ████  █████ █████ ███████   █████ ████ ████████   ██████ \n  ░██████████  ░███  ░░░░░███  ███░░███ ░███░░███     ░███░░███ ░███ ░░███ ░░███ ░░███ ░░░███░   ░░███ ░███ ░░███░░███ ███░░███\n  ░███░░░░░███ ░███   ███████ ░███ ░░░  ░██████░      ░███ ░░░  ░███  ░███  ░░░█████░    ░███     ░███ ░███  ░███ ░░░ ░███████ \n  ░███    ░███ ░███  ███░░███ ░███  ███ ░███░░███     ░███      ░███  ░███   ███░░░███   ░███ ███ ░███ ░███  ░███     ░███░░░  \n  ███████████  █████░░████████░░██████  ████ █████    █████     █████ █████ █████ █████  ░░█████  ░░████████ █████    ░░██████ \n ░░░░░░░░░░░  ░░░░░  ░░░░░░░░  ░░░░░░  ░░░░ ░░░░░    ░░░░░     ░░░░░ ░░░░░ ░░░░░ ░░░░░    ░░░░░    ░░░░░░░░ ░░░░░      ░░░░░░  \n\n\n@blackmixture on IG and YT\n\nhttps://www.instagram.com/blackmixture/\nhttps://www.youtube.com/@BlackMixture/videos\n"
+      ],
+      "color": "#194bff",
+      "bgcolor": "#0537ff"
+    },
+    {
+      "id": 41,
+      "type": "Simple String",
+      "pos": [
+        585,
+        1740
+      ],
+      "size": [
+        315,
+        58
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            41
+          ],
+          "shape": 3
+        }
+      ],
+      "title": "AUTO PROMPT",
+      "properties": {
+        "Node name for S&R": "Simple String"
+      },
+      "widgets_values": [
+        ""
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 43,
+      "type": "Image Save",
+      "pos": [
+        1320,
+        1740
+      ],
+      "size": [
+        570,
+        1185
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 26,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 43
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "files",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "title": "Pick Image Save",
+      "properties": {
+        "Node name for S&R": "Image Save"
+      },
+      "widgets_values": [
+        "[time(%Y-%m-%d)]",
+        "Black Mixture Auto Upscaler_Auto Caption",
+        "_",
+        4,
+        "true",
+        "png",
+        300,
+        100,
+        "true",
+        "false",
+        "false",
+        "false",
+        "false",
+        "true",
+        "true"
+      ],
+      "color": "#89ff2d",
+      "bgcolor": "#75ff19"
+    },
+    {
+      "id": 46,
+      "type": "Note",
+      "pos": [
+        735,
+        435
+      ],
+      "size": [
+        270,
+        60
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "STEP 2",
+      "properties": {},
+      "widgets_values": [
+        "LOAD MODEL + ADVANCED"
+      ],
+      "color": "#ffdd19",
+      "bgcolor": "#ffc905"
+    },
+    {
+      "id": 47,
+      "type": "Note",
+      "pos": [
+        1950,
+        435
+      ],
+      "size": [
+        600,
+        1275
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 11,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "IMPORTANT NOTES",
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "Black Mixture Auto Upscaler + Auto Caption V1.1 (GGUF & LORA)\n\nNeed help? Message me on Patreon:\nhttps://www.patreon.com/c/BlackMixture\n\nDiscord:\nhttps://discord.gg/n2N7Hgvn7n\n\nCheck out our YT channel: \nhttps://www.youtube.com/@BlackMixture/videos\n\nCENTRAL HUB FOR WORKFLOWS/MODELS/UPSCALERS:\nhttps://www.patreon.com/posts/115824280\n\n\nHope you enjoy and have fun with this workflow!\n- Nate Dwarika\nThe Black Mixture Team\n\n------------------------\n\nDownload Models from ComfyUI Manager or the URL\n\nMain Checkpoint Model\nflux1-dev-fp8.safetensors\nhttps://huggingface.co/Comfy-Org/flux1-dev/tree/main\n\nPlace in: ComfyUI\\models\\checkpoints\n\nUnet GGUF Model:\nhttps://huggingface.co/lllyasviel/FLUX.1-dev-gguf\n\n\nPlace in: ComfyUI\\models\\unet\n\n\nCLIP Model 🎯\nhuggingface.co/comfyanonymous/flux_text_encoders\n\nPlace in: ComfyUI\\models\\clip\n\n\nUPSCALE Model 🔍\n4x Foolhardy Remacri\nhttps://openmodeldb.info/models/4x-Remacri\n\nPlace in: ComfyUI_windows_portable\\ComfyUI\\models\\upscale_models\n\n------------------------\n\nThanks to our Supporters on Patreon!\n\nTH\nOlya Vell\nMike Swiderski\nJohn Zeller\nhoodTRONIK\nmiguel bautista\nElizabeth Strickler\nChristopher Avina\nPascal Edrich\nJorge Morales Gonzalez\nVeiss\nBrian Haley\nFinn Negrello\nFoc eighty two\nRedstar71\nNoah Stump\nJax Lumford\nDK TV\nSathya Bee\nGianluca Amati\nDoug Barreiro\nAkari Lara\nSamuel\nWade Jensen\nTim Überlackner\nFabio Brunello\nMcPixel\nNG88\nDanijel Mesko\nVinicius Fischer\nMarco Linder\nUltimatech CN\nhigh vibes\nAdriana\nAlexander Pereira\nOleksii Kapustin\nAndreas Urra\nJames Reid\nDIGIMANN\nSunny\nRL Smith\nOkechukwu Ikwunze\nPeter\nIvan Ivan\nBrandon J\nMarc Joy\nIan Camarillo\nJames Thompson\nMifune\nRobb Calhoon\nRudy VFX\nCraig Beacham\nKamil Banc\nArachnaas\nDana samsonov\nMorgan NOSIDE\nChris Boyle\nRelatos para escuchar\nMalcolm Jones\nAdam Michell\n"
+      ],
+      "color": "#892eff",
+      "bgcolor": "#751aff"
+    },
+    {
+      "id": 48,
+      "type": "UnetLoaderGGUF",
+      "pos": [
+        735,
+        525
+      ],
+      "size": [
+        270,
+        60
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            57
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UnetLoaderGGUF"
+      },
+      "widgets_values": [
+        "Flux\\flux1-dev-Q8_0.gguf"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 50,
+      "type": "DualCLIPLoader",
+      "pos": [
+        735,
+        615
+      ],
+      "size": [
+        270,
+        106
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            56
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DualCLIPLoader"
+      },
+      "widgets_values": [
+        "clip_l.safetensors",
+        "t5xxl_fp8_e4m3fn.safetensors",
+        "flux"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 51,
+      "type": "VAELoader",
+      "pos": [
+        735,
+        750
+      ],
+      "size": [
+        270,
+        60
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            52
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "ae.safetensors"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 53,
+      "type": "LoraLoader|pysssss",
+      "pos": [
+        735,
+        840
+      ],
+      "size": [
+        270,
+        195
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 57
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 56
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            53
+          ]
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            54,
+            55
+          ]
+        },
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            61
+          ],
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoader|pysssss"
+      },
+      "widgets_values": [
+        {
+          "content": "Hyper\\Hyper-FLUX.1-dev-8steps-lora.safetensors",
+          "image": null
+        },
+        1,
+        1,
+        "[none]"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 54,
+      "type": "CR Combine Prompt",
+      "pos": [
+        735,
+        1740
+      ],
+      "size": [
+        300,
+        170
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "part1",
+          "type": "STRING",
+          "link": 60,
+          "widget": {
+            "name": "part1"
+          },
+          "shape": 7
+        },
+        {
+          "name": "part3",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "part3"
+          },
+          "shape": 7
+        },
+        {
+          "name": "part2",
+          "type": "STRING",
+          "link": 61,
+          "widget": {
+            "name": "part2"
+          },
+          "shape": 7
+        },
+        {
+          "name": "part4",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "part4"
+          },
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            62,
+            63
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "show_help",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CR Combine Prompt"
+      },
+      "widgets_values": [
+        "",
+        "",
+        "",
+        "",
+        ",",
+        true,
+        true,
+        true,
+        true
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    }
+  ],
+  "links": [
+    [
+      6,
+      4,
+      0,
+      1,
+      3,
+      "CONDITIONING"
+    ],
+    [
+      10,
+      7,
+      0,
+      1,
+      5,
+      "UPSCALE_MODEL"
+    ],
+    [
+      18,
+      16,
+      0,
+      15,
+      0,
+      "IMAGE"
+    ],
+    [
+      19,
+      17,
+      0,
+      15,
+      1,
+      "FL2MODEL"
+    ],
+    [
+      20,
+      15,
+      2,
+      18,
+      0,
+      "STRING"
+    ],
+    [
+      28,
+      26,
+      3,
+      15,
+      2,
+      "INT"
+    ],
+    [
+      29,
+      26,
+      3,
+      1,
+      6,
+      "INT"
+    ],
+    [
+      30,
+      6,
+      0,
+      1,
+      0,
+      "IMAGE"
+    ],
+    [
+      31,
+      6,
+      0,
+      5,
+      1,
+      "IMAGE"
+    ],
+    [
+      32,
+      1,
+      0,
+      5,
+      0,
+      "IMAGE"
+    ],
+    [
+      38,
+      3,
+      0,
+      34,
+      0,
+      "*"
+    ],
+    [
+      40,
+      4,
+      0,
+      34,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      41,
+      41,
+      0,
+      15,
+      3,
+      "STRING"
+    ],
+    [
+      43,
+      1,
+      0,
+      43,
+      0,
+      "IMAGE"
+    ],
+    [
+      44,
+      6,
+      0,
+      16,
+      0,
+      "*"
+    ],
+    [
+      45,
+      12,
+      0,
+      1,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      46,
+      34,
+      0,
+      12,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      52,
+      51,
+      0,
+      1,
+      4,
+      "VAE"
+    ],
+    [
+      53,
+      53,
+      0,
+      1,
+      1,
+      "MODEL"
+    ],
+    [
+      54,
+      53,
+      1,
+      3,
+      0,
+      "CLIP"
+    ],
+    [
+      55,
+      53,
+      1,
+      4,
+      0,
+      "CLIP"
+    ],
+    [
+      56,
+      50,
+      0,
+      53,
+      1,
+      "CLIP"
+    ],
+    [
+      57,
+      48,
+      0,
+      53,
+      0,
+      "MODEL"
+    ],
+    [
+      60,
+      15,
+      2,
+      54,
+      0,
+      "STRING"
+    ],
+    [
+      61,
+      53,
+      2,
+      54,
+      2,
+      "STRING"
+    ],
+    [
+      62,
+      54,
+      0,
+      3,
+      1,
+      "STRING"
+    ],
+    [
+      63,
+      54,
+      0,
+      3,
+      2,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.8390545288824046,
+      "offset": [
+        60.97170743809837,
+        -329.0903471279023
+      ]
+    },
+    "0246.VERSION": [
+      0,
+      0,
+      4
+    ]
+  },
+  "version": 0.4
+}

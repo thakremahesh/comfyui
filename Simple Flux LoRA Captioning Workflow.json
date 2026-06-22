@@ -1,0 +1,876 @@
+{
+  "id": "5676cb8c-ae5f-4e9e-86ca-84bac9efd161",
+  "revision": 0,
+  "last_node_id": 42,
+  "last_link_id": 45,
+  "nodes": [
+    {
+      "id": 10,
+      "type": "Florence2Run",
+      "pos": [
+        436.3785095214844,
+        188.03527153862848
+      ],
+      "size": [
+        400,
+        462.65625
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 43
+        },
+        {
+          "name": "florence2_model",
+          "type": "FL2MODEL",
+          "link": 10
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": null
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "links": null
+        },
+        {
+          "name": "caption",
+          "type": "STRING",
+          "slot_index": 2,
+          "links": [
+            13,
+            23
+          ]
+        },
+        {
+          "name": "data",
+          "type": "JSON",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-florence2",
+        "ver": "00b63382966a444a9fefacb65b8deb188d12a458",
+        "Node name for S&R": "Florence2Run",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "",
+        "detailed_caption",
+        true,
+        true,
+        1024,
+        3,
+        true,
+        "",
+        909363796503345,
+        "randomize"
+      ],
+      "color": "#cacaca",
+      "bgcolor": "#dcdcdc"
+    },
+    {
+      "id": 13,
+      "type": "Simple String",
+      "pos": [
+        63.97195053100586,
+        795.5489501953125
+      ],
+      "size": [
+        315,
+        108
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "stringout",
+          "type": "STRING",
+          "slot_index": 0,
+          "links": [
+            12,
+            15
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "cg-use-everywhere",
+        "ver": "1ea3fcf5ce5d907772f9b2610bc7431a6239d1f8",
+        "Node name for S&R": "Simple String",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "output/40_ohwx_boy"
+      ]
+    },
+    {
+      "id": 11,
+      "type": "DownloadAndLoadFlorence2Model",
+      "pos": [
+        67.01193046445994,
+        194.7609662324307
+      ],
+      "size": [
+        336.3125,
+        169.328125
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "lora",
+          "shape": 7,
+          "type": "PEFTLORA",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "florence2_model",
+          "type": "FL2MODEL",
+          "links": [
+            10
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-florence2",
+        "ver": "00b63382966a444a9fefacb65b8deb188d12a458",
+        "Node name for S&R": "DownloadAndLoadFlorence2Model",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "microsoft/Florence-2-large",
+        "fp16",
+        "sdpa"
+      ]
+    },
+    {
+      "id": 12,
+      "type": "WWAA_ImageLoader",
+      "pos": [
+        36.80973696887108,
+        414.85508283440754
+      ],
+      "size": [
+        340.1875,
+        389.328125
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "directory_path",
+          "type": "STRING",
+          "widget": {
+            "name": "directory_path"
+          },
+          "link": 12
+        },
+        {
+          "name": "starting_index",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "starting_index"
+          },
+          "link": 44
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            16,
+            43
+          ]
+        },
+        {
+          "name": "current_index",
+          "type": "INT",
+          "slot_index": 1,
+          "links": [
+            25
+          ]
+        },
+        {
+          "name": "total_images",
+          "type": "INT",
+          "slot_index": 2,
+          "links": [
+            24
+          ]
+        },
+        {
+          "name": "filename",
+          "type": "STRING",
+          "slot_index": 3,
+          "links": [
+            14
+          ]
+        },
+        {
+          "name": "caption",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "wwaa-customnodes",
+        "ver": "2.6.0",
+        "Node name for S&R": "WWAA_ImageLoader",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "directory_path": true
+          },
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "",
+        "ALL",
+        false,
+        "alphabetical",
+        false,
+        false,
+        0
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 14,
+      "type": "WWAA_PromptWriter",
+      "pos": [
+        858.421142578125,
+        305.9689636230469
+      ],
+      "size": [
+        400,
+        312
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 13
+        },
+        {
+          "name": "image_filename",
+          "type": "STRING",
+          "widget": {
+            "name": "image_filename"
+          },
+          "link": 14
+        },
+        {
+          "name": "output_path",
+          "type": "STRING",
+          "widget": {
+            "name": "output_path"
+          },
+          "link": 15
+        }
+      ],
+      "outputs": [
+        {
+          "name": "log_output",
+          "type": "STRING",
+          "slot_index": 0,
+          "links": [
+            22
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "wwaa-customnodes",
+        "ver": "2.6.0",
+        "Node name for S&R": "WWAA_PromptWriter",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "text": true,
+            "image_filename": true,
+            "output_path": true
+          },
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "",
+        "",
+        "",
+        false,
+        "ohwx boy, ",
+        ""
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 21,
+      "type": "WWAA_DisplayAny",
+      "pos": [
+        860.170022762336,
+        673.9843757832546
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input",
+          "type": "*",
+          "link": 22
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            42
+          ]
+        }
+      ],
+      "title": "🪠️ Prompt Writer Log",
+      "properties": {
+        "cnr_id": "wwaa-customnodes",
+        "ver": "2.6.0",
+        "Node name for S&R": "WWAA_DisplayAny",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "raw value",
+        "Input Parameters:\n- Image Filename: boy_00018_.png\n- Output Path: output/40_ohwx_boy\n- Overwrite: False\n- Prefix Text: True\n- Subdirectory: None\n\nGenerated Output Filename: boy_00018_.txt\nEnsuring output directory exists: output/40_ohwx_boy\nFull output file path: output/40_ohwx_boy/boy_00018_.txt\nFile write mode: no overwrite\nPrefix text added to main text\nText successfully written to output/40_ohwx_boy/boy_00018_.txt\nTotal characters written: 174\n"
+      ],
+      "color": "#4e2d12ff",
+      "bgcolor": "#92511bff"
+    },
+    {
+      "id": 22,
+      "type": "WWAA_DisplayAny",
+      "pos": [
+        430,
+        710
+      ],
+      "size": [
+        400,
+        174.65625
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input",
+          "type": "*",
+          "link": 23
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "🪠️ WWAA Display Caption",
+      "properties": {
+        "cnr_id": "wwaa-customnodes",
+        "ver": "2.6.0",
+        "Node name for S&R": "WWAA_DisplayAny",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "raw value",
+        "The image shows a young boy standing in front of a black background wearing a white t-shirt and grey pants. His face is animated, giving the impression of movement."
+      ],
+      "color": "#4e2d12ff",
+      "bgcolor": "#92511bff"
+    },
+    {
+      "id": 23,
+      "type": "WWAA_DisplayAny",
+      "pos": [
+        70,
+        900
+      ],
+      "size": [
+        310,
+        174.65625
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input",
+          "type": "*",
+          "link": 24
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "🪠️ Total Image Count",
+      "properties": {
+        "cnr_id": "wwaa-customnodes",
+        "ver": "2.6.0",
+        "Node name for S&R": "WWAA_DisplayAny",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "raw value",
+        "16"
+      ],
+      "color": "#4e2d12ff",
+      "bgcolor": "#92511bff"
+    },
+    {
+      "id": 26,
+      "type": "WWAA_DisplayAny",
+      "pos": [
+        70,
+        1040
+      ],
+      "size": [
+        310,
+        174.65625
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input",
+          "type": "*",
+          "link": 25
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "🪠️ Current Index",
+      "properties": {
+        "cnr_id": "wwaa-customnodes",
+        "ver": "2.6.0",
+        "Node name for S&R": "WWAA_DisplayAny",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "raw value",
+        "15"
+      ],
+      "color": "#4e2d12ff",
+      "bgcolor": "#92511bff"
+    },
+    {
+      "id": 15,
+      "type": "PreviewImage",
+      "pos": [
+        430,
+        890
+      ],
+      "size": [
+        388.203125,
+        304
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 16
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.60",
+        "Node name for S&R": "PreviewImage",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 34,
+      "type": "easy forLoopStart",
+      "pos": [
+        -640.7197391522124,
+        141.5410978756044
+      ],
+      "size": [
+        270,
+        152
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "initial_value1",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "flow",
+          "shape": 5,
+          "type": "FLOW_CONTROL",
+          "links": [
+            40
+          ]
+        },
+        {
+          "name": "index",
+          "type": "INT",
+          "links": [
+            44
+          ]
+        },
+        {
+          "name": "value1",
+          "type": "*",
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "130c1b5796d9876a5f853fa0bea88e808cfda4ad",
+        "Node name for S&R": "easy forLoopStart",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        16
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 40,
+      "type": "easy forLoopEnd",
+      "pos": [
+        1381.9735144445235,
+        147.48244005226204
+      ],
+      "size": [
+        225,
+        120
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "flow",
+          "shape": 5,
+          "type": "FLOW_CONTROL",
+          "link": 40
+        },
+        {
+          "name": "initial_value1",
+          "shape": 7,
+          "type": "*",
+          "link": 42
+        },
+        {
+          "name": "initial_value2",
+          "type": "*",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "value1",
+          "type": "*",
+          "links": [
+            45
+          ]
+        },
+        {
+          "name": "value2",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "130c1b5796d9876a5f853fa0bea88e808cfda4ad",
+        "Node name for S&R": "easy forLoopEnd",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 41,
+      "type": "PreviewAny",
+      "pos": [
+        1680.1120305238287,
+        141.4758236995899
+      ],
+      "size": [
+        225,
+        176
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 45
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.22.0",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        },
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        false
+      ]
+    }
+  ],
+  "links": [
+    [
+      10,
+      11,
+      0,
+      10,
+      1,
+      "FL2MODEL"
+    ],
+    [
+      12,
+      13,
+      0,
+      12,
+      0,
+      "STRING"
+    ],
+    [
+      13,
+      10,
+      2,
+      14,
+      0,
+      "STRING"
+    ],
+    [
+      14,
+      12,
+      3,
+      14,
+      1,
+      "STRING"
+    ],
+    [
+      15,
+      13,
+      0,
+      14,
+      2,
+      "STRING"
+    ],
+    [
+      16,
+      12,
+      0,
+      15,
+      0,
+      "IMAGE"
+    ],
+    [
+      22,
+      14,
+      0,
+      21,
+      0,
+      "*"
+    ],
+    [
+      23,
+      10,
+      2,
+      22,
+      0,
+      "*"
+    ],
+    [
+      24,
+      12,
+      2,
+      23,
+      0,
+      "*"
+    ],
+    [
+      25,
+      12,
+      1,
+      26,
+      0,
+      "*"
+    ],
+    [
+      40,
+      34,
+      0,
+      40,
+      0,
+      "FLOW_CONTROL"
+    ],
+    [
+      42,
+      21,
+      0,
+      40,
+      1,
+      "STRING"
+    ],
+    [
+      43,
+      12,
+      0,
+      10,
+      0,
+      "IMAGE"
+    ],
+    [
+      44,
+      34,
+      1,
+      12,
+      1,
+      "INT"
+    ],
+    [
+      45,
+      40,
+      0,
+      41,
+      0,
+      "*"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.5054470284992967,
+      "offset": [
+        989.7296631678641,
+        222.94809170537485
+      ]
+    },
+    "node_versions": {
+      "ComfyUI-Florence2": "dffd12506d50f0540b8a7f4b36a05d4fb5fed2de",
+      "comfy-core": "0.3.12",
+      "ComfyUI_essentials": "33ff89fd354d8ec3ab6affb605a79a931b445d99",
+      "cg-use-everywhere": "ce510b97d10e69d5fd0042e115ecd946890d2079",
+      "wwaa-customnodes": "1.7.0"
+    },
+    "ue_links": [],
+    "frontendVersion": "1.43.18",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true,
+    "links_added_by_ue": []
+  },
+  "version": 0.4
+}
