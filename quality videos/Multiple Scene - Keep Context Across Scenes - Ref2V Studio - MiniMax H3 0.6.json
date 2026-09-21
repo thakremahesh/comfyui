@@ -1,0 +1,2914 @@
+{
+  "id": "158840d8-7fc5-5e78-8fd8-64c8b310f7cd",
+  "revision": 0,
+  "last_node_id": 74,
+  "last_link_id": 153,
+  "nodes": [
+    {
+      "id": 8,
+      "type": "MiniMaxH3ChainAssemble",
+      "pos": [
+        4390,
+        2436
+      ],
+      "size": [
+        440,
+        360
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "manifest",
+          "type": "H3_CHAIN_MANIFEST",
+          "link": 3
+        },
+        {
+          "name": "source_audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "name": "source_timeline",
+          "shape": 7,
+          "type": "H3_SOURCE_TIMELINE",
+          "link": null
+        },
+        {
+          "name": "blend_video_vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "video_path",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "RECOVERY • Assemble Final Video",
+      "properties": {
+        "Node name for S&R": "MiniMaxH3ChainAssemble"
+      },
+      "widgets_values": [
+        "plan",
+        "t2v_studio_recovered_%date:yyyy-MM-dd%",
+        256,
+        false,
+        "",
+        "plan",
+        "off",
+        "off",
+        false
+      ],
+      "widgets_values_named": {
+        "audio_source": "plan",
+        "filename": "t2v_studio_recovered_%date:yyyy-MM-dd%",
+        "audio_bitrate": 256,
+        "copy_to_output": false,
+        "output_subfolder": "",
+        "blend_schedule": "plan",
+        "boundary_tone_match": "off",
+        "color_stabilization": "off",
+        "delete_checkpoints_after_assembly": false
+      }
+    },
+    {
+      "id": 14,
+      "type": "BasicScheduler",
+      "pos": [
+        4430,
+        1856
+      ],
+      "size": [
+        360,
+        176
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 23
+        },
+        {
+          "name": "steps",
+          "type": "INT",
+          "widget": {
+            "name": "steps"
+          },
+          "link": 24
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SIGMAS",
+          "type": "SIGMAS",
+          "links": [
+            28
+          ]
+        }
+      ],
+      "title": "Sampling Schedule",
+      "properties": {
+        "Node name for S&R": "BasicScheduler"
+      },
+      "widgets_values": [
+        "simple",
+        20,
+        1
+      ],
+      "widgets_values_named": {
+        "scheduler": "simple",
+        "steps": 20,
+        "denoise": 1
+      }
+    },
+    {
+      "id": 16,
+      "type": "VAEDecode",
+      "pos": [
+        5610,
+        180
+      ],
+      "size": [
+        360,
+        104
+      ],
+      "flags": {},
+      "order": 28,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 153
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 31
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            34
+          ]
+        }
+      ],
+      "title": "VAEDecode",
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 17,
+      "type": "VAEDecodeAudio",
+      "pos": [
+        5610,
+        384
+      ],
+      "size": [
+        360,
+        104
+      ],
+      "flags": {},
+      "order": 27,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 144
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 33
+        }
+      ],
+      "outputs": [
+        {
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": [
+            35
+          ]
+        }
+      ],
+      "title": "VAEDecode Audio",
+      "properties": {
+        "Node name for S&R": "VAEDecodeAudio"
+      }
+    },
+    {
+      "id": 18,
+      "type": "MiniMaxH3LoopTrim",
+      "pos": [
+        5610,
+        588
+      ],
+      "size": [
+        420,
+        250
+      ],
+      "flags": {},
+      "order": 29,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 34
+        },
+        {
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": 35
+        },
+        {
+          "name": "state",
+          "shape": 7,
+          "type": "H3_CHAIN_STATE",
+          "link": 37
+        },
+        {
+          "name": "trim_frames",
+          "type": "INT",
+          "widget": {
+            "name": "trim_frames"
+          },
+          "link": 36
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            39,
+            51
+          ]
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            41,
+            48
+          ]
+        },
+        {
+          "name": "images_with_overlap",
+          "type": "IMAGE",
+          "links": [
+            42
+          ]
+        },
+        {
+          "name": "overlap_frames",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "title": "Trim Carried Overlap",
+      "properties": {
+        "Node name for S&R": "MiniMaxH3LoopTrim"
+      },
+      "widgets_values": [
+        0,
+        24,
+        true,
+        5
+      ],
+      "widgets_values_named": {
+        "trim_frames": 0,
+        "fps": 24,
+        "match_tail": true,
+        "retain_overlap_frames": 5
+      }
+    },
+    {
+      "id": 22,
+      "type": "MiniMaxH3ChainManifestLoad",
+      "pos": [
+        3820,
+        2436
+      ],
+      "size": [
+        440,
+        200
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "plan",
+          "type": "H3_CHAIN_PLAN",
+          "link": 45
+        },
+        {
+          "name": "source_audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "name": "external_context",
+          "shape": 7,
+          "type": "H3_CHAIN_EXTERNAL_CONTEXT",
+          "link": null
+        },
+        {
+          "name": "source_timeline",
+          "shape": 7,
+          "type": "H3_SOURCE_TIMELINE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "manifest",
+          "type": "H3_CHAIN_MANIFEST",
+          "links": [
+            3
+          ]
+        },
+        {
+          "name": "manifest_json",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "status",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "RECOVERY • Load Saved Clips",
+      "properties": {
+        "Node name for S&R": "MiniMaxH3ChainManifestLoad"
+      }
+    },
+    {
+      "id": 28,
+      "type": "MiniMaxH3GenerationProfile",
+      "pos": [
+        1027.130929140619,
+        794.5701482809633
+      ],
+      "size": [
+        360,
+        152
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "lip_sync_options",
+          "shape": 7,
+          "type": "H3_LIP_SYNC_OPTIONS",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "chain_policy",
+          "type": "H3_CHAIN_POLICY",
+          "links": [
+            58
+          ]
+        },
+        {
+          "name": "status",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "Generation Profile",
+      "properties": {
+        "Node name for S&R": "MiniMaxH3GenerationProfile"
+      },
+      "widgets_values": [
+        "Hard picture + protected audio",
+        "Generate audio"
+      ],
+      "widgets_values_named": {
+        "scene_continuity": "Hard picture + protected audio",
+        "audio_profile": "Generate audio"
+      }
+    },
+    {
+      "id": 31,
+      "type": "Note",
+      "pos": [
+        1027.130929140619,
+        364.5701482809632
+      ],
+      "size": [
+        1000,
+        330
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "START HERE • 0.6",
+      "properties": {
+        "Node name for S&R": "Note"
+      },
+      "widgets_values": [
+        "0.6 RELEASE • Ref2V Studio\n\n1. Install models and extra packs listed in example_workflows/README.md.\n2. Copy the supplied assets to ComfyUI/input; select source media where requested.\n3. Set a unique project run name, then edit scenes and the Generation Profile.\n4. Follow the numbered columns left → right and inspect the saved results.\n\nRecovery is disabled by default. Enable it only to assemble saved clips without sampling.\nWorkflow-specific setup and detailed wiring notes:\nexample_workflows/guides/Ref2V Studio - MiniMax H3 0.6.md"
+      ],
+      "widgets_values_named": {
+        "text": "0.6 RELEASE • Ref2V Studio\n\n1. Install models and extra packs listed in example_workflows/README.md.\n2. Copy the supplied assets to ComfyUI/input; select source media where requested.\n3. Set a unique project run name, then edit scenes and the Generation Profile.\n4. Follow the numbered columns left → right and inspect the saved results.\n\nRecovery is disabled by default. Enable it only to assemble saved clips without sampling.\nWorkflow-specific setup and detailed wiring notes:\nexample_workflows/guides/Ref2V Studio - MiniMax H3 0.6.md"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 21,
+      "type": "ModelAttentionBackend",
+      "pos": [
+        3756.627991020767,
+        2150.8370470410323
+      ],
+      "size": [
+        360,
+        108
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 141
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            61
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ModelAttentionBackend"
+      },
+      "widgets_values": [
+        "pytorch attention"
+      ],
+      "widgets_values_named": {
+        "attention": "pytorch attention"
+      }
+    },
+    {
+      "id": 7,
+      "type": "MiniMaxH3ChainCurrent",
+      "pos": [
+        3756.627991020767,
+        1650.8370470410318
+      ],
+      "size": [
+        460,
+        400
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "state",
+          "type": "H3_CHAIN_STATE",
+          "link": 2
+        },
+        {
+          "name": "source_audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "state",
+          "type": "H3_CHAIN_STATE",
+          "links": [
+            15,
+            16,
+            37,
+            38,
+            46,
+            50,
+            81
+          ]
+        },
+        {
+          "name": "clip_index",
+          "type": "INT",
+          "links": [
+            9
+          ]
+        },
+        {
+          "name": "clip_count",
+          "type": "INT",
+          "links": [
+            10
+          ]
+        },
+        {
+          "name": "shot_id",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            11
+          ]
+        },
+        {
+          "name": "noise_seed",
+          "type": "INT",
+          "links": [
+            4
+          ]
+        },
+        {
+          "name": "length",
+          "type": "INT",
+          "links": [
+            68
+          ]
+        },
+        {
+          "name": "steps",
+          "type": "INT",
+          "links": [
+            24
+          ]
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            75
+          ]
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            76
+          ]
+        },
+        {
+          "name": "audio_start",
+          "type": "FLOAT",
+          "links": null
+        },
+        {
+          "name": "audio_duration",
+          "type": "FLOAT",
+          "links": null
+        },
+        {
+          "name": "source_audio_slice",
+          "type": "AUDIO",
+          "links": null
+        },
+        {
+          "name": "status",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "video_blend_frames",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "title": "Current Scene",
+      "properties": {
+        "Node name for S&R": "MiniMaxH3ChainCurrent"
+      },
+      "widgets_values": [
+        false
+      ],
+      "widgets_values_named": {
+        "align_audio_reference": false
+      }
+    },
+    {
+      "id": 42,
+      "type": "PreviewAny",
+      "pos": [
+        5120.187813530364,
+        1707.8524224777468
+      ],
+      "size": [
+        338.598776524771,
+        380.9065068904015
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 81
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [],
+      "widgets_values_named": {}
+    },
+    {
+      "id": 23,
+      "type": "MiniMaxH3ChainReview",
+      "pos": [
+        6180,
+        500
+      ],
+      "size": [
+        760,
+        880
+      ],
+      "flags": {},
+      "order": 31,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "state",
+          "type": "H3_CHAIN_STATE",
+          "link": 46
+        },
+        {
+          "name": "segment",
+          "type": "H3_CHAIN_SEGMENT",
+          "link": 47
+        },
+        {
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": 48
+        },
+        {
+          "name": "source_audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "segment",
+          "type": "H3_CHAIN_SEGMENT",
+          "links": [
+            53
+          ]
+        },
+        {
+          "name": "status",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "Review Candidates",
+      "properties": {
+        "Node name for S&R": "MiniMaxH3ChainReview"
+      },
+      "widgets_values": [
+        false,
+        true,
+        0,
+        false,
+        true,
+        "checkpointed",
+        1,
+        false
+      ],
+      "widgets_values_named": {
+        "enabled": false,
+        "play_notification_sound": true,
+        "auto_continue_timeout_minutes": 0,
+        "unload_models_while_waiting": false,
+        "assemble_partial_on_stop": true,
+        "partial_audio_source": "checkpointed",
+        "candidate_count": 1,
+        "review_each_candidate": false
+      }
+    },
+    {
+      "id": 33,
+      "type": "MiniMaxLowVRAMAttention",
+      "pos": [
+        4211.075307840398,
+        2154.8938091498435
+      ],
+      "size": [
+        318.5201171875,
+        58
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 61
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            62
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxLowVRAMAttention"
+      },
+      "widgets_values": [
+        8
+      ],
+      "widgets_values_named": {
+        "head_chunks": 8
+      }
+    },
+    {
+      "id": 2,
+      "type": "CLIPLoader",
+      "pos": [
+        3756.627991020767,
+        414.83704704103206
+      ],
+      "size": [
+        360,
+        156
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            5
+          ]
+        }
+      ],
+      "title": "H3 Text Encoder",
+      "properties": {
+        "Node name for S&R": "CLIPLoader"
+      },
+      "widgets_values": [
+        "qwen3vl_32b_minimax_h3_bf16.safetensors",
+        "minimax",
+        "default"
+      ],
+      "widgets_values_named": {
+        "clip_name": "qwen3vl_32b_minimax_h3_bf16.safetensors",
+        "type": "minimax",
+        "device": "default"
+      }
+    },
+    {
+      "id": 11,
+      "type": "MiniMaxH3ChainContext",
+      "pos": [
+        4435.494496141478,
+        1483.8717289895444
+      ],
+      "size": [
+        420,
+        260
+      ],
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "state",
+          "type": "H3_CHAIN_STATE",
+          "link": 16
+        },
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 17
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 18
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": 19
+        },
+        {
+          "name": "audio_vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        },
+        {
+          "name": "model",
+          "shape": 7,
+          "type": "MODEL",
+          "link": null
+        },
+        {
+          "name": "drift_sigmas",
+          "shape": 7,
+          "type": "SIGMAS",
+          "link": null
+        },
+        {
+          "name": "lip_sync_voice",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "links": [
+            22
+          ]
+        },
+        {
+          "name": "trim_frames",
+          "type": "INT",
+          "links": [
+            36
+          ]
+        },
+        {
+          "name": "is_continuation",
+          "type": "BOOLEAN",
+          "links": null
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": [
+            29
+          ]
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": null
+        }
+      ],
+      "title": "Apply Scene Context",
+      "properties": {
+        "Node name for S&R": "MiniMaxH3ChainContext"
+      }
+    },
+    {
+      "id": 12,
+      "type": "MiniMaxH3SigmaShift",
+      "pos": [
+        4430,
+        1264
+      ],
+      "size": [
+        360,
+        132
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 62
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            21,
+            23
+          ]
+        }
+      ],
+      "title": "Sigma Shift",
+      "properties": {
+        "Node name for S&R": "MiniMaxH3SigmaShift"
+      },
+      "widgets_values": [
+        12,
+        3
+      ],
+      "widgets_values_named": {
+        "shift_video": 12,
+        "shift_audio": 3
+      }
+    },
+    {
+      "id": 13,
+      "type": "BasicGuider",
+      "pos": [
+        5100,
+        180
+      ],
+      "size": [
+        360,
+        104
+      ],
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 21
+        },
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 22
+        }
+      ],
+      "outputs": [
+        {
+          "name": "GUIDER",
+          "type": "GUIDER",
+          "links": [
+            26
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BasicGuider"
+      }
+    },
+    {
+      "id": 9,
+      "type": "RandomNoise",
+      "pos": [
+        4430,
+        180
+      ],
+      "size": [
+        360,
+        132
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "noise_seed",
+          "type": "INT",
+          "widget": {
+            "name": "noise_seed"
+          },
+          "link": 4
+        }
+      ],
+      "outputs": [
+        {
+          "name": "NOISE",
+          "type": "NOISE",
+          "links": [
+            25
+          ]
+        }
+      ],
+      "title": "Scene Seed",
+      "properties": {
+        "Node name for S&R": "RandomNoise"
+      },
+      "widgets_values": [
+        0,
+        "fixed"
+      ],
+      "widgets_values_named": {
+        "noise_seed": 0,
+        "control_after_generate": "fixed"
+      }
+    },
+    {
+      "id": 3,
+      "type": "KSamplerSelect",
+      "pos": [
+        3756.627991020767,
+        670.8370470410322
+      ],
+      "size": [
+        360,
+        108
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "SAMPLER",
+          "type": "SAMPLER",
+          "links": [
+            27
+          ]
+        }
+      ],
+      "title": "Sampler",
+      "properties": {
+        "Node name for S&R": "KSamplerSelect"
+      },
+      "widgets_values": [
+        "res_multistep"
+      ],
+      "widgets_values_named": {
+        "sampler_name": "res_multistep"
+      }
+    },
+    {
+      "id": 30,
+      "type": "MiniMaxH3ChainCheckpointManager",
+      "pos": [
+        3283.7589201613864,
+        1407.4071953219952
+      ],
+      "size": [
+        1200,
+        900
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "plan",
+          "shape": 7,
+          "type": "H3_CHAIN_PLAN",
+          "link": 60
+        }
+      ],
+      "outputs": [
+        {
+          "name": "selected_manifest",
+          "type": "H3_CHAIN_MANIFEST",
+          "links": null
+        }
+      ],
+      "title": "Checkpoint Manager",
+      "properties": {
+        "Node name for S&R": "MiniMaxH3ChainCheckpointManager",
+        "h3_checkpoint_manager_output_scope": "project",
+        "h3_checkpoint_manager_variant": "",
+        "h3_checkpoint_manager_run": "ref2v_studio_minimax_h3_0_6_json",
+        "h3_checkpoint_manager_scene": 1,
+        "h3_checkpoint_manager_revision": "1c6f93faead34ec8beccfc765732e802",
+        "h3_checkpoint_manager_chapter": "all"
+      },
+      "widgets_values": [
+        "{\"run_name\":\"ref2v_studio_minimax_h3_0_6_json\",\"lineage\":[{\"scene\":1,\"revision\":\"1c6f93faead34ec8beccfc765732e802\"}],\"scope_start_scene\":1,\"scope_end_scene\":1}"
+      ],
+      "widgets_values_named": {
+        "selection_json": "{\"run_name\":\"ref2v_studio_minimax_h3_0_6_json\",\"lineage\":[{\"scene\":1,\"revision\":\"1c6f93faead34ec8beccfc765732e802\"}],\"scope_start_scene\":1,\"scope_end_scene\":1}"
+      }
+    },
+    {
+      "id": 4,
+      "type": "VAELoader",
+      "pos": [
+        3761.699469670991,
+        866.0569208424523
+      ],
+      "size": [
+        360,
+        108
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            6,
+            18,
+            31
+          ]
+        }
+      ],
+      "title": "Video VAE",
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "minimax_h3_video_vae_fp16.safetensors"
+      ],
+      "widgets_values_named": {
+        "vae_name": "minimax_h3_video_vae_fp16.safetensors"
+      }
+    },
+    {
+      "id": 5,
+      "type": "VAELoader",
+      "pos": [
+        3756.627991020767,
+        1086.8370470410316
+      ],
+      "size": [
+        360,
+        108
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            7,
+            33
+          ]
+        }
+      ],
+      "title": "Audio VAE",
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "minimax_h3_audio_vae_fp32.safetensors"
+      ],
+      "widgets_values_named": {
+        "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+      }
+    },
+    {
+      "id": 1,
+      "type": "UNETLoader",
+      "pos": [
+        3756.627991020767,
+        182.83704704103204
+      ],
+      "size": [
+        360,
+        132
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            140
+          ]
+        }
+      ],
+      "title": "H3 Diffusion Model",
+      "properties": {
+        "Node name for S&R": "UNETLoader"
+      },
+      "widgets_values": [
+        "Minimax-h3_Singularity_ref2va_v1.3_int8.safetensors",
+        "default"
+      ],
+      "widgets_values_named": {
+        "unet_name": "Minimax-h3_Singularity_ref2va_v1.3_int8.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    {
+      "id": 71,
+      "type": "LoraLoaderModelOnly",
+      "pos": [
+        4239.248247140462,
+        -40.792084360354146
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 140
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            141
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoaderModelOnly"
+      },
+      "widgets_values": [
+        "minimax_h3_lightx2v_ref2v_turbo_4step_alpha8_v0.1_bf16.safetensors",
+        1
+      ],
+      "widgets_values_named": {
+        "lora_name": "minimax_h3_lightx2v_ref2v_turbo_4step_alpha8_v0.1_bf16.safetensors",
+        "strength_model": 1
+      }
+    },
+    {
+      "id": 19,
+      "type": "MiniMaxH3ChainSegmentSave",
+      "pos": [
+        6180,
+        180
+      ],
+      "size": [
+        460,
+        220
+      ],
+      "flags": {},
+      "order": 30,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "state",
+          "type": "H3_CHAIN_STATE",
+          "link": 38
+        },
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 39
+        },
+        {
+          "name": "sampled_latent",
+          "type": "LATENT",
+          "link": 142
+        },
+        {
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": 41
+        },
+        {
+          "name": "images_with_overlap",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 42
+        },
+        {
+          "name": "denoised_latent",
+          "shape": 7,
+          "type": "LATENT",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "segment",
+          "type": "H3_CHAIN_SEGMENT",
+          "links": [
+            47
+          ]
+        },
+        {
+          "name": "status",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "Save Segment + Checkpoint",
+      "properties": {
+        "Node name for S&R": "MiniMaxH3ChainSegmentSave"
+      }
+    },
+    {
+      "id": 10,
+      "type": "MiniMaxH3TaggedReferenceToVideo",
+      "pos": [
+        4406.306737660261,
+        384.43358569023155
+      ],
+      "size": [
+        520,
+        752
+      ],
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 5
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 6
+        },
+        {
+          "name": "audio_vae",
+          "type": "VAE",
+          "link": 7
+        },
+        {
+          "name": "references",
+          "type": "H3_TAGGED_REFERENCES",
+          "link": 8
+        },
+        {
+          "name": "state",
+          "shape": 7,
+          "type": "H3_CHAIN_STATE",
+          "link": 15
+        },
+        {
+          "name": "clip_index",
+          "type": "INT",
+          "widget": {
+            "name": "clip_index"
+          },
+          "link": 9
+        },
+        {
+          "name": "clip_count",
+          "type": "INT",
+          "widget": {
+            "name": "clip_count"
+          },
+          "link": 10
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 11
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 75
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 76
+        },
+        {
+          "name": "length",
+          "type": "INT",
+          "widget": {
+            "name": "length"
+          },
+          "link": 68
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            17
+          ]
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": [
+            19
+          ]
+        },
+        {
+          "name": "compiled_prompt",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "active_references",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "reference_fingerprint",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "refmod_sources",
+          "type": "H3_REF_LIST",
+          "links": null
+        }
+      ],
+      "title": "Tagged Ref2VA Conditioning",
+      "properties": {
+        "Node name for S&R": "MiniMaxH3TaggedReferenceToVideo"
+      },
+      "widgets_values": [
+        1,
+        2,
+        "subject_definitions:\n@courier_arrival defines <Subject 1>, the exact adult bicycle courier, including his face, mustard-yellow waterproof jacket, dark teal trousers, charcoal helmet, olive messenger bag, silver bicycle, kraft parcel, proportions, and photographic rendering.\n@greenhouse_delivery defines the greenhouse delivery destination, including the glass structure, wooden potting table, dense plants, warm practical bulbs, wet floor reflections, and the same courier's end pose.\n<Subject 1> is the single courier shown by both references. Preserve his identity, clothing, equipment, and scale while allowing the described movement.\n\nsummary:\n[reference generation] One continuous delivery moves <Subject 1> from the wet greenhouse entrance in @courier_arrival toward the completed parcel placement in @greenhouse_delivery.\n\nretention_analysis:\n<Subject 1> (appears in [Shot 1]): fully_preserved - retain the exact face, adult age, body proportions, mustard jacket, teal trousers, helmet, bag, bicycle, and parcel across the complete shot.\n@courier_arrival: fully_preserved - use its courier identity, wardrobe, bicycle geometry, exterior doorway, wet paving, camera height, and cool daylight as the opening state.\n@greenhouse_delivery: reference - use its potting table, plants, warm bulbs, interior reflections, and delivery pose as the destination; do not copy the final pose before the action reaches it.\n\ndetailed_description:\n[Shot 1] Begin at the greenhouse entrance with exactly one courier and one bicycle. He walks the bicycle through the open glass door, glances down to confirm the parcel, then turns toward the wooden potting table. The camera tracks laterally at walking speed with restrained handheld movement. He stops the bicycle with his left hand and sets the parcel on the clear corner of the table with his right hand. Preserve face, hands, clothing, bicycle structure, parcel dimensions, plant layout, lighting direction, and coherent reflections. End immediately after the parcel makes contact; no cut, duplicate subject, added customer, text, logo, or early freeze.\n\noverall_soundscape:\nLight rain on greenhouse glass, wet tire roll, a quiet freewheel tick, rubber soles, door hinge, jacket movement, muted ventilation, and soft cardboard contact on wood. Keep every sound synchronized and spatially plausible.\n\nnon_diegetic_music:\nNo non-diegetic music.",
+        480,
+        864,
+        175,
+        "match",
+        "strict",
+        "768",
+        "timestamped_video",
+        true,
+        "native_ref2va"
+      ],
+      "widgets_values_named": {
+        "clip_index": 1,
+        "clip_count": 2,
+        "prompt": "subject_definitions:\n@courier_arrival defines <Subject 1>, the exact adult bicycle courier, including his face, mustard-yellow waterproof jacket, dark teal trousers, charcoal helmet, olive messenger bag, silver bicycle, kraft parcel, proportions, and photographic rendering.\n@greenhouse_delivery defines the greenhouse delivery destination, including the glass structure, wooden potting table, dense plants, warm practical bulbs, wet floor reflections, and the same courier's end pose.\n<Subject 1> is the single courier shown by both references. Preserve his identity, clothing, equipment, and scale while allowing the described movement.\n\nsummary:\n[reference generation] One continuous delivery moves <Subject 1> from the wet greenhouse entrance in @courier_arrival toward the completed parcel placement in @greenhouse_delivery.\n\nretention_analysis:\n<Subject 1> (appears in [Shot 1]): fully_preserved - retain the exact face, adult age, body proportions, mustard jacket, teal trousers, helmet, bag, bicycle, and parcel across the complete shot.\n@courier_arrival: fully_preserved - use its courier identity, wardrobe, bicycle geometry, exterior doorway, wet paving, camera height, and cool daylight as the opening state.\n@greenhouse_delivery: reference - use its potting table, plants, warm bulbs, interior reflections, and delivery pose as the destination; do not copy the final pose before the action reaches it.\n\ndetailed_description:\n[Shot 1] Begin at the greenhouse entrance with exactly one courier and one bicycle. He walks the bicycle through the open glass door, glances down to confirm the parcel, then turns toward the wooden potting table. The camera tracks laterally at walking speed with restrained handheld movement. He stops the bicycle with his left hand and sets the parcel on the clear corner of the table with his right hand. Preserve face, hands, clothing, bicycle structure, parcel dimensions, plant layout, lighting direction, and coherent reflections. End immediately after the parcel makes contact; no cut, duplicate subject, added customer, text, logo, or early freeze.\n\noverall_soundscape:\nLight rain on greenhouse glass, wet tire roll, a quiet freewheel tick, rubber soles, door hinge, jacket movement, muted ventilation, and soft cardboard contact on wood. Keep every sound synchronized and spatially plausible.\n\nnon_diegetic_music:\nNo non-diegetic music.",
+        "width": 480,
+        "height": 864,
+        "length": 175,
+        "ref_image_size": "match",
+        "reference_policy": "strict",
+        "semantic_anchor_size": "768",
+        "semantic_anchor_mode": "timestamped_video",
+        "cache_for_upscale": true,
+        "conditioning_backend": "native_ref2va"
+      }
+    },
+    {
+      "id": 24,
+      "type": "MiniMaxH3ChainLoopEnd",
+      "pos": [
+        7572.483851678963,
+        110.86807188830969
+      ],
+      "size": [
+        420,
+        220
+      ],
+      "flags": {},
+      "order": 32,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "flow",
+          "type": "H3_CHAIN_FLOW",
+          "link": 49
+        },
+        {
+          "name": "state",
+          "type": "H3_CHAIN_STATE",
+          "link": 50
+        },
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 51
+        },
+        {
+          "name": "sampled_latent",
+          "type": "LATENT",
+          "link": 143
+        },
+        {
+          "name": "segment",
+          "type": "H3_CHAIN_SEGMENT",
+          "link": 53
+        }
+      ],
+      "outputs": [
+        {
+          "name": "manifest",
+          "type": "H3_CHAIN_MANIFEST",
+          "links": [
+            43
+          ]
+        },
+        {
+          "name": "manifest_json",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "last_context_frames",
+          "type": "IMAGE",
+          "links": null
+        },
+        {
+          "name": "last_context_latent",
+          "type": "LATENT",
+          "links": []
+        }
+      ],
+      "title": "Loop End",
+      "properties": {
+        "Node name for S&R": "MiniMaxH3ChainLoopEnd"
+      },
+      "widgets_values": [
+        "off",
+        "recursive_legacy"
+      ],
+      "widgets_values_named": {
+        "between_scene_cleanup": "off",
+        "execution_mode": "recursive_legacy"
+      }
+    },
+    {
+      "id": 15,
+      "type": "SamplerCustomAdvanced",
+      "pos": [
+        5080.874163011405,
+        341.02917979691176
+      ],
+      "size": [
+        360,
+        326
+      ],
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "noise",
+          "type": "NOISE",
+          "link": 25
+        },
+        {
+          "name": "guider",
+          "type": "GUIDER",
+          "link": 26
+        },
+        {
+          "name": "sampler",
+          "type": "SAMPLER",
+          "link": 27
+        },
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 28
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 29
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "LATENT",
+          "links": [
+            142,
+            143,
+            144,
+            153
+          ]
+        },
+        {
+          "name": "denoised_output",
+          "type": "LATENT",
+          "links": null
+        }
+      ],
+      "title": "Sample Video + Audio",
+      "properties": {
+        "Node name for S&R": "SamplerCustomAdvanced"
+      },
+      "widgets_values": [],
+      "widgets_values_named": {}
+    },
+    {
+      "id": 20,
+      "type": "MiniMaxH3ChainAssemble",
+      "pos": [
+        7090,
+        500
+      ],
+      "size": [
+        440,
+        1080.4615384615386
+      ],
+      "flags": {},
+      "order": 33,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "manifest",
+          "type": "H3_CHAIN_MANIFEST",
+          "link": 43
+        },
+        {
+          "name": "source_audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "name": "source_timeline",
+          "shape": 7,
+          "type": "H3_SOURCE_TIMELINE",
+          "link": null
+        },
+        {
+          "name": "blend_video_vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "video_path",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "Assemble Final Video",
+      "properties": {
+        "Node name for S&R": "MiniMaxH3ChainAssemble"
+      },
+      "widgets_values": [
+        "plan",
+        "t2v_studio_%date:yyyy-MM-dd%",
+        256,
+        false,
+        "",
+        "plan",
+        "off",
+        "off",
+        false
+      ],
+      "widgets_values_named": {
+        "audio_source": "plan",
+        "filename": "t2v_studio_%date:yyyy-MM-dd%",
+        "audio_bitrate": 256,
+        "copy_to_output": false,
+        "output_subfolder": "",
+        "blend_schedule": "plan",
+        "boundary_tone_match": "off",
+        "color_stabilization": "off",
+        "delete_checkpoints_after_assembly": false
+      }
+    },
+    {
+      "id": 25,
+      "type": "MiniMaxH3ChainPlanStudio",
+      "pos": [
+        2147.130929140619,
+        364.5701482809632
+      ],
+      "size": [
+        1080,
+        948
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "plan",
+          "shape": 7,
+          "type": "H3_CHAIN_PLAN",
+          "link": 54
+        },
+        {
+          "name": "source_timeline",
+          "shape": 7,
+          "type": "H3_SOURCE_TIMELINE",
+          "link": null
+        },
+        {
+          "name": "source_audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "name": "tagged_references",
+          "shape": 7,
+          "type": "H3_TAGGED_REFERENCES",
+          "link": 55
+        },
+        {
+          "name": "reference_schedule",
+          "shape": 7,
+          "type": "H3_REFERENCE_SCHEDULE",
+          "link": null
+        },
+        {
+          "name": "chain_policy",
+          "shape": 7,
+          "type": "H3_CHAIN_POLICY",
+          "link": null
+        },
+        {
+          "name": "project_assets",
+          "shape": 7,
+          "type": "H3_PROJECT_ASSETS",
+          "link": 56
+        }
+      ],
+      "outputs": [
+        {
+          "name": "plan",
+          "type": "H3_CHAIN_PLAN",
+          "links": [
+            1,
+            45,
+            57,
+            60
+          ]
+        },
+        {
+          "name": "preflight",
+          "type": "H3_PREFLIGHT_REPORT",
+          "links": null
+        },
+        {
+          "name": "ready",
+          "type": "BOOLEAN",
+          "links": null
+        },
+        {
+          "name": "status",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "report_json",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "plan_summary",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "clip_count",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "video_blend_frames",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "title": "Plan Studio",
+      "properties": {
+        "Node name for S&R": "MiniMaxH3ChainPlanStudio",
+        "h3_plan_studio_checkpoint_cache_v1": {
+          "version": 1,
+          "run_name": "ref2v_studio_minimax_h3_0_6_json",
+          "checkpoints": [
+            {
+              "scene": 1,
+              "scene_id": "part_1",
+              "revision": "4c11c162a2b04b05ae5af9af2985fa47",
+              "resume_scene": 2,
+              "ready": false,
+              "raw_frames": 175,
+              "delivered_frames": 175,
+              "metadata_sha256": "3ec662606ed78747d85fa73d60655cbc285e8962c75c7ba6977d328237b9a755"
+            },
+            {
+              "scene": 2,
+              "scene_id": "part_2",
+              "revision": "a8b07632b88a493fa456bd3c2903ba42",
+              "resume_scene": 3,
+              "ready": false,
+              "raw_frames": 175,
+              "delivered_frames": 136,
+              "metadata_sha256": "f5074f978f6a9d07305dba9e31e4dc47c3855c0b62a627c7184f6581a725319f"
+            },
+            {
+              "scene": 3,
+              "scene_id": "part_3",
+              "revision": "4ebe546db4654ea8842631b82445d6d8",
+              "resume_scene": 4,
+              "ready": false,
+              "raw_frames": 175,
+              "delivered_frames": 136,
+              "metadata_sha256": "b25165840f1d38e29e9be89b491a94e2bd5c2d1189f07c18a2a7e9d415174528"
+            },
+            {
+              "scene": 4,
+              "scene_id": "scene_04",
+              "revision": "eef81b7cf7ab47d58595712c11962046",
+              "resume_scene": 5,
+              "ready": false,
+              "raw_frames": 175,
+              "delivered_frames": 136,
+              "metadata_sha256": "1bd7afd759d19a5086bb43bd4875adc92866c4b29d4f26b67c6845f1823251bb"
+            }
+          ],
+          "editorial": {
+            "format": "h3_chain_editorial_v1",
+            "run_name": "ref2v_studio_minimax_h3_0_6_json",
+            "revision": "",
+            "chapters": [],
+            "scene_order": [],
+            "placements": [],
+            "trims": [],
+            "locked_scene_ids": [],
+            "subtitles": {
+              "mode": "off",
+              "asset_id": "",
+              "offset_seconds": 0
+            },
+            "alternate_draft": null,
+            "replacements": []
+          }
+        },
+        "h3_plan_studio_active_scene": 2,
+        "h3_plan_studio_active_chapter": "",
+        "h3_plan_studio_view": "scene",
+        "h3_plan_studio_timeline_zoom": 1
+      },
+      "widgets_values": [
+        1,
+        "",
+        true,
+        "{\n  \"shots\": [\n    {\n      \"id\": \"part_1\",\n      \"prompt\": [\n        \"subject_definitions:\",\n        \"<Subject 1> is the beautiful Indian woman in @Picture_1, with voluptuous features, a warm smile, and rural attire\",\n        \"consisting of a knee-high wrap-around cloth around her waist and a strapless wrap-around cloth around her bosom.\",\n        \"@Picture_1 is the reference image establishing the subject's identity, clothing, and background environment.\",\n        \"\",\n        \"summary:\",\n        \"[reference generation] A reference generation task depicting the voluptuous Indian woman from @Picture_1 squatting\",\n        \"beside a pail of water in a rural setting, smiling directly at the camera with one thigh exposed through her\",\n        \"wrap-around cloth.\",\n        \"\",\n        \"retention_analysis:\",\n        \"<Subject 1> (appears in [Shot 1]): fully_preserved - the woman's identity, facial features, voluptuous appearance,\",\n        \"and rural wrap-around clothing from <Picture 1> are fully retained.\",\n        \"@Picture_1 (reference anchor): fully_preserved - the visual reference data defining the character's look,\",\n        \"wardrobe, and rural environment is strictly followed.\",\n        \"\",\n        \"detailed_description:\",\n        \"The target video is rendered in a realistic, warm-toned cinematic style with soft natural outdoor sunlight\",\n        \"illuminating a rural backdrop.\",\n        \"[Shot 1] The scene opens on a rustic rural setting matching the environment of @Picture_1 <Subject 1>, the\",\n        \"voluptuous Indian woman with a warm, engaging smile, is squatting beside a weathered metal pail filled with water.\",\n        \"She is wearing a knee-high wrap-around cloth tied securely around her waist and a strapless wrap-around cloth\",\n        \"fitted across her bosom, matching the attire in @Picture_1. As she squats, one of her thighs is partially showing\",\n        \"through the folds of the wrap-around cloth. She looks directly into the camera lens, maintaining her friendly,\",\n        \"gentle smile while holding a relaxed posture in the quiet village environment.\",\n        \"\",\n        \"overall_soundscape:\",\n        \"Subtle rural ambient sounds including distant chirping birds and a gentle breeze rustling through foliage continue\",\n        \"throughout the scene.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"N/A\"\n      ],\n      \"seed\": \"12636599129996765864\",\n      \"duration_seconds\": 7,\n      \"basic_prompt\": \"\"\n    },\n    {\n      \"id\": \"part_2\",\n      \"prompt\": [\n        \"\",\n        \"subject_definitions:\",\n        \"<Subject 1> is the voluptuous Indian woman from the previous scene, with long dark hair, rural attire consisting of\",\n        \"a knee-high wrap-around cloth around her waist and a strapless wrap-around cloth around her bosom.\",\n        \"@Picture_1 is the reference image establishing the subject's identity, clothing, and background environment.\",\n        \"\",\n        \"summary:\",\n        \"[video continuation] A continuation shot where the voluptuous Indian woman from @Picture_1 shifts her focus away\",\n        \"from the camera, lifts the pail of water over her head, and raises her hands to support it.\",\n        \"\",\n        \"retention_analysis:\",\n        \"<Subject 1> (appears in [Shot 1]): fully_preserved - the woman's identity, voluptuous appearance, and rural\",\n        \"wrap-around clothing are fully retained from the previous scene and @Picture_1.\",\n        \"@Picture_1 (reference anchor): weak_reference - the background environment and character design principles are\",\n        \"maintained.\",\n        \"\",\n        \"detailed_description:\",\n        \"The target video maintains a realistic, warm-toned cinematic style with soft natural outdoor sunlight consistent\",\n        \"with the previous scene.\",\n        \"[Shot 1] The shot opens with <Subject 1> shifting her weight from a squatting position. Breaking eye contact with\",\n        \"the camera, she turns her attention entirely toward the weathered metal pail of water on the ground. Bending down\",\n        \"smoothly, she grips the sides of the pail, lifts it steadily upward, and raises it over her head, adjusting her\",\n        \"hands to support its weight securely. Her expression is focused and determined as she balances the load, her\",\n        \"posture emphasizing her form against the rustic rural backdrop.\",\n        \"\",\n        \"overall_soundscape:\",\n        \"The sounds of water sloshing inside the metal pail and a soft rural breeze continue throughout the shot.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"N/A\",\n        \"\"\n      ],\n      \"seed\": \"6103\",\n      \"duration_seconds\": 7,\n      \"basic_prompt\": \"\"\n    },\n    {\n      \"id\": \"part_3\",\n      \"prompt\": [\n        \"subject_definitions:\",\n        \"<Subject 1> is the voluptuous Indian woman from the previous scene, wearing a knee-high wrap-around cloth around\",\n        \"her waist and a strapless wrap-around cloth around her bosom, carrying a water pail over her head.\",\n        \"@Picture_1 is the reference image establishing the subject's identity, clothing, and background environment.\",\n        \"\",\n        \"summary:\",\n        \"[video continuation] A continuation shot showing the voluptuous Indian woman walking toward the camera with the\",\n        \"water pail balanced over her head, concluding with a brief glance and smile at the camera.\",\n        \"\",\n        \"retention_analysis:\",\n        \"<Subject 1> (appears in [Shot 1]): fully_preserved - the woman's identity, voluptuous appearance, and rural\",\n        \"wrap-around clothing are fully retained.\",\n        \"@Picture_1 (reference anchor): weak_reference - the general rural environment style is maintained.\",\n        \"\",\n        \"detailed_description:\",\n        \"The target video maintains a realistic, warm-toned cinematic style with soft natural outdoor sunlight consistent\",\n        \"with the preceding scenes.\",\n        \"[Shot 1] The shot opens with a medium-full tracking view of <Subject 1> walking steadily forward along a rustic\",\n        \"dirt path toward the camera. She balances the heavy metal pail securely with both hands over her head. Her body\",\n        \"moves with a natural, graceful rhythm as she walks, Mid-stride, she briefly glances toward the camera lens, flashes a warm,\",\n        \"confident smile, and then immediately shifts her focused gaze back to the path ahead as she continues her walk.\",\n        \"\",\n        \"overall_soundscape:\",\n        \"Rhythmic footsteps crunching on a dirt path, the faint splashing of water within the elevated pail, and a gentle\",\n        \"outdoor breeze continue throughout the shot.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"N/A\",\n        \"\"\n      ],\n      \"seed\": \"6103\",\n      \"duration_seconds\": 7,\n      \"basic_prompt\": \"\"\n    },\n    {\n      \"id\": \"scene_04\",\n      \"prompt\": [\n        \"subject_definitions:\",\n        \"<Subject 1> is the voluptuous Indian woman from the previous scene, wearing a knee-high wrap-around cloth around\",\n        \"her waist and a strapless wrap-around cloth around her bosom, carrying a water pail over her head.\",\n        \"@Picture_1 is the reference image establishing the subject's identity, clothing, and background environment.\",\n        \"\",\n        \"summary:\",\n        \"[video continuation] A continuation shot showing the voluptuous Indian woman walking toward the camera with the\",\n        \"water pail balanced over her head,\",\n        \"concluding with a brief glance and smile at the camera.\",\n        \"\",\n        \"retention_analysis:\",\n        \"<Subject 1> (appears in [Shot 1]): fully_preserved - the woman's identity, voluptuous appearance, and rural\",\n        \"wrap-around clothing are fully retained.\",\n        \"@Picture_1 (reference anchor): weak_reference - the general rural environment style is maintained.\",\n        \"\",\n        \"detailed_description:\",\n        \"The target video maintains a realistic, warm-toned cinematic style with soft natural outdoor sunlight consistent\",\n        \"with the preceding scenes.\",\n        \"[Shot 1] The shot opens with a medium-full tracking view of <Subject 1> walking steadily forward along a rustic\",\n        \"dirt path away from the camera. She balances the heavy metal pail securely with both hands over her head. Her body\",\n        \"moves with a natural, graceful rhythm as she walks, The cameras shows her swaying her hips as she walks away keeping her entire body in the frame edge to edge as she walks away from the camera\",\n        \"overall_soundscape:\",\n        \"Rhythmic footsteps crunching on a dirt path, the faint splashing of water within the elevated pail, and a gentle\",\n        \"outdoor breeze continue throughout the shot.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"N/A\",\n        \"\"\n      ]\n    }\n  ],\n  \"defaults\": {\n    \"steps\": 20\n  },\n  \"prompt_prefix\": [\n    \"<Subject 1> is the beautiful Indian woman in @Picture_1, with voluptuous features, a warm smile, and rural attire\",\n    \"consisting of a knee-high wrap-around cloth around her waist and a strapless wrap-around cloth around her bosom. Her clothes cover her breasts fully at all times. She is fair skinned.\",\n    \"@Picture_1 is the reference image establishing the subject's identity, clothing, and background environment.\"\n  ]\n}",
+        "ref2v_studio_minimax_h3_0_6_json",
+        "",
+        416,
+        736,
+        22,
+        "video",
+        "head",
+        "center",
+        "generated_audio",
+        22,
+        7,
+        20,
+        0,
+        20,
+        5,
+        "guide",
+        "null"
+      ],
+      "widgets_values_named": {
+        "start_clip": 1,
+        "scene_range": "",
+        "verify_resume_history": true,
+        "plan_json": "{\n  \"shots\": [\n    {\n      \"id\": \"part_1\",\n      \"prompt\": [\n        \"subject_definitions:\",\n        \"<Subject 1> is the beautiful Indian woman in @Picture_1, with voluptuous features, a warm smile, and rural attire\",\n        \"consisting of a knee-high wrap-around cloth around her waist and a strapless wrap-around cloth around her bosom.\",\n        \"@Picture_1 is the reference image establishing the subject's identity, clothing, and background environment.\",\n        \"\",\n        \"summary:\",\n        \"[reference generation] A reference generation task depicting the voluptuous Indian woman from @Picture_1 squatting\",\n        \"beside a pail of water in a rural setting, smiling directly at the camera with one thigh exposed through her\",\n        \"wrap-around cloth.\",\n        \"\",\n        \"retention_analysis:\",\n        \"<Subject 1> (appears in [Shot 1]): fully_preserved - the woman's identity, facial features, voluptuous appearance,\",\n        \"and rural wrap-around clothing from <Picture 1> are fully retained.\",\n        \"@Picture_1 (reference anchor): fully_preserved - the visual reference data defining the character's look,\",\n        \"wardrobe, and rural environment is strictly followed.\",\n        \"\",\n        \"detailed_description:\",\n        \"The target video is rendered in a realistic, warm-toned cinematic style with soft natural outdoor sunlight\",\n        \"illuminating a rural backdrop.\",\n        \"[Shot 1] The scene opens on a rustic rural setting matching the environment of @Picture_1 <Subject 1>, the\",\n        \"voluptuous Indian woman with a warm, engaging smile, is squatting beside a weathered metal pail filled with water.\",\n        \"She is wearing a knee-high wrap-around cloth tied securely around her waist and a strapless wrap-around cloth\",\n        \"fitted across her bosom, matching the attire in @Picture_1. As she squats, one of her thighs is partially showing\",\n        \"through the folds of the wrap-around cloth. She looks directly into the camera lens, maintaining her friendly,\",\n        \"gentle smile while holding a relaxed posture in the quiet village environment.\",\n        \"\",\n        \"overall_soundscape:\",\n        \"Subtle rural ambient sounds including distant chirping birds and a gentle breeze rustling through foliage continue\",\n        \"throughout the scene.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"N/A\"\n      ],\n      \"seed\": \"12636599129996765864\",\n      \"duration_seconds\": 7,\n      \"basic_prompt\": \"\"\n    },\n    {\n      \"id\": \"part_2\",\n      \"prompt\": [\n        \"\",\n        \"subject_definitions:\",\n        \"<Subject 1> is the voluptuous Indian woman from the previous scene, with long dark hair, rural attire consisting of\",\n        \"a knee-high wrap-around cloth around her waist and a strapless wrap-around cloth around her bosom.\",\n        \"@Picture_1 is the reference image establishing the subject's identity, clothing, and background environment.\",\n        \"\",\n        \"summary:\",\n        \"[video continuation] A continuation shot where the voluptuous Indian woman from @Picture_1 shifts her focus away\",\n        \"from the camera, lifts the pail of water over her head, and raises her hands to support it.\",\n        \"\",\n        \"retention_analysis:\",\n        \"<Subject 1> (appears in [Shot 1]): fully_preserved - the woman's identity, voluptuous appearance, and rural\",\n        \"wrap-around clothing are fully retained from the previous scene and @Picture_1.\",\n        \"@Picture_1 (reference anchor): weak_reference - the background environment and character design principles are\",\n        \"maintained.\",\n        \"\",\n        \"detailed_description:\",\n        \"The target video maintains a realistic, warm-toned cinematic style with soft natural outdoor sunlight consistent\",\n        \"with the previous scene.\",\n        \"[Shot 1] The shot opens with <Subject 1> shifting her weight from a squatting position. Breaking eye contact with\",\n        \"the camera, she turns her attention entirely toward the weathered metal pail of water on the ground. Bending down\",\n        \"smoothly, she grips the sides of the pail, lifts it steadily upward, and raises it over her head, adjusting her\",\n        \"hands to support its weight securely. Her expression is focused and determined as she balances the load, her\",\n        \"posture emphasizing her form against the rustic rural backdrop.\",\n        \"\",\n        \"overall_soundscape:\",\n        \"The sounds of water sloshing inside the metal pail and a soft rural breeze continue throughout the shot.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"N/A\",\n        \"\"\n      ],\n      \"seed\": \"6103\",\n      \"duration_seconds\": 7,\n      \"basic_prompt\": \"\"\n    },\n    {\n      \"id\": \"part_3\",\n      \"prompt\": [\n        \"subject_definitions:\",\n        \"<Subject 1> is the voluptuous Indian woman from the previous scene, wearing a knee-high wrap-around cloth around\",\n        \"her waist and a strapless wrap-around cloth around her bosom, carrying a water pail over her head.\",\n        \"@Picture_1 is the reference image establishing the subject's identity, clothing, and background environment.\",\n        \"\",\n        \"summary:\",\n        \"[video continuation] A continuation shot showing the voluptuous Indian woman walking toward the camera with the\",\n        \"water pail balanced over her head, concluding with a brief glance and smile at the camera.\",\n        \"\",\n        \"retention_analysis:\",\n        \"<Subject 1> (appears in [Shot 1]): fully_preserved - the woman's identity, voluptuous appearance, and rural\",\n        \"wrap-around clothing are fully retained.\",\n        \"@Picture_1 (reference anchor): weak_reference - the general rural environment style is maintained.\",\n        \"\",\n        \"detailed_description:\",\n        \"The target video maintains a realistic, warm-toned cinematic style with soft natural outdoor sunlight consistent\",\n        \"with the preceding scenes.\",\n        \"[Shot 1] The shot opens with a medium-full tracking view of <Subject 1> walking steadily forward along a rustic\",\n        \"dirt path toward the camera. She balances the heavy metal pail securely with both hands over her head. Her body\",\n        \"moves with a natural, graceful rhythm as she walks, Mid-stride, she briefly glances toward the camera lens, flashes a warm,\",\n        \"confident smile, and then immediately shifts her focused gaze back to the path ahead as she continues her walk.\",\n        \"\",\n        \"overall_soundscape:\",\n        \"Rhythmic footsteps crunching on a dirt path, the faint splashing of water within the elevated pail, and a gentle\",\n        \"outdoor breeze continue throughout the shot.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"N/A\",\n        \"\"\n      ],\n      \"seed\": \"6103\",\n      \"duration_seconds\": 7,\n      \"basic_prompt\": \"\"\n    },\n    {\n      \"id\": \"scene_04\",\n      \"prompt\": [\n        \"subject_definitions:\",\n        \"<Subject 1> is the voluptuous Indian woman from the previous scene, wearing a knee-high wrap-around cloth around\",\n        \"her waist and a strapless wrap-around cloth around her bosom, carrying a water pail over her head.\",\n        \"@Picture_1 is the reference image establishing the subject's identity, clothing, and background environment.\",\n        \"\",\n        \"summary:\",\n        \"[video continuation] A continuation shot showing the voluptuous Indian woman walking toward the camera with the\",\n        \"water pail balanced over her head,\",\n        \"concluding with a brief glance and smile at the camera.\",\n        \"\",\n        \"retention_analysis:\",\n        \"<Subject 1> (appears in [Shot 1]): fully_preserved - the woman's identity, voluptuous appearance, and rural\",\n        \"wrap-around clothing are fully retained.\",\n        \"@Picture_1 (reference anchor): weak_reference - the general rural environment style is maintained.\",\n        \"\",\n        \"detailed_description:\",\n        \"The target video maintains a realistic, warm-toned cinematic style with soft natural outdoor sunlight consistent\",\n        \"with the preceding scenes.\",\n        \"[Shot 1] The shot opens with a medium-full tracking view of <Subject 1> walking steadily forward along a rustic\",\n        \"dirt path away from the camera. She balances the heavy metal pail securely with both hands over her head. Her body\",\n        \"moves with a natural, graceful rhythm as she walks, The cameras shows her swaying her hips as she walks away keeping her entire body in the frame edge to edge as she walks away from the camera\",\n        \"overall_soundscape:\",\n        \"Rhythmic footsteps crunching on a dirt path, the faint splashing of water within the elevated pail, and a gentle\",\n        \"outdoor breeze continue throughout the shot.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"N/A\",\n        \"\"\n      ]\n    }\n  ],\n  \"defaults\": {\n    \"steps\": 20\n  },\n  \"prompt_prefix\": [\n    \"<Subject 1> is the beautiful Indian woman in @Picture_1, with voluptuous features, a warm smile, and rural attire\",\n    \"consisting of a knee-high wrap-around cloth around her waist and a strapless wrap-around cloth around her bosom. Her clothes cover her breasts fully at all times. She is fair skinned.\",\n    \"@Picture_1 is the reference image establishing the subject's identity, clothing, and background environment.\"\n  ]\n}",
+        "run_name": "ref2v_studio_minimax_h3_0_6_json",
+        "generation_fingerprint": "",
+        "width": 416,
+        "height": 736,
+        "context_length": 22,
+        "encode_mode": "video",
+        "anchor_mode": "head",
+        "crop": "center",
+        "audio_mode": "generated_audio",
+        "audio_context_length": 22,
+        "default_duration_seconds": 7,
+        "default_steps": 20,
+        "base_seed": 0,
+        "segment_crf": 20,
+        "video_blend_frames": 5,
+        "continuation_mode": "guide",
+        "alternate_take_json": "null"
+      }
+    },
+    {
+      "id": 26,
+      "type": "MiniMaxH3ChainRichScenePromptEditor",
+      "pos": [
+        3283.7589201613864,
+        367.40719532199535
+      ],
+      "size": [
+        1200,
+        940
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "plan",
+          "type": "H3_CHAIN_PLAN",
+          "link": 57
+        }
+      ],
+      "outputs": [
+        {
+          "name": "plan",
+          "type": "H3_CHAIN_PLAN",
+          "links": null
+        }
+      ],
+      "title": "Scene Prompts + References",
+      "properties": {
+        "Node name for S&R": "MiniMaxH3ChainRichScenePromptEditor",
+        "h3_rich_prompt_active_scene": 0,
+        "h3_rich_prompt_font_size": 17,
+        "h3_rich_prompt_guide": "auto",
+        "h3_rich_prompt_rich_text": true
+      },
+      "widgets_values": [],
+      "widgets_values_named": {}
+    },
+    {
+      "id": 29,
+      "type": "MiniMaxH3ProjectAssetManager",
+      "pos": [
+        2054.7567767432456,
+        1456.66388544268
+      ],
+      "size": [
+        1080,
+        880
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "tagged_references",
+          "shape": 7,
+          "type": "H3_TAGGED_REFERENCES",
+          "link": null
+        },
+        {
+          "name": "upscale_model",
+          "shape": 7,
+          "type": "UPSCALE_MODEL",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "project_assets",
+          "type": "H3_PROJECT_ASSETS",
+          "links": [
+            56,
+            59
+          ]
+        },
+        {
+          "name": "references",
+          "type": "H3_TAGGED_REFERENCES",
+          "links": [
+            8,
+            55
+          ]
+        },
+        {
+          "name": "reference_fingerprint",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "source_timeline",
+          "type": "H3_SOURCE_TIMELINE",
+          "links": null
+        },
+        {
+          "name": "status",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "Project Asset Carousel",
+      "properties": {
+        "Node name for S&R": "MiniMaxH3ProjectAssetManager"
+      },
+      "widgets_values": [
+        "ref2v_studio_minimax_h3_0_6_json",
+        "{\"assets\":[{\"created_at\":\"2026-09-21T17:41:31Z\",\"enabled\":true,\"id\":\"0bfb025bb14840b8aaaa195842449338\",\"input_path\":\"h3_projects/ref2v_studio_minimax_h3_0_6_json/images/079cd86bcdb69ceb_ComfyUI_00002.png\",\"kind\":\"image\",\"metadata\":{\"format\":\"png\",\"frames\":1,\"height\":1280,\"width\":720},\"mime_type\":\"image/png\",\"options\":{},\"original_name\":\"ComfyUI_00002.png\",\"relative_path\":\"images/079cd86bcdb69ceb_ComfyUI_00002.png\",\"role\":\"picture\",\"sha256\":\"079cd86bcdb69ceba332693eec9d45847e4cbd2b1fdf70d9a2199c6e9c95c9d3\",\"size\":1080261,\"source_kind\":\"upload\",\"tag\":\"Picture_1\",\"updated_at\":\"2026-09-21T17:41:48Z\"}],\"folders\":[],\"format\":\"h3_project_assets_v1\",\"project\":\"ref2v_studio_minimax_h3_0_6_json\",\"reference_slots\":[],\"revision\":\"64727aad61596cd573877f4f1ce270ef9158b16abb832e7a98846ebe461de0e8\",\"updated_at\":\"2026-09-21T17:41:48Z\",\"version\":1}",
+        "768",
+        "timestamped_video",
+        ""
+      ],
+      "widgets_values_named": {
+        "run_name": "ref2v_studio_minimax_h3_0_6_json",
+        "catalog_json": "{\"assets\":[{\"created_at\":\"2026-09-21T17:41:31Z\",\"enabled\":true,\"id\":\"0bfb025bb14840b8aaaa195842449338\",\"input_path\":\"h3_projects/ref2v_studio_minimax_h3_0_6_json/images/079cd86bcdb69ceb_ComfyUI_00002.png\",\"kind\":\"image\",\"metadata\":{\"format\":\"png\",\"frames\":1,\"height\":1280,\"width\":720},\"mime_type\":\"image/png\",\"options\":{},\"original_name\":\"ComfyUI_00002.png\",\"relative_path\":\"images/079cd86bcdb69ceb_ComfyUI_00002.png\",\"role\":\"picture\",\"sha256\":\"079cd86bcdb69ceba332693eec9d45847e4cbd2b1fdf70d9a2199c6e9c95c9d3\",\"size\":1080261,\"source_kind\":\"upload\",\"tag\":\"Picture_1\",\"updated_at\":\"2026-09-21T17:41:48Z\"}],\"folders\":[],\"format\":\"h3_project_assets_v1\",\"project\":\"ref2v_studio_minimax_h3_0_6_json\",\"reference_slots\":[],\"revision\":\"64727aad61596cd573877f4f1ce270ef9158b16abb832e7a98846ebe461de0e8\",\"updated_at\":\"2026-09-21T17:41:48Z\",\"version\":1}",
+        "semantic_anchor_size": "768",
+        "semantic_anchor_mode": "timestamped_video",
+        "operation_json": ""
+      }
+    },
+    {
+      "id": 6,
+      "type": "MiniMaxH3ChainLoopStart",
+      "pos": [
+        3756.627991020767,
+        1294.8370470410318
+      ],
+      "size": [
+        360,
+        256
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "plan",
+          "type": "H3_CHAIN_PLAN",
+          "link": 1
+        },
+        {
+          "name": "source_audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "name": "external_context",
+          "shape": 7,
+          "type": "H3_CHAIN_EXTERNAL_CONTEXT",
+          "link": null
+        },
+        {
+          "name": "source_timeline",
+          "shape": 7,
+          "type": "H3_SOURCE_TIMELINE",
+          "link": null
+        },
+        {
+          "name": "tagged_references",
+          "shape": 7,
+          "type": "H3_TAGGED_REFERENCES",
+          "link": null
+        },
+        {
+          "name": "reference_schedule",
+          "shape": 7,
+          "type": "H3_REFERENCE_SCHEDULE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "flow",
+          "type": "H3_CHAIN_FLOW",
+          "links": [
+            49
+          ]
+        },
+        {
+          "name": "state",
+          "type": "H3_CHAIN_STATE",
+          "links": [
+            2
+          ]
+        },
+        {
+          "name": "status",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "Loop Start",
+      "properties": {
+        "Node name for S&R": "MiniMaxH3ChainLoopStart"
+      },
+      "widgets_values": [
+        3,
+        "",
+        true
+      ],
+      "widgets_values_named": {
+        "start_clip": 3,
+        "scene_range": "",
+        "verify_resume_history": true
+      }
+    },
+    {
+      "id": 27,
+      "type": "MiniMaxH3ChainPlanModern",
+      "pos": [
+        1074.3608838771208,
+        1093.7244786236733
+      ],
+      "size": [
+        1000,
+        900
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "chain_policy",
+          "type": "H3_CHAIN_POLICY",
+          "link": 58
+        },
+        {
+          "name": "plan_json_input",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        },
+        {
+          "name": "project_assets",
+          "shape": 7,
+          "type": "H3_PROJECT_ASSETS",
+          "link": 59
+        }
+      ],
+      "outputs": [
+        {
+          "name": "plan",
+          "type": "H3_CHAIN_PLAN",
+          "links": [
+            54
+          ]
+        },
+        {
+          "name": "summary",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "clip_count",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": []
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": []
+        },
+        {
+          "name": "video_blend_frames",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "title": "Production Plan",
+      "properties": {
+        "Node name for S&R": "MiniMaxH3ChainPlanModern",
+        "h3_chain_plan_layout": {
+          "promptHeights": {
+            "shared": 88,
+            "scene-basic:reference_delivery": 72,
+            "scene-basic:reference_confirmation": 72,
+            "scene:sitting_to_laying_down": 112,
+            "scene:reference_delivery": 112,
+            "scene-basic:sitting_to_laying_down": 72,
+            "scene:laying_down_to_sitting": 112,
+            "scene:reference_confirmation": 112,
+            "scene-basic:laying_down_to_sitting": 72,
+            "scene-basic:sitting_to_standing": 72,
+            "scene:part_1": 112,
+            "scene-basic:part_1": 72,
+            "scene-basic:part_2": 72,
+            "scene:part_2": 112,
+            "scene-basic:part_2_copy": 72,
+            "scene:part_2_copy": 112,
+            "scene-basic:part_3": 72,
+            "scene:part_3": 112,
+            "scene-basic:scene_04": 72,
+            "scene:scene_04": 112
+          },
+          "collapsedScenes": {},
+          "advanced": true,
+          "jsonOpen": false,
+          "settingsOpen": true
+        },
+        "h3_chain_scene_colors": {}
+      },
+      "widgets_values": [
+        "{\n  \"shots\": [\n    {\n      \"id\": \"part_1\",\n      \"prompt\": [\n        \"subject_definitions:\",\n        \"<Subject 1> is the beautiful Indian woman in @Picture_1, with voluptuous features, a warm smile, and rural attire\",\n        \"consisting of a knee-high wrap-around cloth around her waist and a strapless wrap-around cloth around her bosom.\",\n        \"@Picture_1 is the reference image establishing the subject's identity, clothing, and background environment.\",\n        \"\",\n        \"summary:\",\n        \"[reference generation] A reference generation task depicting the voluptuous Indian woman from @Picture_1 squatting\",\n        \"beside a pail of water in a rural setting, smiling directly at the camera with one thigh exposed through her\",\n        \"wrap-around cloth.\",\n        \"\",\n        \"retention_analysis:\",\n        \"<Subject 1> (appears in [Shot 1]): fully_preserved - the woman's identity, facial features, voluptuous appearance,\",\n        \"and rural wrap-around clothing from <Picture 1> are fully retained.\",\n        \"@Picture_1 (reference anchor): fully_preserved - the visual reference data defining the character's look,\",\n        \"wardrobe, and rural environment is strictly followed.\",\n        \"\",\n        \"detailed_description:\",\n        \"The target video is rendered in a realistic, warm-toned cinematic style with soft natural outdoor sunlight\",\n        \"illuminating a rural backdrop.\",\n        \"[Shot 1] The scene opens on a rustic rural setting matching the environment of @Picture_1 <Subject 1>, the\",\n        \"voluptuous Indian woman with a warm, engaging smile, is squatting beside a weathered metal pail filled with water.\",\n        \"She is wearing a knee-high wrap-around cloth tied securely around her waist and a strapless wrap-around cloth\",\n        \"fitted across her bosom, matching the attire in @Picture_1. As she squats, one of her thighs is partially showing\",\n        \"through the folds of the wrap-around cloth. She looks directly into the camera lens, maintaining her friendly,\",\n        \"gentle smile while holding a relaxed posture in the quiet village environment.\",\n        \"\",\n        \"overall_soundscape:\",\n        \"Subtle rural ambient sounds including distant chirping birds and a gentle breeze rustling through foliage continue\",\n        \"throughout the scene.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"N/A\"\n      ],\n      \"seed\": \"12636599129996765864\",\n      \"duration_seconds\": 7,\n      \"basic_prompt\": \"\"\n    },\n    {\n      \"id\": \"part_2\",\n      \"prompt\": [\n        \"\",\n        \"subject_definitions:\",\n        \"<Subject 1> is the voluptuous Indian woman from the previous scene, with long dark hair, rural attire consisting of\",\n        \"a knee-high wrap-around cloth around her waist and a strapless wrap-around cloth around her bosom.\",\n        \"@Picture_1 is the reference image establishing the subject's identity, clothing, and background environment.\",\n        \"\",\n        \"summary:\",\n        \"[video continuation] A continuation shot where the voluptuous Indian woman from @Picture_1 shifts her focus away\",\n        \"from the camera, lifts the pail of water over her head, and raises her hands to support it.\",\n        \"\",\n        \"retention_analysis:\",\n        \"<Subject 1> (appears in [Shot 1]): fully_preserved - the woman's identity, voluptuous appearance, and rural\",\n        \"wrap-around clothing are fully retained from the previous scene and @Picture_1.\",\n        \"@Picture_1 (reference anchor): weak_reference - the background environment and character design principles are\",\n        \"maintained.\",\n        \"\",\n        \"detailed_description:\",\n        \"The target video maintains a realistic, warm-toned cinematic style with soft natural outdoor sunlight consistent\",\n        \"with the previous scene.\",\n        \"[Shot 1] The shot opens with <Subject 1> shifting her weight from a squatting position. Breaking eye contact with\",\n        \"the camera, she turns her attention entirely toward the weathered metal pail of water on the ground. Bending down\",\n        \"smoothly, she grips the sides of the pail, lifts it steadily upward, and raises it over her head, adjusting her\",\n        \"hands to support its weight securely. Her expression is focused and determined as she balances the load, her\",\n        \"posture emphasizing her form against the rustic rural backdrop.\",\n        \"\",\n        \"overall_soundscape:\",\n        \"The sounds of water sloshing inside the metal pail and a soft rural breeze continue throughout the shot.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"N/A\",\n        \"\"\n      ],\n      \"seed\": \"6103\",\n      \"duration_seconds\": 7,\n      \"basic_prompt\": \"\"\n    },\n    {\n      \"id\": \"part_3\",\n      \"prompt\": [\n        \"subject_definitions:\",\n        \"<Subject 1> is the voluptuous Indian woman from the previous scene, wearing a knee-high wrap-around cloth around\",\n        \"her waist and a strapless wrap-around cloth around her bosom, carrying a water pail over her head.\",\n        \"@Picture_1 is the reference image establishing the subject's identity, clothing, and background environment.\",\n        \"\",\n        \"summary:\",\n        \"[video continuation] A continuation shot showing the voluptuous Indian woman walking toward the camera with the\",\n        \"water pail balanced over her head, concluding with a brief glance and smile at the camera.\",\n        \"\",\n        \"retention_analysis:\",\n        \"<Subject 1> (appears in [Shot 1]): fully_preserved - the woman's identity, voluptuous appearance, and rural\",\n        \"wrap-around clothing are fully retained.\",\n        \"@Picture_1 (reference anchor): weak_reference - the general rural environment style is maintained.\",\n        \"\",\n        \"detailed_description:\",\n        \"The target video maintains a realistic, warm-toned cinematic style with soft natural outdoor sunlight consistent\",\n        \"with the preceding scenes.\",\n        \"[Shot 1] The shot opens with a medium-full tracking view of <Subject 1> walking steadily forward along a rustic\",\n        \"dirt path toward the camera. She balances the heavy metal pail securely with both hands over her head. Her body\",\n        \"moves with a natural, graceful rhythm as she walks, Mid-stride, she briefly glances toward the camera lens, flashes a warm,\",\n        \"confident smile, and then immediately shifts her focused gaze back to the path ahead as she continues her walk.\",\n        \"\",\n        \"overall_soundscape:\",\n        \"Rhythmic footsteps crunching on a dirt path, the faint splashing of water within the elevated pail, and a gentle\",\n        \"outdoor breeze continue throughout the shot.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"N/A\",\n        \"\"\n      ],\n      \"seed\": \"6103\",\n      \"duration_seconds\": 7,\n      \"basic_prompt\": \"\"\n    },\n    {\n      \"id\": \"scene_04\",\n      \"prompt\": [\n        \"subject_definitions:\",\n        \"<Subject 1> is the voluptuous Indian woman from the previous scene, wearing a knee-high wrap-around cloth around\",\n        \"her waist and a strapless wrap-around cloth around her bosom, carrying a water pail over her head.\",\n        \"@Picture_1 is the reference image establishing the subject's identity, clothing, and background environment.\",\n        \"\",\n        \"summary:\",\n        \"[video continuation] A continuation shot showing the voluptuous Indian woman walking toward the camera with the\",\n        \"water pail balanced over her head,\",\n        \"concluding with a brief glance and smile at the camera.\",\n        \"\",\n        \"retention_analysis:\",\n        \"<Subject 1> (appears in [Shot 1]): fully_preserved - the woman's identity, voluptuous appearance, and rural\",\n        \"wrap-around clothing are fully retained.\",\n        \"@Picture_1 (reference anchor): weak_reference - the general rural environment style is maintained.\",\n        \"\",\n        \"detailed_description:\",\n        \"The target video maintains a realistic, warm-toned cinematic style with soft natural outdoor sunlight consistent\",\n        \"with the preceding scenes.\",\n        \"[Shot 1] The shot opens with a medium-full tracking view of <Subject 1> walking steadily forward along a rustic\",\n        \"dirt path away from the camera. She balances the heavy metal pail securely with both hands over her head. Her body\",\n        \"moves with a natural, graceful rhythm as she walks, The cameras shows her swaying her hips as she walks away keeping her entire body in the frame edge to edge as she walks away from the camera\",\n        \"overall_soundscape:\",\n        \"Rhythmic footsteps crunching on a dirt path, the faint splashing of water within the elevated pail, and a gentle\",\n        \"outdoor breeze continue throughout the shot.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"N/A\",\n        \"\"\n      ]\n    }\n  ],\n  \"defaults\": {\n    \"steps\": 20\n  },\n  \"prompt_prefix\": [\n    \"<Subject 1> is the beautiful Indian woman in @Picture_1, with voluptuous features, a warm smile, and rural attire\",\n    \"consisting of a knee-high wrap-around cloth around her waist and a strapless wrap-around cloth around her bosom. Her clothes cover her breasts fully at all times. She is fair skinned.\",\n    \"@Picture_1 is the reference image establishing the subject's identity, clothing, and background environment.\"\n  ]\n}",
+        "ref2v_studio_minimax_h3_0_6_json",
+        "",
+        416,
+        736,
+        "video",
+        "center",
+        7,
+        20,
+        0,
+        20,
+        5
+      ],
+      "widgets_values_named": {
+        "plan_json": "{\n  \"shots\": [\n    {\n      \"id\": \"part_1\",\n      \"prompt\": [\n        \"subject_definitions:\",\n        \"<Subject 1> is the beautiful Indian woman in @Picture_1, with voluptuous features, a warm smile, and rural attire\",\n        \"consisting of a knee-high wrap-around cloth around her waist and a strapless wrap-around cloth around her bosom.\",\n        \"@Picture_1 is the reference image establishing the subject's identity, clothing, and background environment.\",\n        \"\",\n        \"summary:\",\n        \"[reference generation] A reference generation task depicting the voluptuous Indian woman from @Picture_1 squatting\",\n        \"beside a pail of water in a rural setting, smiling directly at the camera with one thigh exposed through her\",\n        \"wrap-around cloth.\",\n        \"\",\n        \"retention_analysis:\",\n        \"<Subject 1> (appears in [Shot 1]): fully_preserved - the woman's identity, facial features, voluptuous appearance,\",\n        \"and rural wrap-around clothing from <Picture 1> are fully retained.\",\n        \"@Picture_1 (reference anchor): fully_preserved - the visual reference data defining the character's look,\",\n        \"wardrobe, and rural environment is strictly followed.\",\n        \"\",\n        \"detailed_description:\",\n        \"The target video is rendered in a realistic, warm-toned cinematic style with soft natural outdoor sunlight\",\n        \"illuminating a rural backdrop.\",\n        \"[Shot 1] The scene opens on a rustic rural setting matching the environment of @Picture_1 <Subject 1>, the\",\n        \"voluptuous Indian woman with a warm, engaging smile, is squatting beside a weathered metal pail filled with water.\",\n        \"She is wearing a knee-high wrap-around cloth tied securely around her waist and a strapless wrap-around cloth\",\n        \"fitted across her bosom, matching the attire in @Picture_1. As she squats, one of her thighs is partially showing\",\n        \"through the folds of the wrap-around cloth. She looks directly into the camera lens, maintaining her friendly,\",\n        \"gentle smile while holding a relaxed posture in the quiet village environment.\",\n        \"\",\n        \"overall_soundscape:\",\n        \"Subtle rural ambient sounds including distant chirping birds and a gentle breeze rustling through foliage continue\",\n        \"throughout the scene.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"N/A\"\n      ],\n      \"seed\": \"12636599129996765864\",\n      \"duration_seconds\": 7,\n      \"basic_prompt\": \"\"\n    },\n    {\n      \"id\": \"part_2\",\n      \"prompt\": [\n        \"\",\n        \"subject_definitions:\",\n        \"<Subject 1> is the voluptuous Indian woman from the previous scene, with long dark hair, rural attire consisting of\",\n        \"a knee-high wrap-around cloth around her waist and a strapless wrap-around cloth around her bosom.\",\n        \"@Picture_1 is the reference image establishing the subject's identity, clothing, and background environment.\",\n        \"\",\n        \"summary:\",\n        \"[video continuation] A continuation shot where the voluptuous Indian woman from @Picture_1 shifts her focus away\",\n        \"from the camera, lifts the pail of water over her head, and raises her hands to support it.\",\n        \"\",\n        \"retention_analysis:\",\n        \"<Subject 1> (appears in [Shot 1]): fully_preserved - the woman's identity, voluptuous appearance, and rural\",\n        \"wrap-around clothing are fully retained from the previous scene and @Picture_1.\",\n        \"@Picture_1 (reference anchor): weak_reference - the background environment and character design principles are\",\n        \"maintained.\",\n        \"\",\n        \"detailed_description:\",\n        \"The target video maintains a realistic, warm-toned cinematic style with soft natural outdoor sunlight consistent\",\n        \"with the previous scene.\",\n        \"[Shot 1] The shot opens with <Subject 1> shifting her weight from a squatting position. Breaking eye contact with\",\n        \"the camera, she turns her attention entirely toward the weathered metal pail of water on the ground. Bending down\",\n        \"smoothly, she grips the sides of the pail, lifts it steadily upward, and raises it over her head, adjusting her\",\n        \"hands to support its weight securely. Her expression is focused and determined as she balances the load, her\",\n        \"posture emphasizing her form against the rustic rural backdrop.\",\n        \"\",\n        \"overall_soundscape:\",\n        \"The sounds of water sloshing inside the metal pail and a soft rural breeze continue throughout the shot.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"N/A\",\n        \"\"\n      ],\n      \"seed\": \"6103\",\n      \"duration_seconds\": 7,\n      \"basic_prompt\": \"\"\n    },\n    {\n      \"id\": \"part_3\",\n      \"prompt\": [\n        \"subject_definitions:\",\n        \"<Subject 1> is the voluptuous Indian woman from the previous scene, wearing a knee-high wrap-around cloth around\",\n        \"her waist and a strapless wrap-around cloth around her bosom, carrying a water pail over her head.\",\n        \"@Picture_1 is the reference image establishing the subject's identity, clothing, and background environment.\",\n        \"\",\n        \"summary:\",\n        \"[video continuation] A continuation shot showing the voluptuous Indian woman walking toward the camera with the\",\n        \"water pail balanced over her head, concluding with a brief glance and smile at the camera.\",\n        \"\",\n        \"retention_analysis:\",\n        \"<Subject 1> (appears in [Shot 1]): fully_preserved - the woman's identity, voluptuous appearance, and rural\",\n        \"wrap-around clothing are fully retained.\",\n        \"@Picture_1 (reference anchor): weak_reference - the general rural environment style is maintained.\",\n        \"\",\n        \"detailed_description:\",\n        \"The target video maintains a realistic, warm-toned cinematic style with soft natural outdoor sunlight consistent\",\n        \"with the preceding scenes.\",\n        \"[Shot 1] The shot opens with a medium-full tracking view of <Subject 1> walking steadily forward along a rustic\",\n        \"dirt path toward the camera. She balances the heavy metal pail securely with both hands over her head. Her body\",\n        \"moves with a natural, graceful rhythm as she walks, Mid-stride, she briefly glances toward the camera lens, flashes a warm,\",\n        \"confident smile, and then immediately shifts her focused gaze back to the path ahead as she continues her walk.\",\n        \"\",\n        \"overall_soundscape:\",\n        \"Rhythmic footsteps crunching on a dirt path, the faint splashing of water within the elevated pail, and a gentle\",\n        \"outdoor breeze continue throughout the shot.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"N/A\",\n        \"\"\n      ],\n      \"seed\": \"6103\",\n      \"duration_seconds\": 7,\n      \"basic_prompt\": \"\"\n    },\n    {\n      \"id\": \"scene_04\",\n      \"prompt\": [\n        \"subject_definitions:\",\n        \"<Subject 1> is the voluptuous Indian woman from the previous scene, wearing a knee-high wrap-around cloth around\",\n        \"her waist and a strapless wrap-around cloth around her bosom, carrying a water pail over her head.\",\n        \"@Picture_1 is the reference image establishing the subject's identity, clothing, and background environment.\",\n        \"\",\n        \"summary:\",\n        \"[video continuation] A continuation shot showing the voluptuous Indian woman walking toward the camera with the\",\n        \"water pail balanced over her head,\",\n        \"concluding with a brief glance and smile at the camera.\",\n        \"\",\n        \"retention_analysis:\",\n        \"<Subject 1> (appears in [Shot 1]): fully_preserved - the woman's identity, voluptuous appearance, and rural\",\n        \"wrap-around clothing are fully retained.\",\n        \"@Picture_1 (reference anchor): weak_reference - the general rural environment style is maintained.\",\n        \"\",\n        \"detailed_description:\",\n        \"The target video maintains a realistic, warm-toned cinematic style with soft natural outdoor sunlight consistent\",\n        \"with the preceding scenes.\",\n        \"[Shot 1] The shot opens with a medium-full tracking view of <Subject 1> walking steadily forward along a rustic\",\n        \"dirt path away from the camera. She balances the heavy metal pail securely with both hands over her head. Her body\",\n        \"moves with a natural, graceful rhythm as she walks, The cameras shows her swaying her hips as she walks away keeping her entire body in the frame edge to edge as she walks away from the camera\",\n        \"overall_soundscape:\",\n        \"Rhythmic footsteps crunching on a dirt path, the faint splashing of water within the elevated pail, and a gentle\",\n        \"outdoor breeze continue throughout the shot.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"N/A\",\n        \"\"\n      ]\n    }\n  ],\n  \"defaults\": {\n    \"steps\": 20\n  },\n  \"prompt_prefix\": [\n    \"<Subject 1> is the beautiful Indian woman in @Picture_1, with voluptuous features, a warm smile, and rural attire\",\n    \"consisting of a knee-high wrap-around cloth around her waist and a strapless wrap-around cloth around her bosom. Her clothes cover her breasts fully at all times. She is fair skinned.\",\n    \"@Picture_1 is the reference image establishing the subject's identity, clothing, and background environment.\"\n  ]\n}",
+        "run_name": "ref2v_studio_minimax_h3_0_6_json",
+        "generation_fingerprint": "",
+        "width": 416,
+        "height": 736,
+        "encode_mode": "video",
+        "crop": "center",
+        "default_duration_seconds": 7,
+        "default_steps": 20,
+        "base_seed": 0,
+        "segment_crf": 20,
+        "video_blend_frames": 5
+      }
+    }
+  ],
+  "links": [
+    [
+      1,
+      25,
+      0,
+      6,
+      0,
+      "H3_CHAIN_PLAN"
+    ],
+    [
+      2,
+      6,
+      1,
+      7,
+      0,
+      "H3_CHAIN_STATE"
+    ],
+    [
+      3,
+      22,
+      0,
+      8,
+      0,
+      "H3_CHAIN_MANIFEST"
+    ],
+    [
+      4,
+      7,
+      5,
+      9,
+      0,
+      "INT"
+    ],
+    [
+      5,
+      2,
+      0,
+      10,
+      0,
+      "CLIP"
+    ],
+    [
+      6,
+      4,
+      0,
+      10,
+      1,
+      "VAE"
+    ],
+    [
+      7,
+      5,
+      0,
+      10,
+      2,
+      "VAE"
+    ],
+    [
+      8,
+      29,
+      1,
+      10,
+      3,
+      "H3_TAGGED_REFERENCES"
+    ],
+    [
+      9,
+      7,
+      1,
+      10,
+      5,
+      "INT"
+    ],
+    [
+      10,
+      7,
+      2,
+      10,
+      6,
+      "INT"
+    ],
+    [
+      11,
+      7,
+      4,
+      10,
+      7,
+      "STRING"
+    ],
+    [
+      15,
+      7,
+      0,
+      10,
+      4,
+      "H3_CHAIN_STATE"
+    ],
+    [
+      16,
+      7,
+      0,
+      11,
+      0,
+      "H3_CHAIN_STATE"
+    ],
+    [
+      17,
+      10,
+      0,
+      11,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      18,
+      4,
+      0,
+      11,
+      2,
+      "VAE"
+    ],
+    [
+      19,
+      10,
+      1,
+      11,
+      3,
+      "LATENT"
+    ],
+    [
+      21,
+      12,
+      0,
+      13,
+      0,
+      "MODEL"
+    ],
+    [
+      22,
+      11,
+      0,
+      13,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      23,
+      12,
+      0,
+      14,
+      0,
+      "MODEL"
+    ],
+    [
+      24,
+      7,
+      7,
+      14,
+      1,
+      "INT"
+    ],
+    [
+      25,
+      9,
+      0,
+      15,
+      0,
+      "NOISE"
+    ],
+    [
+      26,
+      13,
+      0,
+      15,
+      1,
+      "GUIDER"
+    ],
+    [
+      27,
+      3,
+      0,
+      15,
+      2,
+      "SAMPLER"
+    ],
+    [
+      28,
+      14,
+      0,
+      15,
+      3,
+      "SIGMAS"
+    ],
+    [
+      29,
+      11,
+      3,
+      15,
+      4,
+      "LATENT"
+    ],
+    [
+      31,
+      4,
+      0,
+      16,
+      1,
+      "VAE"
+    ],
+    [
+      33,
+      5,
+      0,
+      17,
+      1,
+      "VAE"
+    ],
+    [
+      34,
+      16,
+      0,
+      18,
+      0,
+      "IMAGE"
+    ],
+    [
+      35,
+      17,
+      0,
+      18,
+      1,
+      "AUDIO"
+    ],
+    [
+      36,
+      11,
+      1,
+      18,
+      3,
+      "INT"
+    ],
+    [
+      37,
+      7,
+      0,
+      18,
+      2,
+      "H3_CHAIN_STATE"
+    ],
+    [
+      38,
+      7,
+      0,
+      19,
+      0,
+      "H3_CHAIN_STATE"
+    ],
+    [
+      39,
+      18,
+      0,
+      19,
+      1,
+      "IMAGE"
+    ],
+    [
+      41,
+      18,
+      1,
+      19,
+      3,
+      "AUDIO"
+    ],
+    [
+      42,
+      18,
+      2,
+      19,
+      4,
+      "IMAGE"
+    ],
+    [
+      43,
+      24,
+      0,
+      20,
+      0,
+      "H3_CHAIN_MANIFEST"
+    ],
+    [
+      45,
+      25,
+      0,
+      22,
+      0,
+      "H3_CHAIN_PLAN"
+    ],
+    [
+      46,
+      7,
+      0,
+      23,
+      0,
+      "H3_CHAIN_STATE"
+    ],
+    [
+      47,
+      19,
+      0,
+      23,
+      1,
+      "H3_CHAIN_SEGMENT"
+    ],
+    [
+      48,
+      18,
+      1,
+      23,
+      2,
+      "AUDIO"
+    ],
+    [
+      49,
+      6,
+      0,
+      24,
+      0,
+      "H3_CHAIN_FLOW"
+    ],
+    [
+      50,
+      7,
+      0,
+      24,
+      1,
+      "H3_CHAIN_STATE"
+    ],
+    [
+      51,
+      18,
+      0,
+      24,
+      2,
+      "IMAGE"
+    ],
+    [
+      53,
+      23,
+      0,
+      24,
+      4,
+      "H3_CHAIN_SEGMENT"
+    ],
+    [
+      54,
+      27,
+      0,
+      25,
+      0,
+      "H3_CHAIN_PLAN"
+    ],
+    [
+      55,
+      29,
+      1,
+      25,
+      3,
+      "H3_TAGGED_REFERENCES"
+    ],
+    [
+      56,
+      29,
+      0,
+      25,
+      6,
+      "H3_PROJECT_ASSETS"
+    ],
+    [
+      57,
+      25,
+      0,
+      26,
+      0,
+      "H3_CHAIN_PLAN"
+    ],
+    [
+      58,
+      28,
+      0,
+      27,
+      0,
+      "H3_CHAIN_POLICY"
+    ],
+    [
+      59,
+      29,
+      0,
+      27,
+      2,
+      "H3_PROJECT_ASSETS"
+    ],
+    [
+      60,
+      25,
+      0,
+      30,
+      0,
+      "H3_CHAIN_PLAN"
+    ],
+    [
+      61,
+      21,
+      0,
+      33,
+      0,
+      "MODEL"
+    ],
+    [
+      62,
+      33,
+      0,
+      12,
+      0,
+      "MODEL"
+    ],
+    [
+      68,
+      7,
+      6,
+      10,
+      10,
+      "INT"
+    ],
+    [
+      75,
+      7,
+      8,
+      10,
+      8,
+      "INT"
+    ],
+    [
+      76,
+      7,
+      9,
+      10,
+      9,
+      "INT"
+    ],
+    [
+      81,
+      7,
+      0,
+      42,
+      0,
+      "H3_CHAIN_STATE"
+    ],
+    [
+      140,
+      1,
+      0,
+      71,
+      0,
+      "MODEL"
+    ],
+    [
+      141,
+      71,
+      0,
+      21,
+      0,
+      "MODEL"
+    ],
+    [
+      142,
+      15,
+      0,
+      19,
+      2,
+      "LATENT"
+    ],
+    [
+      143,
+      15,
+      0,
+      24,
+      3,
+      "LATENT"
+    ],
+    [
+      144,
+      15,
+      0,
+      17,
+      0,
+      "LATENT"
+    ],
+    [
+      153,
+      15,
+      0,
+      16,
+      0,
+      "LATENT"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "01 • PROJECT & SCENES",
+      "bounding": [
+        987.1309291406188,
+        274.5701482809632,
+        3600,
+        2070
+      ],
+      "color": "#315566",
+      "flags": {}
+    },
+    {
+      "id": 2,
+      "title": "02 • MODELS & INPUTS",
+      "bounding": [
+        3716.627991020767,
+        92.83704704103204,
+        540,
+        2206
+      ],
+      "color": "#393f58",
+      "flags": {}
+    },
+    {
+      "id": 3,
+      "title": "03 • PREPARE SCENE",
+      "bounding": [
+        4390,
+        90,
+        600,
+        1982
+      ],
+      "color": "#394c49",
+      "flags": {}
+    },
+    {
+      "id": 4,
+      "title": "04 • SAMPLE & DECODE",
+      "bounding": [
+        5060,
+        90,
+        440,
+        498
+      ],
+      "color": "#393f58",
+      "flags": {}
+    },
+    {
+      "id": 5,
+      "title": "05 • PREPARE SCENE",
+      "bounding": [
+        5570,
+        90,
+        500,
+        788
+      ],
+      "color": "#394c49",
+      "flags": {}
+    },
+    {
+      "id": 6,
+      "title": "06 • REVIEW & CONTINUE",
+      "bounding": [
+        6140,
+        90,
+        840,
+        1330
+      ],
+      "color": "#393f58",
+      "flags": {}
+    },
+    {
+      "id": 7,
+      "title": "07 • DELIVER",
+      "bounding": [
+        7532.483851678963,
+        20.8680718883098,
+        520,
+        810
+      ],
+      "color": "#394c49",
+      "flags": {}
+    },
+    {
+      "id": 8,
+      "title": "RECOVERY • DISABLED / NO SAMPLING",
+      "bounding": [
+        3780,
+        2346,
+        1090,
+        490
+      ],
+      "color": "#665135",
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.4472557666091748,
+      "offset": [
+        -3211.8225012161442,
+        583.5471274261694
+      ]
+    },
+    "comfyui_mcp": {
+      "workflow_uuid": "158840d8-7fc5-5e78-8fd8-64c8b310f7cd"
+    },
+    "frontendVersion": "1.52.7",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
