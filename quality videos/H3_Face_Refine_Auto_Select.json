@@ -1,8 +1,8 @@
 {
   "id": "6e29cc8d-a136-481c-98aa-8e1ac695ba71",
   "revision": 0,
-  "last_node_id": 125,
-  "last_link_id": 66,
+  "last_node_id": 127,
+  "last_link_id": 70,
   "nodes": [
     {
       "id": 8,
@@ -187,7 +187,7 @@
         75
       ],
       "flags": {},
-      "order": 39,
+      "order": 41,
       "mode": 0,
       "inputs": [
         {
@@ -355,7 +355,7 @@
         146
       ],
       "flags": {},
-      "order": 27,
+      "order": 28,
       "mode": 2,
       "inputs": [
         {
@@ -474,7 +474,7 @@
         80
       ],
       "flags": {},
-      "order": 30,
+      "order": 32,
       "mode": 0,
       "inputs": [
         {
@@ -515,7 +515,7 @@
         80
       ],
       "flags": {},
-      "order": 38,
+      "order": 40,
       "mode": 0,
       "inputs": [
         {
@@ -556,7 +556,7 @@
         80
       ],
       "flags": {},
-      "order": 43,
+      "order": 45,
       "mode": 0,
       "inputs": [
         {
@@ -597,7 +597,7 @@
         80
       ],
       "flags": {},
-      "order": 44,
+      "order": 46,
       "mode": 0,
       "inputs": [
         {
@@ -638,7 +638,7 @@
         110
       ],
       "flags": {},
-      "order": 46,
+      "order": 48,
       "mode": 0,
       "inputs": [
         {
@@ -679,7 +679,7 @@
         110
       ],
       "flags": {},
-      "order": 49,
+      "order": 51,
       "mode": 0,
       "inputs": [
         {
@@ -720,7 +720,7 @@
         110
       ],
       "flags": {},
-      "order": 25,
+      "order": 26,
       "mode": 0,
       "inputs": [
         {
@@ -761,7 +761,7 @@
         80
       ],
       "flags": {},
-      "order": 32,
+      "order": 34,
       "mode": 0,
       "inputs": [
         {
@@ -802,7 +802,7 @@
         80
       ],
       "flags": {},
-      "order": 36,
+      "order": 38,
       "mode": 0,
       "inputs": [
         {
@@ -1041,51 +1041,6 @@
       "bgcolor": "#353"
     },
     {
-      "id": 12,
-      "type": "LoraLoaderModelOnly",
-      "pos": [
-        -1470,
-        955
-      ],
-      "size": [
-        330,
-        105
-      ],
-      "flags": {},
-      "order": 23,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 11
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [
-            12
-          ]
-        }
-      ],
-      "title": "Turbo LoRA — steps must match",
-      "properties": {
-        "Node name for S&R": "LoraLoaderModelOnly"
-      },
-      "widgets_values": [
-        "minimax_h3_turbo_v4_step600_ema_pruned_comfyui.safetensors",
-        1
-      ],
-      "widgets_values_named": {
-        "lora_name": "minimax_h3_turbo_v4_step600_ema_pruned_comfyui.safetensors",
-        "strength_model": 1
-      },
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
       "id": 121,
       "type": "PreviewImage",
       "pos": [
@@ -1097,7 +1052,7 @@
         246
       ],
       "flags": {},
-      "order": 47,
+      "order": 49,
       "mode": 0,
       "inputs": [
         {
@@ -1129,7 +1084,7 @@
         75
       ],
       "flags": {},
-      "order": 42,
+      "order": 44,
       "mode": 0,
       "inputs": [
         {
@@ -1202,145 +1157,6 @@
       "bgcolor": "#353"
     },
     {
-      "id": 9,
-      "type": "MiniMaxH3ReferenceToVideo",
-      "pos": [
-        -419.0917638723327,
-        393.8470664902586
-      ],
-      "size": [
-        360,
-        384
-      ],
-      "flags": {},
-      "order": 28,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 2
-        },
-        {
-          "name": "vae",
-          "shape": 7,
-          "type": "VAE",
-          "link": 3
-        },
-        {
-          "name": "audio_vae",
-          "shape": 7,
-          "type": "VAE",
-          "link": 4
-        },
-        {
-          "name": "ref_images.ref_image_0",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": 5
-        },
-        {
-          "name": "ref_images.ref_image_1",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": 6
-        },
-        {
-          "name": "ref_images.ref_image_2",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": null
-        },
-        {
-          "label": "ref_video_0",
-          "name": "ref_videos.ref_video_0",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": null
-        },
-        {
-          "label": "ref_video_audio_0",
-          "name": "ref_video_audios.ref_video_audio_0",
-          "shape": 7,
-          "type": "AUDIO",
-          "link": null
-        },
-        {
-          "name": "ref_audios.ref_audio_0",
-          "shape": 7,
-          "type": "AUDIO",
-          "link": 55
-        },
-        {
-          "name": "ref_audios.ref_audio_1",
-          "shape": 7,
-          "type": "AUDIO",
-          "link": null
-        },
-        {
-          "name": "width",
-          "type": "INT",
-          "widget": {
-            "name": "width"
-          },
-          "link": 37
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "widget": {
-            "name": "height"
-          },
-          "link": 38
-        },
-        {
-          "name": "length",
-          "type": "INT",
-          "widget": {
-            "name": "length"
-          },
-          "link": 40
-        }
-      ],
-      "outputs": [
-        {
-          "name": "positive",
-          "type": "CONDITIONING",
-          "links": [
-            17
-          ]
-        },
-        {
-          "name": "LATENT",
-          "type": "LATENT",
-          "links": [
-            8,
-            41
-          ]
-        }
-      ],
-      "title": "3. Conditioning + EMPTY AV latent",
-      "properties": {
-        "Node name for S&R": "MiniMaxH3ReferenceToVideo"
-      },
-      "widgets_values": [
-        "A young South Asian woman with long dark wavy hair falling past her shoulders, warm medium skin tone, and a small stud earring. She wears a white ribbed tank top with a small multicolor (pink-dominant) floral print, a medium-blue denim mini skirt with two back pockets, and white low-top sneakers. Her build is slim and proportionate; arms rest relaxed at her sides. <Picture 1> locks her full-body front-facing proportion, wardrobe drape, footwear, and serves as the baseline for her side silhouette, natural posture, and back-view body proportions. <Picture 2> anchors her face identity, skin tone, earring, and the floral top's print detail in a three-quarter view, while guiding her profile and back-angle head turns. Both Pictures condition the clip's identity and wardrobe simultaneously across all 360 degrees; no Picture is tied to a specific orbit segment.SUMMARYA single unbroken 12-second 35 mm full-body wide shot of the woman standing on fine pale tropical sand at golden hour. The camera executes a smooth clockwise 360° dolly-orbit at chest height and constant 3–4 m radius, passing from front-on through her left profile, directly behind her, her right profile, and back to front-on. She laughs softly, shifts her weight between feet, and tilts her head to maintain a joyful, open expression throughout. Turquoise surf laps gently behind her; distant palm silhouettes frame the horizon. No cuts, no zoom, no tilt.RETENTION ANALYSISIdentity continuity: Face shape, warm medium skin tone, small stud earring, and long dark wavy hair must remain consistent across all orbit angles, extrapolating her side and back views cleanly from <Picture 2> (primary face) and <Picture 1> (hair length/texture).Wardrobe lock: White ribbed floral tank top, medium-blue denim mini skirt (with two back pockets), and white low-top sneakers must not change, tear, or shift drape unrealistically, holding the front layout of <Picture 1> and logically extending it to the back pockets during the reverse angle.Environment lock: Fine pale sand lower third, turquoise water mid-ground, palm silhouettes and open sky upper background must persist at every orbit angle with no foreground occlusion.Camera lock: Chest-height, 35 mm equivalent, level horizon, subject centered, constant radius—no drift, no zoom, no tilt.Lighting: Warm golden-hour key raking from screen-left in the first half and screen-right in the second half of the orbit; no harsh midday contrast.DETAILED DESCRIPTION0–3 seconds: The camera begins square-on, front-facing, at chest height, 35 mm equivalent, subject centered. Fine pale sand fills the lower third; turquoise surf rolls gently in the mid-background; distant palm silhouettes trace the horizon under a bright, warm sky. The woman stands planted, feet shoulder-width on the sand, arms relaxed at her sides (<Picture 1> front proportion and wardrobe; <Picture 2> face and identity). She gives a soft, genuine laugh, shoulders lifting slightly, head tilting a few degrees to her left. Warm golden-hour light rakes from screen-left, catching the right side of her face and the ribbed texture of her white floral top. The camera begins its smooth clockwise arc, drifting toward her left profile.3–6 seconds: The orbit sweeps through her left side profile and continues toward the position directly behind her. Her long dark wavy hair catches the breeze and lifts slightly off her left shoulder, maintaining the flow and length established in <Picture 1>. She shifts her weight from her right foot to her left, a small grounded rock, and turns her head a few degrees further to the left so her face and joyful smile (<Picture 2>) remain partially visible even as her back grows larger in frame. The turquoise surf and palm silhouettes shift in the background as the camera angle changes. The light, now more frontal from the camera's new vantage, softens across her back and the white of her top.6–9 seconds: The camera passes directly behind her, showing her full back—long dark wavy hair centered down her spine, the two pockets of the denim mini skirt, the ribbed floral top's back drape, and white sneakers planted in the sand, maintaining proportions derived from <Picture 1>. She pivots her head gently to her right, a subtle turn, keeping a bright smile and a glint of her earring (<Picture 2>) visible at the edge of her profile. The camera continues its clockwise sweep toward her right side. Golden-hour light now rakes from screen-right, warming the right contour of her hair and the sand behind her. Surf sound and a light ocean breeze on her hair are the dominant textures.9–12 seconds: The orbit completes its final quadrant, sweeping from her right profile back to square-on front-facing. Her face turns progressively back toward the camera; the full front view re-establishes with <Picture 1> proportion and <Picture 2> identity. She settles her weight back to a neutral stance, both feet planted, arms still relaxed, and offers one last small, warm laugh with her head level. The camera arrives at its starting framing: front-on, full-body, centered, chest-height, 35 mm, level horizon. The end framing is a near-exact match of the opening. Sand, surf, palms, and sky remain unchanged. No cut. The orbit is one continuous, unbroken movement.OVERALL SOUNDSCAPEContinuous natural beach ambience throughout the 12 seconds. Gentle turquoise surf rolling and lapping on pale sand forms the rhythmic bed, slightly closer and more textured when the camera angle brings the water nearer in the background (3–9 seconds). A soft tropical ocean breeze moves through the distant palm fronds, producing a faint, intermittent whisper. The woman's soft, natural laugh is heard twice—once around the 1–2 second mark and again near the 10–11 second mark—warm, close, and unstrained. The subtle shift of her denim skirt and the faint tap of her white sneakers shifting weight on dry sand add small, dry textural accents. No wind gusts, no seagulls, no distant traffic. The soundscape is intimate, warm, and unhurried, matching the slow orbit tempo.NON-DIEGETIC MUSICNo non-diegetic music. The shot carries on natural beach sound and the subject's voice alone; any score or ambient bed is to be layered in post if desired. The H3 prompt should produce only diegetic audio. <Audio 1> is the sound made by the character",
-        768,
-        768,
-        362,
-        "match"
-      ],
-      "widgets_values_named": {
-        "prompt": "A young South Asian woman with long dark wavy hair falling past her shoulders, warm medium skin tone, and a small stud earring. She wears a white ribbed tank top with a small multicolor (pink-dominant) floral print, a medium-blue denim mini skirt with two back pockets, and white low-top sneakers. Her build is slim and proportionate; arms rest relaxed at her sides. <Picture 1> locks her full-body front-facing proportion, wardrobe drape, footwear, and serves as the baseline for her side silhouette, natural posture, and back-view body proportions. <Picture 2> anchors her face identity, skin tone, earring, and the floral top's print detail in a three-quarter view, while guiding her profile and back-angle head turns. Both Pictures condition the clip's identity and wardrobe simultaneously across all 360 degrees; no Picture is tied to a specific orbit segment.SUMMARYA single unbroken 12-second 35 mm full-body wide shot of the woman standing on fine pale tropical sand at golden hour. The camera executes a smooth clockwise 360° dolly-orbit at chest height and constant 3–4 m radius, passing from front-on through her left profile, directly behind her, her right profile, and back to front-on. She laughs softly, shifts her weight between feet, and tilts her head to maintain a joyful, open expression throughout. Turquoise surf laps gently behind her; distant palm silhouettes frame the horizon. No cuts, no zoom, no tilt.RETENTION ANALYSISIdentity continuity: Face shape, warm medium skin tone, small stud earring, and long dark wavy hair must remain consistent across all orbit angles, extrapolating her side and back views cleanly from <Picture 2> (primary face) and <Picture 1> (hair length/texture).Wardrobe lock: White ribbed floral tank top, medium-blue denim mini skirt (with two back pockets), and white low-top sneakers must not change, tear, or shift drape unrealistically, holding the front layout of <Picture 1> and logically extending it to the back pockets during the reverse angle.Environment lock: Fine pale sand lower third, turquoise water mid-ground, palm silhouettes and open sky upper background must persist at every orbit angle with no foreground occlusion.Camera lock: Chest-height, 35 mm equivalent, level horizon, subject centered, constant radius—no drift, no zoom, no tilt.Lighting: Warm golden-hour key raking from screen-left in the first half and screen-right in the second half of the orbit; no harsh midday contrast.DETAILED DESCRIPTION0–3 seconds: The camera begins square-on, front-facing, at chest height, 35 mm equivalent, subject centered. Fine pale sand fills the lower third; turquoise surf rolls gently in the mid-background; distant palm silhouettes trace the horizon under a bright, warm sky. The woman stands planted, feet shoulder-width on the sand, arms relaxed at her sides (<Picture 1> front proportion and wardrobe; <Picture 2> face and identity). She gives a soft, genuine laugh, shoulders lifting slightly, head tilting a few degrees to her left. Warm golden-hour light rakes from screen-left, catching the right side of her face and the ribbed texture of her white floral top. The camera begins its smooth clockwise arc, drifting toward her left profile.3–6 seconds: The orbit sweeps through her left side profile and continues toward the position directly behind her. Her long dark wavy hair catches the breeze and lifts slightly off her left shoulder, maintaining the flow and length established in <Picture 1>. She shifts her weight from her right foot to her left, a small grounded rock, and turns her head a few degrees further to the left so her face and joyful smile (<Picture 2>) remain partially visible even as her back grows larger in frame. The turquoise surf and palm silhouettes shift in the background as the camera angle changes. The light, now more frontal from the camera's new vantage, softens across her back and the white of her top.6–9 seconds: The camera passes directly behind her, showing her full back—long dark wavy hair centered down her spine, the two pockets of the denim mini skirt, the ribbed floral top's back drape, and white sneakers planted in the sand, maintaining proportions derived from <Picture 1>. She pivots her head gently to her right, a subtle turn, keeping a bright smile and a glint of her earring (<Picture 2>) visible at the edge of her profile. The camera continues its clockwise sweep toward her right side. Golden-hour light now rakes from screen-right, warming the right contour of her hair and the sand behind her. Surf sound and a light ocean breeze on her hair are the dominant textures.9–12 seconds: The orbit completes its final quadrant, sweeping from her right profile back to square-on front-facing. Her face turns progressively back toward the camera; the full front view re-establishes with <Picture 1> proportion and <Picture 2> identity. She settles her weight back to a neutral stance, both feet planted, arms still relaxed, and offers one last small, warm laugh with her head level. The camera arrives at its starting framing: front-on, full-body, centered, chest-height, 35 mm, level horizon. The end framing is a near-exact match of the opening. Sand, surf, palms, and sky remain unchanged. No cut. The orbit is one continuous, unbroken movement.OVERALL SOUNDSCAPEContinuous natural beach ambience throughout the 12 seconds. Gentle turquoise surf rolling and lapping on pale sand forms the rhythmic bed, slightly closer and more textured when the camera angle brings the water nearer in the background (3–9 seconds). A soft tropical ocean breeze moves through the distant palm fronds, producing a faint, intermittent whisper. The woman's soft, natural laugh is heard twice—once around the 1–2 second mark and again near the 10–11 second mark—warm, close, and unstrained. The subtle shift of her denim skirt and the faint tap of her white sneakers shifting weight on dry sand add small, dry textural accents. No wind gusts, no seagulls, no distant traffic. The soundscape is intimate, warm, and unhurried, matching the slow orbit tempo.NON-DIEGETIC MUSICNo non-diegetic music. The shot carries on natural beach sound and the subject's voice alone; any score or ambient bed is to be layered in post if desired. The H3 prompt should produce only diegetic audio. <Audio 1> is the sound made by the character",
-        "width": 768,
-        "height": 768,
-        "length": 362,
-        "ref_image_size": "match"
-      },
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
       "id": 122,
       "type": "VAEDecode",
       "pos": [
@@ -1352,7 +1168,7 @@
         75
       ],
       "flags": {},
-      "order": 33,
+      "order": 35,
       "mode": 0,
       "inputs": [
         {
@@ -1394,7 +1210,7 @@
         246
       ],
       "flags": {},
-      "order": 26,
+      "order": 27,
       "mode": 0,
       "inputs": [
         {
@@ -1412,64 +1228,7 @@
       ],
       "properties": {
         "Node name for S&R": "PreviewImage"
-      },
-      "widgets_values": [],
-      "widgets_values_named": {}
-    },
-    {
-      "id": 10,
-      "type": "H3InjectVideoLatent",
-      "pos": [
-        -29.091763872332713,
-        393.8470664902586
-      ],
-      "size": [
-        330,
-        105
-      ],
-      "flags": {},
-      "order": 29,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "av_latent",
-          "type": "LATENT",
-          "link": 8
-        },
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 9
-        },
-        {
-          "name": "vae",
-          "type": "VAE",
-          "link": 10
-        }
-      ],
-      "outputs": [
-        {
-          "name": "av_latent",
-          "type": "LATENT",
-          "links": [
-            13,
-            42,
-            64
-          ]
-        },
-        {
-          "name": "report",
-          "type": "STRING",
-          "links": [
-            66
-          ]
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "H3InjectVideoLatent"
-      },
-      "color": "#322",
-      "bgcolor": "#533"
+      }
     },
     {
       "id": 125,
@@ -1483,7 +1242,7 @@
         247.60974846623637
       ],
       "flags": {},
-      "order": 34,
+      "order": 36,
       "mode": 0,
       "inputs": [
         {
@@ -1517,7 +1276,7 @@
         270
       ],
       "flags": {},
-      "order": 45,
+      "order": 47,
       "mode": 0,
       "inputs": [
         {
@@ -1640,78 +1399,13 @@
         "Node name for S&R": "RandomNoise"
       },
       "widgets_values": [
-        540298892855180,
+        952444808286156,
         "randomize"
       ],
       "widgets_values_named": {
-        "noise_seed": 540298892855180,
+        "noise_seed": 952444808286156,
         "control_after_generate": "randomize"
       }
-    },
-    {
-      "id": 13,
-      "type": "MiniMaxH3NativeAudioLock",
-      "pos": [
-        360.9082361276673,
-        393.8470664902586
-      ],
-      "size": [
-        330,
-        120
-      ],
-      "flags": {},
-      "order": 31,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 12
-        },
-        {
-          "name": "av_latent",
-          "type": "LATENT",
-          "link": 13
-        },
-        {
-          "name": "audio_vae",
-          "type": "VAE",
-          "link": 14
-        },
-        {
-          "name": "audio",
-          "type": "AUDIO",
-          "link": 15
-        }
-      ],
-      "outputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "links": [
-            39
-          ]
-        },
-        {
-          "name": "av_latent",
-          "type": "LATENT",
-          "links": [
-            23,
-            43
-          ]
-        },
-        {
-          "name": "exact_audio",
-          "type": "AUDIO",
-          "links": []
-        }
-      ],
-      "title": "5. Lock audio -> LIPSYNC",
-      "properties": {
-        "Node name for S&R": "MiniMaxH3NativeAudioLock"
-      },
-      "color": "#232",
-      "bgcolor": "#353"
     },
     {
       "id": 18,
@@ -1725,7 +1419,7 @@
         326
       ],
       "flags": {},
-      "order": 41,
+      "order": 43,
       "mode": 0,
       "inputs": [
         {
@@ -1788,7 +1482,7 @@
         242
       ],
       "flags": {},
-      "order": 35,
+      "order": 37,
       "mode": 0,
       "inputs": [
         {
@@ -1866,7 +1560,7 @@
         135
       ],
       "flags": {},
-      "order": 40,
+      "order": 42,
       "mode": 0,
       "inputs": [
         {
@@ -1902,94 +1596,6 @@
       "bgcolor": "#533"
     },
     {
-      "id": 6,
-      "type": "LoadImage",
-      "pos": [
-        -1860,
-        405
-      ],
-      "size": [
-        330,
-        330
-      ],
-      "flags": {},
-      "order": 20,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            5
-          ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": []
-        }
-      ],
-      "title": "Load Image — Ref 1, character identity",
-      "properties": {
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "QwenEdit_00002_.png",
-        "image"
-      ],
-      "widgets_values_named": {
-        "image": "QwenEdit_00002_.png",
-        "upload": "image"
-      },
-      "color": "#233",
-      "bgcolor": "#355"
-    },
-    {
-      "id": 7,
-      "type": "LoadImage",
-      "pos": [
-        -1860,
-        805
-      ],
-      "size": [
-        336.30625,
-        330
-      ],
-      "flags": {},
-      "order": 21,
-      "mode": 4,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            6
-          ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": []
-        }
-      ],
-      "title": "Load Image — Ref 2, optional (wardrobe etc)",
-      "properties": {
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "Woman_standing_in_white_top_2K_20260913222230.jpeg",
-        "image"
-      ],
-      "widgets_values_named": {
-        "image": "Woman_standing_in_white_top_2K_20260913222230.jpeg",
-        "upload": "image"
-      },
-      "color": "#233",
-      "bgcolor": "#355"
-    },
-    {
       "id": 123,
       "type": "PreviewImage",
       "pos": [
@@ -2001,7 +1607,7 @@
         246
       ],
       "flags": {},
-      "order": 37,
+      "order": 39,
       "mode": 0,
       "inputs": [
         {
@@ -2030,10 +1636,10 @@
       ],
       "size": [
         390,
-        1000.9411764705883
+        334
       ],
       "flags": {},
-      "order": 48,
+      "order": 50,
       "mode": 0,
       "inputs": [
         {
@@ -2086,13 +1692,13 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "output_00005-audio.mp4",
+            "filename": "output_00012-audio.mp4",
             "subfolder": "video/FaceRefined",
             "type": "output",
             "format": "video/h264-mp4",
             "frame_rate": 24,
-            "workflow": "output_00005.png",
-            "fullpath": "/Users/maheshthakre/Documents/ComfyUI/output/video/FaceRefined/output_00005-audio.mp4"
+            "workflow": "output_00012.png",
+            "fullpath": "/Users/maheshthakre/Documents/ComfyUI/output/video/FaceRefined/output_00012-audio.mp4"
           }
         }
       },
@@ -2111,123 +1717,13 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "output_00005-audio.mp4",
+            "filename": "output_00012-audio.mp4",
             "subfolder": "video/FaceRefined",
             "type": "output",
             "format": "video/h264-mp4",
             "frame_rate": 24,
-            "workflow": "output_00005.png",
-            "fullpath": "/Users/maheshthakre/Documents/ComfyUI/output/video/FaceRefined/output_00005-audio.mp4"
-          }
-        }
-      },
-      "color": "#233",
-      "bgcolor": "#355"
-    },
-    {
-      "id": 1,
-      "type": "VHS_LoadVideoPath",
-      "pos": [
-        -1071.641689506713,
-        396.631747948764
-      ],
-      "size": [
-        330,
-        847.0588235294118
-      ],
-      "flags": {},
-      "order": 22,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "meta_batch",
-          "shape": 7,
-          "type": "VHS_BatchManager",
-          "link": null
-        },
-        {
-          "name": "vae",
-          "shape": 7,
-          "type": "VAE",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            1,
-            28
-          ]
-        },
-        {
-          "name": "frame_count",
-          "type": "INT",
-          "links": []
-        },
-        {
-          "name": "audio",
-          "type": "AUDIO",
-          "links": [
-            15,
-            36,
-            55
-          ]
-        },
-        {
-          "name": "video_info",
-          "type": "VHS_VIDEOINFO",
-          "links": []
-        }
-      ],
-      "title": "1. Source clip",
-      "properties": {
-        "Node name for S&R": "VHS_LoadVideoPath"
-      },
-      "widgets_values": {
-        "video": "/Users/maheshthakre/Documents/ComfyUI_Related/Stories/.other/video-0059/MiniMax_H3_00037-audio.mp4",
-        "force_rate": 0,
-        "custom_width": 0,
-        "custom_height": 0,
-        "frame_load_cap": 0,
-        "skip_first_frames": 0,
-        "select_every_nth": 1,
-        "format": "AnimateDiff",
-        "videopreview": {
-          "hidden": false,
-          "paused": false,
-          "params": {
-            "filename": "/Users/maheshthakre/Documents/ComfyUI_Related/Stories/.other/video-0059/MiniMax_H3_00037-audio.mp4",
-            "type": "path",
-            "format": "video/mp4",
-            "force_rate": 0,
-            "frame_load_cap": 0,
-            "skip_first_frames": 0,
-            "select_every_nth": 1
-          }
-        }
-      },
-      "widgets_values_named": {
-        "video": "/Users/maheshthakre/Documents/ComfyUI_Related/Stories/.other/video-0059/MiniMax_H3_00037-audio.mp4",
-        "force_rate": 0,
-        "custom_width": 0,
-        "custom_height": 0,
-        "frame_load_cap": 0,
-        "skip_first_frames": 0,
-        "select_every_nth": 1,
-        "format": "AnimateDiff",
-        "videopreview": {
-          "hidden": false,
-          "paused": false,
-          "params": {
-            "filename": "/Users/maheshthakre/Documents/ComfyUI_Related/Stories/.other/video-0059/MiniMax_H3_00037-audio.mp4",
-            "type": "path",
-            "format": "video/mp4",
-            "force_rate": 0,
-            "frame_load_cap": 0,
-            "skip_first_frames": 0,
-            "select_every_nth": 1
+            "workflow": "output_00012.png",
+            "fullpath": "/Users/maheshthakre/Documents/ComfyUI/output/video/FaceRefined/output_00012-audio.mp4"
           }
         }
       },
@@ -2380,6 +1876,658 @@
       },
       "color": "#322",
       "bgcolor": "#533"
+    },
+    {
+      "id": 6,
+      "type": "LoadImage",
+      "pos": [
+        -1860,
+        405
+      ],
+      "size": [
+        330,
+        330
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            5
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": []
+        }
+      ],
+      "title": "Load Image — Ref 1, character identity",
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "character_sheet.png",
+        "image"
+      ],
+      "widgets_values_named": {
+        "image": "character_sheet.png",
+        "upload": "image"
+      },
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 7,
+      "type": "LoadImage",
+      "pos": [
+        -1860,
+        805
+      ],
+      "size": [
+        336.30625,
+        330
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            6
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": []
+        }
+      ],
+      "title": "Load Image — Ref 2, optional (wardrobe etc)",
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "reference.png",
+        "image"
+      ],
+      "widgets_values_named": {
+        "image": "reference.png",
+        "upload": "image"
+      },
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 9,
+      "type": "MiniMaxH3ReferenceToVideo",
+      "pos": [
+        -419.0917638723327,
+        393.8470664902586
+      ],
+      "size": [
+        360,
+        364
+      ],
+      "flags": {},
+      "order": 29,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 2
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": 3
+        },
+        {
+          "name": "audio_vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": 4
+        },
+        {
+          "name": "ref_images.ref_image_0",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 5
+        },
+        {
+          "name": "ref_images.ref_image_1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 6
+        },
+        {
+          "name": "ref_images.ref_image_2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "label": "ref_video_0",
+          "name": "ref_videos.ref_video_0",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "label": "ref_video_audio_0",
+          "name": "ref_video_audios.ref_video_audio_0",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "name": "ref_audios.ref_audio_0",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 37
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 38
+        },
+        {
+          "name": "length",
+          "type": "INT",
+          "widget": {
+            "name": "length"
+          },
+          "link": 40
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            17
+          ]
+        },
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            8,
+            41
+          ]
+        }
+      ],
+      "title": "3. Conditioning + EMPTY AV latent",
+      "properties": {
+        "Node name for S&R": "MiniMaxH3ReferenceToVideo"
+      },
+      "widgets_values": [
+        "id=\"woman_catwalk_approach_001\"\n\nsubject_definitions:\n<Subject 1>: A young South Asian woman with a warm, gentle smile and dark, expressive eyes. Her hair is long, dark, and wavy, styled in a voluminous half-up ponytail that cascades over her shoulder. She wears a vibrant, deep crimson-red saree with a matching sleeveless blouse; the fabric has a subtle, elegant sheen. Visual identity is strictly governed by <Picture 1> and <Picture 2>.\n<Subject 2>: A rustic wooden pedestrian bridge constructed from weathered, light-brown timber planks.\n<Environment>: A lush, verdant garden/park with dense green bushes and tall, leafy trees, as seen in <Picture 2>.\n\nsummary:\nThe subject transitions from a static pose to a rhythmic catwalk toward the camera, concluding with a 180-degree turn to face away.\n\nretention_analysis:\n<Picture 1> → <Subject 1>: fully_preserved (facial identity, hair texture).\n<Picture 2> → <Subject 1>: partially_preserved (exact pose/clothing drape at start).\n<Picture 2> → <Subject 2>: fully_preserved (bridge construction).\n<Picture 2> → <Environment>: fully_preserved (foliage and light).\n\ndetailed_description:\n[Shot 1] A medium shot establishes <Subject 1> standing in the exact pose and composition as <Picture 2>.\n<Subject 1> begins in a poised, stationary state, then initiates a rhythmic catwalk toward the lens. \nAs she performs the catwalk, she exhibits a graceful weight transfer with each step, causing a rhythmic lateral sway in her hips and a fluid movement in the folds of her red saree. Her hair sways naturally with her momentum.\nThe camera performs a smooth tracking backward movement at a constant speed, maintaining a medium shot to keep <Subject 1> centered in the frame.\nUpon reaching the edge of the wooden walkway, <Subject 1> pauses momentarily, then executes a fluid 180-degree pivot (turning her back to the camera).\nThe shot ends with <Subject 1> facing away from the lens, her silhouette outlined by the soft garden light.\nThe sound of rhythmic, steady footsteps on hollow wood and the soft rustle of silk fabric are synchronized with her steps.\n\noverall_soundscape:\nSoft garden ambience, birds chirping, and the rhythmic, clear sound of heels clicking on wooden planks accompanied by the rustle of fabric.\n\nnon_diegetic_music:\nNone.\n",
+        768,
+        768,
+        362,
+        "match"
+      ],
+      "widgets_values_named": {
+        "prompt": "id=\"woman_catwalk_approach_001\"\n\nsubject_definitions:\n<Subject 1>: A young South Asian woman with a warm, gentle smile and dark, expressive eyes. Her hair is long, dark, and wavy, styled in a voluminous half-up ponytail that cascades over her shoulder. She wears a vibrant, deep crimson-red saree with a matching sleeveless blouse; the fabric has a subtle, elegant sheen. Visual identity is strictly governed by <Picture 1> and <Picture 2>.\n<Subject 2>: A rustic wooden pedestrian bridge constructed from weathered, light-brown timber planks.\n<Environment>: A lush, verdant garden/park with dense green bushes and tall, leafy trees, as seen in <Picture 2>.\n\nsummary:\nThe subject transitions from a static pose to a rhythmic catwalk toward the camera, concluding with a 180-degree turn to face away.\n\nretention_analysis:\n<Picture 1> → <Subject 1>: fully_preserved (facial identity, hair texture).\n<Picture 2> → <Subject 1>: partially_preserved (exact pose/clothing drape at start).\n<Picture 2> → <Subject 2>: fully_preserved (bridge construction).\n<Picture 2> → <Environment>: fully_preserved (foliage and light).\n\ndetailed_description:\n[Shot 1] A medium shot establishes <Subject 1> standing in the exact pose and composition as <Picture 2>.\n<Subject 1> begins in a poised, stationary state, then initiates a rhythmic catwalk toward the lens. \nAs she performs the catwalk, she exhibits a graceful weight transfer with each step, causing a rhythmic lateral sway in her hips and a fluid movement in the folds of her red saree. Her hair sways naturally with her momentum.\nThe camera performs a smooth tracking backward movement at a constant speed, maintaining a medium shot to keep <Subject 1> centered in the frame.\nUpon reaching the edge of the wooden walkway, <Subject 1> pauses momentarily, then executes a fluid 180-degree pivot (turning her back to the camera).\nThe shot ends with <Subject 1> facing away from the lens, her silhouette outlined by the soft garden light.\nThe sound of rhythmic, steady footsteps on hollow wood and the soft rustle of silk fabric are synchronized with her steps.\n\noverall_soundscape:\nSoft garden ambience, birds chirping, and the rhythmic, clear sound of heels clicking on wooden planks accompanied by the rustle of fabric.\n\nnon_diegetic_music:\nNone.\n",
+        "width": 768,
+        "height": 768,
+        "length": 362,
+        "ref_image_size": "match"
+      },
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 10,
+      "type": "H3InjectVideoLatent",
+      "pos": [
+        -40.29335725384527,
+        383.7113410463314
+      ],
+      "size": [
+        330,
+        105
+      ],
+      "flags": {},
+      "order": 31,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "av_latent",
+          "type": "LATENT",
+          "link": 8
+        },
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 9
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 10
+        }
+      ],
+      "outputs": [
+        {
+          "name": "av_latent",
+          "type": "LATENT",
+          "links": [
+            13,
+            42,
+            64
+          ]
+        },
+        {
+          "name": "report",
+          "type": "STRING",
+          "links": [
+            66
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "H3InjectVideoLatent"
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 12,
+      "type": "LoraLoaderModelOnly",
+      "pos": [
+        -1470,
+        955
+      ],
+      "size": [
+        330,
+        105
+      ],
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 11
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            67
+          ]
+        }
+      ],
+      "title": "Turbo LoRA — steps must match",
+      "properties": {
+        "Node name for S&R": "LoraLoaderModelOnly"
+      },
+      "widgets_values": [
+        "minimax_h3_ref2v_turbo_8step_v1.0_768p_bf16.safetensors",
+        1
+      ],
+      "widgets_values_named": {
+        "lora_name": "minimax_h3_ref2v_turbo_8step_v1.0_768p_bf16.safetensors",
+        "strength_model": 1
+      },
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 13,
+      "type": "MiniMaxH3NativeAudioLock",
+      "pos": [
+        376.0699081387095,
+        376.358049881418
+      ],
+      "size": [
+        330,
+        120
+      ],
+      "flags": {},
+      "order": 33,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 70
+        },
+        {
+          "name": "av_latent",
+          "type": "LATENT",
+          "link": 13
+        },
+        {
+          "name": "audio_vae",
+          "type": "VAE",
+          "link": 14
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 15
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            39
+          ]
+        },
+        {
+          "name": "av_latent",
+          "type": "LATENT",
+          "links": [
+            23,
+            43
+          ]
+        },
+        {
+          "name": "exact_audio",
+          "type": "AUDIO",
+          "links": []
+        }
+      ],
+      "title": "5. Lock audio -> LIPSYNC",
+      "properties": {
+        "Node name for S&R": "MiniMaxH3NativeAudioLock"
+      },
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 1,
+      "type": "VHS_LoadVideoPath",
+      "pos": [
+        -1071.641689506713,
+        396.631747948764
+      ],
+      "size": [
+        330,
+        848.4615384615385
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "meta_batch",
+          "shape": 7,
+          "type": "VHS_BatchManager",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1,
+            28
+          ]
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "links": []
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            15,
+            36
+          ]
+        },
+        {
+          "name": "video_info",
+          "type": "VHS_VIDEOINFO",
+          "links": []
+        }
+      ],
+      "title": "1. Source clip",
+      "properties": {
+        "Node name for S&R": "VHS_LoadVideoPath"
+      },
+      "widgets_values": {
+        "video": "/Users/maheshthakre/Documents/ComfyUI_Related/Stories/.other/video-0067/last-face-clip-only.mp4",
+        "force_rate": 0,
+        "custom_width": 0,
+        "custom_height": 0,
+        "frame_load_cap": 0,
+        "skip_first_frames": 0,
+        "select_every_nth": 1,
+        "format": "AnimateDiff",
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "/Users/maheshthakre/Documents/ComfyUI_Related/Stories/.other/video-0067/last-face-clip-only.mp4",
+            "type": "path",
+            "format": "video/mp4",
+            "force_rate": 0,
+            "frame_load_cap": 0,
+            "skip_first_frames": 0,
+            "select_every_nth": 1
+          }
+        }
+      },
+      "widgets_values_named": {
+        "video": "/Users/maheshthakre/Documents/ComfyUI_Related/Stories/.other/video-0067/last-face-clip-only.mp4",
+        "force_rate": 0,
+        "custom_width": 0,
+        "custom_height": 0,
+        "frame_load_cap": 0,
+        "skip_first_frames": 0,
+        "select_every_nth": 1,
+        "format": "AnimateDiff",
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "/Users/maheshthakre/Documents/ComfyUI_Related/Stories/.other/video-0067/last-face-clip-only.mp4",
+            "type": "path",
+            "format": "video/mp4",
+            "force_rate": 0,
+            "frame_load_cap": 0,
+            "skip_first_frames": 0,
+            "select_every_nth": 1
+          }
+        }
+      },
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 126,
+      "type": "ModelPreviewOverrideKJ",
+      "pos": [
+        -522.5589397551717,
+        -726.2662851588515
+      ],
+      "size": [
+        450,
+        946.78125
+      ],
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 67
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            69
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ModelPreviewOverrideKJ",
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "2bf3bd9ceedcbd4d75fded2870360e28ac15619a",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.5.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        1024,
+        80,
+        true,
+        73,
+        12,
+        "taeh3.safetensors",
+        ""
+      ],
+      "widgets_values_named": {
+        "max_resolution": 1024,
+        "jpeg_quality": 80,
+        "suppress_default_preview": true,
+        "preview_frames": 73,
+        "preview_fps": 12,
+        "tiny_vae": "taeh3.safetensors",
+        "preview": ""
+      }
+    },
+    {
+      "id": 127,
+      "type": "SpectrumApplyMiniMaxH3",
+      "pos": [
+        19.007793486627502,
+        -728.6318594124406
+      ],
+      "size": [
+        390.669921875,
+        658
+      ],
+      "flags": {},
+      "order": 30,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 69
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            70
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SpectrumApplyMiniMaxH3"
+      },
+      "widgets_values": [
+        true,
+        0.5,
+        1,
+        0.1,
+        2,
+        0.75,
+        1,
+        1,
+        8,
+        false,
+        "system_ram",
+        true,
+        false,
+        false,
+        true,
+        0,
+        "system_ram",
+        "off",
+        0.65,
+        false,
+        false,
+        "coordinate_rls",
+        "hard_clip",
+        0.4,
+        "no_attenuation",
+        "balanced"
+      ],
+      "widgets_values_named": {
+        "enabled": true,
+        "blend_weight": 0.5,
+        "degree": 1,
+        "ridge_lambda": 0.1,
+        "window_size": 2,
+        "flex_window": 0.75,
+        "warmup_steps": 1,
+        "tail_actual_steps": 1,
+        "max_history": 8,
+        "debug": false,
+        "history_storage": "system_ram",
+        "bootstrap_first_forecast": true,
+        "anchor_residual_feedback": false,
+        "selective_rollback_correction": false,
+        "offline_smoothing_replay": true,
+        "audio_blend_weight": 0,
+        "offline_archive_storage": "system_ram",
+        "model_aware_mode": "off",
+        "model_aware_risk_threshold": 0.65,
+        "model_aware_trust_shrinkage": false,
+        "model_aware_replay_generic_correction": false,
+        "generic_correction_mode": "coordinate_rls",
+        "generic_correction_limiter": "hard_clip",
+        "generic_correction_limit": 0.4,
+        "generic_correction_attenuation": "no_attenuation",
+        "sa_pece_forecast_policy": "balanced"
+      }
     }
   ],
   "links": [
@@ -2460,14 +2608,6 @@
       108,
       0,
       12,
-      0,
-      "MODEL"
-    ],
-    [
-      12,
-      12,
-      0,
-      13,
       0,
       "MODEL"
     ],
@@ -2636,7 +2776,7 @@
       2,
       4,
       9,
-      10,
+      9,
       "INT"
     ],
     [
@@ -2644,7 +2784,7 @@
       2,
       5,
       9,
-      11,
+      10,
       "INT"
     ],
     [
@@ -2692,7 +2832,7 @@
       2,
       6,
       9,
-      12,
+      11,
       "INT"
     ],
     [
@@ -2768,14 +2908,6 @@
       "IMAGE"
     ],
     [
-      55,
-      1,
-      2,
-      9,
-      8,
-      "AUDIO"
-    ],
-    [
       56,
       19,
       0,
@@ -2822,6 +2954,30 @@
       125,
       0,
       "STRING"
+    ],
+    [
+      67,
+      12,
+      0,
+      126,
+      0,
+      "MODEL"
+    ],
+    [
+      69,
+      126,
+      0,
+      127,
+      0,
+      "MODEL"
+    ],
+    [
+      70,
+      127,
+      0,
+      13,
+      0,
+      "MODEL"
     ]
   ],
   "groups": [
@@ -2937,10 +3093,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 1.4390346616063054,
+      "scale": 0.4851607134990716,
       "offset": [
-        725.3236630466913,
-        -807.0895610699131
+        747.112305142158,
+        1083.5779805100592
       ]
     },
     "ue_links": [],

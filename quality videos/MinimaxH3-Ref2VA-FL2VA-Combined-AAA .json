@@ -1,8 +1,8 @@
 {
   "id": "6bcc8966-6d25-4d05-b0f2-ffd7add7dd47",
   "revision": 0,
-  "last_node_id": 257,
-  "last_link_id": 499,
+  "last_node_id": 259,
+  "last_link_id": 507,
   "nodes": [
     {
       "id": 123,
@@ -91,7 +91,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 57,
+      "order": 59,
       "mode": 0,
       "inputs": [
         {
@@ -132,7 +132,7 @@
         46
       ],
       "flags": {},
-      "order": 55,
+      "order": 56,
       "mode": 0,
       "inputs": [
         {
@@ -173,7 +173,7 @@
         26
       ],
       "flags": {},
-      "order": 34,
+      "order": 35,
       "mode": 0,
       "inputs": [
         {
@@ -208,7 +208,7 @@
         106
       ],
       "flags": {},
-      "order": 56,
+      "order": 58,
       "mode": 0,
       "inputs": [
         {
@@ -270,7 +270,7 @@
         26
       ],
       "flags": {},
-      "order": 41,
+      "order": 43,
       "mode": 0,
       "inputs": [
         {
@@ -309,7 +309,7 @@
         26
       ],
       "flags": {},
-      "order": 32,
+      "order": 33,
       "mode": 0,
       "inputs": [
         {
@@ -344,7 +344,7 @@
         26
       ],
       "flags": {},
-      "order": 33,
+      "order": 34,
       "mode": 0,
       "inputs": [
         {
@@ -454,13 +454,13 @@
         26
       ],
       "flags": {},
-      "order": 45,
+      "order": 53,
       "mode": 0,
       "inputs": [
         {
           "name": "",
           "type": "*",
-          "link": 412
+          "link": 507
         }
       ],
       "outputs": [
@@ -489,7 +489,7 @@
         26
       ],
       "flags": {},
-      "order": 36,
+      "order": 37,
       "mode": 0,
       "inputs": [
         {
@@ -562,8 +562,8 @@
         26
       ],
       "flags": {},
-      "order": 42,
-      "mode": 0,
+      "order": 44,
+      "mode": 4,
       "inputs": [
         {
           "name": "",
@@ -783,7 +783,7 @@
         106
       ],
       "flags": {},
-      "order": 53,
+      "order": 57,
       "mode": 0,
       "inputs": [
         {
@@ -833,17 +833,16 @@
       "flags": {
         "collapsed": true
       },
-      "order": 44,
+      "order": 32,
       "mode": 0,
       "inputs": [
         {
           "label": "a",
           "name": "values.a",
           "type": "FLOAT,INT,BOOLEAN",
-          "link": 261
+          "link": 500
         },
         {
-          "label": "b",
           "name": "values.b",
           "shape": 7,
           "type": "FLOAT,INT,BOOLEAN",
@@ -894,16 +893,18 @@
         78
       ],
       "flags": {},
-      "order": 51,
+      "order": 50,
       "mode": 0,
       "inputs": [
         {
           "name": "on_false",
+          "shape": 7,
           "type": "CONDITIONING",
           "link": 368
         },
         {
           "name": "on_true",
+          "shape": 7,
           "type": "CONDITIONING",
           "link": 396
         },
@@ -949,16 +950,18 @@
         78
       ],
       "flags": {},
-      "order": 52,
+      "order": 51,
       "mode": 0,
       "inputs": [
         {
           "name": "on_false",
+          "shape": 7,
           "type": "LATENT",
           "link": 401
         },
         {
           "name": "on_true",
+          "shape": 7,
           "type": "LATENT",
           "link": 400
         },
@@ -1120,7 +1123,7 @@
         26
       ],
       "flags": {},
-      "order": 46,
+      "order": 48,
       "mode": 0,
       "inputs": [
         {
@@ -1157,7 +1160,7 @@
         26
       ],
       "flags": {},
-      "order": 50,
+      "order": 52,
       "mode": 0,
       "inputs": [
         {
@@ -1192,7 +1195,7 @@
         26
       ],
       "flags": {},
-      "order": 43,
+      "order": 45,
       "mode": 0,
       "inputs": [
         {
@@ -1230,7 +1233,7 @@
         220
       ],
       "flags": {},
-      "order": 48,
+      "order": 41,
       "mode": 0,
       "inputs": [
         {
@@ -1331,7 +1334,7 @@
       ],
       "size": [
         305.4545454545455,
-        444
+        604
       ],
       "flags": {},
       "order": 47,
@@ -1344,11 +1347,13 @@
         },
         {
           "name": "vae",
+          "shape": 7,
           "type": "VAE",
           "link": 297
         },
         {
           "name": "audio_vae",
+          "shape": 7,
           "type": "VAE",
           "link": 287
         },
@@ -1360,22 +1365,49 @@
           "link": 337
         },
         {
-          "label": "ref_image_1",
           "name": "ref_images.ref_image_1",
           "shape": 7,
           "type": "IMAGE",
           "link": 340
         },
         {
-          "label": "ref_image_2",
           "name": "ref_images.ref_image_2",
           "shape": 7,
           "type": "IMAGE",
           "link": 450
         },
         {
-          "label": "ref_image_3",
           "name": "ref_images.ref_image_3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "ref_images.ref_image_4",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "ref_images.ref_image_5",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "ref_images.ref_image_6",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "ref_images.ref_image_7",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "ref_images.ref_image_8",
           "shape": 7,
           "type": "IMAGE",
           "link": null
@@ -1388,8 +1420,13 @@
           "link": 451
         },
         {
-          "label": "ref_video_1",
           "name": "ref_videos.ref_video_1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "ref_videos.ref_video_2",
           "shape": 7,
           "type": "IMAGE",
           "link": null
@@ -1402,8 +1439,13 @@
           "link": 455
         },
         {
-          "label": "ref_video_audio_1",
           "name": "ref_video_audios.ref_video_audio_1",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "name": "ref_video_audios.ref_video_audio_2",
           "shape": 7,
           "type": "AUDIO",
           "link": null
@@ -1416,8 +1458,13 @@
           "link": 452
         },
         {
-          "label": "ref_audio_1",
           "name": "ref_audios.ref_audio_1",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "name": "ref_audios.ref_audio_2",
           "shape": 7,
           "type": "AUDIO",
           "link": null
@@ -1505,7 +1552,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 58,
+      "order": 60,
       "mode": 0,
       "inputs": [
         {
@@ -1546,7 +1593,7 @@
         26
       ],
       "flags": {},
-      "order": 60,
+      "order": 62,
       "mode": 0,
       "inputs": [
         {
@@ -1578,12 +1625,12 @@
       ],
       "size": [
         358.5908919287299,
-        957.4636054717138
+        334
       ],
       "flags": {
         "collapsed": false
       },
-      "order": 59,
+      "order": 61,
       "mode": 0,
       "inputs": [
         {
@@ -1638,13 +1685,13 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "MiniMax_H3_00006-audio.mp4",
+            "filename": "MiniMax_H3_00001.mp4",
             "subfolder": "video",
             "type": "output",
             "format": "video/h264-mp4",
             "frame_rate": 24,
-            "workflow": "MiniMax_H3_00006.png",
-            "fullpath": "/Users/maheshthakre/Documents/ComfyUI/output/video/MiniMax_H3_00006-audio.mp4"
+            "workflow": "MiniMax_H3_00001.png",
+            "fullpath": "/Users/maheshthakre/Documents/ComfyUI/output/video/MiniMax_H3_00001.mp4"
           }
         }
       },
@@ -1663,13 +1710,13 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "MiniMax_H3_00006-audio.mp4",
+            "filename": "MiniMax_H3_00001.mp4",
             "subfolder": "video",
             "type": "output",
             "format": "video/h264-mp4",
             "frame_rate": 24,
-            "workflow": "MiniMax_H3_00006.png",
-            "fullpath": "/Users/maheshthakre/Documents/ComfyUI/output/video/MiniMax_H3_00006-audio.mp4"
+            "workflow": "MiniMax_H3_00001.png",
+            "fullpath": "/Users/maheshthakre/Documents/ComfyUI/output/video/MiniMax_H3_00001.mp4"
           }
         }
       }
@@ -1775,11 +1822,11 @@
         ]
       },
       "widgets_values": [
-        "minimax_h3_ref2va_bf16.safetensors",
+        "Minimax-h3_Singularity_ref2va_v1.3_int8.safetensors",
         "default"
       ],
       "widgets_values_named": {
-        "unet_name": "minimax_h3_ref2va_bf16.safetensors",
+        "unet_name": "Minimax-h3_Singularity_ref2va_v1.3_int8.safetensors",
         "weight_dtype": "default"
       }
     },
@@ -1973,13 +2020,13 @@
         104.88433266175161
       ],
       "flags": {},
-      "order": 40,
+      "order": 42,
       "mode": 0,
       "inputs": [
         {
           "name": "model",
           "type": "MODEL",
-          "link": 460
+          "link": 505
         }
       ],
       "outputs": [
@@ -1987,7 +2034,7 @@
           "name": "MODEL",
           "type": "MODEL",
           "links": [
-            412
+            503
           ]
         }
       ],
@@ -2001,11 +2048,11 @@
         }
       },
       "widgets_values": [
-        "minimax_h3_fl2v_turbo_4step_v1.0_768p_bf16.safetensors",
+        "minimax_h3_ref2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors",
         1
       ],
       "widgets_values_named": {
-        "lora_name": "minimax_h3_fl2v_turbo_4step_v1.0_768p_bf16.safetensors",
+        "lora_name": "minimax_h3_ref2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors",
         "strength_model": 1
       }
     },
@@ -2137,11 +2184,11 @@
         "ver": "0.19.0"
       },
       "widgets_values": [
-        "Untitled (19).png",
+        "Qwen_Edit_2511_00002_.png",
         "image"
       ],
       "widgets_values_named": {
-        "image": "Untitled (19).png",
+        "image": "Qwen_Edit_2511_00002_.png",
         "upload": "image"
       },
       "color": "#232",
@@ -2179,10 +2226,10 @@
         "ver": "0.19.0"
       },
       "widgets_values": [
-        "subject_definitions:\n  <Video 1>: The master reference video of a man with a mustache in khaki clothes. This establishes the unalterable baseline for background pixels, camera framing, lighting, shadows, and the exact physical mouth/lip movements matching the audio track.\n  <Picture 1>: The identity reference image of a woman. This establishes her facial structure, clean skin (no facial hair), hairstyle, hair color, and clothing.\n  <Audio 1>: The original dialogue track of the man speaking in <Video 1>, containing his exact spoken words, timing, and vocal performance.\nsummary:\n  [video-to-video subject-swap] Replace only the male subject in <Video 1> with the female subject from <Picture 1>. Retain the entire environment, background, camera setup, and reuse <Audio 1> as the exact original audio track, completely unchanged.\nretention_analysis:\n  <Video 1>: attribute_transfer - Source for the static background environment, lighting, exact lip/mouth shape timelines, and head movements.\n  <Picture 1>: fully_preserved - Source for the woman's facial identity, clean-shaven face, hair, and clothing.\n  <Audio 1>: fully_preserved - Reuse this exact dialogue track as-is for the final output. Do not regenerate, replace, alter, or resynthesize any part of the vocal performance, timing, or content.\n  Original Man's Facial Hair: fully_replaced - Completely remove, filter out, and overwrite the mustache from <Video 1>. The replacement woman must have smooth skin with zero facial hair or mustache artifacts.\ndetailed_description:\n  Create a seamless, photorealistic live-action subject replacement video where the woman from <Picture 1> replaces the man from <Video 1> frame-by-frame.\n  The woman must have a completely clean-shaven face, absolutely inheriting no mustache or facial hair features from the original man. Her lips, mouth, jaw, and teeth must mirror the exact physical open-and-close shapes of the original man's speech, synced precisely to <Audio 1>.\n  Reuse <Audio 1> exactly as provided — do not alter, replace, or hallucinate the voice or dialogue, and do not remove the background music layer if present in the original clip. Lock all surrounding pixels, keeping the environment, background elements, lighting, shadows, and camera perspective 100% identical to <Video 1>. The final output must look like the woman was natively filmed in that exact environment delivering the audio performance carried by <Audio 1>.\noverall_soundscape:\n  <Audio 1> is used unmodified as the complete audio track for the output — the man's original spoken dialogue, at its original timing, pitch, and tone, with no AI voice regeneration."
+        "id=\"apsara_lakeside_drone_sequence_003\"\n\nsubject_definitions:\n<Subject 1>: [Apsara: tan skin, long voluminous wavy black hair, wearing a deep red silk wrap-around top and a matching red draped skirt with ornate gold borders; wearing heavy gold jewelry including a necklace, earrings, and a decorative gold waist belt (kamarband); identity preserved from character sheet]\n<Subject 2>: [Peacock: vibrant iridescent blue and green plumage, tail feathers long and trailing, seen feeding in the grass]\n<Subject 3>: [Swans: white, elegant, gliding gracefully across the surface of the lake]\n<Environment>: [Lakeside shore, thick lush green grass, calm reflective lake water, soft natural daylight, serene atmosphere]\n\nsummary:\nA high-altitude drone shot follows Apsara as she walks gracefully through a grassy lakeshore towards the water, transitioning through a sweeping orbit and a rapid descent to settle into an eye-level close-up of her peaceful face.\n\nretention_analysis:\n<Subject 1>: fully_preserved (red silk attire, gold jewelry, hair texture, and facial features)\n<Subject 2>: attribute_transfer (vibrant feather colors and feeding posture)\n<Subject 3>: attribute_transfer (white plumage and water interaction)\n\ndetailed_description:\n[Shot 1] A high-altitude wide shot (20ft altitude) establishes the scene from behind <Subject 1>. <Subject 1> is walking gracefully through thick grass toward the edge of a calm lake. In the mid-ground, a <Subject 2> is feeding in the grass, its long, beautiful feathers trailing behind it and touching the ground. In the background, <Subject 3> glide peacefully on the water. The camera performs a slow, high-angle tracking movement, following the subject's path. The red silk of her skirt and the gold of her jewelry catch the light with every step.\n\n[Shot 2] At 00:03.000, the camera performs a large-radius orbit (arc) movement, sweeping over the top of <Subject 1>'s head to transition from her back to her front. As the camera orbits, it reveals the expansive view of the lake and the white swans. The motion highlights the sheen of the red silk and the intricate gold details of her attire.\n\n[Shot 3] At 00:05.000, the camera performs a rapid plunge (dive) from the high angle, descending quickly toward the subject's face. The camera motion is smooth but fast, creating a cinematic momentum. The shot settles into a medium close-up at eye level. <Subject 1> has a peaceful and serene expression, her gaze directed toward the lake. The background of the lake and the swans is rendered in a soft, creamy bokeh due to a shallow depth of field.\n\noverall_soundscape:\n[Soft lapping of lake water, gentle rustle of grass, distant swan calls, and the subtle sound of bird movements in the grass]\n\nnon_diegetic_music:\n[Ethereal, melodic Indian classical flute music, playing softly and peacefully]\n"
       ],
       "widgets_values_named": {
-        "value": "subject_definitions:\n  <Video 1>: The master reference video of a man with a mustache in khaki clothes. This establishes the unalterable baseline for background pixels, camera framing, lighting, shadows, and the exact physical mouth/lip movements matching the audio track.\n  <Picture 1>: The identity reference image of a woman. This establishes her facial structure, clean skin (no facial hair), hairstyle, hair color, and clothing.\n  <Audio 1>: The original dialogue track of the man speaking in <Video 1>, containing his exact spoken words, timing, and vocal performance.\nsummary:\n  [video-to-video subject-swap] Replace only the male subject in <Video 1> with the female subject from <Picture 1>. Retain the entire environment, background, camera setup, and reuse <Audio 1> as the exact original audio track, completely unchanged.\nretention_analysis:\n  <Video 1>: attribute_transfer - Source for the static background environment, lighting, exact lip/mouth shape timelines, and head movements.\n  <Picture 1>: fully_preserved - Source for the woman's facial identity, clean-shaven face, hair, and clothing.\n  <Audio 1>: fully_preserved - Reuse this exact dialogue track as-is for the final output. Do not regenerate, replace, alter, or resynthesize any part of the vocal performance, timing, or content.\n  Original Man's Facial Hair: fully_replaced - Completely remove, filter out, and overwrite the mustache from <Video 1>. The replacement woman must have smooth skin with zero facial hair or mustache artifacts.\ndetailed_description:\n  Create a seamless, photorealistic live-action subject replacement video where the woman from <Picture 1> replaces the man from <Video 1> frame-by-frame.\n  The woman must have a completely clean-shaven face, absolutely inheriting no mustache or facial hair features from the original man. Her lips, mouth, jaw, and teeth must mirror the exact physical open-and-close shapes of the original man's speech, synced precisely to <Audio 1>.\n  Reuse <Audio 1> exactly as provided — do not alter, replace, or hallucinate the voice or dialogue, and do not remove the background music layer if present in the original clip. Lock all surrounding pixels, keeping the environment, background elements, lighting, shadows, and camera perspective 100% identical to <Video 1>. The final output must look like the woman was natively filmed in that exact environment delivering the audio performance carried by <Audio 1>.\noverall_soundscape:\n  <Audio 1> is used unmodified as the complete audio track for the output — the man's original spoken dialogue, at its original timing, pitch, and tone, with no AI voice regeneration."
+        "value": "id=\"apsara_lakeside_drone_sequence_003\"\n\nsubject_definitions:\n<Subject 1>: [Apsara: tan skin, long voluminous wavy black hair, wearing a deep red silk wrap-around top and a matching red draped skirt with ornate gold borders; wearing heavy gold jewelry including a necklace, earrings, and a decorative gold waist belt (kamarband); identity preserved from character sheet]\n<Subject 2>: [Peacock: vibrant iridescent blue and green plumage, tail feathers long and trailing, seen feeding in the grass]\n<Subject 3>: [Swans: white, elegant, gliding gracefully across the surface of the lake]\n<Environment>: [Lakeside shore, thick lush green grass, calm reflective lake water, soft natural daylight, serene atmosphere]\n\nsummary:\nA high-altitude drone shot follows Apsara as she walks gracefully through a grassy lakeshore towards the water, transitioning through a sweeping orbit and a rapid descent to settle into an eye-level close-up of her peaceful face.\n\nretention_analysis:\n<Subject 1>: fully_preserved (red silk attire, gold jewelry, hair texture, and facial features)\n<Subject 2>: attribute_transfer (vibrant feather colors and feeding posture)\n<Subject 3>: attribute_transfer (white plumage and water interaction)\n\ndetailed_description:\n[Shot 1] A high-altitude wide shot (20ft altitude) establishes the scene from behind <Subject 1>. <Subject 1> is walking gracefully through thick grass toward the edge of a calm lake. In the mid-ground, a <Subject 2> is feeding in the grass, its long, beautiful feathers trailing behind it and touching the ground. In the background, <Subject 3> glide peacefully on the water. The camera performs a slow, high-angle tracking movement, following the subject's path. The red silk of her skirt and the gold of her jewelry catch the light with every step.\n\n[Shot 2] At 00:03.000, the camera performs a large-radius orbit (arc) movement, sweeping over the top of <Subject 1>'s head to transition from her back to her front. As the camera orbits, it reveals the expansive view of the lake and the white swans. The motion highlights the sheen of the red silk and the intricate gold details of her attire.\n\n[Shot 3] At 00:05.000, the camera performs a rapid plunge (dive) from the high angle, descending quickly toward the subject's face. The camera motion is smooth but fast, creating a cinematic momentum. The shot settles into a medium close-up at eye level. <Subject 1> has a peaceful and serene expression, her gaze directed toward the lake. The background of the lake and the swans is rendered in a soft, creamy bokeh due to a shallow depth of field.\n\noverall_soundscape:\n[Soft lapping of lake water, gentle rustle of grass, distant swan calls, and the subtle sound of bird movements in the grass]\n\nnon_diegetic_music:\n[Ethereal, melodic Indian classical flute music, playing softly and peacefully]\n"
       },
       "color": "#232",
       "bgcolor": "#353"
@@ -2235,8 +2282,8 @@
         204
       ],
       "flags": {},
-      "order": 38,
-      "mode": 0,
+      "order": 39,
+      "mode": 4,
       "inputs": [
         {
           "name": "duration",
@@ -2272,6 +2319,7 @@
         "audio": "untitled (1).wav",
         "start_time": 0,
         "duration": 5,
+        "choose audio to upload": "image",
         "audiopreview": {
           "params": {
             "start_time": 0,
@@ -2285,7 +2333,7 @@
         "audio": "untitled (1).wav",
         "start_time": 0,
         "duration": 5,
-        "choose audio to upload": null,
+        "choose audio to upload": "image",
         "audiopreview": {
           "params": {
             "start_time": 0,
@@ -2310,16 +2358,18 @@
         78
       ],
       "flags": {},
-      "order": 35,
+      "order": 36,
       "mode": 0,
       "inputs": [
         {
           "name": "on_false",
+          "shape": 7,
           "type": "MODEL",
           "link": 402
         },
         {
           "name": "on_true",
+          "shape": 7,
           "type": "MODEL",
           "link": 403
         },
@@ -2337,7 +2387,7 @@
           "name": "output",
           "type": "MODEL",
           "links": [
-            460
+            505
           ]
         }
       ],
@@ -2396,21 +2446,21 @@
       "id": 185,
       "type": "ModelPreviewOverrideKJ",
       "pos": [
-        -692.2868025388956,
-        5784.883860011261
+        457.28457328779706,
+        4105.296387329694
       ],
       "size": [
-        296.145445914015,
-        501.39735859184157
+        337.7282649090914,
+        753.1284788188082
       ],
       "flags": {},
-      "order": 17,
+      "order": 49,
       "mode": 0,
       "inputs": [
         {
           "name": "model",
           "type": "MODEL",
-          "link": null
+          "link": 506
         },
         {
           "name": "vae",
@@ -2423,7 +2473,9 @@
         {
           "name": "MODEL",
           "type": "MODEL",
-          "links": []
+          "links": [
+            507
+          ]
         }
       ],
       "properties": {
@@ -2467,7 +2519,7 @@
         82
       ],
       "flags": {},
-      "order": 49,
+      "order": 55,
       "mode": 0,
       "inputs": [
         {
@@ -2513,10 +2565,10 @@
       ],
       "size": [
         374.0297064621818,
-        126
+        150
       ],
       "flags": {},
-      "order": 18,
+      "order": 17,
       "mode": 0,
       "showAdvanced": false,
       "inputs": [],
@@ -2572,7 +2624,7 @@
       ],
       "flags": {},
       "order": 29,
-      "mode": 0,
+      "mode": 4,
       "inputs": [
         {
           "name": "a",
@@ -2635,7 +2687,7 @@
       ],
       "flags": {},
       "order": 30,
-      "mode": 0,
+      "mode": 4,
       "inputs": [
         {
           "name": "a",
@@ -2697,8 +2749,8 @@
         336
       ],
       "flags": {},
-      "order": 37,
-      "mode": 0,
+      "order": 38,
+      "mode": 4,
       "inputs": [
         {
           "name": "image",
@@ -2785,11 +2837,11 @@
       ],
       "size": [
         248.72230970286682,
-        730.3950010475446
+        310
       ],
       "flags": {},
-      "order": 19,
-      "mode": 0,
+      "order": 18,
+      "mode": 4,
       "inputs": [
         {
           "name": "meta_batch",
@@ -2845,6 +2897,7 @@
         "skip_first_frames": 0,
         "select_every_nth": 1,
         "format": "AnimateDiff",
+        "choose video to upload": "image",
         "videopreview": {
           "hidden": false,
           "paused": false,
@@ -2870,7 +2923,7 @@
         "skip_first_frames": 0,
         "select_every_nth": 1,
         "format": "AnimateDiff",
-        "choose video to upload": null,
+        "choose video to upload": "image",
         "videopreview": {
           "hidden": false,
           "paused": false,
@@ -2902,8 +2955,8 @@
         58
       ],
       "flags": {},
-      "order": 39,
-      "mode": 0,
+      "order": 40,
+      "mode": 4,
       "inputs": [
         {
           "name": "value",
@@ -2918,9 +2971,7 @@
         {
           "name": "FLOAT",
           "type": "FLOAT",
-          "links": [
-            261
-          ]
+          "links": []
         }
       ],
       "title": "Float (Duration)",
@@ -2951,7 +3002,7 @@
       ],
       "flags": {},
       "order": 31,
-      "mode": 0,
+      "mode": 4,
       "inputs": [
         {
           "name": "video_info",
@@ -3018,6 +3069,132 @@
         "Node name for S&R": "VHS_VideoInfo"
       },
       "widgets_values": {}
+    },
+    {
+      "id": 258,
+      "type": "PrimitiveInt",
+      "pos": [
+        -1435.5933273589544,
+        6393.616335642629
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            500
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveInt"
+      },
+      "widgets_values": [
+        7,
+        "fixed"
+      ],
+      "widgets_values_named": {
+        "value": 7,
+        "fixed": "fixed"
+      }
+    },
+    {
+      "id": 259,
+      "type": "SpectrumApplyMiniMaxH3",
+      "pos": [
+        -14.120586929368493,
+        4090.6226457135995
+      ],
+      "size": [
+        390.669921875,
+        658
+      ],
+      "flags": {},
+      "order": 46,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 503
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            506
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SpectrumApplyMiniMaxH3"
+      },
+      "widgets_values": [
+        true,
+        0.5,
+        1,
+        0.1,
+        2,
+        0.75,
+        1,
+        1,
+        8,
+        false,
+        "system_ram",
+        true,
+        false,
+        false,
+        true,
+        0,
+        "system_ram",
+        "off",
+        0.65,
+        false,
+        false,
+        "coordinate_rls",
+        "hard_clip",
+        0.4,
+        "no_attenuation",
+        "balanced"
+      ],
+      "widgets_values_named": {
+        "enabled": true,
+        "blend_weight": 0.5,
+        "degree": 1,
+        "ridge_lambda": 0.1,
+        "window_size": 2,
+        "flex_window": 0.75,
+        "warmup_steps": 1,
+        "tail_actual_steps": 1,
+        "max_history": 8,
+        "debug": false,
+        "history_storage": "system_ram",
+        "bootstrap_first_forecast": true,
+        "anchor_residual_feedback": false,
+        "selective_rollback_correction": false,
+        "offline_smoothing_replay": true,
+        "audio_blend_weight": 0,
+        "offline_archive_storage": "system_ram",
+        "model_aware_mode": "off",
+        "model_aware_risk_threshold": 0.65,
+        "model_aware_trust_shrinkage": false,
+        "model_aware_replay_generic_correction": false,
+        "generic_correction_mode": "coordinate_rls",
+        "generic_correction_limiter": "hard_clip",
+        "generic_correction_limit": 0.4,
+        "generic_correction_attenuation": "no_attenuation",
+        "sa_pece_forecast_policy": "balanced"
+      }
     }
   ],
   "links": [
@@ -3044,38 +3221,6 @@
       125,
       3,
       "SIGMAS"
-    ],
-    [
-      261,
-      132,
-      0,
-      131,
-      0,
-      "FLOAT"
-    ],
-    [
-      275,
-      131,
-      1,
-      136,
-      16,
-      "INT"
-    ],
-    [
-      276,
-      115,
-      0,
-      136,
-      14,
-      "INT"
-    ],
-    [
-      277,
-      115,
-      1,
-      136,
-      15,
-      "INT"
     ],
     [
       280,
@@ -3110,14 +3255,6 @@
       "VAE"
     ],
     [
-      287,
-      145,
-      0,
-      136,
-      2,
-      "VAE"
-    ],
-    [
       288,
       145,
       0,
@@ -3142,27 +3279,11 @@
       "VAE"
     ],
     [
-      293,
-      143,
-      0,
-      136,
-      0,
-      "CLIP"
-    ],
-    [
       296,
       119,
       0,
       148,
       0,
-      "VAE"
-    ],
-    [
-      297,
-      148,
-      0,
-      136,
-      1,
       "VAE"
     ],
     [
@@ -3222,14 +3343,6 @@
       "IMAGE"
     ],
     [
-      337,
-      171,
-      0,
-      136,
-      3,
-      "IMAGE"
-    ],
-    [
       338,
       171,
       0,
@@ -3243,14 +3356,6 @@
       0,
       172,
       0,
-      "IMAGE"
-    ],
-    [
-      340,
-      172,
-      0,
-      136,
-      4,
       "IMAGE"
     ],
     [
@@ -3350,14 +3455,6 @@
       "BOOLEAN"
     ],
     [
-      412,
-      186,
-      0,
-      159,
-      0,
-      "MODEL"
-    ],
-    [
       414,
       187,
       0,
@@ -3446,52 +3543,12 @@
       "IMAGE"
     ],
     [
-      450,
-      232,
-      0,
-      136,
-      5,
-      "IMAGE"
-    ],
-    [
-      451,
-      230,
-      0,
-      136,
-      7,
-      "IMAGE"
-    ],
-    [
-      452,
-      231,
-      0,
-      136,
-      11,
-      "AUDIO"
-    ],
-    [
-      455,
-      229,
-      0,
-      136,
-      9,
-      "AUDIO"
-    ],
-    [
       457,
       234,
       0,
       229,
       0,
       "AUDIO"
-    ],
-    [
-      460,
-      207,
-      0,
-      186,
-      0,
-      "MODEL"
     ],
     [
       480,
@@ -3515,14 +3572,6 @@
       0,
       163,
       4,
-      "STRING"
-    ],
-    [
-      484,
-      138,
-      0,
-      136,
-      13,
       "STRING"
     ],
     [
@@ -3614,6 +3663,14 @@
       "VHS_VIDEOINFO"
     ],
     [
+      499,
+      257,
+      2,
+      132,
+      0,
+      "FLOAT"
+    ],
+    [
       498,
       257,
       2,
@@ -3622,12 +3679,148 @@
       "FLOAT"
     ],
     [
-      499,
-      257,
-      2,
-      132,
+      503,
+      186,
       0,
-      "FLOAT"
+      259,
+      0,
+      "MODEL"
+    ],
+    [
+      505,
+      207,
+      0,
+      186,
+      0,
+      "MODEL"
+    ],
+    [
+      506,
+      259,
+      0,
+      185,
+      0,
+      "MODEL"
+    ],
+    [
+      507,
+      185,
+      0,
+      159,
+      0,
+      "MODEL"
+    ],
+    [
+      500,
+      258,
+      0,
+      131,
+      0,
+      "INT"
+    ],
+    [
+      293,
+      143,
+      0,
+      136,
+      0,
+      "CLIP"
+    ],
+    [
+      297,
+      148,
+      0,
+      136,
+      1,
+      "VAE"
+    ],
+    [
+      287,
+      145,
+      0,
+      136,
+      2,
+      "VAE"
+    ],
+    [
+      337,
+      171,
+      0,
+      136,
+      3,
+      "IMAGE"
+    ],
+    [
+      340,
+      172,
+      0,
+      136,
+      4,
+      "IMAGE"
+    ],
+    [
+      450,
+      232,
+      0,
+      136,
+      5,
+      "IMAGE"
+    ],
+    [
+      451,
+      230,
+      0,
+      136,
+      12,
+      "IMAGE"
+    ],
+    [
+      455,
+      229,
+      0,
+      136,
+      15,
+      "AUDIO"
+    ],
+    [
+      452,
+      231,
+      0,
+      136,
+      18,
+      "AUDIO"
+    ],
+    [
+      484,
+      138,
+      0,
+      136,
+      21,
+      "STRING"
+    ],
+    [
+      276,
+      115,
+      0,
+      136,
+      22,
+      "INT"
+    ],
+    [
+      277,
+      115,
+      1,
+      136,
+      23,
+      "INT"
+    ],
+    [
+      275,
+      131,
+      1,
+      136,
+      24,
+      "INT"
     ]
   ],
   "groups": [
@@ -3695,13 +3888,13 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.6727499949325659,
+      "scale": 0.4871252094428653,
       "offset": [
-        2197.837620627967,
-        -5370.784202409686
+        3083.1855557741296,
+        -4816.245955114245
       ]
     },
-    "frontendVersion": "1.49.6",
+    "frontendVersion": "1.53.6",
     "VHS_latentpreview": false,
     "VHS_latentpreviewrate": 0,
     "VHS_MetadataImage": true,
