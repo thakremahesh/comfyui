@@ -1,0 +1,3758 @@
+{
+  "id": "158840d8-7fc5-5e78-8fd8-64c8b310f7cd",
+  "revision": 0,
+  "last_node_id": 87,
+  "last_link_id": 180,
+  "nodes": [
+    {
+      "id": 8,
+      "type": "MiniMaxH3ChainAssemble",
+      "pos": [
+        4390,
+        2436
+      ],
+      "size": [
+        440,
+        360
+      ],
+      "flags": {},
+      "order": 27,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "manifest",
+          "type": "H3_CHAIN_MANIFEST",
+          "link": 3
+        },
+        {
+          "name": "source_audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "name": "source_timeline",
+          "shape": 7,
+          "type": "H3_SOURCE_TIMELINE",
+          "link": null
+        },
+        {
+          "name": "blend_video_vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "video_path",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "RECOVERY • Assemble Final Video",
+      "properties": {
+        "Node name for S&R": "MiniMaxH3ChainAssemble"
+      },
+      "widgets_values": [
+        "plan",
+        "t2v_studio_recovered_%date:yyyy-MM-dd%",
+        256,
+        false,
+        "",
+        "plan",
+        "off",
+        "off",
+        false
+      ],
+      "widgets_values_named": {
+        "audio_source": "plan",
+        "filename": "t2v_studio_recovered_%date:yyyy-MM-dd%",
+        "audio_bitrate": 256,
+        "copy_to_output": false,
+        "output_subfolder": "",
+        "blend_schedule": "plan",
+        "boundary_tone_match": "off",
+        "color_stabilization": "off",
+        "delete_checkpoints_after_assembly": false
+      }
+    },
+    {
+      "id": 14,
+      "type": "BasicScheduler",
+      "pos": [
+        4430,
+        1856
+      ],
+      "size": [
+        360,
+        176
+      ],
+      "flags": {},
+      "order": 32,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 156
+        },
+        {
+          "name": "steps",
+          "type": "INT",
+          "widget": {
+            "name": "steps"
+          },
+          "link": 24
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SIGMAS",
+          "type": "SIGMAS",
+          "links": [
+            28
+          ]
+        }
+      ],
+      "title": "Sampling Schedule",
+      "properties": {
+        "Node name for S&R": "BasicScheduler"
+      },
+      "widgets_values": [
+        "simple",
+        20,
+        1
+      ],
+      "widgets_values_named": {
+        "scheduler": "simple",
+        "steps": 20,
+        "denoise": 1
+      }
+    },
+    {
+      "id": 16,
+      "type": "VAEDecode",
+      "pos": [
+        5610,
+        180
+      ],
+      "size": [
+        360,
+        104
+      ],
+      "flags": {},
+      "order": 37,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 171
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 31
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            34
+          ]
+        }
+      ],
+      "title": "VAEDecode",
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 17,
+      "type": "VAEDecodeAudio",
+      "pos": [
+        5610,
+        384
+      ],
+      "size": [
+        360,
+        104
+      ],
+      "flags": {},
+      "order": 38,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 172
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 33
+        }
+      ],
+      "outputs": [
+        {
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": [
+            35
+          ]
+        }
+      ],
+      "title": "VAEDecode Audio",
+      "properties": {
+        "Node name for S&R": "VAEDecodeAudio"
+      }
+    },
+    {
+      "id": 18,
+      "type": "MiniMaxH3LoopTrim",
+      "pos": [
+        5610,
+        588
+      ],
+      "size": [
+        420,
+        250
+      ],
+      "flags": {},
+      "order": 39,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 34
+        },
+        {
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": 35
+        },
+        {
+          "name": "state",
+          "shape": 7,
+          "type": "H3_CHAIN_STATE",
+          "link": 37
+        },
+        {
+          "name": "trim_frames",
+          "type": "INT",
+          "widget": {
+            "name": "trim_frames"
+          },
+          "link": 36
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            39,
+            51,
+            179
+          ]
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            41,
+            48,
+            180
+          ]
+        },
+        {
+          "name": "images_with_overlap",
+          "type": "IMAGE",
+          "links": [
+            42
+          ]
+        },
+        {
+          "name": "overlap_frames",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "title": "Trim Carried Overlap",
+      "properties": {
+        "Node name for S&R": "MiniMaxH3LoopTrim"
+      },
+      "widgets_values": [
+        0,
+        24,
+        true,
+        5
+      ],
+      "widgets_values_named": {
+        "trim_frames": 0,
+        "fps": 24,
+        "match_tail": true,
+        "retain_overlap_frames": 5
+      }
+    },
+    {
+      "id": 22,
+      "type": "MiniMaxH3ChainManifestLoad",
+      "pos": [
+        3820,
+        2436
+      ],
+      "size": [
+        440,
+        200
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "plan",
+          "type": "H3_CHAIN_PLAN",
+          "link": 45
+        },
+        {
+          "name": "source_audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "name": "external_context",
+          "shape": 7,
+          "type": "H3_CHAIN_EXTERNAL_CONTEXT",
+          "link": null
+        },
+        {
+          "name": "source_timeline",
+          "shape": 7,
+          "type": "H3_SOURCE_TIMELINE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "manifest",
+          "type": "H3_CHAIN_MANIFEST",
+          "links": [
+            3
+          ]
+        },
+        {
+          "name": "manifest_json",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "status",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "RECOVERY • Load Saved Clips",
+      "properties": {
+        "Node name for S&R": "MiniMaxH3ChainManifestLoad"
+      }
+    },
+    {
+      "id": 28,
+      "type": "MiniMaxH3GenerationProfile",
+      "pos": [
+        1027.130929140619,
+        794.5701482809633
+      ],
+      "size": [
+        360,
+        152
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "lip_sync_options",
+          "shape": 7,
+          "type": "H3_LIP_SYNC_OPTIONS",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "chain_policy",
+          "type": "H3_CHAIN_POLICY",
+          "links": [
+            58
+          ]
+        },
+        {
+          "name": "status",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "Generation Profile",
+      "properties": {
+        "Node name for S&R": "MiniMaxH3GenerationProfile"
+      },
+      "widgets_values": [
+        "Hard picture + protected audio",
+        "Generate audio"
+      ],
+      "widgets_values_named": {
+        "scene_continuity": "Hard picture + protected audio",
+        "audio_profile": "Generate audio"
+      }
+    },
+    {
+      "id": 31,
+      "type": "Note",
+      "pos": [
+        1027.130929140619,
+        364.5701482809632
+      ],
+      "size": [
+        1000,
+        330
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "START HERE • 0.6",
+      "properties": {
+        "Node name for S&R": "Note"
+      },
+      "widgets_values": [
+        "0.6 RELEASE • Ref2V Studio\n\n1. Install models and extra packs listed in example_workflows/README.md.\n2. Copy the supplied assets to ComfyUI/input; select source media where requested.\n3. Set a unique project run name, then edit scenes and the Generation Profile.\n4. Follow the numbered columns left → right and inspect the saved results.\n\nRecovery is disabled by default. Enable it only to assemble saved clips without sampling.\nWorkflow-specific setup and detailed wiring notes:\nexample_workflows/guides/Ref2V Studio - MiniMax H3 0.6.md"
+      ],
+      "widgets_values_named": {
+        "text": "0.6 RELEASE • Ref2V Studio\n\n1. Install models and extra packs listed in example_workflows/README.md.\n2. Copy the supplied assets to ComfyUI/input; select source media where requested.\n3. Set a unique project run name, then edit scenes and the Generation Profile.\n4. Follow the numbered columns left → right and inspect the saved results.\n\nRecovery is disabled by default. Enable it only to assemble saved clips without sampling.\nWorkflow-specific setup and detailed wiring notes:\nexample_workflows/guides/Ref2V Studio - MiniMax H3 0.6.md"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 21,
+      "type": "ModelAttentionBackend",
+      "pos": [
+        3756.627991020767,
+        2150.8370470410323
+      ],
+      "size": [
+        360,
+        108
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 141
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            61
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ModelAttentionBackend"
+      },
+      "widgets_values": [
+        "pytorch attention"
+      ],
+      "widgets_values_named": {
+        "attention": "pytorch attention"
+      }
+    },
+    {
+      "id": 7,
+      "type": "MiniMaxH3ChainCurrent",
+      "pos": [
+        3756.627991020767,
+        1650.8370470410318
+      ],
+      "size": [
+        460,
+        400
+      ],
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "state",
+          "type": "H3_CHAIN_STATE",
+          "link": 2
+        },
+        {
+          "name": "source_audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "state",
+          "type": "H3_CHAIN_STATE",
+          "links": [
+            15,
+            16,
+            37,
+            38,
+            46,
+            50,
+            81
+          ]
+        },
+        {
+          "name": "clip_index",
+          "type": "INT",
+          "links": [
+            9
+          ]
+        },
+        {
+          "name": "clip_count",
+          "type": "INT",
+          "links": [
+            10
+          ]
+        },
+        {
+          "name": "shot_id",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            11
+          ]
+        },
+        {
+          "name": "noise_seed",
+          "type": "INT",
+          "links": [
+            4
+          ]
+        },
+        {
+          "name": "length",
+          "type": "INT",
+          "links": [
+            68
+          ]
+        },
+        {
+          "name": "steps",
+          "type": "INT",
+          "links": [
+            24
+          ]
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            75
+          ]
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            76
+          ]
+        },
+        {
+          "name": "audio_start",
+          "type": "FLOAT",
+          "links": null
+        },
+        {
+          "name": "audio_duration",
+          "type": "FLOAT",
+          "links": null
+        },
+        {
+          "name": "source_audio_slice",
+          "type": "AUDIO",
+          "links": null
+        },
+        {
+          "name": "status",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "video_blend_frames",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "title": "Current Scene",
+      "properties": {
+        "Node name for S&R": "MiniMaxH3ChainCurrent"
+      },
+      "widgets_values": [
+        false
+      ],
+      "widgets_values_named": {
+        "align_audio_reference": false
+      }
+    },
+    {
+      "id": 42,
+      "type": "PreviewAny",
+      "pos": [
+        5120.187813530364,
+        1707.8524224777468
+      ],
+      "size": [
+        338.598776524771,
+        380.9065068904015
+      ],
+      "flags": {},
+      "order": 29,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 81
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [],
+      "widgets_values_named": {}
+    },
+    {
+      "id": 23,
+      "type": "MiniMaxH3ChainReview",
+      "pos": [
+        6180,
+        500
+      ],
+      "size": [
+        760,
+        880
+      ],
+      "flags": {},
+      "order": 42,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "state",
+          "type": "H3_CHAIN_STATE",
+          "link": 46
+        },
+        {
+          "name": "segment",
+          "type": "H3_CHAIN_SEGMENT",
+          "link": 47
+        },
+        {
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": 48
+        },
+        {
+          "name": "source_audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "segment",
+          "type": "H3_CHAIN_SEGMENT",
+          "links": [
+            53
+          ]
+        },
+        {
+          "name": "status",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "Review Candidates",
+      "properties": {
+        "Node name for S&R": "MiniMaxH3ChainReview"
+      },
+      "widgets_values": [
+        false,
+        true,
+        0,
+        false,
+        true,
+        "checkpointed",
+        1,
+        false
+      ],
+      "widgets_values_named": {
+        "enabled": false,
+        "play_notification_sound": true,
+        "auto_continue_timeout_minutes": 0,
+        "unload_models_while_waiting": false,
+        "assemble_partial_on_stop": true,
+        "partial_audio_source": "checkpointed",
+        "candidate_count": 1,
+        "review_each_candidate": false
+      }
+    },
+    {
+      "id": 2,
+      "type": "CLIPLoader",
+      "pos": [
+        3748.748497157738,
+        459.09742292371016
+      ],
+      "size": [
+        360,
+        156
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            176
+          ]
+        }
+      ],
+      "title": "H3 Text Encoder",
+      "properties": {
+        "Node name for S&R": "CLIPLoader"
+      },
+      "widgets_values": [
+        "qwen3-vl-32b-minimax-h3-fp8-comfyui.safetensors",
+        "minimax",
+        "default"
+      ],
+      "widgets_values_named": {
+        "clip_name": "qwen3-vl-32b-minimax-h3-fp8-comfyui.safetensors",
+        "type": "minimax",
+        "device": "default"
+      }
+    },
+    {
+      "id": 11,
+      "type": "MiniMaxH3ChainContext",
+      "pos": [
+        4564.4961859450705,
+        1250.7686080309286
+      ],
+      "size": [
+        420,
+        260
+      ],
+      "flags": {},
+      "order": 33,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "state",
+          "type": "H3_CHAIN_STATE",
+          "link": 16
+        },
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 17
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 18
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": 19
+        },
+        {
+          "name": "audio_vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        },
+        {
+          "name": "model",
+          "shape": 7,
+          "type": "MODEL",
+          "link": null
+        },
+        {
+          "name": "drift_sigmas",
+          "shape": 7,
+          "type": "SIGMAS",
+          "link": null
+        },
+        {
+          "name": "lip_sync_voice",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "links": [
+            22,
+            169
+          ]
+        },
+        {
+          "name": "trim_frames",
+          "type": "INT",
+          "links": [
+            36
+          ]
+        },
+        {
+          "name": "is_continuation",
+          "type": "BOOLEAN",
+          "links": null
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": [
+            29
+          ]
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": null
+        }
+      ],
+      "title": "Apply Scene Context",
+      "properties": {
+        "Node name for S&R": "MiniMaxH3ChainContext"
+      }
+    },
+    {
+      "id": 9,
+      "type": "RandomNoise",
+      "pos": [
+        4430,
+        180
+      ],
+      "size": [
+        360,
+        132
+      ],
+      "flags": {},
+      "order": 30,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "noise_seed",
+          "type": "INT",
+          "widget": {
+            "name": "noise_seed"
+          },
+          "link": 4
+        }
+      ],
+      "outputs": [
+        {
+          "name": "NOISE",
+          "type": "NOISE",
+          "links": [
+            25
+          ]
+        }
+      ],
+      "title": "Scene Seed",
+      "properties": {
+        "Node name for S&R": "RandomNoise"
+      },
+      "widgets_values": [
+        0,
+        "fixed"
+      ],
+      "widgets_values_named": {
+        "noise_seed": 0,
+        "control_after_generate": "fixed"
+      }
+    },
+    {
+      "id": 3,
+      "type": "KSamplerSelect",
+      "pos": [
+        3756.627991020767,
+        670.8370470410322
+      ],
+      "size": [
+        360,
+        108
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "SAMPLER",
+          "type": "SAMPLER",
+          "links": [
+            27
+          ]
+        }
+      ],
+      "title": "Sampler",
+      "properties": {
+        "Node name for S&R": "KSamplerSelect"
+      },
+      "widgets_values": [
+        "res_multistep"
+      ],
+      "widgets_values_named": {
+        "sampler_name": "res_multistep"
+      }
+    },
+    {
+      "id": 30,
+      "type": "MiniMaxH3ChainCheckpointManager",
+      "pos": [
+        3283.7589201613864,
+        1407.4071953219952
+      ],
+      "size": [
+        1200,
+        900
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "plan",
+          "shape": 7,
+          "type": "H3_CHAIN_PLAN",
+          "link": 60
+        }
+      ],
+      "outputs": [
+        {
+          "name": "selected_manifest",
+          "type": "H3_CHAIN_MANIFEST",
+          "links": null
+        }
+      ],
+      "title": "Checkpoint Manager",
+      "properties": {
+        "Node name for S&R": "MiniMaxH3ChainCheckpointManager",
+        "h3_checkpoint_manager_output_scope": "project",
+        "h3_checkpoint_manager_variant": "",
+        "h3_checkpoint_manager_run": "ref2v_studio_minimax_h3_0_6_json",
+        "h3_checkpoint_manager_scene": 1,
+        "h3_checkpoint_manager_revision": "1c6f93faead34ec8beccfc765732e802",
+        "h3_checkpoint_manager_chapter": "all"
+      },
+      "widgets_values": [
+        "{\"run_name\":\"ref2v_studio_minimax_h3_0_6_json\",\"lineage\":[{\"scene\":1,\"revision\":\"1c6f93faead34ec8beccfc765732e802\"}],\"scope_start_scene\":1,\"scope_end_scene\":6}"
+      ],
+      "widgets_values_named": {
+        "selection_json": "{\"run_name\":\"ref2v_studio_minimax_h3_0_6_json\",\"lineage\":[{\"scene\":1,\"revision\":\"1c6f93faead34ec8beccfc765732e802\"}],\"scope_start_scene\":1,\"scope_end_scene\":6}"
+      }
+    },
+    {
+      "id": 4,
+      "type": "VAELoader",
+      "pos": [
+        3761.699469670991,
+        866.0569208424523
+      ],
+      "size": [
+        360,
+        108
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            6,
+            18,
+            31
+          ]
+        }
+      ],
+      "title": "Video VAE",
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "minimax_h3_video_vae_fp16.safetensors"
+      ],
+      "widgets_values_named": {
+        "vae_name": "minimax_h3_video_vae_fp16.safetensors"
+      }
+    },
+    {
+      "id": 5,
+      "type": "VAELoader",
+      "pos": [
+        3756.627991020767,
+        1086.8370470410316
+      ],
+      "size": [
+        360,
+        108
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            7,
+            33
+          ]
+        }
+      ],
+      "title": "Audio VAE",
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "minimax_h3_audio_vae_fp32.safetensors"
+      ],
+      "widgets_values_named": {
+        "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+      }
+    },
+    {
+      "id": 1,
+      "type": "UNETLoader",
+      "pos": [
+        3756.627991020767,
+        182.83704704103204
+      ],
+      "size": [
+        360,
+        132
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            140
+          ]
+        }
+      ],
+      "title": "H3 Diffusion Model",
+      "properties": {
+        "Node name for S&R": "UNETLoader"
+      },
+      "widgets_values": [
+        "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+        "default"
+      ],
+      "widgets_values_named": {
+        "unet_name": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    {
+      "id": 19,
+      "type": "MiniMaxH3ChainSegmentSave",
+      "pos": [
+        6175.657598765108,
+        182.34049501256936
+      ],
+      "size": [
+        460,
+        220
+      ],
+      "flags": {},
+      "order": 41,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "state",
+          "type": "H3_CHAIN_STATE",
+          "link": 38
+        },
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 39
+        },
+        {
+          "name": "sampled_latent",
+          "type": "LATENT",
+          "link": 178
+        },
+        {
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": 41
+        },
+        {
+          "name": "images_with_overlap",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 42
+        },
+        {
+          "name": "denoised_latent",
+          "shape": 7,
+          "type": "LATENT",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "segment",
+          "type": "H3_CHAIN_SEGMENT",
+          "links": [
+            47
+          ]
+        },
+        {
+          "name": "status",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "Save Segment + Checkpoint",
+      "properties": {
+        "Node name for S&R": "MiniMaxH3ChainSegmentSave"
+      }
+    },
+    {
+      "id": 10,
+      "type": "MiniMaxH3TaggedReferenceToVideo",
+      "pos": [
+        4516.518876368039,
+        380.43559425425593
+      ],
+      "size": [
+        520,
+        752
+      ],
+      "flags": {},
+      "order": 31,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 176
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 6
+        },
+        {
+          "name": "audio_vae",
+          "type": "VAE",
+          "link": 7
+        },
+        {
+          "name": "references",
+          "type": "H3_TAGGED_REFERENCES",
+          "link": 8
+        },
+        {
+          "name": "state",
+          "shape": 7,
+          "type": "H3_CHAIN_STATE",
+          "link": 15
+        },
+        {
+          "name": "clip_index",
+          "type": "INT",
+          "widget": {
+            "name": "clip_index"
+          },
+          "link": 9
+        },
+        {
+          "name": "clip_count",
+          "type": "INT",
+          "widget": {
+            "name": "clip_count"
+          },
+          "link": 10
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 11
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 75
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 76
+        },
+        {
+          "name": "length",
+          "type": "INT",
+          "widget": {
+            "name": "length"
+          },
+          "link": 68
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            17
+          ]
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": [
+            19
+          ]
+        },
+        {
+          "name": "compiled_prompt",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "active_references",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "reference_fingerprint",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "refmod_sources",
+          "type": "H3_REF_LIST",
+          "links": null
+        }
+      ],
+      "title": "Tagged Ref2VA Conditioning",
+      "properties": {
+        "Node name for S&R": "MiniMaxH3TaggedReferenceToVideo"
+      },
+      "widgets_values": [
+        1,
+        2,
+        "subject_definitions:\n@courier_arrival defines <Subject 1>, the exact adult bicycle courier, including his face, mustard-yellow waterproof jacket, dark teal trousers, charcoal helmet, olive messenger bag, silver bicycle, kraft parcel, proportions, and photographic rendering.\n@greenhouse_delivery defines the greenhouse delivery destination, including the glass structure, wooden potting table, dense plants, warm practical bulbs, wet floor reflections, and the same courier's end pose.\n<Subject 1> is the single courier shown by both references. Preserve his identity, clothing, equipment, and scale while allowing the described movement.\n\nsummary:\n[reference generation] One continuous delivery moves <Subject 1> from the wet greenhouse entrance in @courier_arrival toward the completed parcel placement in @greenhouse_delivery.\n\nretention_analysis:\n<Subject 1> (appears in [Shot 1]): fully_preserved - retain the exact face, adult age, body proportions, mustard jacket, teal trousers, helmet, bag, bicycle, and parcel across the complete shot.\n@courier_arrival: fully_preserved - use its courier identity, wardrobe, bicycle geometry, exterior doorway, wet paving, camera height, and cool daylight as the opening state.\n@greenhouse_delivery: reference - use its potting table, plants, warm bulbs, interior reflections, and delivery pose as the destination; do not copy the final pose before the action reaches it.\n\ndetailed_description:\n[Shot 1] Begin at the greenhouse entrance with exactly one courier and one bicycle. He walks the bicycle through the open glass door, glances down to confirm the parcel, then turns toward the wooden potting table. The camera tracks laterally at walking speed with restrained handheld movement. He stops the bicycle with his left hand and sets the parcel on the clear corner of the table with his right hand. Preserve face, hands, clothing, bicycle structure, parcel dimensions, plant layout, lighting direction, and coherent reflections. End immediately after the parcel makes contact; no cut, duplicate subject, added customer, text, logo, or early freeze.\n\noverall_soundscape:\nLight rain on greenhouse glass, wet tire roll, a quiet freewheel tick, rubber soles, door hinge, jacket movement, muted ventilation, and soft cardboard contact on wood. Keep every sound synchronized and spatially plausible.\n\nnon_diegetic_music:\nNo non-diegetic music.",
+        480,
+        864,
+        175,
+        "match",
+        "strict",
+        "768",
+        "timestamped_video",
+        true,
+        "native_ref2va"
+      ],
+      "widgets_values_named": {
+        "clip_index": 1,
+        "clip_count": 2,
+        "prompt": "subject_definitions:\n@courier_arrival defines <Subject 1>, the exact adult bicycle courier, including his face, mustard-yellow waterproof jacket, dark teal trousers, charcoal helmet, olive messenger bag, silver bicycle, kraft parcel, proportions, and photographic rendering.\n@greenhouse_delivery defines the greenhouse delivery destination, including the glass structure, wooden potting table, dense plants, warm practical bulbs, wet floor reflections, and the same courier's end pose.\n<Subject 1> is the single courier shown by both references. Preserve his identity, clothing, equipment, and scale while allowing the described movement.\n\nsummary:\n[reference generation] One continuous delivery moves <Subject 1> from the wet greenhouse entrance in @courier_arrival toward the completed parcel placement in @greenhouse_delivery.\n\nretention_analysis:\n<Subject 1> (appears in [Shot 1]): fully_preserved - retain the exact face, adult age, body proportions, mustard jacket, teal trousers, helmet, bag, bicycle, and parcel across the complete shot.\n@courier_arrival: fully_preserved - use its courier identity, wardrobe, bicycle geometry, exterior doorway, wet paving, camera height, and cool daylight as the opening state.\n@greenhouse_delivery: reference - use its potting table, plants, warm bulbs, interior reflections, and delivery pose as the destination; do not copy the final pose before the action reaches it.\n\ndetailed_description:\n[Shot 1] Begin at the greenhouse entrance with exactly one courier and one bicycle. He walks the bicycle through the open glass door, glances down to confirm the parcel, then turns toward the wooden potting table. The camera tracks laterally at walking speed with restrained handheld movement. He stops the bicycle with his left hand and sets the parcel on the clear corner of the table with his right hand. Preserve face, hands, clothing, bicycle structure, parcel dimensions, plant layout, lighting direction, and coherent reflections. End immediately after the parcel makes contact; no cut, duplicate subject, added customer, text, logo, or early freeze.\n\noverall_soundscape:\nLight rain on greenhouse glass, wet tire roll, a quiet freewheel tick, rubber soles, door hinge, jacket movement, muted ventilation, and soft cardboard contact on wood. Keep every sound synchronized and spatially plausible.\n\nnon_diegetic_music:\nNo non-diegetic music.",
+        "width": 480,
+        "height": 864,
+        "length": 175,
+        "ref_image_size": "match",
+        "reference_policy": "strict",
+        "semantic_anchor_size": "768",
+        "semantic_anchor_mode": "timestamped_video",
+        "cache_for_upscale": true,
+        "conditioning_backend": "native_ref2va"
+      }
+    },
+    {
+      "id": 24,
+      "type": "MiniMaxH3ChainLoopEnd",
+      "pos": [
+        7572.483851678963,
+        110.86807188830969
+      ],
+      "size": [
+        420,
+        220
+      ],
+      "flags": {},
+      "order": 43,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "flow",
+          "type": "H3_CHAIN_FLOW",
+          "link": 49
+        },
+        {
+          "name": "state",
+          "type": "H3_CHAIN_STATE",
+          "link": 50
+        },
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 51
+        },
+        {
+          "name": "sampled_latent",
+          "type": "LATENT",
+          "link": 177
+        },
+        {
+          "name": "segment",
+          "type": "H3_CHAIN_SEGMENT",
+          "link": 53
+        }
+      ],
+      "outputs": [
+        {
+          "name": "manifest",
+          "type": "H3_CHAIN_MANIFEST",
+          "links": [
+            43
+          ]
+        },
+        {
+          "name": "manifest_json",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "last_context_frames",
+          "type": "IMAGE",
+          "links": null
+        },
+        {
+          "name": "last_context_latent",
+          "type": "LATENT",
+          "links": []
+        }
+      ],
+      "title": "Loop End",
+      "properties": {
+        "Node name for S&R": "MiniMaxH3ChainLoopEnd"
+      },
+      "widgets_values": [
+        "off",
+        "recursive_legacy"
+      ],
+      "widgets_values_named": {
+        "between_scene_cleanup": "off",
+        "execution_mode": "recursive_legacy"
+      }
+    },
+    {
+      "id": 15,
+      "type": "SamplerCustomAdvanced",
+      "pos": [
+        5080.874163011405,
+        341.02917979691176
+      ],
+      "size": [
+        360,
+        326
+      ],
+      "flags": {},
+      "order": 35,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "noise",
+          "type": "NOISE",
+          "link": 25
+        },
+        {
+          "name": "guider",
+          "type": "GUIDER",
+          "link": 26
+        },
+        {
+          "name": "sampler",
+          "type": "SAMPLER",
+          "link": 27
+        },
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 28
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 29
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "LATENT",
+          "links": [
+            168,
+            177,
+            178
+          ]
+        },
+        {
+          "name": "denoised_output",
+          "type": "LATENT",
+          "links": null
+        }
+      ],
+      "title": "Sample Video + Audio",
+      "properties": {
+        "Node name for S&R": "SamplerCustomAdvanced"
+      },
+      "widgets_values": [],
+      "widgets_values_named": {}
+    },
+    {
+      "id": 20,
+      "type": "MiniMaxH3ChainAssemble",
+      "pos": [
+        7090,
+        500
+      ],
+      "size": [
+        440,
+        1090.3333333333335
+      ],
+      "flags": {},
+      "order": 44,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "manifest",
+          "type": "H3_CHAIN_MANIFEST",
+          "link": 43
+        },
+        {
+          "name": "source_audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "name": "source_timeline",
+          "shape": 7,
+          "type": "H3_SOURCE_TIMELINE",
+          "link": null
+        },
+        {
+          "name": "blend_video_vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "video_path",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "Assemble Final Video",
+      "properties": {
+        "Node name for S&R": "MiniMaxH3ChainAssemble"
+      },
+      "widgets_values": [
+        "plan",
+        "t2v_studio_%date:yyyy-MM-dd%",
+        256,
+        false,
+        "",
+        "plan",
+        "off",
+        "off",
+        false
+      ],
+      "widgets_values_named": {
+        "audio_source": "plan",
+        "filename": "t2v_studio_%date:yyyy-MM-dd%",
+        "audio_bitrate": 256,
+        "copy_to_output": false,
+        "output_subfolder": "",
+        "blend_schedule": "plan",
+        "boundary_tone_match": "off",
+        "color_stabilization": "off",
+        "delete_checkpoints_after_assembly": false
+      }
+    },
+    {
+      "id": 25,
+      "type": "MiniMaxH3ChainPlanStudio",
+      "pos": [
+        2147.130929140619,
+        364.5701482809632
+      ],
+      "size": [
+        1080,
+        948
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "plan",
+          "shape": 7,
+          "type": "H3_CHAIN_PLAN",
+          "link": 54
+        },
+        {
+          "name": "source_timeline",
+          "shape": 7,
+          "type": "H3_SOURCE_TIMELINE",
+          "link": null
+        },
+        {
+          "name": "source_audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "name": "tagged_references",
+          "shape": 7,
+          "type": "H3_TAGGED_REFERENCES",
+          "link": 55
+        },
+        {
+          "name": "reference_schedule",
+          "shape": 7,
+          "type": "H3_REFERENCE_SCHEDULE",
+          "link": null
+        },
+        {
+          "name": "chain_policy",
+          "shape": 7,
+          "type": "H3_CHAIN_POLICY",
+          "link": null
+        },
+        {
+          "name": "project_assets",
+          "shape": 7,
+          "type": "H3_PROJECT_ASSETS",
+          "link": 56
+        }
+      ],
+      "outputs": [
+        {
+          "name": "plan",
+          "type": "H3_CHAIN_PLAN",
+          "links": [
+            1,
+            45,
+            57,
+            60
+          ]
+        },
+        {
+          "name": "preflight",
+          "type": "H3_PREFLIGHT_REPORT",
+          "links": null
+        },
+        {
+          "name": "ready",
+          "type": "BOOLEAN",
+          "links": null
+        },
+        {
+          "name": "status",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "report_json",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "plan_summary",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "clip_count",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "video_blend_frames",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "title": "Plan Studio",
+      "properties": {
+        "Node name for S&R": "MiniMaxH3ChainPlanStudio",
+        "h3_plan_studio_checkpoint_cache_v1": {
+          "version": 1,
+          "run_name": "ref2v_studio_minimax_h3_0_6_json",
+          "checkpoints": [
+            {
+              "scene": 1,
+              "scene_id": "part_1",
+              "revision": "2bf36ddb9fcf40aeb4223a25576d3f7e",
+              "resume_scene": 2,
+              "ready": true,
+              "raw_frames": 175,
+              "delivered_frames": 175,
+              "metadata_sha256": "51a472092a2f4ed80497ba0a3c5a91375bc2377661f5942593d6fdee8df2a6e7",
+              "video": {
+                "filename": "clip_0001.2bf36ddb9fcf40aeb4223a25576d3f7e.mp4",
+                "subfolder": "h3_chains/ref2v_studio_minimax_h3_0_6_json/segments",
+                "type": "output"
+              },
+              "audio": {
+                "filename": "clip_0001.2bf36ddb9fcf40aeb4223a25576d3f7e.wav",
+                "subfolder": "h3_chains/ref2v_studio_minimax_h3_0_6_json/generated_audio",
+                "type": "output"
+              }
+            },
+            {
+              "scene": 2,
+              "scene_id": "part_2",
+              "revision": "e43a4f2087614cd5bb4f50b41435304c",
+              "resume_scene": 3,
+              "ready": true,
+              "raw_frames": 175,
+              "delivered_frames": 136,
+              "metadata_sha256": "29c634a7c69145bc81c2860dbe0aba037f6e3c69b52edd57737812bc8f3fa75a",
+              "video": {
+                "filename": "clip_0002.e43a4f2087614cd5bb4f50b41435304c.mp4",
+                "subfolder": "h3_chains/ref2v_studio_minimax_h3_0_6_json/segments",
+                "type": "output"
+              },
+              "audio": {
+                "filename": "clip_0002.e43a4f2087614cd5bb4f50b41435304c.wav",
+                "subfolder": "h3_chains/ref2v_studio_minimax_h3_0_6_json/generated_audio",
+                "type": "output"
+              }
+            },
+            {
+              "scene": 3,
+              "scene_id": "scene_03",
+              "revision": "e5e0edb778834a79b58b4c0c8284ea37",
+              "resume_scene": 4,
+              "ready": true,
+              "raw_frames": 175,
+              "delivered_frames": 136,
+              "metadata_sha256": "a1a133d8e721b7b44e46f97c2074dc7c8ed5cf2da81e0d05d3ef2d5a9764d061",
+              "video": {
+                "filename": "clip_0003.e5e0edb778834a79b58b4c0c8284ea37.mp4",
+                "subfolder": "h3_chains/ref2v_studio_minimax_h3_0_6_json/segments",
+                "type": "output"
+              },
+              "audio": {
+                "filename": "clip_0003.e5e0edb778834a79b58b4c0c8284ea37.wav",
+                "subfolder": "h3_chains/ref2v_studio_minimax_h3_0_6_json/generated_audio",
+                "type": "output"
+              }
+            }
+          ],
+          "editorial": {
+            "format": "h3_chain_editorial_v1",
+            "run_name": "ref2v_studio_minimax_h3_0_6_json",
+            "revision": "",
+            "chapters": [],
+            "scene_order": [],
+            "placements": [],
+            "trims": [],
+            "locked_scene_ids": [],
+            "subtitles": {
+              "mode": "off",
+              "asset_id": "",
+              "offset_seconds": 0
+            },
+            "alternate_draft": null,
+            "replacements": []
+          }
+        },
+        "h3_plan_studio_active_scene": 2,
+        "h3_plan_studio_active_chapter": "",
+        "h3_plan_studio_view": "scene",
+        "h3_plan_studio_timeline_zoom": 1
+      },
+      "widgets_values": [
+        1,
+        "",
+        true,
+        "{\n  \"shots\": [\n    {\n      \"id\": \"part_1\",\n      \"prompt\": [\n        \"id=\\\"woman_approach_and_sit_001\\\"\",\n        \"\",\n        \"subject_definitions:\",\n        \"<Subject 1>: The woman from @picture_1 with long, wavy dark hair and a neutral, serious facial expression. She is wearing the same ornate, heavily embroidered green lehenga (fitted blouse and voluminous skirt) as seen in <Picture 1>.\",\n        \"<Environment>: A luxurious interior featuring a large, dark brown tufted leather armchair with deep folds and brass studding, consistent with the setting in <Picture 1>.\",\n        \"<Prop>: The green lehenga, characterized by heavy silk fabric and dense gold embroidery that reacts physically to her movement.\",\n        \"\",\n        \"summary:\",\n        \"The woman walks toward the leather armchair, performs a graceful turn once she reaches it, and settles into the chair, maintaining a neutral expression while gazing into the distance.\",\n        \"\",\n        \"retention_analysis:\",\n        \"@picture_1 -> <Subject 1> (fully_preserved identity, clothing, and facial expression)\",\n        \"<Picture 1> -> <Environment> (fully_preserved environment and furniture)\",\n        \"\",\n        \"detailed_description:\",\n        \"[Shot 1] A medium-wide tracking shot follows <Subject 1> as she walks toward the armchair with a steady, rhythmic gait. The camera moves laterally to maintain her in a medium shot, keeping her head and eyes centered within the frame to ensure a high-quality, symmetrical composition.\",\n        \"As she approaches the chair, <Subject 1> performs a graceful pivot, turning her body to face the back of the armchair. The camera performs a smooth, slow arc around her to facilitate the turn.\",\n        \"As she turns, the heavy silk of her lehenga swings with natural momentum, the gold embroidery catching the light. \",\n        \"<Subject 1> then begins to lower her center of gravity, settling gracefully into the deep, tufted leather cushion of the chair. \",\n        \"The camera performs a subtle, slow push-in toward her face as she sits, maintaining focus on her neutral, non-smiling expression.\",\n        \"As she settles, her weight causes the leather to creak and the heavy fabric of the lehenga to drape and fold naturally around her legs and the chair's armrests.\",\n        \"<Subject 1> finishes in a poised, seated position, looking away from the camera toward the distant background with a contemplative, neutral gaze.\",\n        \"\",\n        \"overall_soundscape:\",\n        \"The rhythmic, muffled sound of footsteps on a hard floor, followed by the continuous, heavy rustle of silk and the distinct, deep creak of leather as she settles into the chair.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"None.\"\n      ],\n      \"seed\": \"12636599129996765864\",\n      \"duration_seconds\": 7,\n      \"basic_prompt\": \"\"\n    },\n    {\n      \"id\": \"part_2\",\n      \"prompt\": [\n        \"id=\\\"woman_lehenga_pose_transition_001\\\"\",\n        \"\",\n        \"subject_definitions:\",\n        \"<Subject 1>: Woman from <Picture 1> with long, wavy dark hair and a serious, neutral facial expression. Her appearance, including her facial features and the ornate green lehenga, is identical to <Picture 1>. Her final position at the end of the video must match the exact pose and limb placement seen in <Picture 1>.\",\n        \"<Environment>: The same luxurious interior from <Picture 1>, featuring a large, dark brown tufted leather armchair with deep folds and brass studding.\",\n        \"<Prop>: The green lehenga, characterized by dense gold embroidery and a heavy, smooth silk texture that reacts to the movement of her legs.\",\n        \"\",\n        \"summary:\",\n        \"The woman transitions from an upright seated position to the exact reclining pose shown in <Picture 1>. As she reclines sideways and lifts her legs toward the opposite armrest, the heavy lehenga fabric slides up toward her waist, gradually revealing her legs until she reaches the final composition of <Picture 1>.\",\n        \"\",\n        \"retention_analysis:\",\n        \"<Picture 1> -> <Subject 1> (fully_preserved identity and target final pose)\",\n        \"<Picture 1> -> <Environment> (fully_preserved environment and lighting)\",\n        \"\",\n        \"detailed_description:\",\n        \"[Shot 1] A medium-wide shot establishes <Subject 1> sitting perfectly upright in the center of the frame, looking forward with a serious, non-smiling expression.\",\n        \"As the action begins, <Subject 1> shifts her weight to her hip, leaning her torso sideways to begin reclining into the armchair. \",\n        \"The camera performs a slow, steady orbit keeping her entire body perfectly centered within the frame throughout the movement to maintain a strong, symmetrical composition. \",\n        \"As she reclines, <Subject 1> lifts her legs upward and across the seat toward the opposite armrest. \",\n        \"The upward motion of her legs acts as a trigger, causing the heavy, embroidered silk of the lehenga to slide smoothly up her thighs toward her waist, continuously revealing the skin of her legs. \",\n        \"The movement is fluid and continuous, following the physics of heavy fabric being displaced by rising limbs. \",\n        \"At the moment of maximum leg elevation, the lighting and composition transition to match <Picture 1> perfectly. \",\n        \"The shot concludes with <Subject 1> in the exact pose, limb placement, and lighting seen in <Picture 1>, maintaining her serious facial expression.\",\n        \"\",\n        \"overall_soundscape:\",\n        \"The deep creak of the leather armchair under shifting weight and the continuous, heavy rustle of thick silk fabric sliding against skin.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"None.\",\n        \"\"\n      ]\n    },\n    {\n      \"id\": \"scene_03\",\n      \"prompt\": [\n        \"id=\\\"woman_lehenga_reveal_pan_001\\\"\",\n        \"\",\n        \"subject_definitions:\",\n        \"<Subject 1>: The woman from <Picture 1> with long, wavy dark hair and a neutral, serious facial expression. She is wearing the ornate, heavily embroidered green lehenga (fitted blouse and voluminous skirt) seen in <Picture 1>.\",\n        \"<Environment>: A luxurious, warm-toned interior featuring a large, dark brown tufted leather armchair, consistent with the background of <Picture 1>.\",\n        \"<Prop>: The green lehenga, characterized by heavy, high-sheen silk fabric and dense, reflective gold embroidery.\",\n        \"\",\n        \"summary:\",\n        \"The shot begins with a close-up on the subject's legs. The camera pans slowly to the left, progressively revealing her hips and full body. Simultaneously, the subject lets her arm fall gracefully to her side and tilts her head back toward the ceiling.\",\n        \"\",\n        \"retention_analysis:\",\n        \"<Picture 1> -> <Subject 1> (fully_preserved identity, clothing, and neutral expression)\",\n        \"<Picture 1> -> <Environment> (fully_preserved lighting and leather texture)\",\n        \"\",\n        \"detailed_description:\",\n        \"[Shot 1] The shot opens with a tight, medium-close-up focus on <Subject 1>'s legs, showcasing the intricate gold embroidery and heavy texture of the green lehenga. \",\n        \"Starting with position in <Picture 1>, <Subject 1> performs a coordinated movement: she lets her arm fall gracefully from her side to the floor in a fluid, continuous motion, while simultaneously tilting her head back toward the ceiling. Only her upper body moves.\",\n        \"\",\n        \"As she tilts her head, the light catches the highlights on her neck and the sheen of the silk fabric. \",\n        \"The shot ends with <Subject 1> in a poised, head-tilted pose, her gaze directed upward.\",\n        \"\",\n        \"overall_soundscape:\",\n        \"The soft, heavy rustle of silk fabric and the subtle, rhythmic movement of the heavy lehenga as it shifts.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"None.\",\n        \"\"\n      ]\n    }\n  ],\n  \"defaults\": {\n    \"steps\": 3\n  },\n  \"prompt_prefix\": [\n    \"Bright daylight sunlit lighting, savannah backdrop. The impala does not smile at any time. The impala is always standing on all 4 legs.\"\n  ]\n}",
+        "ref2v_studio_minimax_h3_0_6_json",
+        "",
+        416,
+        736,
+        22,
+        "video",
+        "head",
+        "center",
+        "generated_audio",
+        22,
+        7,
+        3,
+        0,
+        20,
+        5,
+        "guide",
+        "null"
+      ],
+      "widgets_values_named": {
+        "start_clip": 1,
+        "scene_range": "",
+        "verify_resume_history": true,
+        "plan_json": "{\n  \"shots\": [\n    {\n      \"id\": \"part_1\",\n      \"prompt\": [\n        \"id=\\\"woman_approach_and_sit_001\\\"\",\n        \"\",\n        \"subject_definitions:\",\n        \"<Subject 1>: The woman from @picture_1 with long, wavy dark hair and a neutral, serious facial expression. She is wearing the same ornate, heavily embroidered green lehenga (fitted blouse and voluminous skirt) as seen in <Picture 1>.\",\n        \"<Environment>: A luxurious interior featuring a large, dark brown tufted leather armchair with deep folds and brass studding, consistent with the setting in <Picture 1>.\",\n        \"<Prop>: The green lehenga, characterized by heavy silk fabric and dense gold embroidery that reacts physically to her movement.\",\n        \"\",\n        \"summary:\",\n        \"The woman walks toward the leather armchair, performs a graceful turn once she reaches it, and settles into the chair, maintaining a neutral expression while gazing into the distance.\",\n        \"\",\n        \"retention_analysis:\",\n        \"@picture_1 -> <Subject 1> (fully_preserved identity, clothing, and facial expression)\",\n        \"<Picture 1> -> <Environment> (fully_preserved environment and furniture)\",\n        \"\",\n        \"detailed_description:\",\n        \"[Shot 1] A medium-wide tracking shot follows <Subject 1> as she walks toward the armchair with a steady, rhythmic gait. The camera moves laterally to maintain her in a medium shot, keeping her head and eyes centered within the frame to ensure a high-quality, symmetrical composition.\",\n        \"As she approaches the chair, <Subject 1> performs a graceful pivot, turning her body to face the back of the armchair. The camera performs a smooth, slow arc around her to facilitate the turn.\",\n        \"As she turns, the heavy silk of her lehenga swings with natural momentum, the gold embroidery catching the light. \",\n        \"<Subject 1> then begins to lower her center of gravity, settling gracefully into the deep, tufted leather cushion of the chair. \",\n        \"The camera performs a subtle, slow push-in toward her face as she sits, maintaining focus on her neutral, non-smiling expression.\",\n        \"As she settles, her weight causes the leather to creak and the heavy fabric of the lehenga to drape and fold naturally around her legs and the chair's armrests.\",\n        \"<Subject 1> finishes in a poised, seated position, looking away from the camera toward the distant background with a contemplative, neutral gaze.\",\n        \"\",\n        \"overall_soundscape:\",\n        \"The rhythmic, muffled sound of footsteps on a hard floor, followed by the continuous, heavy rustle of silk and the distinct, deep creak of leather as she settles into the chair.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"None.\"\n      ],\n      \"seed\": \"12636599129996765864\",\n      \"duration_seconds\": 7,\n      \"basic_prompt\": \"\"\n    },\n    {\n      \"id\": \"part_2\",\n      \"prompt\": [\n        \"id=\\\"woman_lehenga_pose_transition_001\\\"\",\n        \"\",\n        \"subject_definitions:\",\n        \"<Subject 1>: Woman from <Picture 1> with long, wavy dark hair and a serious, neutral facial expression. Her appearance, including her facial features and the ornate green lehenga, is identical to <Picture 1>. Her final position at the end of the video must match the exact pose and limb placement seen in <Picture 1>.\",\n        \"<Environment>: The same luxurious interior from <Picture 1>, featuring a large, dark brown tufted leather armchair with deep folds and brass studding.\",\n        \"<Prop>: The green lehenga, characterized by dense gold embroidery and a heavy, smooth silk texture that reacts to the movement of her legs.\",\n        \"\",\n        \"summary:\",\n        \"The woman transitions from an upright seated position to the exact reclining pose shown in <Picture 1>. As she reclines sideways and lifts her legs toward the opposite armrest, the heavy lehenga fabric slides up toward her waist, gradually revealing her legs until she reaches the final composition of <Picture 1>.\",\n        \"\",\n        \"retention_analysis:\",\n        \"<Picture 1> -> <Subject 1> (fully_preserved identity and target final pose)\",\n        \"<Picture 1> -> <Environment> (fully_preserved environment and lighting)\",\n        \"\",\n        \"detailed_description:\",\n        \"[Shot 1] A medium-wide shot establishes <Subject 1> sitting perfectly upright in the center of the frame, looking forward with a serious, non-smiling expression.\",\n        \"As the action begins, <Subject 1> shifts her weight to her hip, leaning her torso sideways to begin reclining into the armchair. \",\n        \"The camera performs a slow, steady orbit keeping her entire body perfectly centered within the frame throughout the movement to maintain a strong, symmetrical composition. \",\n        \"As she reclines, <Subject 1> lifts her legs upward and across the seat toward the opposite armrest. \",\n        \"The upward motion of her legs acts as a trigger, causing the heavy, embroidered silk of the lehenga to slide smoothly up her thighs toward her waist, continuously revealing the skin of her legs. \",\n        \"The movement is fluid and continuous, following the physics of heavy fabric being displaced by rising limbs. \",\n        \"At the moment of maximum leg elevation, the lighting and composition transition to match <Picture 1> perfectly. \",\n        \"The shot concludes with <Subject 1> in the exact pose, limb placement, and lighting seen in <Picture 1>, maintaining her serious facial expression.\",\n        \"\",\n        \"overall_soundscape:\",\n        \"The deep creak of the leather armchair under shifting weight and the continuous, heavy rustle of thick silk fabric sliding against skin.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"None.\",\n        \"\"\n      ]\n    },\n    {\n      \"id\": \"scene_03\",\n      \"prompt\": [\n        \"id=\\\"woman_lehenga_reveal_pan_001\\\"\",\n        \"\",\n        \"subject_definitions:\",\n        \"<Subject 1>: The woman from <Picture 1> with long, wavy dark hair and a neutral, serious facial expression. She is wearing the ornate, heavily embroidered green lehenga (fitted blouse and voluminous skirt) seen in <Picture 1>.\",\n        \"<Environment>: A luxurious, warm-toned interior featuring a large, dark brown tufted leather armchair, consistent with the background of <Picture 1>.\",\n        \"<Prop>: The green lehenga, characterized by heavy, high-sheen silk fabric and dense, reflective gold embroidery.\",\n        \"\",\n        \"summary:\",\n        \"The shot begins with a close-up on the subject's legs. The camera pans slowly to the left, progressively revealing her hips and full body. Simultaneously, the subject lets her arm fall gracefully to her side and tilts her head back toward the ceiling.\",\n        \"\",\n        \"retention_analysis:\",\n        \"<Picture 1> -> <Subject 1> (fully_preserved identity, clothing, and neutral expression)\",\n        \"<Picture 1> -> <Environment> (fully_preserved lighting and leather texture)\",\n        \"\",\n        \"detailed_description:\",\n        \"[Shot 1] The shot opens with a tight, medium-close-up focus on <Subject 1>'s legs, showcasing the intricate gold embroidery and heavy texture of the green lehenga. \",\n        \"Starting with position in <Picture 1>, <Subject 1> performs a coordinated movement: she lets her arm fall gracefully from her side to the floor in a fluid, continuous motion, while simultaneously tilting her head back toward the ceiling. Only her upper body moves.\",\n        \"\",\n        \"As she tilts her head, the light catches the highlights on her neck and the sheen of the silk fabric. \",\n        \"The shot ends with <Subject 1> in a poised, head-tilted pose, her gaze directed upward.\",\n        \"\",\n        \"overall_soundscape:\",\n        \"The soft, heavy rustle of silk fabric and the subtle, rhythmic movement of the heavy lehenga as it shifts.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"None.\",\n        \"\"\n      ]\n    }\n  ],\n  \"defaults\": {\n    \"steps\": 3\n  },\n  \"prompt_prefix\": [\n    \"Bright daylight sunlit lighting, savannah backdrop. The impala does not smile at any time. The impala is always standing on all 4 legs.\"\n  ]\n}",
+        "run_name": "ref2v_studio_minimax_h3_0_6_json",
+        "generation_fingerprint": "",
+        "width": 416,
+        "height": 736,
+        "context_length": 22,
+        "encode_mode": "video",
+        "anchor_mode": "head",
+        "crop": "center",
+        "audio_mode": "generated_audio",
+        "audio_context_length": 22,
+        "default_duration_seconds": 7,
+        "default_steps": 3,
+        "base_seed": 0,
+        "segment_crf": 20,
+        "video_blend_frames": 5,
+        "continuation_mode": "guide",
+        "alternate_take_json": "null"
+      }
+    },
+    {
+      "id": 26,
+      "type": "MiniMaxH3ChainRichScenePromptEditor",
+      "pos": [
+        2159.832653332839,
+        -734.6854853564238
+      ],
+      "size": [
+        1200,
+        940
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "plan",
+          "type": "H3_CHAIN_PLAN",
+          "link": 57
+        }
+      ],
+      "outputs": [
+        {
+          "name": "plan",
+          "type": "H3_CHAIN_PLAN",
+          "links": null
+        }
+      ],
+      "title": "Scene Prompts + References",
+      "properties": {
+        "Node name for S&R": "MiniMaxH3ChainRichScenePromptEditor",
+        "h3_rich_prompt_active_scene": 0,
+        "h3_rich_prompt_font_size": 17,
+        "h3_rich_prompt_guide": "auto",
+        "h3_rich_prompt_rich_text": true
+      },
+      "widgets_values": [],
+      "widgets_values_named": {}
+    },
+    {
+      "id": 13,
+      "type": "BasicGuider",
+      "pos": [
+        5100,
+        180
+      ],
+      "size": [
+        360,
+        104
+      ],
+      "flags": {},
+      "order": 34,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 155
+        },
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 22
+        }
+      ],
+      "outputs": [
+        {
+          "name": "GUIDER",
+          "type": "GUIDER",
+          "links": [
+            26
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BasicGuider"
+      }
+    },
+    {
+      "id": 71,
+      "type": "LoraLoaderModelOnly",
+      "pos": [
+        4239.248247140462,
+        -40.792084360354146
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 140
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            141,
+            163,
+            170
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoaderModelOnly"
+      },
+      "widgets_values": [
+        "minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors",
+        1
+      ],
+      "widgets_values_named": {
+        "lora_name": "minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors",
+        "strength_model": 1
+      }
+    },
+    {
+      "id": 33,
+      "type": "MiniMaxLowVRAMAttention",
+      "pos": [
+        4211.075307840398,
+        2154.8938091498435
+      ],
+      "size": [
+        318.5201171875,
+        58
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 61
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            62
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxLowVRAMAttention"
+      },
+      "widgets_values": [
+        8
+      ],
+      "widgets_values_named": {
+        "head_chunks": 8
+      }
+    },
+    {
+      "id": 12,
+      "type": "MiniMaxH3SigmaShift",
+      "pos": [
+        4169.006475189114,
+        1158.1381060085946
+      ],
+      "size": [
+        360,
+        132
+      ],
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 62
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            154
+          ]
+        }
+      ],
+      "title": "Sigma Shift",
+      "properties": {
+        "Node name for S&R": "MiniMaxH3SigmaShift"
+      },
+      "widgets_values": [
+        12,
+        3
+      ],
+      "widgets_values_named": {
+        "shift_video": 12,
+        "shift_audio": 3
+      }
+    },
+    {
+      "id": 75,
+      "type": "ModelPreviewOverrideKJ",
+      "pos": [
+        5603.009405092201,
+        976.6697690340441
+      ],
+      "size": [
+        450,
+        946.78125
+      ],
+      "flags": {},
+      "order": 28,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 154
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            155,
+            156
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ModelPreviewOverrideKJ",
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "2bf3bd9ceedcbd4d75fded2870360e28ac15619a",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.5.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        1024,
+        80,
+        false,
+        73,
+        12,
+        "taeh3.safetensors",
+        ""
+      ],
+      "widgets_values_named": {
+        "max_resolution": 1024,
+        "jpeg_quality": 80,
+        "suppress_default_preview": false,
+        "preview_frames": 73,
+        "preview_fps": 12,
+        "tiny_vae": "taeh3.safetensors",
+        "preview": ""
+      }
+    },
+    {
+      "id": 6,
+      "type": "MiniMaxH3ChainLoopStart",
+      "pos": [
+        3756.627991020767,
+        1294.8370470410318
+      ],
+      "size": [
+        360,
+        256
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "plan",
+          "type": "H3_CHAIN_PLAN",
+          "link": 1
+        },
+        {
+          "name": "source_audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "name": "external_context",
+          "shape": 7,
+          "type": "H3_CHAIN_EXTERNAL_CONTEXT",
+          "link": null
+        },
+        {
+          "name": "source_timeline",
+          "shape": 7,
+          "type": "H3_SOURCE_TIMELINE",
+          "link": null
+        },
+        {
+          "name": "tagged_references",
+          "shape": 7,
+          "type": "H3_TAGGED_REFERENCES",
+          "link": null
+        },
+        {
+          "name": "reference_schedule",
+          "shape": 7,
+          "type": "H3_REFERENCE_SCHEDULE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "flow",
+          "type": "H3_CHAIN_FLOW",
+          "links": [
+            49
+          ]
+        },
+        {
+          "name": "state",
+          "type": "H3_CHAIN_STATE",
+          "links": [
+            2
+          ]
+        },
+        {
+          "name": "status",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "Loop Start",
+      "properties": {
+        "Node name for S&R": "MiniMaxH3ChainLoopStart"
+      },
+      "widgets_values": [
+        1,
+        "",
+        true
+      ],
+      "widgets_values_named": {
+        "start_clip": 1,
+        "scene_range": "",
+        "verify_resume_history": true
+      }
+    },
+    {
+      "id": 29,
+      "type": "MiniMaxH3ProjectAssetManager",
+      "pos": [
+        2160.713124847166,
+        1376.463661051437
+      ],
+      "size": [
+        1080,
+        880
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "tagged_references",
+          "shape": 7,
+          "type": "H3_TAGGED_REFERENCES",
+          "link": null
+        },
+        {
+          "name": "upscale_model",
+          "shape": 7,
+          "type": "UPSCALE_MODEL",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "project_assets",
+          "type": "H3_PROJECT_ASSETS",
+          "links": [
+            56,
+            59
+          ]
+        },
+        {
+          "name": "references",
+          "type": "H3_TAGGED_REFERENCES",
+          "links": [
+            8,
+            55
+          ]
+        },
+        {
+          "name": "reference_fingerprint",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "source_timeline",
+          "type": "H3_SOURCE_TIMELINE",
+          "links": null
+        },
+        {
+          "name": "status",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "Project Asset Carousel",
+      "properties": {
+        "Node name for S&R": "MiniMaxH3ProjectAssetManager"
+      },
+      "widgets_values": [
+        "ref2v_studio_minimax_h3_0_6_json",
+        "{\"assets\":[{\"created_at\":\"2026-10-02T16:22:13Z\",\"enabled\":true,\"id\":\"994e3d43d1ff41e793a1b5177c314e7f\",\"input_path\":\"h3_projects/ref2v_studio_minimax_h3_0_6_json/images/ad8deef10dea1b42_qwen2_1_00001.png\",\"kind\":\"image\",\"metadata\":{\"format\":\"png\",\"frames\":1,\"height\":1376,\"width\":768},\"mime_type\":\"image/png\",\"options\":{},\"original_name\":\"qwen2_1_00001_.png\",\"relative_path\":\"images/ad8deef10dea1b42_qwen2_1_00001.png\",\"role\":\"picture\",\"sha256\":\"ad8deef10dea1b4265cabe006ae980444b48c92ee2ed6438e739bd17a79c323d\",\"size\":1855226,\"source_kind\":\"upload\",\"tag\":\"picture_1\",\"updated_at\":\"2026-10-02T17:28:55Z\"}],\"folders\":[],\"format\":\"h3_project_assets_v1\",\"project\":\"ref2v_studio_minimax_h3_0_6_json\",\"reference_slots\":[],\"revision\":\"1918d0374e6ac7d147ce0912a31c58bdd40444d0e21bbb59b5bf9ef917961b58\",\"updated_at\":\"2026-10-02T17:28:55Z\",\"version\":1}",
+        "768",
+        "timestamped_video",
+        ""
+      ],
+      "widgets_values_named": {
+        "run_name": "ref2v_studio_minimax_h3_0_6_json",
+        "catalog_json": "{\"assets\":[{\"created_at\":\"2026-10-02T16:22:13Z\",\"enabled\":true,\"id\":\"994e3d43d1ff41e793a1b5177c314e7f\",\"input_path\":\"h3_projects/ref2v_studio_minimax_h3_0_6_json/images/ad8deef10dea1b42_qwen2_1_00001.png\",\"kind\":\"image\",\"metadata\":{\"format\":\"png\",\"frames\":1,\"height\":1376,\"width\":768},\"mime_type\":\"image/png\",\"options\":{},\"original_name\":\"qwen2_1_00001_.png\",\"relative_path\":\"images/ad8deef10dea1b42_qwen2_1_00001.png\",\"role\":\"picture\",\"sha256\":\"ad8deef10dea1b4265cabe006ae980444b48c92ee2ed6438e739bd17a79c323d\",\"size\":1855226,\"source_kind\":\"upload\",\"tag\":\"picture_1\",\"updated_at\":\"2026-10-02T17:28:55Z\"}],\"folders\":[],\"format\":\"h3_project_assets_v1\",\"project\":\"ref2v_studio_minimax_h3_0_6_json\",\"reference_slots\":[],\"revision\":\"1918d0374e6ac7d147ce0912a31c58bdd40444d0e21bbb59b5bf9ef917961b58\",\"updated_at\":\"2026-10-02T17:28:55Z\",\"version\":1}",
+        "semantic_anchor_size": "768",
+        "semantic_anchor_mode": "timestamped_video",
+        "operation_json": ""
+      }
+    },
+    {
+      "id": 27,
+      "type": "MiniMaxH3ChainPlanModern",
+      "pos": [
+        1074.3608838771208,
+        1093.7244786236733
+      ],
+      "size": [
+        1000,
+        900
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "chain_policy",
+          "type": "H3_CHAIN_POLICY",
+          "link": 58
+        },
+        {
+          "name": "plan_json_input",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        },
+        {
+          "name": "project_assets",
+          "shape": 7,
+          "type": "H3_PROJECT_ASSETS",
+          "link": 59
+        }
+      ],
+      "outputs": [
+        {
+          "name": "plan",
+          "type": "H3_CHAIN_PLAN",
+          "links": [
+            54
+          ]
+        },
+        {
+          "name": "summary",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "clip_count",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": []
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": []
+        },
+        {
+          "name": "video_blend_frames",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "title": "Production Plan",
+      "properties": {
+        "Node name for S&R": "MiniMaxH3ChainPlanModern",
+        "h3_chain_plan_layout": {
+          "promptHeights": {
+            "shared": 88,
+            "scene-basic:reference_delivery": 72,
+            "scene-basic:reference_confirmation": 72,
+            "scene:sitting_to_laying_down": 112,
+            "scene:reference_delivery": 112,
+            "scene-basic:sitting_to_laying_down": 72,
+            "scene:laying_down_to_sitting": 112,
+            "scene:reference_confirmation": 112,
+            "scene-basic:laying_down_to_sitting": 72,
+            "scene-basic:sitting_to_standing": 72,
+            "scene:part_1": 112,
+            "scene-basic:part_1": 72,
+            "scene-basic:part_2": 72,
+            "scene:part_2": 112,
+            "scene-basic:part_2_copy": 72,
+            "scene:part_2_copy": 112,
+            "scene-basic:part_3": 72,
+            "scene:part_3": 112,
+            "scene-basic:scene_04": 72,
+            "scene:scene_04": 112,
+            "scene-basic:scene_02": 72,
+            "scene:scene_02": 112,
+            "scene-basic:scene_03": 72,
+            "scene:scene_03": 112
+          },
+          "collapsedScenes": {
+            "part_2": true,
+            "scene_03": true,
+            "part_1": true
+          },
+          "advanced": false,
+          "jsonOpen": false,
+          "settingsOpen": true
+        },
+        "h3_chain_scene_colors": {}
+      },
+      "widgets_values": [
+        "{\n  \"shots\": [\n    {\n      \"id\": \"part_1\",\n      \"prompt\": [\n        \"id=\\\"woman_approach_and_sit_001\\\"\",\n        \"\",\n        \"subject_definitions:\",\n        \"<Subject 1>: The woman from @picture_1 with long, wavy dark hair and a neutral, serious facial expression. She is wearing the same ornate, heavily embroidered green lehenga (fitted blouse and voluminous skirt) as seen in <Picture 1>.\",\n        \"<Environment>: A luxurious interior featuring a large, dark brown tufted leather armchair with deep folds and brass studding, consistent with the setting in <Picture 1>.\",\n        \"<Prop>: The green lehenga, characterized by heavy silk fabric and dense gold embroidery that reacts physically to her movement.\",\n        \"\",\n        \"summary:\",\n        \"The woman walks toward the leather armchair, performs a graceful turn once she reaches it, and settles into the chair, maintaining a neutral expression while gazing into the distance.\",\n        \"\",\n        \"retention_analysis:\",\n        \"@picture_1 -> <Subject 1> (fully_preserved identity, clothing, and facial expression)\",\n        \"<Picture 1> -> <Environment> (fully_preserved environment and furniture)\",\n        \"\",\n        \"detailed_description:\",\n        \"[Shot 1] A medium-wide tracking shot follows <Subject 1> as she walks toward the armchair with a steady, rhythmic gait. The camera moves laterally to maintain her in a medium shot, keeping her head and eyes centered within the frame to ensure a high-quality, symmetrical composition.\",\n        \"As she approaches the chair, <Subject 1> performs a graceful pivot, turning her body to face the back of the armchair. The camera performs a smooth, slow arc around her to facilitate the turn.\",\n        \"As she turns, the heavy silk of her lehenga swings with natural momentum, the gold embroidery catching the light. \",\n        \"<Subject 1> then begins to lower her center of gravity, settling gracefully into the deep, tufted leather cushion of the chair. \",\n        \"The camera performs a subtle, slow push-in toward her face as she sits, maintaining focus on her neutral, non-smiling expression.\",\n        \"As she settles, her weight causes the leather to creak and the heavy fabric of the lehenga to drape and fold naturally around her legs and the chair's armrests.\",\n        \"<Subject 1> finishes in a poised, seated position, looking away from the camera toward the distant background with a contemplative, neutral gaze.\",\n        \"\",\n        \"overall_soundscape:\",\n        \"The rhythmic, muffled sound of footsteps on a hard floor, followed by the continuous, heavy rustle of silk and the distinct, deep creak of leather as she settles into the chair.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"None.\"\n      ],\n      \"seed\": \"12636599129996765864\",\n      \"duration_seconds\": 7,\n      \"basic_prompt\": \"\"\n    },\n    {\n      \"id\": \"part_2\",\n      \"prompt\": [\n        \"id=\\\"woman_lehenga_pose_transition_001\\\"\",\n        \"\",\n        \"subject_definitions:\",\n        \"<Subject 1>: Woman from <Picture 1> with long, wavy dark hair and a serious, neutral facial expression. Her appearance, including her facial features and the ornate green lehenga, is identical to <Picture 1>. Her final position at the end of the video must match the exact pose and limb placement seen in <Picture 1>.\",\n        \"<Environment>: The same luxurious interior from <Picture 1>, featuring a large, dark brown tufted leather armchair with deep folds and brass studding.\",\n        \"<Prop>: The green lehenga, characterized by dense gold embroidery and a heavy, smooth silk texture that reacts to the movement of her legs.\",\n        \"\",\n        \"summary:\",\n        \"The woman transitions from an upright seated position to the exact reclining pose shown in <Picture 1>. As she reclines sideways and lifts her legs toward the opposite armrest, the heavy lehenga fabric slides up toward her waist, gradually revealing her legs until she reaches the final composition of <Picture 1>.\",\n        \"\",\n        \"retention_analysis:\",\n        \"<Picture 1> -> <Subject 1> (fully_preserved identity and target final pose)\",\n        \"<Picture 1> -> <Environment> (fully_preserved environment and lighting)\",\n        \"\",\n        \"detailed_description:\",\n        \"[Shot 1] A medium-wide shot establishes <Subject 1> sitting perfectly upright in the center of the frame, looking forward with a serious, non-smiling expression.\",\n        \"As the action begins, <Subject 1> shifts her weight to her hip, leaning her torso sideways to begin reclining into the armchair. \",\n        \"The camera performs a slow, steady orbit keeping her entire body perfectly centered within the frame throughout the movement to maintain a strong, symmetrical composition. \",\n        \"As she reclines, <Subject 1> lifts her legs upward and across the seat toward the opposite armrest. \",\n        \"The upward motion of her legs acts as a trigger, causing the heavy, embroidered silk of the lehenga to slide smoothly up her thighs toward her waist, continuously revealing the skin of her legs. \",\n        \"The movement is fluid and continuous, following the physics of heavy fabric being displaced by rising limbs. \",\n        \"At the moment of maximum leg elevation, the lighting and composition transition to match <Picture 1> perfectly. \",\n        \"The shot concludes with <Subject 1> in the exact pose, limb placement, and lighting seen in <Picture 1>, maintaining her serious facial expression.\",\n        \"\",\n        \"overall_soundscape:\",\n        \"The deep creak of the leather armchair under shifting weight and the continuous, heavy rustle of thick silk fabric sliding against skin.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"None.\",\n        \"\"\n      ]\n    },\n    {\n      \"id\": \"scene_03\",\n      \"prompt\": [\n        \"id=\\\"woman_lehenga_reveal_pan_001\\\"\",\n        \"\",\n        \"subject_definitions:\",\n        \"<Subject 1>: The woman from <Picture 1> with long, wavy dark hair and a neutral, serious facial expression. She is wearing the ornate, heavily embroidered green lehenga (fitted blouse and voluminous skirt) seen in <Picture 1>.\",\n        \"<Environment>: A luxurious, warm-toned interior featuring a large, dark brown tufted leather armchair, consistent with the background of <Picture 1>.\",\n        \"<Prop>: The green lehenga, characterized by heavy, high-sheen silk fabric and dense, reflective gold embroidery.\",\n        \"\",\n        \"summary:\",\n        \"The shot begins with a close-up on the subject's legs. The camera pans slowly to the left, progressively revealing her hips and full body. Simultaneously, the subject lets her arm fall gracefully to her side and tilts her head back toward the ceiling.\",\n        \"\",\n        \"retention_analysis:\",\n        \"<Picture 1> -> <Subject 1> (fully_preserved identity, clothing, and neutral expression)\",\n        \"<Picture 1> -> <Environment> (fully_preserved lighting and leather texture)\",\n        \"\",\n        \"detailed_description:\",\n        \"[Shot 1] The shot opens with a tight, medium-close-up focus on <Subject 1>'s legs, showcasing the intricate gold embroidery and heavy texture of the green lehenga. \",\n        \"Starting with position in <Picture 1>, <Subject 1> performs a coordinated movement: she lets her arm fall gracefully from her side to the floor in a fluid, continuous motion, while simultaneously tilting her head back toward the ceiling. Only her upper body moves.\",\n        \"\",\n        \"As she tilts her head, the light catches the highlights on her neck and the sheen of the silk fabric. \",\n        \"The shot ends with <Subject 1> in a poised, head-tilted pose, her gaze directed upward.\",\n        \"\",\n        \"overall_soundscape:\",\n        \"The soft, heavy rustle of silk fabric and the subtle, rhythmic movement of the heavy lehenga as it shifts.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"None.\",\n        \"\"\n      ]\n    }\n  ],\n  \"defaults\": {\n    \"steps\": 3\n  },\n  \"prompt_prefix\": [\n    \"Bright daylight sunlit lighting, savannah backdrop. The impala does not smile at any time. The impala is always standing on all 4 legs.\"\n  ]\n}",
+        "ref2v_studio_minimax_h3_0_6_json",
+        "",
+        416,
+        736,
+        "video",
+        "center",
+        7,
+        3,
+        0,
+        20,
+        5
+      ],
+      "widgets_values_named": {
+        "plan_json": "{\n  \"shots\": [\n    {\n      \"id\": \"part_1\",\n      \"prompt\": [\n        \"id=\\\"woman_approach_and_sit_001\\\"\",\n        \"\",\n        \"subject_definitions:\",\n        \"<Subject 1>: The woman from @picture_1 with long, wavy dark hair and a neutral, serious facial expression. She is wearing the same ornate, heavily embroidered green lehenga (fitted blouse and voluminous skirt) as seen in <Picture 1>.\",\n        \"<Environment>: A luxurious interior featuring a large, dark brown tufted leather armchair with deep folds and brass studding, consistent with the setting in <Picture 1>.\",\n        \"<Prop>: The green lehenga, characterized by heavy silk fabric and dense gold embroidery that reacts physically to her movement.\",\n        \"\",\n        \"summary:\",\n        \"The woman walks toward the leather armchair, performs a graceful turn once she reaches it, and settles into the chair, maintaining a neutral expression while gazing into the distance.\",\n        \"\",\n        \"retention_analysis:\",\n        \"@picture_1 -> <Subject 1> (fully_preserved identity, clothing, and facial expression)\",\n        \"<Picture 1> -> <Environment> (fully_preserved environment and furniture)\",\n        \"\",\n        \"detailed_description:\",\n        \"[Shot 1] A medium-wide tracking shot follows <Subject 1> as she walks toward the armchair with a steady, rhythmic gait. The camera moves laterally to maintain her in a medium shot, keeping her head and eyes centered within the frame to ensure a high-quality, symmetrical composition.\",\n        \"As she approaches the chair, <Subject 1> performs a graceful pivot, turning her body to face the back of the armchair. The camera performs a smooth, slow arc around her to facilitate the turn.\",\n        \"As she turns, the heavy silk of her lehenga swings with natural momentum, the gold embroidery catching the light. \",\n        \"<Subject 1> then begins to lower her center of gravity, settling gracefully into the deep, tufted leather cushion of the chair. \",\n        \"The camera performs a subtle, slow push-in toward her face as she sits, maintaining focus on her neutral, non-smiling expression.\",\n        \"As she settles, her weight causes the leather to creak and the heavy fabric of the lehenga to drape and fold naturally around her legs and the chair's armrests.\",\n        \"<Subject 1> finishes in a poised, seated position, looking away from the camera toward the distant background with a contemplative, neutral gaze.\",\n        \"\",\n        \"overall_soundscape:\",\n        \"The rhythmic, muffled sound of footsteps on a hard floor, followed by the continuous, heavy rustle of silk and the distinct, deep creak of leather as she settles into the chair.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"None.\"\n      ],\n      \"seed\": \"12636599129996765864\",\n      \"duration_seconds\": 7,\n      \"basic_prompt\": \"\"\n    },\n    {\n      \"id\": \"part_2\",\n      \"prompt\": [\n        \"id=\\\"woman_lehenga_pose_transition_001\\\"\",\n        \"\",\n        \"subject_definitions:\",\n        \"<Subject 1>: Woman from <Picture 1> with long, wavy dark hair and a serious, neutral facial expression. Her appearance, including her facial features and the ornate green lehenga, is identical to <Picture 1>. Her final position at the end of the video must match the exact pose and limb placement seen in <Picture 1>.\",\n        \"<Environment>: The same luxurious interior from <Picture 1>, featuring a large, dark brown tufted leather armchair with deep folds and brass studding.\",\n        \"<Prop>: The green lehenga, characterized by dense gold embroidery and a heavy, smooth silk texture that reacts to the movement of her legs.\",\n        \"\",\n        \"summary:\",\n        \"The woman transitions from an upright seated position to the exact reclining pose shown in <Picture 1>. As she reclines sideways and lifts her legs toward the opposite armrest, the heavy lehenga fabric slides up toward her waist, gradually revealing her legs until she reaches the final composition of <Picture 1>.\",\n        \"\",\n        \"retention_analysis:\",\n        \"<Picture 1> -> <Subject 1> (fully_preserved identity and target final pose)\",\n        \"<Picture 1> -> <Environment> (fully_preserved environment and lighting)\",\n        \"\",\n        \"detailed_description:\",\n        \"[Shot 1] A medium-wide shot establishes <Subject 1> sitting perfectly upright in the center of the frame, looking forward with a serious, non-smiling expression.\",\n        \"As the action begins, <Subject 1> shifts her weight to her hip, leaning her torso sideways to begin reclining into the armchair. \",\n        \"The camera performs a slow, steady orbit keeping her entire body perfectly centered within the frame throughout the movement to maintain a strong, symmetrical composition. \",\n        \"As she reclines, <Subject 1> lifts her legs upward and across the seat toward the opposite armrest. \",\n        \"The upward motion of her legs acts as a trigger, causing the heavy, embroidered silk of the lehenga to slide smoothly up her thighs toward her waist, continuously revealing the skin of her legs. \",\n        \"The movement is fluid and continuous, following the physics of heavy fabric being displaced by rising limbs. \",\n        \"At the moment of maximum leg elevation, the lighting and composition transition to match <Picture 1> perfectly. \",\n        \"The shot concludes with <Subject 1> in the exact pose, limb placement, and lighting seen in <Picture 1>, maintaining her serious facial expression.\",\n        \"\",\n        \"overall_soundscape:\",\n        \"The deep creak of the leather armchair under shifting weight and the continuous, heavy rustle of thick silk fabric sliding against skin.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"None.\",\n        \"\"\n      ]\n    },\n    {\n      \"id\": \"scene_03\",\n      \"prompt\": [\n        \"id=\\\"woman_lehenga_reveal_pan_001\\\"\",\n        \"\",\n        \"subject_definitions:\",\n        \"<Subject 1>: The woman from <Picture 1> with long, wavy dark hair and a neutral, serious facial expression. She is wearing the ornate, heavily embroidered green lehenga (fitted blouse and voluminous skirt) seen in <Picture 1>.\",\n        \"<Environment>: A luxurious, warm-toned interior featuring a large, dark brown tufted leather armchair, consistent with the background of <Picture 1>.\",\n        \"<Prop>: The green lehenga, characterized by heavy, high-sheen silk fabric and dense, reflective gold embroidery.\",\n        \"\",\n        \"summary:\",\n        \"The shot begins with a close-up on the subject's legs. The camera pans slowly to the left, progressively revealing her hips and full body. Simultaneously, the subject lets her arm fall gracefully to her side and tilts her head back toward the ceiling.\",\n        \"\",\n        \"retention_analysis:\",\n        \"<Picture 1> -> <Subject 1> (fully_preserved identity, clothing, and neutral expression)\",\n        \"<Picture 1> -> <Environment> (fully_preserved lighting and leather texture)\",\n        \"\",\n        \"detailed_description:\",\n        \"[Shot 1] The shot opens with a tight, medium-close-up focus on <Subject 1>'s legs, showcasing the intricate gold embroidery and heavy texture of the green lehenga. \",\n        \"Starting with position in <Picture 1>, <Subject 1> performs a coordinated movement: she lets her arm fall gracefully from her side to the floor in a fluid, continuous motion, while simultaneously tilting her head back toward the ceiling. Only her upper body moves.\",\n        \"\",\n        \"As she tilts her head, the light catches the highlights on her neck and the sheen of the silk fabric. \",\n        \"The shot ends with <Subject 1> in a poised, head-tilted pose, her gaze directed upward.\",\n        \"\",\n        \"overall_soundscape:\",\n        \"The soft, heavy rustle of silk fabric and the subtle, rhythmic movement of the heavy lehenga as it shifts.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"None.\",\n        \"\"\n      ]\n    }\n  ],\n  \"defaults\": {\n    \"steps\": 3\n  },\n  \"prompt_prefix\": [\n    \"Bright daylight sunlit lighting, savannah backdrop. The impala does not smile at any time. The impala is always standing on all 4 legs.\"\n  ]\n}",
+        "run_name": "ref2v_studio_minimax_h3_0_6_json",
+        "generation_fingerprint": "",
+        "width": 416,
+        "height": 736,
+        "encode_mode": "video",
+        "crop": "center",
+        "default_duration_seconds": 7,
+        "default_steps": 3,
+        "base_seed": 0,
+        "segment_crf": 20,
+        "video_blend_frames": 5
+      }
+    },
+    {
+      "id": 76,
+      "type": "MMH3UltimateUpscale",
+      "pos": [
+        5576.695418931947,
+        -470.7952305350629
+      ],
+      "size": [
+        260,
+        490
+      ],
+      "flags": {},
+      "order": 36,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 170
+        },
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 169
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": 168
+        },
+        {
+          "name": "noise",
+          "type": "NOISE",
+          "link": 157
+        },
+        {
+          "name": "sampler",
+          "type": "SAMPLER",
+          "link": 158
+        },
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 159
+        },
+        {
+          "name": "negative",
+          "shape": 7,
+          "type": "CONDITIONING",
+          "link": null
+        },
+        {
+          "name": "latent_upscale_param",
+          "shape": 7,
+          "type": "H3_UPSCALE_PARAM",
+          "link": 160
+        },
+        {
+          "name": "temporal_split_param",
+          "shape": 7,
+          "type": "H3_TEMPORAL_PARAM",
+          "link": 161
+        },
+        {
+          "name": "spatial_split_param",
+          "shape": 7,
+          "type": "H3_SPATIAL_PARAM",
+          "link": 162
+        },
+        {
+          "name": "fun_control_param",
+          "shape": 7,
+          "type": "H3_FUN_CONTROL_PARAM",
+          "link": null
+        },
+        {
+          "name": "inpaint_param",
+          "shape": 7,
+          "type": "H3_INPAINT_PARAM",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": [
+            171,
+            172
+          ]
+        },
+        {
+          "name": "segments_info",
+          "type": "DICT",
+          "links": []
+        },
+        {
+          "name": "tiles_info",
+          "type": "DICT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MMH3UltimateUpscale",
+        "cnr_id": "Comfyui-MMH3-UltimateUpscale",
+        "ver": "26cf738a33bbd497299663c26c6dfc8f26d5c2ee",
+        "aux_id": "bbaudio-2025/Comfyui-MMH3-UltimateUpscale"
+      },
+      "widgets_values": [
+        1
+      ],
+      "widgets_values_named": {
+        "cfg": 1
+      }
+    },
+    {
+      "id": 77,
+      "type": "MMH3LatentUpscaleWithModelParams",
+      "pos": [
+        5097.628435004746,
+        -847.9579807628558
+      ],
+      "size": [
+        320,
+        198
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 164
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 165
+        }
+      ],
+      "outputs": [
+        {
+          "name": "latent_upscale_param",
+          "type": "H3_UPSCALE_PARAM",
+          "links": [
+            160
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MMH3LatentUpscaleWithModelParams",
+        "cnr_id": "Comfyui-MMH3-UltimateUpscale",
+        "ver": "26cf738a33bbd497299663c26c6dfc8f26d5c2ee",
+        "aux_id": "bbaudio-2025/Comfyui-MMH3-UltimateUpscale"
+      },
+      "widgets_values": [
+        "minimax_h3_latent_upscaler_3d_bf16.safetensors",
+        1280,
+        704,
+        "mps",
+        "fp16",
+        true
+      ],
+      "widgets_values_named": {
+        "model_name": "minimax_h3_latent_upscaler_3d_bf16.safetensors",
+        "width": 1280,
+        "height": 704,
+        "device": "mps",
+        "precision": "fp16",
+        "offload_model": true
+      }
+    },
+    {
+      "id": 78,
+      "type": "MMH3SpatialSplitParams",
+      "pos": [
+        5090.941967137037,
+        -578.8344740318556
+      ],
+      "size": [
+        320,
+        506
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "upscale_width",
+          "type": "INT",
+          "widget": {
+            "name": "upscale_width"
+          },
+          "link": 166
+        },
+        {
+          "name": "upscale_height",
+          "type": "INT",
+          "widget": {
+            "name": "upscale_height"
+          },
+          "link": 167
+        }
+      ],
+      "outputs": [
+        {
+          "name": "spatial_split_param",
+          "type": "H3_SPATIAL_PARAM",
+          "links": [
+            162
+          ]
+        },
+        {
+          "name": "tile_width",
+          "type": "INT",
+          "links": []
+        },
+        {
+          "name": "tile_height",
+          "type": "INT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MMH3SpatialSplitParams",
+        "cnr_id": "Comfyui-MMH3-UltimateUpscale",
+        "ver": "3b4d972dd7de1ab9c40deb0084bf7db55474b5d9"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        "rows_cols",
+        512,
+        512,
+        2,
+        2,
+        128,
+        128,
+        64,
+        64,
+        256,
+        "earlier",
+        "smoothstep",
+        0,
+        false,
+        "off",
+        32
+      ],
+      "widgets_values_named": {
+        "upscale_width": 1024,
+        "upscale_height": 1024,
+        "tile_size_mode": "rows_cols",
+        "tile_width": 512,
+        "tile_height": 512,
+        "grid_rows": 2,
+        "grid_cols": 2,
+        "spatial_w_overlap": 128,
+        "spatial_h_overlap": 128,
+        "fade_width": 64,
+        "fade_height": 64,
+        "min_tile_size": 256,
+        "overlap_mode": "earlier",
+        "overlap_blend": "smoothstep",
+        "masked_area_noise": 0,
+        "brightness_match": false,
+        "dynamic_fade": "off",
+        "dynamic_fade_min": 32
+      }
+    },
+    {
+      "id": 79,
+      "type": "MMH3TemporalSplitParams",
+      "pos": [
+        5092.541880905851,
+        -1051.2729856290644
+      ],
+      "size": [
+        320,
+        142
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "temporal_split_param",
+          "type": "H3_TEMPORAL_PARAM",
+          "links": [
+            161
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MMH3TemporalSplitParams",
+        "cnr_id": "Comfyui-MMH3-UltimateUpscale",
+        "ver": "26cf738a33bbd497299663c26c6dfc8f26d5c2ee",
+        "aux_id": "bbaudio-2025/Comfyui-MMH3-UltimateUpscale"
+      },
+      "widgets_values": [
+        119,
+        17,
+        0.999
+      ],
+      "widgets_values_named": {
+        "chunk_length": 119,
+        "temporal_overlap": 17,
+        "anchor_strength": 0.999
+      }
+    },
+    {
+      "id": 80,
+      "type": "BasicScheduler",
+      "pos": [
+        5106.889409660316,
+        -1254.5367685233578
+      ],
+      "size": [
+        280,
+        118
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 163
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SIGMAS",
+          "type": "SIGMAS",
+          "links": [
+            159
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BasicScheduler",
+        "cnr_id": "comfy-core",
+        "ver": "0.33.0"
+      },
+      "widgets_values": [
+        "beta",
+        2,
+        0.2
+      ],
+      "widgets_values_named": {
+        "scheduler": "beta",
+        "steps": 2,
+        "denoise": 0.2
+      }
+    },
+    {
+      "id": 81,
+      "type": "RandomNoise",
+      "pos": [
+        5091.027732780053,
+        -1396.9017372760673
+      ],
+      "size": [
+        280,
+        90
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "NOISE",
+          "type": "NOISE",
+          "links": [
+            157
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RandomNoise",
+        "cnr_id": "comfy-core",
+        "ver": "0.33.0"
+      },
+      "widgets_values": [
+        201177824316208,
+        "fixed"
+      ],
+      "widgets_values_named": {
+        "noise_seed": 201177824316208,
+        "control_after_generate": "fixed"
+      }
+    },
+    {
+      "id": 82,
+      "type": "KSamplerSelect",
+      "pos": [
+        5405.615493433906,
+        -1393.8580023544137
+      ],
+      "size": [
+        280,
+        62
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "SAMPLER",
+          "type": "SAMPLER",
+          "links": [
+            158
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSamplerSelect",
+        "cnr_id": "comfy-core",
+        "ver": "0.33.0"
+      },
+      "widgets_values": [
+        "er_sde"
+      ],
+      "widgets_values_named": {
+        "sampler_name": "er_sde"
+      }
+    },
+    {
+      "id": 83,
+      "type": "ResolutionSelector",
+      "pos": [
+        4476.9754474555875,
+        -882.9790104874021
+      ],
+      "size": [
+        270,
+        150
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            164,
+            166
+          ]
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            165,
+            167
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ResolutionSelector"
+      },
+      "widgets_values": [
+        "9:16 (Portrait Widescreen)",
+        1,
+        32
+      ],
+      "widgets_values_named": {
+        "aspect_ratio": "9:16 (Portrait Widescreen)",
+        "megapixels": 1,
+        "multiple": 32
+      }
+    },
+    {
+      "id": 86,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        6114.371514903985,
+        -541.3266389941032
+      ],
+      "size": [
+        225.3349609375,
+        715.8918050130208
+      ],
+      "flags": {},
+      "order": 40,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 179
+        },
+        {
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": 180
+        },
+        {
+          "name": "meta_batch",
+          "shape": 7,
+          "type": "VHS_BatchManager",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 24,
+        "loop_count": 0,
+        "filename_prefix": "MinimaxH3-Segment",
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "crf": 19,
+        "save_metadata": true,
+        "trim_to_audio": false,
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "MinimaxH3-Segment_00001-audio.mp4",
+            "subfolder": "",
+            "type": "output",
+            "format": "video/h264-mp4",
+            "frame_rate": 24,
+            "workflow": "MinimaxH3-Segment_00001.png",
+            "fullpath": "/Users/maheshthakre/Documents/ComfyUI/output/MinimaxH3-Segment_00001-audio.mp4"
+          }
+        }
+      },
+      "widgets_values_named": {
+        "frame_rate": 24,
+        "loop_count": 0,
+        "filename_prefix": "MinimaxH3-Segment",
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "crf": 19,
+        "save_metadata": true,
+        "trim_to_audio": false,
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "MinimaxH3-Segment_00001-audio.mp4",
+            "subfolder": "",
+            "type": "output",
+            "format": "video/h264-mp4",
+            "frame_rate": 24,
+            "workflow": "MinimaxH3-Segment_00001.png",
+            "fullpath": "/Users/maheshthakre/Documents/ComfyUI/output/MinimaxH3-Segment_00001-audio.mp4"
+          }
+        }
+      }
+    },
+    {
+      "id": 87,
+      "type": "MarkdownNote",
+      "pos": [
+        614.1398569880669,
+        1318.630711785264
+      ],
+      "size": [
+        254.7109291566394,
+        375.7900638935098
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Note: Size Settings Reference",
+      "properties": {},
+      "widgets_values": [
+        "| megapixels | Aspect | Output (multiple=32) |\n|---|---|---|\n| 0.2 | 16:9 | 608 x 352 |\n| 0.3 | 16:9 | 736 x 416 |\n| 0.4 | 16:9 | 864 x 480 |\n| 0.5 | 16:9 | 960 x 544 |\n| 0.6 | 16:9 | 1056 x 608 |\n| 0.7 | 16:9 | 1152 x 640 |\n| 0.8 | 16:9 | 1216 x 672 |\n| 0.9 | 16:9 | 1280 x 736 |\n| 0.98 | 16:9 | 1344 x 768 |\n| 1.0 | 16:9 | 1376 x 768 |\n| 1.2 | 16:9 | 1504 x 832 |\n| 1.5 | 16:9 | 1664 x 928 |\n| 1.8 | 16:9 | 1824 x 1024 |\n| 2.0 | 16:9 | 1920 x 1088 |\n"
+      ],
+      "widgets_values_named": {
+        "text": "| megapixels | Aspect | Output (multiple=32) |\n|---|---|---|\n| 0.2 | 16:9 | 608 x 352 |\n| 0.3 | 16:9 | 736 x 416 |\n| 0.4 | 16:9 | 864 x 480 |\n| 0.5 | 16:9 | 960 x 544 |\n| 0.6 | 16:9 | 1056 x 608 |\n| 0.7 | 16:9 | 1152 x 640 |\n| 0.8 | 16:9 | 1216 x 672 |\n| 0.9 | 16:9 | 1280 x 736 |\n| 0.98 | 16:9 | 1344 x 768 |\n| 1.0 | 16:9 | 1376 x 768 |\n| 1.2 | 16:9 | 1504 x 832 |\n| 1.5 | 16:9 | 1664 x 928 |\n| 1.8 | 16:9 | 1824 x 1024 |\n| 2.0 | 16:9 | 1920 x 1088 |\n"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    }
+  ],
+  "links": [
+    [
+      1,
+      25,
+      0,
+      6,
+      0,
+      "H3_CHAIN_PLAN"
+    ],
+    [
+      2,
+      6,
+      1,
+      7,
+      0,
+      "H3_CHAIN_STATE"
+    ],
+    [
+      3,
+      22,
+      0,
+      8,
+      0,
+      "H3_CHAIN_MANIFEST"
+    ],
+    [
+      4,
+      7,
+      5,
+      9,
+      0,
+      "INT"
+    ],
+    [
+      6,
+      4,
+      0,
+      10,
+      1,
+      "VAE"
+    ],
+    [
+      7,
+      5,
+      0,
+      10,
+      2,
+      "VAE"
+    ],
+    [
+      8,
+      29,
+      1,
+      10,
+      3,
+      "H3_TAGGED_REFERENCES"
+    ],
+    [
+      9,
+      7,
+      1,
+      10,
+      5,
+      "INT"
+    ],
+    [
+      10,
+      7,
+      2,
+      10,
+      6,
+      "INT"
+    ],
+    [
+      11,
+      7,
+      4,
+      10,
+      7,
+      "STRING"
+    ],
+    [
+      15,
+      7,
+      0,
+      10,
+      4,
+      "H3_CHAIN_STATE"
+    ],
+    [
+      16,
+      7,
+      0,
+      11,
+      0,
+      "H3_CHAIN_STATE"
+    ],
+    [
+      17,
+      10,
+      0,
+      11,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      18,
+      4,
+      0,
+      11,
+      2,
+      "VAE"
+    ],
+    [
+      19,
+      10,
+      1,
+      11,
+      3,
+      "LATENT"
+    ],
+    [
+      22,
+      11,
+      0,
+      13,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      25,
+      9,
+      0,
+      15,
+      0,
+      "NOISE"
+    ],
+    [
+      26,
+      13,
+      0,
+      15,
+      1,
+      "GUIDER"
+    ],
+    [
+      27,
+      3,
+      0,
+      15,
+      2,
+      "SAMPLER"
+    ],
+    [
+      28,
+      14,
+      0,
+      15,
+      3,
+      "SIGMAS"
+    ],
+    [
+      29,
+      11,
+      3,
+      15,
+      4,
+      "LATENT"
+    ],
+    [
+      31,
+      4,
+      0,
+      16,
+      1,
+      "VAE"
+    ],
+    [
+      33,
+      5,
+      0,
+      17,
+      1,
+      "VAE"
+    ],
+    [
+      34,
+      16,
+      0,
+      18,
+      0,
+      "IMAGE"
+    ],
+    [
+      35,
+      17,
+      0,
+      18,
+      1,
+      "AUDIO"
+    ],
+    [
+      36,
+      11,
+      1,
+      18,
+      3,
+      "INT"
+    ],
+    [
+      37,
+      7,
+      0,
+      18,
+      2,
+      "H3_CHAIN_STATE"
+    ],
+    [
+      38,
+      7,
+      0,
+      19,
+      0,
+      "H3_CHAIN_STATE"
+    ],
+    [
+      39,
+      18,
+      0,
+      19,
+      1,
+      "IMAGE"
+    ],
+    [
+      41,
+      18,
+      1,
+      19,
+      3,
+      "AUDIO"
+    ],
+    [
+      42,
+      18,
+      2,
+      19,
+      4,
+      "IMAGE"
+    ],
+    [
+      43,
+      24,
+      0,
+      20,
+      0,
+      "H3_CHAIN_MANIFEST"
+    ],
+    [
+      45,
+      25,
+      0,
+      22,
+      0,
+      "H3_CHAIN_PLAN"
+    ],
+    [
+      46,
+      7,
+      0,
+      23,
+      0,
+      "H3_CHAIN_STATE"
+    ],
+    [
+      47,
+      19,
+      0,
+      23,
+      1,
+      "H3_CHAIN_SEGMENT"
+    ],
+    [
+      48,
+      18,
+      1,
+      23,
+      2,
+      "AUDIO"
+    ],
+    [
+      49,
+      6,
+      0,
+      24,
+      0,
+      "H3_CHAIN_FLOW"
+    ],
+    [
+      50,
+      7,
+      0,
+      24,
+      1,
+      "H3_CHAIN_STATE"
+    ],
+    [
+      51,
+      18,
+      0,
+      24,
+      2,
+      "IMAGE"
+    ],
+    [
+      53,
+      23,
+      0,
+      24,
+      4,
+      "H3_CHAIN_SEGMENT"
+    ],
+    [
+      54,
+      27,
+      0,
+      25,
+      0,
+      "H3_CHAIN_PLAN"
+    ],
+    [
+      55,
+      29,
+      1,
+      25,
+      3,
+      "H3_TAGGED_REFERENCES"
+    ],
+    [
+      56,
+      29,
+      0,
+      25,
+      6,
+      "H3_PROJECT_ASSETS"
+    ],
+    [
+      57,
+      25,
+      0,
+      26,
+      0,
+      "H3_CHAIN_PLAN"
+    ],
+    [
+      58,
+      28,
+      0,
+      27,
+      0,
+      "H3_CHAIN_POLICY"
+    ],
+    [
+      59,
+      29,
+      0,
+      27,
+      2,
+      "H3_PROJECT_ASSETS"
+    ],
+    [
+      60,
+      25,
+      0,
+      30,
+      0,
+      "H3_CHAIN_PLAN"
+    ],
+    [
+      61,
+      21,
+      0,
+      33,
+      0,
+      "MODEL"
+    ],
+    [
+      62,
+      33,
+      0,
+      12,
+      0,
+      "MODEL"
+    ],
+    [
+      68,
+      7,
+      6,
+      10,
+      10,
+      "INT"
+    ],
+    [
+      75,
+      7,
+      8,
+      10,
+      8,
+      "INT"
+    ],
+    [
+      76,
+      7,
+      9,
+      10,
+      9,
+      "INT"
+    ],
+    [
+      81,
+      7,
+      0,
+      42,
+      0,
+      "H3_CHAIN_STATE"
+    ],
+    [
+      140,
+      1,
+      0,
+      71,
+      0,
+      "MODEL"
+    ],
+    [
+      141,
+      71,
+      0,
+      21,
+      0,
+      "MODEL"
+    ],
+    [
+      154,
+      12,
+      0,
+      75,
+      0,
+      "MODEL"
+    ],
+    [
+      155,
+      75,
+      0,
+      13,
+      0,
+      "MODEL"
+    ],
+    [
+      156,
+      75,
+      0,
+      14,
+      0,
+      "MODEL"
+    ],
+    [
+      24,
+      7,
+      7,
+      14,
+      1,
+      "INT"
+    ],
+    [
+      157,
+      81,
+      0,
+      76,
+      3,
+      "NOISE"
+    ],
+    [
+      158,
+      82,
+      0,
+      76,
+      4,
+      "SAMPLER"
+    ],
+    [
+      159,
+      80,
+      0,
+      76,
+      5,
+      "SIGMAS"
+    ],
+    [
+      160,
+      77,
+      0,
+      76,
+      7,
+      "H3_UPSCALE_PARAM"
+    ],
+    [
+      161,
+      79,
+      0,
+      76,
+      8,
+      "H3_TEMPORAL_PARAM"
+    ],
+    [
+      162,
+      78,
+      0,
+      76,
+      9,
+      "H3_SPATIAL_PARAM"
+    ],
+    [
+      163,
+      71,
+      0,
+      80,
+      0,
+      "MODEL"
+    ],
+    [
+      164,
+      83,
+      0,
+      77,
+      0,
+      "INT"
+    ],
+    [
+      165,
+      83,
+      1,
+      77,
+      1,
+      "INT"
+    ],
+    [
+      166,
+      83,
+      0,
+      78,
+      0,
+      "INT"
+    ],
+    [
+      167,
+      83,
+      1,
+      78,
+      1,
+      "INT"
+    ],
+    [
+      168,
+      15,
+      0,
+      76,
+      2,
+      "LATENT"
+    ],
+    [
+      169,
+      11,
+      0,
+      76,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      170,
+      71,
+      0,
+      76,
+      0,
+      "MODEL"
+    ],
+    [
+      171,
+      76,
+      0,
+      16,
+      0,
+      "LATENT"
+    ],
+    [
+      172,
+      76,
+      0,
+      17,
+      0,
+      "LATENT"
+    ],
+    [
+      176,
+      2,
+      0,
+      10,
+      0,
+      "CLIP"
+    ],
+    [
+      177,
+      15,
+      0,
+      24,
+      3,
+      "LATENT"
+    ],
+    [
+      178,
+      15,
+      0,
+      19,
+      2,
+      "LATENT"
+    ],
+    [
+      179,
+      18,
+      0,
+      86,
+      0,
+      "IMAGE"
+    ],
+    [
+      180,
+      18,
+      1,
+      86,
+      1,
+      "AUDIO"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "01 • PROJECT & SCENES",
+      "bounding": [
+        987.1309291406188,
+        274.5701482809632,
+        3600,
+        2070
+      ],
+      "color": "#315566",
+      "flags": {}
+    },
+    {
+      "id": 2,
+      "title": "02 • MODELS & INPUTS",
+      "bounding": [
+        3716.627991020767,
+        92.83704704103204,
+        540,
+        2206
+      ],
+      "color": "#393f58",
+      "flags": {}
+    },
+    {
+      "id": 3,
+      "title": "03 • PREPARE SCENE",
+      "bounding": [
+        4390,
+        90,
+        600,
+        1982
+      ],
+      "color": "#394c49",
+      "flags": {}
+    },
+    {
+      "id": 4,
+      "title": "04 • SAMPLE & DECODE",
+      "bounding": [
+        5060,
+        90,
+        440,
+        498
+      ],
+      "color": "#393f58",
+      "flags": {}
+    },
+    {
+      "id": 5,
+      "title": "05 • PREPARE SCENE",
+      "bounding": [
+        5570,
+        90,
+        500,
+        788
+      ],
+      "color": "#394c49",
+      "flags": {}
+    },
+    {
+      "id": 6,
+      "title": "06 • REVIEW & CONTINUE",
+      "bounding": [
+        6140,
+        90,
+        840,
+        1330
+      ],
+      "color": "#393f58",
+      "flags": {}
+    },
+    {
+      "id": 7,
+      "title": "07 • DELIVER",
+      "bounding": [
+        7532.483851678963,
+        20.8680718883098,
+        520,
+        810
+      ],
+      "color": "#394c49",
+      "flags": {}
+    },
+    {
+      "id": 8,
+      "title": "RECOVERY • DISABLED / NO SAMPLING",
+      "bounding": [
+        3780,
+        2346,
+        1090,
+        490
+      ],
+      "color": "#665135",
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.24538132732074147,
+      "offset": [
+        -2786.669980590045,
+        1427.5885021856723
+      ]
+    },
+    "comfyui_mcp": {
+      "workflow_uuid": "158840d8-7fc5-5e78-8fd8-64c8b310f7cd"
+    },
+    "frontendVersion": "1.53.6",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
