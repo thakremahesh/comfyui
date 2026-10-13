@@ -52,7 +52,12 @@
       ],
       "title": "RECOVERY • Assemble Final Video",
       "properties": {
-        "Node name for S&R": "MiniMaxH3ChainAssemble"
+        "Node name for S&R": "MiniMaxH3ChainAssemble",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         "plan",
@@ -117,7 +122,14 @@
       ],
       "title": "Sampling Schedule",
       "properties": {
-        "Node name for S&R": "BasicScheduler"
+        "Node name for S&R": "BasicScheduler",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "steps": true
+          },
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         "simple",
@@ -167,7 +179,12 @@
       ],
       "title": "VAEDecode",
       "properties": {
-        "Node name for S&R": "VAEDecode"
+        "Node name for S&R": "VAEDecode",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       }
     },
     {
@@ -207,7 +224,12 @@
       ],
       "title": "VAEDecode Audio",
       "properties": {
-        "Node name for S&R": "VAEDecodeAudio"
+        "Node name for S&R": "VAEDecodeAudio",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       }
     },
     {
@@ -285,7 +307,14 @@
       ],
       "title": "Trim Carried Overlap",
       "properties": {
-        "Node name for S&R": "MiniMaxH3LoopTrim"
+        "Node name for S&R": "MiniMaxH3LoopTrim",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "trim_frames": true
+          },
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         0,
@@ -360,7 +389,12 @@
       ],
       "title": "RECOVERY • Load Saved Clips",
       "properties": {
-        "Node name for S&R": "MiniMaxH3ChainManifestLoad"
+        "Node name for S&R": "MiniMaxH3ChainManifestLoad",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       }
     },
     {
@@ -401,7 +435,12 @@
       ],
       "title": "Generation Profile",
       "properties": {
-        "Node name for S&R": "MiniMaxH3GenerationProfile"
+        "Node name for S&R": "MiniMaxH3GenerationProfile",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         "Hard picture + protected audio",
@@ -430,7 +469,12 @@
       "outputs": [],
       "title": "START HERE • 0.6",
       "properties": {
-        "Node name for S&R": "Note"
+        "Node name for S&R": "Note",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         "0.6 RELEASE • Ref2V Studio\n\n1. Install models and extra packs listed in example_workflows/README.md.\n2. Copy the supplied assets to ComfyUI/input; select source media where requested.\n3. Set a unique project run name, then edit scenes and the Generation Profile.\n4. Follow the numbered columns left → right and inspect the saved results.\n\nRecovery is disabled by default. Enable it only to assemble saved clips without sampling.\nWorkflow-specific setup and detailed wiring notes:\nexample_workflows/guides/Ref2V Studio - MiniMax H3 0.6.md"
@@ -472,7 +516,12 @@
         }
       ],
       "properties": {
-        "Node name for S&R": "ModelAttentionBackend"
+        "Node name for S&R": "ModelAttentionBackend",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         "pytorch attention"
@@ -611,7 +660,12 @@
       ],
       "title": "Current Scene",
       "properties": {
-        "Node name for S&R": "MiniMaxH3ChainCurrent"
+        "Node name for S&R": "MiniMaxH3ChainCurrent",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         false
@@ -649,7 +703,12 @@
         }
       ],
       "properties": {
-        "Node name for S&R": "PreviewAny"
+        "Node name for S&R": "PreviewAny",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [],
       "widgets_values_named": {}
@@ -708,7 +767,12 @@
       ],
       "title": "Review Candidates",
       "properties": {
-        "Node name for S&R": "MiniMaxH3ChainReview"
+        "Node name for S&R": "MiniMaxH3ChainReview",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         false,
@@ -757,7 +821,12 @@
       ],
       "title": "H3 Text Encoder",
       "properties": {
-        "Node name for S&R": "CLIPLoader"
+        "Node name for S&R": "CLIPLoader",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         "qwen3-vl-32b-minimax-h3-fp8-comfyui.safetensors",
@@ -866,7 +935,12 @@
       ],
       "title": "Apply Scene Context",
       "properties": {
-        "Node name for S&R": "MiniMaxH3ChainContext"
+        "Node name for S&R": "MiniMaxH3ChainContext",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       }
     },
     {
@@ -904,7 +978,14 @@
       ],
       "title": "Scene Seed",
       "properties": {
-        "Node name for S&R": "RandomNoise"
+        "Node name for S&R": "RandomNoise",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "noise_seed": true
+          },
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         0,
@@ -941,7 +1022,12 @@
       ],
       "title": "Sampler",
       "properties": {
-        "Node name for S&R": "KSamplerSelect"
+        "Node name for S&R": "KSamplerSelect",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         "res_multistep"
@@ -987,15 +1073,20 @@
         "h3_checkpoint_manager_output_scope": "project",
         "h3_checkpoint_manager_variant": "",
         "h3_checkpoint_manager_run": "ref2v_studio_minimax_h3_0_6_json",
-        "h3_checkpoint_manager_scene": 1,
-        "h3_checkpoint_manager_revision": "1c6f93faead34ec8beccfc765732e802",
-        "h3_checkpoint_manager_chapter": "all"
+        "h3_checkpoint_manager_scene": 2,
+        "h3_checkpoint_manager_revision": "fd8fc65e4930409db64fc8315ae8e82a",
+        "h3_checkpoint_manager_chapter": "all",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
-        "{\"run_name\":\"ref2v_studio_minimax_h3_0_6_json\",\"lineage\":[{\"scene\":1,\"revision\":\"1c6f93faead34ec8beccfc765732e802\"}],\"scope_start_scene\":1,\"scope_end_scene\":6}"
+        "{\"run_name\":\"ref2v_studio_minimax_h3_0_6_json\",\"lineage\":[{\"scene\":1,\"revision\":\"0dddc0be38b143dba85d687f2f743098\"},{\"scene\":2,\"revision\":\"fd8fc65e4930409db64fc8315ae8e82a\"}],\"scope_start_scene\":1,\"scope_end_scene\":4}"
       ],
       "widgets_values_named": {
-        "selection_json": "{\"run_name\":\"ref2v_studio_minimax_h3_0_6_json\",\"lineage\":[{\"scene\":1,\"revision\":\"1c6f93faead34ec8beccfc765732e802\"}],\"scope_start_scene\":1,\"scope_end_scene\":6}"
+        "selection_json": "{\"run_name\":\"ref2v_studio_minimax_h3_0_6_json\",\"lineage\":[{\"scene\":1,\"revision\":\"0dddc0be38b143dba85d687f2f743098\"},{\"scene\":2,\"revision\":\"fd8fc65e4930409db64fc8315ae8e82a\"}],\"scope_start_scene\":1,\"scope_end_scene\":4}"
       }
     },
     {
@@ -1026,7 +1117,12 @@
       ],
       "title": "Video VAE",
       "properties": {
-        "Node name for S&R": "VAELoader"
+        "Node name for S&R": "VAELoader",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         "minimax_h3_video_vae_fp16.safetensors"
@@ -1062,7 +1158,12 @@
       ],
       "title": "Audio VAE",
       "properties": {
-        "Node name for S&R": "VAELoader"
+        "Node name for S&R": "VAELoader",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         "minimax_h3_audio_vae_fp32.safetensors"
@@ -1097,14 +1198,19 @@
       ],
       "title": "H3 Diffusion Model",
       "properties": {
-        "Node name for S&R": "UNETLoader"
+        "Node name for S&R": "UNETLoader",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
-        "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+        "Minimax-h3_Singularity_ref2va_v1.3_int8.safetensors",
         "default"
       ],
       "widgets_values_named": {
-        "unet_name": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+        "unet_name": "Minimax-h3_Singularity_ref2va_v1.3_int8.safetensors",
         "weight_dtype": "default"
       }
     },
@@ -1173,7 +1279,12 @@
       ],
       "title": "Save Segment + Checkpoint",
       "properties": {
-        "Node name for S&R": "MiniMaxH3ChainSegmentSave"
+        "Node name for S&R": "MiniMaxH3ChainSegmentSave",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       }
     },
     {
@@ -1304,7 +1415,19 @@
       ],
       "title": "Tagged Ref2VA Conditioning",
       "properties": {
-        "Node name for S&R": "MiniMaxH3TaggedReferenceToVideo"
+        "Node name for S&R": "MiniMaxH3TaggedReferenceToVideo",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "clip_index": true,
+            "clip_count": true,
+            "prompt": true,
+            "width": true,
+            "height": true,
+            "length": true
+          },
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         1,
@@ -1402,7 +1525,12 @@
       ],
       "title": "Loop End",
       "properties": {
-        "Node name for S&R": "MiniMaxH3ChainLoopEnd"
+        "Node name for S&R": "MiniMaxH3ChainLoopEnd",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         "off",
@@ -1472,7 +1600,12 @@
       ],
       "title": "Sample Video + Audio",
       "properties": {
-        "Node name for S&R": "SamplerCustomAdvanced"
+        "Node name for S&R": "SamplerCustomAdvanced",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [],
       "widgets_values_named": {}
@@ -1525,7 +1658,12 @@
       ],
       "title": "Assemble Final Video",
       "properties": {
-        "Node name for S&R": "MiniMaxH3ChainAssemble"
+        "Node name for S&R": "MiniMaxH3ChainAssemble",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         "plan",
@@ -1674,63 +1812,13 @@
           "checkpoints": [
             {
               "scene": 1,
-              "scene_id": "part_1",
-              "revision": "2bf36ddb9fcf40aeb4223a25576d3f7e",
+              "scene_id": "scene_04",
+              "revision": "2ea83584c3794c7291ef29f92fe4c9d0",
               "resume_scene": 2,
-              "ready": true,
+              "ready": false,
               "raw_frames": 175,
               "delivered_frames": 175,
-              "metadata_sha256": "51a472092a2f4ed80497ba0a3c5a91375bc2377661f5942593d6fdee8df2a6e7",
-              "video": {
-                "filename": "clip_0001.2bf36ddb9fcf40aeb4223a25576d3f7e.mp4",
-                "subfolder": "h3_chains/ref2v_studio_minimax_h3_0_6_json/segments",
-                "type": "output"
-              },
-              "audio": {
-                "filename": "clip_0001.2bf36ddb9fcf40aeb4223a25576d3f7e.wav",
-                "subfolder": "h3_chains/ref2v_studio_minimax_h3_0_6_json/generated_audio",
-                "type": "output"
-              }
-            },
-            {
-              "scene": 2,
-              "scene_id": "part_2",
-              "revision": "e43a4f2087614cd5bb4f50b41435304c",
-              "resume_scene": 3,
-              "ready": true,
-              "raw_frames": 175,
-              "delivered_frames": 136,
-              "metadata_sha256": "29c634a7c69145bc81c2860dbe0aba037f6e3c69b52edd57737812bc8f3fa75a",
-              "video": {
-                "filename": "clip_0002.e43a4f2087614cd5bb4f50b41435304c.mp4",
-                "subfolder": "h3_chains/ref2v_studio_minimax_h3_0_6_json/segments",
-                "type": "output"
-              },
-              "audio": {
-                "filename": "clip_0002.e43a4f2087614cd5bb4f50b41435304c.wav",
-                "subfolder": "h3_chains/ref2v_studio_minimax_h3_0_6_json/generated_audio",
-                "type": "output"
-              }
-            },
-            {
-              "scene": 3,
-              "scene_id": "scene_03",
-              "revision": "e5e0edb778834a79b58b4c0c8284ea37",
-              "resume_scene": 4,
-              "ready": true,
-              "raw_frames": 175,
-              "delivered_frames": 136,
-              "metadata_sha256": "a1a133d8e721b7b44e46f97c2074dc7c8ed5cf2da81e0d05d3ef2d5a9764d061",
-              "video": {
-                "filename": "clip_0003.e5e0edb778834a79b58b4c0c8284ea37.mp4",
-                "subfolder": "h3_chains/ref2v_studio_minimax_h3_0_6_json/segments",
-                "type": "output"
-              },
-              "audio": {
-                "filename": "clip_0003.e5e0edb778834a79b58b4c0c8284ea37.wav",
-                "subfolder": "h3_chains/ref2v_studio_minimax_h3_0_6_json/generated_audio",
-                "type": "output"
-              }
+              "metadata_sha256": "fe6d71cb1f5dcc94c9041f31b6eab75a61ca2863c435db7de591468afb2d52c8"
             }
           ],
           "editorial": {
@@ -1751,16 +1839,21 @@
             "replacements": []
           }
         },
-        "h3_plan_studio_active_scene": 2,
+        "h3_plan_studio_active_scene": 3,
         "h3_plan_studio_active_chapter": "",
         "h3_plan_studio_view": "scene",
-        "h3_plan_studio_timeline_zoom": 1
+        "h3_plan_studio_timeline_zoom": 1,
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         1,
         "",
         true,
-        "{\n  \"shots\": [\n    {\n      \"id\": \"part_1\",\n      \"prompt\": [\n        \"id=\\\"woman_approach_and_sit_001\\\"\",\n        \"\",\n        \"subject_definitions:\",\n        \"<Subject 1>: The woman from @picture_1 with long, wavy dark hair and a neutral, serious facial expression. She is wearing the same ornate, heavily embroidered green lehenga (fitted blouse and voluminous skirt) as seen in <Picture 1>.\",\n        \"<Environment>: A luxurious interior featuring a large, dark brown tufted leather armchair with deep folds and brass studding, consistent with the setting in <Picture 1>.\",\n        \"<Prop>: The green lehenga, characterized by heavy silk fabric and dense gold embroidery that reacts physically to her movement.\",\n        \"\",\n        \"summary:\",\n        \"The woman walks toward the leather armchair, performs a graceful turn once she reaches it, and settles into the chair, maintaining a neutral expression while gazing into the distance.\",\n        \"\",\n        \"retention_analysis:\",\n        \"@picture_1 -> <Subject 1> (fully_preserved identity, clothing, and facial expression)\",\n        \"<Picture 1> -> <Environment> (fully_preserved environment and furniture)\",\n        \"\",\n        \"detailed_description:\",\n        \"[Shot 1] A medium-wide tracking shot follows <Subject 1> as she walks toward the armchair with a steady, rhythmic gait. The camera moves laterally to maintain her in a medium shot, keeping her head and eyes centered within the frame to ensure a high-quality, symmetrical composition.\",\n        \"As she approaches the chair, <Subject 1> performs a graceful pivot, turning her body to face the back of the armchair. The camera performs a smooth, slow arc around her to facilitate the turn.\",\n        \"As she turns, the heavy silk of her lehenga swings with natural momentum, the gold embroidery catching the light. \",\n        \"<Subject 1> then begins to lower her center of gravity, settling gracefully into the deep, tufted leather cushion of the chair. \",\n        \"The camera performs a subtle, slow push-in toward her face as she sits, maintaining focus on her neutral, non-smiling expression.\",\n        \"As she settles, her weight causes the leather to creak and the heavy fabric of the lehenga to drape and fold naturally around her legs and the chair's armrests.\",\n        \"<Subject 1> finishes in a poised, seated position, looking away from the camera toward the distant background with a contemplative, neutral gaze.\",\n        \"\",\n        \"overall_soundscape:\",\n        \"The rhythmic, muffled sound of footsteps on a hard floor, followed by the continuous, heavy rustle of silk and the distinct, deep creak of leather as she settles into the chair.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"None.\"\n      ],\n      \"seed\": \"12636599129996765864\",\n      \"duration_seconds\": 7,\n      \"basic_prompt\": \"\"\n    },\n    {\n      \"id\": \"part_2\",\n      \"prompt\": [\n        \"id=\\\"woman_lehenga_pose_transition_001\\\"\",\n        \"\",\n        \"subject_definitions:\",\n        \"<Subject 1>: Woman from <Picture 1> with long, wavy dark hair and a serious, neutral facial expression. Her appearance, including her facial features and the ornate green lehenga, is identical to <Picture 1>. Her final position at the end of the video must match the exact pose and limb placement seen in <Picture 1>.\",\n        \"<Environment>: The same luxurious interior from <Picture 1>, featuring a large, dark brown tufted leather armchair with deep folds and brass studding.\",\n        \"<Prop>: The green lehenga, characterized by dense gold embroidery and a heavy, smooth silk texture that reacts to the movement of her legs.\",\n        \"\",\n        \"summary:\",\n        \"The woman transitions from an upright seated position to the exact reclining pose shown in <Picture 1>. As she reclines sideways and lifts her legs toward the opposite armrest, the heavy lehenga fabric slides up toward her waist, gradually revealing her legs until she reaches the final composition of <Picture 1>.\",\n        \"\",\n        \"retention_analysis:\",\n        \"<Picture 1> -> <Subject 1> (fully_preserved identity and target final pose)\",\n        \"<Picture 1> -> <Environment> (fully_preserved environment and lighting)\",\n        \"\",\n        \"detailed_description:\",\n        \"[Shot 1] A medium-wide shot establishes <Subject 1> sitting perfectly upright in the center of the frame, looking forward with a serious, non-smiling expression.\",\n        \"As the action begins, <Subject 1> shifts her weight to her hip, leaning her torso sideways to begin reclining into the armchair. \",\n        \"The camera performs a slow, steady orbit keeping her entire body perfectly centered within the frame throughout the movement to maintain a strong, symmetrical composition. \",\n        \"As she reclines, <Subject 1> lifts her legs upward and across the seat toward the opposite armrest. \",\n        \"The upward motion of her legs acts as a trigger, causing the heavy, embroidered silk of the lehenga to slide smoothly up her thighs toward her waist, continuously revealing the skin of her legs. \",\n        \"The movement is fluid and continuous, following the physics of heavy fabric being displaced by rising limbs. \",\n        \"At the moment of maximum leg elevation, the lighting and composition transition to match <Picture 1> perfectly. \",\n        \"The shot concludes with <Subject 1> in the exact pose, limb placement, and lighting seen in <Picture 1>, maintaining her serious facial expression.\",\n        \"\",\n        \"overall_soundscape:\",\n        \"The deep creak of the leather armchair under shifting weight and the continuous, heavy rustle of thick silk fabric sliding against skin.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"None.\",\n        \"\"\n      ]\n    },\n    {\n      \"id\": \"scene_03\",\n      \"prompt\": [\n        \"id=\\\"woman_lehenga_reveal_pan_001\\\"\",\n        \"\",\n        \"subject_definitions:\",\n        \"<Subject 1>: The woman from <Picture 1> with long, wavy dark hair and a neutral, serious facial expression. She is wearing the ornate, heavily embroidered green lehenga (fitted blouse and voluminous skirt) seen in <Picture 1>.\",\n        \"<Environment>: A luxurious, warm-toned interior featuring a large, dark brown tufted leather armchair, consistent with the background of <Picture 1>.\",\n        \"<Prop>: The green lehenga, characterized by heavy, high-sheen silk fabric and dense, reflective gold embroidery.\",\n        \"\",\n        \"summary:\",\n        \"The shot begins with a close-up on the subject's legs. The camera pans slowly to the left, progressively revealing her hips and full body. Simultaneously, the subject lets her arm fall gracefully to her side and tilts her head back toward the ceiling.\",\n        \"\",\n        \"retention_analysis:\",\n        \"<Picture 1> -> <Subject 1> (fully_preserved identity, clothing, and neutral expression)\",\n        \"<Picture 1> -> <Environment> (fully_preserved lighting and leather texture)\",\n        \"\",\n        \"detailed_description:\",\n        \"[Shot 1] The shot opens with a tight, medium-close-up focus on <Subject 1>'s legs, showcasing the intricate gold embroidery and heavy texture of the green lehenga. \",\n        \"Starting with position in <Picture 1>, <Subject 1> performs a coordinated movement: she lets her arm fall gracefully from her side to the floor in a fluid, continuous motion, while simultaneously tilting her head back toward the ceiling. Only her upper body moves.\",\n        \"\",\n        \"As she tilts her head, the light catches the highlights on her neck and the sheen of the silk fabric. \",\n        \"The shot ends with <Subject 1> in a poised, head-tilted pose, her gaze directed upward.\",\n        \"\",\n        \"overall_soundscape:\",\n        \"The soft, heavy rustle of silk fabric and the subtle, rhythmic movement of the heavy lehenga as it shifts.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"None.\",\n        \"\"\n      ]\n    }\n  ],\n  \"defaults\": {\n    \"steps\": 3\n  },\n  \"prompt_prefix\": [\n    \"Bright daylight sunlit lighting, savannah backdrop. The impala does not smile at any time. The impala is always standing on all 4 legs.\"\n  ]\n}",
+        "{\n  \"shots\": [\n    {\n      \"id\": \"scene_04\",\n      \"prompt\": [\n        \"id=\\\"gorilla_gym_arrival\\\"\",\n        \"\",\n        \"subject_definitions:\",\n        \"<Subject 1>: A massive, hyper-muscular gorilla with thick, dark, textured fur, mirroring the identity and anatomy of @picture_2. He exhibits heavy, realistic, animalistic movements.\",\n        \"<Subject 2>: A professional weightlifting gym featuring a bench press setup, power rack, and iron weights, mirroring the environment of @picture_1.\",\n        \"\",\n        \"summary:\",\n        \"A massive gorilla enters the gym from behind the rack. He walks around the rack from behind to the right and then to the front. He walks with a realistic, quadrupedal knuckle-walking gait, scanning the room with curious glances. He circles the rack and settles into a seated position on the weight bench. As he walks around the rack, he momentarily goes offscreen to the right.\",\n        \"\",\n        \"retention_analysis:\",\n        \"<Picture 1> -> <Subject 2>: fully_preserved (gym environment and equipment)\",\n        \"<Picture 2> -> <Subject 1>: fully_preserved (gorilla identity and muscularity)\",\n        \"\",\n        \"detailed_description:\",\n        \"[Shot 1] A wide, static shot establishes the gym environment as seen in <Picture 1>. The camera remains perfectly still and fixed. From behind the heavy metal frame of the power rack, <Subject 1> emerges. He moves with a realistic, heavy, quadrupedal knuckle-walking gait, his weight shifting powerfully between his hands and feet. As he moves, his head turns slowly, his eyes scanning the gym equipment and the ceiling with curiosity and primal awareness.\",\n        \"\",\n        \"[Shot 2] At 00:04.000, the gorilla continues his heavy, rhythmic movement, arcing gracefully around the side of the metal rack. The movement is fluid but heavy, causing subtle, realistic vibrations in the gym floor. As he rounds the rack, he continues to look around the room, his eyes tracking the various machines and weights in the periphery.\",\n        \"\",\n        \"[Shot 3] The gorilla approaches the center of the bench press setup. He transitions from his quadrupedal knuckle-walking gait into a seated position on the weight bench in a single, heavy, muscular movement. As he settles onto the bench, he remains seated, his head turning to scan the vastness of the gym one last time. The camera remains completely stationary and locked-off throughout the entire sequence.\",\n        \"\",\n        \"overall_soundscape:\",\n        \"The heavy, rhythmic, muffled thud of large knuckles hitting the rubber gym floor; the deep, resonant breathing of the gorilla; the metallic creak of the power rack as he passes; and the low, ambient hum of a large industrial space.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"None.\"\n      ]\n    }\n  ],\n  \"defaults\": {\n    \"steps\": 8\n  },\n  \"prompt_prefix\": [\n    \"\"\n  ]\n}",
         "ref2v_studio_minimax_h3_0_6_json",
         "",
         416,
@@ -1772,7 +1865,7 @@
         "generated_audio",
         22,
         7,
-        3,
+        8,
         0,
         20,
         5,
@@ -1783,7 +1876,7 @@
         "start_clip": 1,
         "scene_range": "",
         "verify_resume_history": true,
-        "plan_json": "{\n  \"shots\": [\n    {\n      \"id\": \"part_1\",\n      \"prompt\": [\n        \"id=\\\"woman_approach_and_sit_001\\\"\",\n        \"\",\n        \"subject_definitions:\",\n        \"<Subject 1>: The woman from @picture_1 with long, wavy dark hair and a neutral, serious facial expression. She is wearing the same ornate, heavily embroidered green lehenga (fitted blouse and voluminous skirt) as seen in <Picture 1>.\",\n        \"<Environment>: A luxurious interior featuring a large, dark brown tufted leather armchair with deep folds and brass studding, consistent with the setting in <Picture 1>.\",\n        \"<Prop>: The green lehenga, characterized by heavy silk fabric and dense gold embroidery that reacts physically to her movement.\",\n        \"\",\n        \"summary:\",\n        \"The woman walks toward the leather armchair, performs a graceful turn once she reaches it, and settles into the chair, maintaining a neutral expression while gazing into the distance.\",\n        \"\",\n        \"retention_analysis:\",\n        \"@picture_1 -> <Subject 1> (fully_preserved identity, clothing, and facial expression)\",\n        \"<Picture 1> -> <Environment> (fully_preserved environment and furniture)\",\n        \"\",\n        \"detailed_description:\",\n        \"[Shot 1] A medium-wide tracking shot follows <Subject 1> as she walks toward the armchair with a steady, rhythmic gait. The camera moves laterally to maintain her in a medium shot, keeping her head and eyes centered within the frame to ensure a high-quality, symmetrical composition.\",\n        \"As she approaches the chair, <Subject 1> performs a graceful pivot, turning her body to face the back of the armchair. The camera performs a smooth, slow arc around her to facilitate the turn.\",\n        \"As she turns, the heavy silk of her lehenga swings with natural momentum, the gold embroidery catching the light. \",\n        \"<Subject 1> then begins to lower her center of gravity, settling gracefully into the deep, tufted leather cushion of the chair. \",\n        \"The camera performs a subtle, slow push-in toward her face as she sits, maintaining focus on her neutral, non-smiling expression.\",\n        \"As she settles, her weight causes the leather to creak and the heavy fabric of the lehenga to drape and fold naturally around her legs and the chair's armrests.\",\n        \"<Subject 1> finishes in a poised, seated position, looking away from the camera toward the distant background with a contemplative, neutral gaze.\",\n        \"\",\n        \"overall_soundscape:\",\n        \"The rhythmic, muffled sound of footsteps on a hard floor, followed by the continuous, heavy rustle of silk and the distinct, deep creak of leather as she settles into the chair.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"None.\"\n      ],\n      \"seed\": \"12636599129996765864\",\n      \"duration_seconds\": 7,\n      \"basic_prompt\": \"\"\n    },\n    {\n      \"id\": \"part_2\",\n      \"prompt\": [\n        \"id=\\\"woman_lehenga_pose_transition_001\\\"\",\n        \"\",\n        \"subject_definitions:\",\n        \"<Subject 1>: Woman from <Picture 1> with long, wavy dark hair and a serious, neutral facial expression. Her appearance, including her facial features and the ornate green lehenga, is identical to <Picture 1>. Her final position at the end of the video must match the exact pose and limb placement seen in <Picture 1>.\",\n        \"<Environment>: The same luxurious interior from <Picture 1>, featuring a large, dark brown tufted leather armchair with deep folds and brass studding.\",\n        \"<Prop>: The green lehenga, characterized by dense gold embroidery and a heavy, smooth silk texture that reacts to the movement of her legs.\",\n        \"\",\n        \"summary:\",\n        \"The woman transitions from an upright seated position to the exact reclining pose shown in <Picture 1>. As she reclines sideways and lifts her legs toward the opposite armrest, the heavy lehenga fabric slides up toward her waist, gradually revealing her legs until she reaches the final composition of <Picture 1>.\",\n        \"\",\n        \"retention_analysis:\",\n        \"<Picture 1> -> <Subject 1> (fully_preserved identity and target final pose)\",\n        \"<Picture 1> -> <Environment> (fully_preserved environment and lighting)\",\n        \"\",\n        \"detailed_description:\",\n        \"[Shot 1] A medium-wide shot establishes <Subject 1> sitting perfectly upright in the center of the frame, looking forward with a serious, non-smiling expression.\",\n        \"As the action begins, <Subject 1> shifts her weight to her hip, leaning her torso sideways to begin reclining into the armchair. \",\n        \"The camera performs a slow, steady orbit keeping her entire body perfectly centered within the frame throughout the movement to maintain a strong, symmetrical composition. \",\n        \"As she reclines, <Subject 1> lifts her legs upward and across the seat toward the opposite armrest. \",\n        \"The upward motion of her legs acts as a trigger, causing the heavy, embroidered silk of the lehenga to slide smoothly up her thighs toward her waist, continuously revealing the skin of her legs. \",\n        \"The movement is fluid and continuous, following the physics of heavy fabric being displaced by rising limbs. \",\n        \"At the moment of maximum leg elevation, the lighting and composition transition to match <Picture 1> perfectly. \",\n        \"The shot concludes with <Subject 1> in the exact pose, limb placement, and lighting seen in <Picture 1>, maintaining her serious facial expression.\",\n        \"\",\n        \"overall_soundscape:\",\n        \"The deep creak of the leather armchair under shifting weight and the continuous, heavy rustle of thick silk fabric sliding against skin.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"None.\",\n        \"\"\n      ]\n    },\n    {\n      \"id\": \"scene_03\",\n      \"prompt\": [\n        \"id=\\\"woman_lehenga_reveal_pan_001\\\"\",\n        \"\",\n        \"subject_definitions:\",\n        \"<Subject 1>: The woman from <Picture 1> with long, wavy dark hair and a neutral, serious facial expression. She is wearing the ornate, heavily embroidered green lehenga (fitted blouse and voluminous skirt) seen in <Picture 1>.\",\n        \"<Environment>: A luxurious, warm-toned interior featuring a large, dark brown tufted leather armchair, consistent with the background of <Picture 1>.\",\n        \"<Prop>: The green lehenga, characterized by heavy, high-sheen silk fabric and dense, reflective gold embroidery.\",\n        \"\",\n        \"summary:\",\n        \"The shot begins with a close-up on the subject's legs. The camera pans slowly to the left, progressively revealing her hips and full body. Simultaneously, the subject lets her arm fall gracefully to her side and tilts her head back toward the ceiling.\",\n        \"\",\n        \"retention_analysis:\",\n        \"<Picture 1> -> <Subject 1> (fully_preserved identity, clothing, and neutral expression)\",\n        \"<Picture 1> -> <Environment> (fully_preserved lighting and leather texture)\",\n        \"\",\n        \"detailed_description:\",\n        \"[Shot 1] The shot opens with a tight, medium-close-up focus on <Subject 1>'s legs, showcasing the intricate gold embroidery and heavy texture of the green lehenga. \",\n        \"Starting with position in <Picture 1>, <Subject 1> performs a coordinated movement: she lets her arm fall gracefully from her side to the floor in a fluid, continuous motion, while simultaneously tilting her head back toward the ceiling. Only her upper body moves.\",\n        \"\",\n        \"As she tilts her head, the light catches the highlights on her neck and the sheen of the silk fabric. \",\n        \"The shot ends with <Subject 1> in a poised, head-tilted pose, her gaze directed upward.\",\n        \"\",\n        \"overall_soundscape:\",\n        \"The soft, heavy rustle of silk fabric and the subtle, rhythmic movement of the heavy lehenga as it shifts.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"None.\",\n        \"\"\n      ]\n    }\n  ],\n  \"defaults\": {\n    \"steps\": 3\n  },\n  \"prompt_prefix\": [\n    \"Bright daylight sunlit lighting, savannah backdrop. The impala does not smile at any time. The impala is always standing on all 4 legs.\"\n  ]\n}",
+        "plan_json": "{\n  \"shots\": [\n    {\n      \"id\": \"scene_04\",\n      \"prompt\": [\n        \"id=\\\"gorilla_gym_arrival\\\"\",\n        \"\",\n        \"subject_definitions:\",\n        \"<Subject 1>: A massive, hyper-muscular gorilla with thick, dark, textured fur, mirroring the identity and anatomy of @picture_2. He exhibits heavy, realistic, animalistic movements.\",\n        \"<Subject 2>: A professional weightlifting gym featuring a bench press setup, power rack, and iron weights, mirroring the environment of @picture_1.\",\n        \"\",\n        \"summary:\",\n        \"A massive gorilla enters the gym from behind the rack. He walks around the rack from behind to the right and then to the front. He walks with a realistic, quadrupedal knuckle-walking gait, scanning the room with curious glances. He circles the rack and settles into a seated position on the weight bench. As he walks around the rack, he momentarily goes offscreen to the right.\",\n        \"\",\n        \"retention_analysis:\",\n        \"<Picture 1> -> <Subject 2>: fully_preserved (gym environment and equipment)\",\n        \"<Picture 2> -> <Subject 1>: fully_preserved (gorilla identity and muscularity)\",\n        \"\",\n        \"detailed_description:\",\n        \"[Shot 1] A wide, static shot establishes the gym environment as seen in <Picture 1>. The camera remains perfectly still and fixed. From behind the heavy metal frame of the power rack, <Subject 1> emerges. He moves with a realistic, heavy, quadrupedal knuckle-walking gait, his weight shifting powerfully between his hands and feet. As he moves, his head turns slowly, his eyes scanning the gym equipment and the ceiling with curiosity and primal awareness.\",\n        \"\",\n        \"[Shot 2] At 00:04.000, the gorilla continues his heavy, rhythmic movement, arcing gracefully around the side of the metal rack. The movement is fluid but heavy, causing subtle, realistic vibrations in the gym floor. As he rounds the rack, he continues to look around the room, his eyes tracking the various machines and weights in the periphery.\",\n        \"\",\n        \"[Shot 3] The gorilla approaches the center of the bench press setup. He transitions from his quadrupedal knuckle-walking gait into a seated position on the weight bench in a single, heavy, muscular movement. As he settles onto the bench, he remains seated, his head turning to scan the vastness of the gym one last time. The camera remains completely stationary and locked-off throughout the entire sequence.\",\n        \"\",\n        \"overall_soundscape:\",\n        \"The heavy, rhythmic, muffled thud of large knuckles hitting the rubber gym floor; the deep, resonant breathing of the gorilla; the metallic creak of the power rack as he passes; and the low, ambient hum of a large industrial space.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"None.\"\n      ]\n    }\n  ],\n  \"defaults\": {\n    \"steps\": 8\n  },\n  \"prompt_prefix\": [\n    \"\"\n  ]\n}",
         "run_name": "ref2v_studio_minimax_h3_0_6_json",
         "generation_fingerprint": "",
         "width": 416,
@@ -1795,7 +1888,7 @@
         "audio_mode": "generated_audio",
         "audio_context_length": 22,
         "default_duration_seconds": 7,
-        "default_steps": 3,
+        "default_steps": 8,
         "base_seed": 0,
         "segment_crf": 20,
         "video_blend_frames": 5,
@@ -1839,7 +1932,12 @@
         "h3_rich_prompt_active_scene": 0,
         "h3_rich_prompt_font_size": 17,
         "h3_rich_prompt_guide": "auto",
-        "h3_rich_prompt_rich_text": true
+        "h3_rich_prompt_rich_text": true,
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [],
       "widgets_values_named": {}
@@ -1880,7 +1978,12 @@
         }
       ],
       "properties": {
-        "Node name for S&R": "BasicGuider"
+        "Node name for S&R": "BasicGuider",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       }
     },
     {
@@ -1916,14 +2019,19 @@
         }
       ],
       "properties": {
-        "Node name for S&R": "LoraLoaderModelOnly"
+        "Node name for S&R": "LoraLoaderModelOnly",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
-        "minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors",
+        "minimax_h3_ref2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors",
         1
       ],
       "widgets_values_named": {
-        "lora_name": "minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors",
+        "lora_name": "minimax_h3_ref2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors",
         "strength_model": 1
       }
     },
@@ -1958,7 +2066,12 @@
         }
       ],
       "properties": {
-        "Node name for S&R": "MiniMaxLowVRAMAttention"
+        "Node name for S&R": "MiniMaxLowVRAMAttention",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         8
@@ -1999,7 +2112,12 @@
       ],
       "title": "Sigma Shift",
       "properties": {
-        "Node name for S&R": "MiniMaxH3SigmaShift"
+        "Node name for S&R": "MiniMaxH3SigmaShift",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         12,
@@ -2150,17 +2268,22 @@
       ],
       "title": "Loop Start",
       "properties": {
-        "Node name for S&R": "MiniMaxH3ChainLoopStart"
+        "Node name for S&R": "MiniMaxH3ChainLoopStart",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         1,
         "",
-        true
+        false
       ],
       "widgets_values_named": {
         "start_clip": 1,
         "scene_range": "",
-        "verify_resume_history": true
+        "verify_resume_history": false
       }
     },
     {
@@ -2228,18 +2351,23 @@
       ],
       "title": "Project Asset Carousel",
       "properties": {
-        "Node name for S&R": "MiniMaxH3ProjectAssetManager"
+        "Node name for S&R": "MiniMaxH3ProjectAssetManager",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         "ref2v_studio_minimax_h3_0_6_json",
-        "{\"assets\":[{\"created_at\":\"2026-10-02T16:22:13Z\",\"enabled\":true,\"id\":\"994e3d43d1ff41e793a1b5177c314e7f\",\"input_path\":\"h3_projects/ref2v_studio_minimax_h3_0_6_json/images/ad8deef10dea1b42_qwen2_1_00001.png\",\"kind\":\"image\",\"metadata\":{\"format\":\"png\",\"frames\":1,\"height\":1376,\"width\":768},\"mime_type\":\"image/png\",\"options\":{},\"original_name\":\"qwen2_1_00001_.png\",\"relative_path\":\"images/ad8deef10dea1b42_qwen2_1_00001.png\",\"role\":\"picture\",\"sha256\":\"ad8deef10dea1b4265cabe006ae980444b48c92ee2ed6438e739bd17a79c323d\",\"size\":1855226,\"source_kind\":\"upload\",\"tag\":\"picture_1\",\"updated_at\":\"2026-10-02T17:28:55Z\"}],\"folders\":[],\"format\":\"h3_project_assets_v1\",\"project\":\"ref2v_studio_minimax_h3_0_6_json\",\"reference_slots\":[],\"revision\":\"1918d0374e6ac7d147ce0912a31c58bdd40444d0e21bbb59b5bf9ef917961b58\",\"updated_at\":\"2026-10-02T17:28:55Z\",\"version\":1}",
+        "{\"assets\":[{\"created_at\":\"2026-10-14T21:30:02Z\",\"enabled\":true,\"id\":\"ac35d1ee926540e0bb603e77dff10308\",\"input_path\":\"h3_projects/ref2v_studio_minimax_h3_0_6_json/images/370334b8be928d84_qwen2_1_00002.png\",\"kind\":\"image\",\"metadata\":{\"format\":\"png\",\"frames\":1,\"height\":1920,\"width\":1088},\"mime_type\":\"image/png\",\"options\":{},\"original_name\":\"qwen2_1_00002_.png\",\"relative_path\":\"images/370334b8be928d84_qwen2_1_00002.png\",\"role\":\"picture\",\"sha256\":\"370334b8be928d84ad656b67ae623490f006c209e96687ed20f83b84646796cb\",\"size\":2710563,\"source_kind\":\"upload\",\"tag\":\"picture_1\",\"updated_at\":\"2026-10-14T21:31:09Z\"},{\"created_at\":\"2026-10-14T21:44:28Z\",\"enabled\":true,\"id\":\"88f06ad49b5b41839df54fc3eb82bd10\",\"input_path\":\"h3_projects/ref2v_studio_minimax_h3_0_6_json/images/116c75f1f9ae890d_A_powerful_silverback_gorilla_standing_2K_20261014121651.jpg\",\"kind\":\"image\",\"metadata\":{\"format\":\"jpeg\",\"frames\":1,\"height\":2752,\"width\":1536},\"mime_type\":\"image/jpeg\",\"options\":{},\"original_name\":\"A_powerful_silverback_gorilla_standing_2K_20261014121651.jpg\",\"relative_path\":\"images/116c75f1f9ae890d_A_powerful_silverback_gorilla_standing_2K_20261014121651.jpg\",\"role\":\"picture\",\"sha256\":\"116c75f1f9ae890d1bedafca5d854043559820597c3ab9a3a1aef102b28b81e2\",\"size\":4065756,\"source_kind\":\"upload\",\"tag\":\"picture_2\",\"updated_at\":\"2026-10-14T21:44:36Z\"}],\"folders\":[],\"format\":\"h3_project_assets_v1\",\"project\":\"ref2v_studio_minimax_h3_0_6_json\",\"reference_slots\":[],\"revision\":\"65cae48b12a4758b3869ceed8637ee73b7bc09627464cfa2df4826d9a1a1c32b\",\"updated_at\":\"2026-10-14T21:44:36Z\",\"version\":1}",
         "768",
         "timestamped_video",
         ""
       ],
       "widgets_values_named": {
         "run_name": "ref2v_studio_minimax_h3_0_6_json",
-        "catalog_json": "{\"assets\":[{\"created_at\":\"2026-10-02T16:22:13Z\",\"enabled\":true,\"id\":\"994e3d43d1ff41e793a1b5177c314e7f\",\"input_path\":\"h3_projects/ref2v_studio_minimax_h3_0_6_json/images/ad8deef10dea1b42_qwen2_1_00001.png\",\"kind\":\"image\",\"metadata\":{\"format\":\"png\",\"frames\":1,\"height\":1376,\"width\":768},\"mime_type\":\"image/png\",\"options\":{},\"original_name\":\"qwen2_1_00001_.png\",\"relative_path\":\"images/ad8deef10dea1b42_qwen2_1_00001.png\",\"role\":\"picture\",\"sha256\":\"ad8deef10dea1b4265cabe006ae980444b48c92ee2ed6438e739bd17a79c323d\",\"size\":1855226,\"source_kind\":\"upload\",\"tag\":\"picture_1\",\"updated_at\":\"2026-10-02T17:28:55Z\"}],\"folders\":[],\"format\":\"h3_project_assets_v1\",\"project\":\"ref2v_studio_minimax_h3_0_6_json\",\"reference_slots\":[],\"revision\":\"1918d0374e6ac7d147ce0912a31c58bdd40444d0e21bbb59b5bf9ef917961b58\",\"updated_at\":\"2026-10-02T17:28:55Z\",\"version\":1}",
+        "catalog_json": "{\"assets\":[{\"created_at\":\"2026-10-14T21:30:02Z\",\"enabled\":true,\"id\":\"ac35d1ee926540e0bb603e77dff10308\",\"input_path\":\"h3_projects/ref2v_studio_minimax_h3_0_6_json/images/370334b8be928d84_qwen2_1_00002.png\",\"kind\":\"image\",\"metadata\":{\"format\":\"png\",\"frames\":1,\"height\":1920,\"width\":1088},\"mime_type\":\"image/png\",\"options\":{},\"original_name\":\"qwen2_1_00002_.png\",\"relative_path\":\"images/370334b8be928d84_qwen2_1_00002.png\",\"role\":\"picture\",\"sha256\":\"370334b8be928d84ad656b67ae623490f006c209e96687ed20f83b84646796cb\",\"size\":2710563,\"source_kind\":\"upload\",\"tag\":\"picture_1\",\"updated_at\":\"2026-10-14T21:31:09Z\"},{\"created_at\":\"2026-10-14T21:44:28Z\",\"enabled\":true,\"id\":\"88f06ad49b5b41839df54fc3eb82bd10\",\"input_path\":\"h3_projects/ref2v_studio_minimax_h3_0_6_json/images/116c75f1f9ae890d_A_powerful_silverback_gorilla_standing_2K_20261014121651.jpg\",\"kind\":\"image\",\"metadata\":{\"format\":\"jpeg\",\"frames\":1,\"height\":2752,\"width\":1536},\"mime_type\":\"image/jpeg\",\"options\":{},\"original_name\":\"A_powerful_silverback_gorilla_standing_2K_20261014121651.jpg\",\"relative_path\":\"images/116c75f1f9ae890d_A_powerful_silverback_gorilla_standing_2K_20261014121651.jpg\",\"role\":\"picture\",\"sha256\":\"116c75f1f9ae890d1bedafca5d854043559820597c3ab9a3a1aef102b28b81e2\",\"size\":4065756,\"source_kind\":\"upload\",\"tag\":\"picture_2\",\"updated_at\":\"2026-10-14T21:44:36Z\"}],\"folders\":[],\"format\":\"h3_project_assets_v1\",\"project\":\"ref2v_studio_minimax_h3_0_6_json\",\"reference_slots\":[],\"revision\":\"65cae48b12a4758b3869ceed8637ee73b7bc09627464cfa2df4826d9a1a1c32b\",\"updated_at\":\"2026-10-14T21:44:36Z\",\"version\":1}",
         "semantic_anchor_size": "768",
         "semantic_anchor_mode": "timestamped_video",
         "operation_json": ""
@@ -2344,19 +2472,20 @@
             "scene-basic:scene_03": 72,
             "scene:scene_03": 112
           },
-          "collapsedScenes": {
-            "part_2": true,
-            "scene_03": true,
-            "part_1": true
-          },
+          "collapsedScenes": {},
           "advanced": false,
           "jsonOpen": false,
           "settingsOpen": true
         },
-        "h3_chain_scene_colors": {}
+        "h3_chain_scene_colors": {},
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
-        "{\n  \"shots\": [\n    {\n      \"id\": \"part_1\",\n      \"prompt\": [\n        \"id=\\\"woman_approach_and_sit_001\\\"\",\n        \"\",\n        \"subject_definitions:\",\n        \"<Subject 1>: The woman from @picture_1 with long, wavy dark hair and a neutral, serious facial expression. She is wearing the same ornate, heavily embroidered green lehenga (fitted blouse and voluminous skirt) as seen in <Picture 1>.\",\n        \"<Environment>: A luxurious interior featuring a large, dark brown tufted leather armchair with deep folds and brass studding, consistent with the setting in <Picture 1>.\",\n        \"<Prop>: The green lehenga, characterized by heavy silk fabric and dense gold embroidery that reacts physically to her movement.\",\n        \"\",\n        \"summary:\",\n        \"The woman walks toward the leather armchair, performs a graceful turn once she reaches it, and settles into the chair, maintaining a neutral expression while gazing into the distance.\",\n        \"\",\n        \"retention_analysis:\",\n        \"@picture_1 -> <Subject 1> (fully_preserved identity, clothing, and facial expression)\",\n        \"<Picture 1> -> <Environment> (fully_preserved environment and furniture)\",\n        \"\",\n        \"detailed_description:\",\n        \"[Shot 1] A medium-wide tracking shot follows <Subject 1> as she walks toward the armchair with a steady, rhythmic gait. The camera moves laterally to maintain her in a medium shot, keeping her head and eyes centered within the frame to ensure a high-quality, symmetrical composition.\",\n        \"As she approaches the chair, <Subject 1> performs a graceful pivot, turning her body to face the back of the armchair. The camera performs a smooth, slow arc around her to facilitate the turn.\",\n        \"As she turns, the heavy silk of her lehenga swings with natural momentum, the gold embroidery catching the light. \",\n        \"<Subject 1> then begins to lower her center of gravity, settling gracefully into the deep, tufted leather cushion of the chair. \",\n        \"The camera performs a subtle, slow push-in toward her face as she sits, maintaining focus on her neutral, non-smiling expression.\",\n        \"As she settles, her weight causes the leather to creak and the heavy fabric of the lehenga to drape and fold naturally around her legs and the chair's armrests.\",\n        \"<Subject 1> finishes in a poised, seated position, looking away from the camera toward the distant background with a contemplative, neutral gaze.\",\n        \"\",\n        \"overall_soundscape:\",\n        \"The rhythmic, muffled sound of footsteps on a hard floor, followed by the continuous, heavy rustle of silk and the distinct, deep creak of leather as she settles into the chair.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"None.\"\n      ],\n      \"seed\": \"12636599129996765864\",\n      \"duration_seconds\": 7,\n      \"basic_prompt\": \"\"\n    },\n    {\n      \"id\": \"part_2\",\n      \"prompt\": [\n        \"id=\\\"woman_lehenga_pose_transition_001\\\"\",\n        \"\",\n        \"subject_definitions:\",\n        \"<Subject 1>: Woman from <Picture 1> with long, wavy dark hair and a serious, neutral facial expression. Her appearance, including her facial features and the ornate green lehenga, is identical to <Picture 1>. Her final position at the end of the video must match the exact pose and limb placement seen in <Picture 1>.\",\n        \"<Environment>: The same luxurious interior from <Picture 1>, featuring a large, dark brown tufted leather armchair with deep folds and brass studding.\",\n        \"<Prop>: The green lehenga, characterized by dense gold embroidery and a heavy, smooth silk texture that reacts to the movement of her legs.\",\n        \"\",\n        \"summary:\",\n        \"The woman transitions from an upright seated position to the exact reclining pose shown in <Picture 1>. As she reclines sideways and lifts her legs toward the opposite armrest, the heavy lehenga fabric slides up toward her waist, gradually revealing her legs until she reaches the final composition of <Picture 1>.\",\n        \"\",\n        \"retention_analysis:\",\n        \"<Picture 1> -> <Subject 1> (fully_preserved identity and target final pose)\",\n        \"<Picture 1> -> <Environment> (fully_preserved environment and lighting)\",\n        \"\",\n        \"detailed_description:\",\n        \"[Shot 1] A medium-wide shot establishes <Subject 1> sitting perfectly upright in the center of the frame, looking forward with a serious, non-smiling expression.\",\n        \"As the action begins, <Subject 1> shifts her weight to her hip, leaning her torso sideways to begin reclining into the armchair. \",\n        \"The camera performs a slow, steady orbit keeping her entire body perfectly centered within the frame throughout the movement to maintain a strong, symmetrical composition. \",\n        \"As she reclines, <Subject 1> lifts her legs upward and across the seat toward the opposite armrest. \",\n        \"The upward motion of her legs acts as a trigger, causing the heavy, embroidered silk of the lehenga to slide smoothly up her thighs toward her waist, continuously revealing the skin of her legs. \",\n        \"The movement is fluid and continuous, following the physics of heavy fabric being displaced by rising limbs. \",\n        \"At the moment of maximum leg elevation, the lighting and composition transition to match <Picture 1> perfectly. \",\n        \"The shot concludes with <Subject 1> in the exact pose, limb placement, and lighting seen in <Picture 1>, maintaining her serious facial expression.\",\n        \"\",\n        \"overall_soundscape:\",\n        \"The deep creak of the leather armchair under shifting weight and the continuous, heavy rustle of thick silk fabric sliding against skin.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"None.\",\n        \"\"\n      ]\n    },\n    {\n      \"id\": \"scene_03\",\n      \"prompt\": [\n        \"id=\\\"woman_lehenga_reveal_pan_001\\\"\",\n        \"\",\n        \"subject_definitions:\",\n        \"<Subject 1>: The woman from <Picture 1> with long, wavy dark hair and a neutral, serious facial expression. She is wearing the ornate, heavily embroidered green lehenga (fitted blouse and voluminous skirt) seen in <Picture 1>.\",\n        \"<Environment>: A luxurious, warm-toned interior featuring a large, dark brown tufted leather armchair, consistent with the background of <Picture 1>.\",\n        \"<Prop>: The green lehenga, characterized by heavy, high-sheen silk fabric and dense, reflective gold embroidery.\",\n        \"\",\n        \"summary:\",\n        \"The shot begins with a close-up on the subject's legs. The camera pans slowly to the left, progressively revealing her hips and full body. Simultaneously, the subject lets her arm fall gracefully to her side and tilts her head back toward the ceiling.\",\n        \"\",\n        \"retention_analysis:\",\n        \"<Picture 1> -> <Subject 1> (fully_preserved identity, clothing, and neutral expression)\",\n        \"<Picture 1> -> <Environment> (fully_preserved lighting and leather texture)\",\n        \"\",\n        \"detailed_description:\",\n        \"[Shot 1] The shot opens with a tight, medium-close-up focus on <Subject 1>'s legs, showcasing the intricate gold embroidery and heavy texture of the green lehenga. \",\n        \"Starting with position in <Picture 1>, <Subject 1> performs a coordinated movement: she lets her arm fall gracefully from her side to the floor in a fluid, continuous motion, while simultaneously tilting her head back toward the ceiling. Only her upper body moves.\",\n        \"\",\n        \"As she tilts her head, the light catches the highlights on her neck and the sheen of the silk fabric. \",\n        \"The shot ends with <Subject 1> in a poised, head-tilted pose, her gaze directed upward.\",\n        \"\",\n        \"overall_soundscape:\",\n        \"The soft, heavy rustle of silk fabric and the subtle, rhythmic movement of the heavy lehenga as it shifts.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"None.\",\n        \"\"\n      ]\n    }\n  ],\n  \"defaults\": {\n    \"steps\": 3\n  },\n  \"prompt_prefix\": [\n    \"Bright daylight sunlit lighting, savannah backdrop. The impala does not smile at any time. The impala is always standing on all 4 legs.\"\n  ]\n}",
+        "{\n  \"shots\": [\n    {\n      \"id\": \"scene_04\",\n      \"prompt\": [\n        \"id=\\\"gorilla_gym_arrival\\\"\",\n        \"\",\n        \"subject_definitions:\",\n        \"<Subject 1>: A massive, hyper-muscular gorilla with thick, dark, textured fur, mirroring the identity and anatomy of @picture_2. He exhibits heavy, realistic, animalistic movements.\",\n        \"<Subject 2>: A professional weightlifting gym featuring a bench press setup, power rack, and iron weights, mirroring the environment of @picture_1.\",\n        \"\",\n        \"summary:\",\n        \"A massive gorilla enters the gym from behind the rack. He walks around the rack from behind to the right and then to the front. He walks with a realistic, quadrupedal knuckle-walking gait, scanning the room with curious glances. He circles the rack and settles into a seated position on the weight bench. As he walks around the rack, he momentarily goes offscreen to the right.\",\n        \"\",\n        \"retention_analysis:\",\n        \"<Picture 1> -> <Subject 2>: fully_preserved (gym environment and equipment)\",\n        \"<Picture 2> -> <Subject 1>: fully_preserved (gorilla identity and muscularity)\",\n        \"\",\n        \"detailed_description:\",\n        \"[Shot 1] A wide, static shot establishes the gym environment as seen in <Picture 1>. The camera remains perfectly still and fixed. From behind the heavy metal frame of the power rack, <Subject 1> emerges. He moves with a realistic, heavy, quadrupedal knuckle-walking gait, his weight shifting powerfully between his hands and feet. As he moves, his head turns slowly, his eyes scanning the gym equipment and the ceiling with curiosity and primal awareness.\",\n        \"\",\n        \"[Shot 2] At 00:04.000, the gorilla continues his heavy, rhythmic movement, arcing gracefully around the side of the metal rack. The movement is fluid but heavy, causing subtle, realistic vibrations in the gym floor. As he rounds the rack, he continues to look around the room, his eyes tracking the various machines and weights in the periphery.\",\n        \"\",\n        \"[Shot 3] The gorilla approaches the center of the bench press setup. He transitions from his quadrupedal knuckle-walking gait into a seated position on the weight bench in a single, heavy, muscular movement. As he settles onto the bench, he remains seated, his head turning to scan the vastness of the gym one last time. The camera remains completely stationary and locked-off throughout the entire sequence.\",\n        \"\",\n        \"overall_soundscape:\",\n        \"The heavy, rhythmic, muffled thud of large knuckles hitting the rubber gym floor; the deep, resonant breathing of the gorilla; the metallic creak of the power rack as he passes; and the low, ambient hum of a large industrial space.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"None.\"\n      ]\n    }\n  ],\n  \"defaults\": {\n    \"steps\": 8\n  },\n  \"prompt_prefix\": [\n    \"\"\n  ]\n}",
         "ref2v_studio_minimax_h3_0_6_json",
         "",
         416,
@@ -2364,13 +2493,13 @@
         "video",
         "center",
         7,
-        3,
+        8,
         0,
         20,
         5
       ],
       "widgets_values_named": {
-        "plan_json": "{\n  \"shots\": [\n    {\n      \"id\": \"part_1\",\n      \"prompt\": [\n        \"id=\\\"woman_approach_and_sit_001\\\"\",\n        \"\",\n        \"subject_definitions:\",\n        \"<Subject 1>: The woman from @picture_1 with long, wavy dark hair and a neutral, serious facial expression. She is wearing the same ornate, heavily embroidered green lehenga (fitted blouse and voluminous skirt) as seen in <Picture 1>.\",\n        \"<Environment>: A luxurious interior featuring a large, dark brown tufted leather armchair with deep folds and brass studding, consistent with the setting in <Picture 1>.\",\n        \"<Prop>: The green lehenga, characterized by heavy silk fabric and dense gold embroidery that reacts physically to her movement.\",\n        \"\",\n        \"summary:\",\n        \"The woman walks toward the leather armchair, performs a graceful turn once she reaches it, and settles into the chair, maintaining a neutral expression while gazing into the distance.\",\n        \"\",\n        \"retention_analysis:\",\n        \"@picture_1 -> <Subject 1> (fully_preserved identity, clothing, and facial expression)\",\n        \"<Picture 1> -> <Environment> (fully_preserved environment and furniture)\",\n        \"\",\n        \"detailed_description:\",\n        \"[Shot 1] A medium-wide tracking shot follows <Subject 1> as she walks toward the armchair with a steady, rhythmic gait. The camera moves laterally to maintain her in a medium shot, keeping her head and eyes centered within the frame to ensure a high-quality, symmetrical composition.\",\n        \"As she approaches the chair, <Subject 1> performs a graceful pivot, turning her body to face the back of the armchair. The camera performs a smooth, slow arc around her to facilitate the turn.\",\n        \"As she turns, the heavy silk of her lehenga swings with natural momentum, the gold embroidery catching the light. \",\n        \"<Subject 1> then begins to lower her center of gravity, settling gracefully into the deep, tufted leather cushion of the chair. \",\n        \"The camera performs a subtle, slow push-in toward her face as she sits, maintaining focus on her neutral, non-smiling expression.\",\n        \"As she settles, her weight causes the leather to creak and the heavy fabric of the lehenga to drape and fold naturally around her legs and the chair's armrests.\",\n        \"<Subject 1> finishes in a poised, seated position, looking away from the camera toward the distant background with a contemplative, neutral gaze.\",\n        \"\",\n        \"overall_soundscape:\",\n        \"The rhythmic, muffled sound of footsteps on a hard floor, followed by the continuous, heavy rustle of silk and the distinct, deep creak of leather as she settles into the chair.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"None.\"\n      ],\n      \"seed\": \"12636599129996765864\",\n      \"duration_seconds\": 7,\n      \"basic_prompt\": \"\"\n    },\n    {\n      \"id\": \"part_2\",\n      \"prompt\": [\n        \"id=\\\"woman_lehenga_pose_transition_001\\\"\",\n        \"\",\n        \"subject_definitions:\",\n        \"<Subject 1>: Woman from <Picture 1> with long, wavy dark hair and a serious, neutral facial expression. Her appearance, including her facial features and the ornate green lehenga, is identical to <Picture 1>. Her final position at the end of the video must match the exact pose and limb placement seen in <Picture 1>.\",\n        \"<Environment>: The same luxurious interior from <Picture 1>, featuring a large, dark brown tufted leather armchair with deep folds and brass studding.\",\n        \"<Prop>: The green lehenga, characterized by dense gold embroidery and a heavy, smooth silk texture that reacts to the movement of her legs.\",\n        \"\",\n        \"summary:\",\n        \"The woman transitions from an upright seated position to the exact reclining pose shown in <Picture 1>. As she reclines sideways and lifts her legs toward the opposite armrest, the heavy lehenga fabric slides up toward her waist, gradually revealing her legs until she reaches the final composition of <Picture 1>.\",\n        \"\",\n        \"retention_analysis:\",\n        \"<Picture 1> -> <Subject 1> (fully_preserved identity and target final pose)\",\n        \"<Picture 1> -> <Environment> (fully_preserved environment and lighting)\",\n        \"\",\n        \"detailed_description:\",\n        \"[Shot 1] A medium-wide shot establishes <Subject 1> sitting perfectly upright in the center of the frame, looking forward with a serious, non-smiling expression.\",\n        \"As the action begins, <Subject 1> shifts her weight to her hip, leaning her torso sideways to begin reclining into the armchair. \",\n        \"The camera performs a slow, steady orbit keeping her entire body perfectly centered within the frame throughout the movement to maintain a strong, symmetrical composition. \",\n        \"As she reclines, <Subject 1> lifts her legs upward and across the seat toward the opposite armrest. \",\n        \"The upward motion of her legs acts as a trigger, causing the heavy, embroidered silk of the lehenga to slide smoothly up her thighs toward her waist, continuously revealing the skin of her legs. \",\n        \"The movement is fluid and continuous, following the physics of heavy fabric being displaced by rising limbs. \",\n        \"At the moment of maximum leg elevation, the lighting and composition transition to match <Picture 1> perfectly. \",\n        \"The shot concludes with <Subject 1> in the exact pose, limb placement, and lighting seen in <Picture 1>, maintaining her serious facial expression.\",\n        \"\",\n        \"overall_soundscape:\",\n        \"The deep creak of the leather armchair under shifting weight and the continuous, heavy rustle of thick silk fabric sliding against skin.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"None.\",\n        \"\"\n      ]\n    },\n    {\n      \"id\": \"scene_03\",\n      \"prompt\": [\n        \"id=\\\"woman_lehenga_reveal_pan_001\\\"\",\n        \"\",\n        \"subject_definitions:\",\n        \"<Subject 1>: The woman from <Picture 1> with long, wavy dark hair and a neutral, serious facial expression. She is wearing the ornate, heavily embroidered green lehenga (fitted blouse and voluminous skirt) seen in <Picture 1>.\",\n        \"<Environment>: A luxurious, warm-toned interior featuring a large, dark brown tufted leather armchair, consistent with the background of <Picture 1>.\",\n        \"<Prop>: The green lehenga, characterized by heavy, high-sheen silk fabric and dense, reflective gold embroidery.\",\n        \"\",\n        \"summary:\",\n        \"The shot begins with a close-up on the subject's legs. The camera pans slowly to the left, progressively revealing her hips and full body. Simultaneously, the subject lets her arm fall gracefully to her side and tilts her head back toward the ceiling.\",\n        \"\",\n        \"retention_analysis:\",\n        \"<Picture 1> -> <Subject 1> (fully_preserved identity, clothing, and neutral expression)\",\n        \"<Picture 1> -> <Environment> (fully_preserved lighting and leather texture)\",\n        \"\",\n        \"detailed_description:\",\n        \"[Shot 1] The shot opens with a tight, medium-close-up focus on <Subject 1>'s legs, showcasing the intricate gold embroidery and heavy texture of the green lehenga. \",\n        \"Starting with position in <Picture 1>, <Subject 1> performs a coordinated movement: she lets her arm fall gracefully from her side to the floor in a fluid, continuous motion, while simultaneously tilting her head back toward the ceiling. Only her upper body moves.\",\n        \"\",\n        \"As she tilts her head, the light catches the highlights on her neck and the sheen of the silk fabric. \",\n        \"The shot ends with <Subject 1> in a poised, head-tilted pose, her gaze directed upward.\",\n        \"\",\n        \"overall_soundscape:\",\n        \"The soft, heavy rustle of silk fabric and the subtle, rhythmic movement of the heavy lehenga as it shifts.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"None.\",\n        \"\"\n      ]\n    }\n  ],\n  \"defaults\": {\n    \"steps\": 3\n  },\n  \"prompt_prefix\": [\n    \"Bright daylight sunlit lighting, savannah backdrop. The impala does not smile at any time. The impala is always standing on all 4 legs.\"\n  ]\n}",
+        "plan_json": "{\n  \"shots\": [\n    {\n      \"id\": \"scene_04\",\n      \"prompt\": [\n        \"id=\\\"gorilla_gym_arrival\\\"\",\n        \"\",\n        \"subject_definitions:\",\n        \"<Subject 1>: A massive, hyper-muscular gorilla with thick, dark, textured fur, mirroring the identity and anatomy of @picture_2. He exhibits heavy, realistic, animalistic movements.\",\n        \"<Subject 2>: A professional weightlifting gym featuring a bench press setup, power rack, and iron weights, mirroring the environment of @picture_1.\",\n        \"\",\n        \"summary:\",\n        \"A massive gorilla enters the gym from behind the rack. He walks around the rack from behind to the right and then to the front. He walks with a realistic, quadrupedal knuckle-walking gait, scanning the room with curious glances. He circles the rack and settles into a seated position on the weight bench. As he walks around the rack, he momentarily goes offscreen to the right.\",\n        \"\",\n        \"retention_analysis:\",\n        \"<Picture 1> -> <Subject 2>: fully_preserved (gym environment and equipment)\",\n        \"<Picture 2> -> <Subject 1>: fully_preserved (gorilla identity and muscularity)\",\n        \"\",\n        \"detailed_description:\",\n        \"[Shot 1] A wide, static shot establishes the gym environment as seen in <Picture 1>. The camera remains perfectly still and fixed. From behind the heavy metal frame of the power rack, <Subject 1> emerges. He moves with a realistic, heavy, quadrupedal knuckle-walking gait, his weight shifting powerfully between his hands and feet. As he moves, his head turns slowly, his eyes scanning the gym equipment and the ceiling with curiosity and primal awareness.\",\n        \"\",\n        \"[Shot 2] At 00:04.000, the gorilla continues his heavy, rhythmic movement, arcing gracefully around the side of the metal rack. The movement is fluid but heavy, causing subtle, realistic vibrations in the gym floor. As he rounds the rack, he continues to look around the room, his eyes tracking the various machines and weights in the periphery.\",\n        \"\",\n        \"[Shot 3] The gorilla approaches the center of the bench press setup. He transitions from his quadrupedal knuckle-walking gait into a seated position on the weight bench in a single, heavy, muscular movement. As he settles onto the bench, he remains seated, his head turning to scan the vastness of the gym one last time. The camera remains completely stationary and locked-off throughout the entire sequence.\",\n        \"\",\n        \"overall_soundscape:\",\n        \"The heavy, rhythmic, muffled thud of large knuckles hitting the rubber gym floor; the deep, resonant breathing of the gorilla; the metallic creak of the power rack as he passes; and the low, ambient hum of a large industrial space.\",\n        \"\",\n        \"non_diegetic_music:\",\n        \"None.\"\n      ]\n    }\n  ],\n  \"defaults\": {\n    \"steps\": 8\n  },\n  \"prompt_prefix\": [\n    \"\"\n  ]\n}",
         "run_name": "ref2v_studio_minimax_h3_0_6_json",
         "generation_fingerprint": "",
         "width": 416,
@@ -2378,7 +2507,7 @@
         "encode_mode": "video",
         "crop": "center",
         "default_duration_seconds": 7,
-        "default_steps": 3,
+        "default_steps": 8,
         "base_seed": 0,
         "segment_crf": 20,
         "video_blend_frames": 5
@@ -2490,7 +2619,12 @@
         "Node name for S&R": "MMH3UltimateUpscale",
         "cnr_id": "Comfyui-MMH3-UltimateUpscale",
         "ver": "26cf738a33bbd497299663c26c6dfc8f26d5c2ee",
-        "aux_id": "bbaudio-2025/Comfyui-MMH3-UltimateUpscale"
+        "aux_id": "bbaudio-2025/Comfyui-MMH3-UltimateUpscale",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         1
@@ -2544,7 +2678,15 @@
         "Node name for S&R": "MMH3LatentUpscaleWithModelParams",
         "cnr_id": "Comfyui-MMH3-UltimateUpscale",
         "ver": "26cf738a33bbd497299663c26c6dfc8f26d5c2ee",
-        "aux_id": "bbaudio-2025/Comfyui-MMH3-UltimateUpscale"
+        "aux_id": "bbaudio-2025/Comfyui-MMH3-UltimateUpscale",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "width": true,
+            "height": true
+          },
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         "minimax_h3_latent_upscaler_3d_bf16.safetensors",
@@ -2617,7 +2759,15 @@
       "properties": {
         "Node name for S&R": "MMH3SpatialSplitParams",
         "cnr_id": "Comfyui-MMH3-UltimateUpscale",
-        "ver": "3b4d972dd7de1ab9c40deb0084bf7db55474b5d9"
+        "ver": "3b4d972dd7de1ab9c40deb0084bf7db55474b5d9",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "upscale_width": true,
+            "upscale_height": true
+          },
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         1024,
@@ -2688,7 +2838,12 @@
         "Node name for S&R": "MMH3TemporalSplitParams",
         "cnr_id": "Comfyui-MMH3-UltimateUpscale",
         "ver": "26cf738a33bbd497299663c26c6dfc8f26d5c2ee",
-        "aux_id": "bbaudio-2025/Comfyui-MMH3-UltimateUpscale"
+        "aux_id": "bbaudio-2025/Comfyui-MMH3-UltimateUpscale",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         119,
@@ -2734,7 +2889,12 @@
       "properties": {
         "Node name for S&R": "BasicScheduler",
         "cnr_id": "comfy-core",
-        "ver": "0.33.0"
+        "ver": "0.33.0",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         "beta",
@@ -2774,7 +2934,12 @@
       "properties": {
         "Node name for S&R": "RandomNoise",
         "cnr_id": "comfy-core",
-        "ver": "0.33.0"
+        "ver": "0.33.0",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         201177824316208,
@@ -2812,7 +2977,12 @@
       "properties": {
         "Node name for S&R": "KSamplerSelect",
         "cnr_id": "comfy-core",
-        "ver": "0.33.0"
+        "ver": "0.33.0",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         "er_sde"
@@ -2855,7 +3025,12 @@
         }
       ],
       "properties": {
-        "Node name for S&R": "ResolutionSelector"
+        "Node name for S&R": "ResolutionSelector",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": [
         "9:16 (Portrait Widescreen)",
@@ -2915,7 +3090,12 @@
         }
       ],
       "properties": {
-        "Node name for S&R": "VHS_VideoCombine"
+        "Node name for S&R": "VHS_VideoCombine",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
       },
       "widgets_values": {
         "frame_rate": 24,
@@ -2932,13 +3112,13 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "MinimaxH3-Segment_00001-audio.mp4",
+            "filename": "MinimaxH3-Segment_00007-audio.mp4",
             "subfolder": "",
             "type": "output",
             "format": "video/h264-mp4",
             "frame_rate": 24,
-            "workflow": "MinimaxH3-Segment_00001.png",
-            "fullpath": "/Users/maheshthakre/Documents/ComfyUI/output/MinimaxH3-Segment_00001-audio.mp4"
+            "workflow": "MinimaxH3-Segment_00007.png",
+            "fullpath": "/Users/maheshthakre/Documents/ComfyUI/output/MinimaxH3-Segment_00007-audio.mp4"
           }
         }
       },
@@ -2957,13 +3137,13 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "MinimaxH3-Segment_00001-audio.mp4",
+            "filename": "MinimaxH3-Segment_00007-audio.mp4",
             "subfolder": "",
             "type": "output",
             "format": "video/h264-mp4",
             "frame_rate": 24,
-            "workflow": "MinimaxH3-Segment_00001.png",
-            "fullpath": "/Users/maheshthakre/Documents/ComfyUI/output/MinimaxH3-Segment_00001-audio.mp4"
+            "workflow": "MinimaxH3-Segment_00007.png",
+            "fullpath": "/Users/maheshthakre/Documents/ComfyUI/output/MinimaxH3-Segment_00007-audio.mp4"
           }
         }
       }
@@ -2985,7 +3165,13 @@
       "inputs": [],
       "outputs": [],
       "title": "Note: Size Settings Reference",
-      "properties": {},
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
       "widgets_values": [
         "| megapixels | Aspect | Output (multiple=32) |\n|---|---|---|\n| 0.2 | 16:9 | 608 x 352 |\n| 0.3 | 16:9 | 736 x 416 |\n| 0.4 | 16:9 | 864 x 480 |\n| 0.5 | 16:9 | 960 x 544 |\n| 0.6 | 16:9 | 1056 x 608 |\n| 0.7 | 16:9 | 1152 x 640 |\n| 0.8 | 16:9 | 1216 x 672 |\n| 0.9 | 16:9 | 1280 x 736 |\n| 0.98 | 16:9 | 1344 x 768 |\n| 1.0 | 16:9 | 1376 x 768 |\n| 1.2 | 16:9 | 1504 x 832 |\n| 1.5 | 16:9 | 1664 x 928 |\n| 1.8 | 16:9 | 1824 x 1024 |\n| 2.0 | 16:9 | 1920 x 1088 |\n"
       ],
@@ -3462,14 +3648,6 @@
       "MODEL"
     ],
     [
-      24,
-      7,
-      7,
-      14,
-      1,
-      "INT"
-    ],
-    [
       157,
       81,
       0,
@@ -3524,22 +3702,6 @@
       80,
       0,
       "MODEL"
-    ],
-    [
-      164,
-      83,
-      0,
-      77,
-      0,
-      "INT"
-    ],
-    [
-      165,
-      83,
-      1,
-      77,
-      1,
-      "INT"
     ],
     [
       166,
@@ -3636,6 +3798,30 @@
       86,
       1,
       "AUDIO"
+    ],
+    [
+      24,
+      7,
+      7,
+      14,
+      1,
+      "INT"
+    ],
+    [
+      164,
+      83,
+      0,
+      77,
+      0,
+      "INT"
+    ],
+    [
+      165,
+      83,
+      1,
+      77,
+      1,
+      "INT"
     ]
   ],
   "groups": [
@@ -3739,10 +3925,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.24538132732074147,
+      "scale": 0.4938988388275381,
       "offset": [
-        -2786.669980590045,
-        1427.5885021856723
+        -3895.036562715835,
+        417.23978143972477
       ]
     },
     "comfyui_mcp": {
@@ -3752,7 +3938,9 @@
     "VHS_latentpreview": false,
     "VHS_latentpreviewrate": 0,
     "VHS_MetadataImage": true,
-    "VHS_KeepIntermediate": true
+    "VHS_KeepIntermediate": true,
+    "ue_links": [],
+    "links_added_by_ue": []
   },
   "version": 0.4
 }

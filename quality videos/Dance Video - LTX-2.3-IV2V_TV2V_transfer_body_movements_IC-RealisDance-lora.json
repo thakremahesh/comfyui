@@ -1,7 +1,7 @@
 {
   "id": "a8e69c84-cca8-4323-88b2-c086c84b4635",
   "revision": 0,
-  "last_node_id": 5389,
+  "last_node_id": 5391,
   "last_link_id": 14027,
   "nodes": [
     {
@@ -18,7 +18,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 113,
+      "order": 115,
       "mode": 0,
       "inputs": [
         {
@@ -66,7 +66,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 107,
+      "order": 109,
       "mode": 0,
       "inputs": [
         {
@@ -114,7 +114,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 101,
+      "order": 103,
       "mode": 0,
       "inputs": [
         {
@@ -162,7 +162,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 102,
+      "order": 104,
       "mode": 0,
       "inputs": [
         {
@@ -318,7 +318,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 103,
+      "order": 105,
       "mode": 0,
       "inputs": [
         {
@@ -547,7 +547,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 183,
+      "order": 185,
       "mode": 0,
       "inputs": [
         {
@@ -595,7 +595,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 184,
+      "order": 186,
       "mode": 0,
       "inputs": [
         {
@@ -905,7 +905,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 153,
+      "order": 155,
       "mode": 0,
       "inputs": [
         {
@@ -1295,7 +1295,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 121,
+      "order": 123,
       "mode": 0,
       "inputs": [
         {
@@ -1343,7 +1343,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 122,
+      "order": 124,
       "mode": 0,
       "inputs": [
         {
@@ -1391,7 +1391,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 114,
+      "order": 116,
       "mode": 0,
       "inputs": [
         {
@@ -1439,7 +1439,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 116,
+      "order": 118,
       "mode": 0,
       "inputs": [
         {
@@ -1555,7 +1555,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 135,
+      "order": 137,
       "mode": 0,
       "inputs": [
         {
@@ -1603,7 +1603,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 112,
+      "order": 114,
       "mode": 0,
       "inputs": [
         {
@@ -1737,7 +1737,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 105,
+      "order": 107,
       "mode": 0,
       "inputs": [
         {
@@ -2219,7 +2219,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 145,
+      "order": 147,
       "mode": 4,
       "inputs": [
         {
@@ -2270,7 +2270,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 157,
+      "order": 159,
       "mode": 4,
       "inputs": [
         {
@@ -2321,7 +2321,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 182,
+      "order": 184,
       "mode": 0,
       "inputs": [
         {
@@ -2369,7 +2369,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 166,
+      "order": 168,
       "mode": 0,
       "inputs": [
         {
@@ -2477,7 +2477,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 126,
+      "order": 128,
       "mode": 0,
       "inputs": [
         {
@@ -2611,7 +2611,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 155,
+      "order": 157,
       "mode": 0,
       "inputs": [
         {
@@ -2744,7 +2744,7 @@
         170
       ],
       "flags": {},
-      "order": 132,
+      "order": 134,
       "mode": 0,
       "inputs": [
         {
@@ -2854,7 +2854,7 @@
         86.75984634927909
       ],
       "flags": {},
-      "order": 192,
+      "order": 194,
       "mode": 0,
       "inputs": [
         {
@@ -2916,7 +2916,7 @@
         122
       ],
       "flags": {},
-      "order": 193,
+      "order": 195,
       "mode": 0,
       "inputs": [
         {
@@ -3112,7 +3112,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 144,
+      "order": 146,
       "mode": 0,
       "inputs": [
         {
@@ -3160,7 +3160,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 146,
+      "order": 148,
       "mode": 0,
       "inputs": [
         {
@@ -3294,7 +3294,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 172,
+      "order": 174,
       "mode": 0,
       "inputs": [
         {
@@ -3342,7 +3342,7 @@
         46
       ],
       "flags": {},
-      "order": 198,
+      "order": 200,
       "mode": 0,
       "inputs": [
         {
@@ -3390,7 +3390,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 201,
+      "order": 203,
       "mode": 0,
       "inputs": [
         {
@@ -3436,7 +3436,7 @@
         150
       ],
       "flags": {},
-      "order": 199,
+      "order": 201,
       "mode": 0,
       "inputs": [
         {
@@ -3583,7 +3583,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 164,
+      "order": 166,
       "mode": 4,
       "inputs": [
         {
@@ -3642,7 +3642,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 108,
+      "order": 110,
       "mode": 0,
       "inputs": [
         {
@@ -3713,7 +3713,7 @@
         130
       ],
       "flags": {},
-      "order": 106,
+      "order": 108,
       "mode": 0,
       "inputs": [
         {
@@ -3791,7 +3791,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 111,
+      "order": 113,
       "mode": 0,
       "inputs": [
         {
@@ -3994,7 +3994,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 147,
+      "order": 149,
       "mode": 0,
       "inputs": [
         {
@@ -4042,7 +4042,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 134,
+      "order": 136,
       "mode": 0,
       "inputs": [
         {
@@ -4115,7 +4115,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 115,
+      "order": 117,
       "mode": 0,
       "inputs": [
         {
@@ -4287,7 +4287,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 160,
+      "order": 162,
       "mode": 0,
       "inputs": [
         {
@@ -4338,7 +4338,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 168,
+      "order": 170,
       "mode": 0,
       "inputs": [
         {
@@ -4426,7 +4426,7 @@
         334
       ],
       "flags": {},
-      "order": 110,
+      "order": 112,
       "mode": 0,
       "inputs": [
         {
@@ -4503,7 +4503,7 @@
             "format": "video/h264-mp4",
             "frame_rate": 24,
             "workflow": "LTX_00001.png",
-            "fullpath": "/var/folders/l2/qt431d5n5cq2nl1m7xr6rffc0000gn/T/latentsync_9eeaa60e/LTX_00001-audio.mp4"
+            "fullpath": "/var/folders/l2/qt431d5n5cq2nl1m7xr6rffc0000gn/T/latentsync_8888d650/LTX_00001-audio.mp4"
           }
         }
       },
@@ -4528,7 +4528,7 @@
             "format": "video/h264-mp4",
             "frame_rate": 24,
             "workflow": "LTX_00001.png",
-            "fullpath": "/var/folders/l2/qt431d5n5cq2nl1m7xr6rffc0000gn/T/latentsync_9eeaa60e/LTX_00001-audio.mp4"
+            "fullpath": "/var/folders/l2/qt431d5n5cq2nl1m7xr6rffc0000gn/T/latentsync_8888d650/LTX_00001-audio.mp4"
           }
         }
       }
@@ -4631,7 +4631,7 @@
         106
       ],
       "flags": {},
-      "order": 150,
+      "order": 152,
       "mode": 0,
       "inputs": [
         {
@@ -4741,7 +4741,7 @@
         46
       ],
       "flags": {},
-      "order": 171,
+      "order": 173,
       "mode": 0,
       "inputs": [
         {
@@ -4789,7 +4789,7 @@
         46
       ],
       "flags": {},
-      "order": 194,
+      "order": 196,
       "mode": 0,
       "inputs": [
         {
@@ -4837,7 +4837,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 154,
+      "order": 156,
       "mode": 0,
       "inputs": [
         {
@@ -4978,7 +4978,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 104,
+      "order": 106,
       "mode": 0,
       "inputs": [
         {
@@ -5029,7 +5029,7 @@
         78
       ],
       "flags": {},
-      "order": 174,
+      "order": 176,
       "mode": 0,
       "inputs": [
         {
@@ -5102,7 +5102,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 148,
+      "order": 150,
       "mode": 0,
       "inputs": [
         {
@@ -5338,7 +5338,7 @@
         106.56108138862601
       ],
       "flags": {},
-      "order": 131,
+      "order": 133,
       "mode": 0,
       "inputs": [
         {
@@ -5441,7 +5441,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 109,
+      "order": 111,
       "mode": 0,
       "inputs": [
         {
@@ -5502,7 +5502,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 149,
+      "order": 151,
       "mode": 0,
       "inputs": [
         {
@@ -5596,7 +5596,7 @@
         97.13791725018427
       ],
       "flags": {},
-      "order": 158,
+      "order": 160,
       "mode": 0,
       "inputs": [
         {
@@ -5657,7 +5657,7 @@
         122
       ],
       "flags": {},
-      "order": 130,
+      "order": 132,
       "mode": 0,
       "inputs": [
         {
@@ -5774,7 +5774,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 137,
+      "order": 139,
       "mode": 0,
       "inputs": [
         {
@@ -5826,7 +5826,7 @@
         46
       ],
       "flags": {},
-      "order": 196,
+      "order": 198,
       "mode": 0,
       "inputs": [
         {
@@ -5874,7 +5874,7 @@
         118
       ],
       "flags": {},
-      "order": 173,
+      "order": 175,
       "mode": 0,
       "inputs": [
         {
@@ -5948,7 +5948,7 @@
         75.1585248564364
       ],
       "flags": {},
-      "order": 181,
+      "order": 183,
       "mode": 0,
       "inputs": [
         {
@@ -6054,7 +6054,7 @@
         69.46716747472055
       ],
       "flags": {},
-      "order": 197,
+      "order": 199,
       "mode": 0,
       "inputs": [
         {
@@ -6187,10 +6187,10 @@
         }
       },
       "widgets_values": [
-        15
+        10
       ],
       "widgets_values_named": {
-        "value": 15
+        "value": 10
       },
       "color": "#006691",
       "bgcolor": "rgba(24,24,27,.9)"
@@ -6252,7 +6252,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 159,
+      "order": 161,
       "mode": 0,
       "inputs": [
         {
@@ -6309,7 +6309,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 117,
+      "order": 119,
       "mode": 0,
       "inputs": [
         {
@@ -6462,7 +6462,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 143,
+      "order": 145,
       "mode": 0,
       "inputs": [
         {
@@ -6622,7 +6622,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 151,
+      "order": 153,
       "mode": 0,
       "inputs": [
         {
@@ -6758,7 +6758,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 120,
+      "order": 122,
       "mode": 0,
       "inputs": [
         {
@@ -6806,7 +6806,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 119,
+      "order": 121,
       "mode": 0,
       "inputs": [
         {
@@ -6854,7 +6854,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 177,
+      "order": 179,
       "mode": 0,
       "inputs": [
         {
@@ -6902,7 +6902,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 136,
+      "order": 138,
       "mode": 0,
       "inputs": [
         {
@@ -7058,7 +7058,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 167,
+      "order": 169,
       "mode": 0,
       "inputs": [
         {
@@ -7170,7 +7170,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 138,
+      "order": 140,
       "mode": 0,
       "inputs": [
         {
@@ -7353,7 +7353,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 118,
+      "order": 120,
       "mode": 0,
       "inputs": [
         {
@@ -7412,7 +7412,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 191,
+      "order": 193,
       "mode": 0,
       "inputs": [
         {
@@ -7684,7 +7684,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 123,
+      "order": 125,
       "mode": 0,
       "inputs": [
         {
@@ -7741,7 +7741,7 @@
         808.6585480650217
       ],
       "flags": {},
-      "order": 162,
+      "order": 164,
       "mode": 0,
       "inputs": [
         {
@@ -7807,7 +7807,7 @@
         798.4214907140474
       ],
       "flags": {},
-      "order": 195,
+      "order": 197,
       "mode": 0,
       "inputs": [
         {
@@ -7904,11 +7904,11 @@
         }
       },
       "widgets_values": [
-        "1791289952236-0.png",
+        "Screenshot 2026-09-05 at 11.43.56 AM.png",
         "image"
       ],
       "widgets_values_named": {
-        "image": "1791289952236-0.png",
+        "image": "Screenshot 2026-09-05 at 11.43.56 AM.png",
         "upload": "image"
       },
       "color": "#346434",
@@ -7934,7 +7934,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 165,
+      "order": 167,
       "mode": 0,
       "inputs": [
         {
@@ -7963,10 +7963,10 @@
         }
       },
       "widgets_values": [
-        "highly detailed. Make this image come alive with fluid motion. \n\nThe woman's body is at an angle to the camera as in the reference video. The woman is dancing in perfect sync to the music with expressive body language and fast motion. Her eyes are always open. Her fingers are always touching each other and her hand is flat. She is only wearing a top and shorts. Her movements are very graceful and not jerky. She is wearing a saree which is wrapped around her waist.\n\nextreme close up, pores, detailed skin, individual hair strands, photorealistic.\n\nGraceful finger, body and waist movements. The fingers remain strictly touching and aligned flat as a singular unit, undulating smoothly in a rhythmic, liquid wave-like motion."
+        "highly detailed. Make this image come alive with fluid motion. \n\nThe police woman is dancing in the street.\n\nextreme close up, pores, detailed skin, individual hair strands, photorealistic.\n\nThe background remains the same as in the reference picture."
       ],
       "widgets_values_named": {
-        "text": "highly detailed. Make this image come alive with fluid motion. \n\nThe woman's body is at an angle to the camera as in the reference video. The woman is dancing in perfect sync to the music with expressive body language and fast motion. Her eyes are always open. Her fingers are always touching each other and her hand is flat. She is only wearing a top and shorts. Her movements are very graceful and not jerky. She is wearing a saree which is wrapped around her waist.\n\nextreme close up, pores, detailed skin, individual hair strands, photorealistic.\n\nGraceful finger, body and waist movements. The fingers remain strictly touching and aligned flat as a singular unit, undulating smoothly in a rhythmic, liquid wave-like motion."
+        "text": "highly detailed. Make this image come alive with fluid motion. \n\nThe police woman is dancing in the street.\n\nextreme close up, pores, detailed skin, individual hair strands, photorealistic.\n\nThe background remains the same as in the reference picture."
       },
       "color": "#008181",
       "bgcolor": "rgba(24,24,27,.9)"
@@ -7985,7 +7985,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 186,
+      "order": 188,
       "mode": 0,
       "inputs": [
         {
@@ -8033,7 +8033,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 187,
+      "order": 189,
       "mode": 0,
       "inputs": [
         {
@@ -8081,7 +8081,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 188,
+      "order": 190,
       "mode": 0,
       "inputs": [
         {
@@ -8129,7 +8129,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 185,
+      "order": 187,
       "mode": 0,
       "inputs": [
         {
@@ -8177,7 +8177,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 175,
+      "order": 177,
       "mode": 0,
       "inputs": [
         {
@@ -8211,7 +8211,7 @@
           ]
         },
         {
-          "label": "361 count",
+          "label": "241 count",
           "name": "count",
           "type": "INT",
           "links": [
@@ -8416,7 +8416,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 124,
+      "order": 126,
       "mode": 0,
       "inputs": [
         {
@@ -8562,7 +8562,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 127,
+      "order": 129,
       "mode": 0,
       "inputs": [
         {
@@ -8702,10 +8702,10 @@
         }
       },
       "widgets_values": [
-        "highly detailed. Make this image come alive with fluid motion. \n\nThe woman's body is at an angle to the camera as in the reference video. The woman is dancing in perfect sync to the music with expressive body language and fast motion. Her eyes are always open. Her fingers are always touching each other and her hand is flat. She is only wearing a top and shorts. Her movements are very graceful and not jerky. She is wearing a saree which is wrapped around her waist.\n\nextreme close up, pores, detailed skin, individual hair strands, photorealistic.\n\nGraceful finger, body and waist movements. The fingers remain strictly touching and aligned flat as a singular unit, undulating smoothly in a rhythmic, liquid wave-like motion."
+        "highly detailed. Make this image come alive with fluid motion. \n\nThe woman is dancing in a office setting with glass walls and upscale furniture.\n\nNo text in the output video.\n\nextreme close up, pores, detailed skin, individual hair strands, photorealistic.\n\nThe background remains the same as in the reference picture."
       ],
       "widgets_values_named": {
-        "value": "highly detailed. Make this image come alive with fluid motion. \n\nThe woman's body is at an angle to the camera as in the reference video. The woman is dancing in perfect sync to the music with expressive body language and fast motion. Her eyes are always open. Her fingers are always touching each other and her hand is flat. She is only wearing a top and shorts. Her movements are very graceful and not jerky. She is wearing a saree which is wrapped around her waist.\n\nextreme close up, pores, detailed skin, individual hair strands, photorealistic.\n\nGraceful finger, body and waist movements. The fingers remain strictly touching and aligned flat as a singular unit, undulating smoothly in a rhythmic, liquid wave-like motion."
+        "value": "highly detailed. Make this image come alive with fluid motion. \n\nThe woman is dancing in a office setting with glass walls and upscale furniture.\n\nNo text in the output video.\n\nextreme close up, pores, detailed skin, individual hair strands, photorealistic.\n\nThe background remains the same as in the reference picture."
       },
       "color": "#346434",
       "bgcolor": "rgba(24,24,27,.9)"
@@ -8724,7 +8724,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 152,
+      "order": 154,
       "mode": 0,
       "inputs": [
         {
@@ -8815,7 +8815,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 156,
+      "order": 158,
       "mode": 0,
       "inputs": [
         {
@@ -8864,7 +8864,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 139,
+      "order": 141,
       "mode": 0,
       "inputs": [
         {
@@ -8912,7 +8912,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 125,
+      "order": 127,
       "mode": 0,
       "inputs": [
         {
@@ -8986,7 +8986,7 @@
         }
       },
       "widgets_values": {
-        "video": "Video - ES MEDIA (2560p, av01.0.12M.08.0.111, facebook) via VidBee.mp4",
+        "video": "untitled (9).mp4",
         "force_rate": 0,
         "custom_width": 0,
         "custom_height": 0,
@@ -8998,7 +8998,7 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "Video - ES MEDIA (2560p, av01.0.12M.08.0.111, facebook) via VidBee.mp4",
+            "filename": "untitled (9).mp4",
             "type": "input",
             "format": "video/mp4",
             "force_rate": 0,
@@ -9010,7 +9010,7 @@
         }
       },
       "widgets_values_named": {
-        "video": "Video - ES MEDIA (2560p, av01.0.12M.08.0.111, facebook) via VidBee.mp4",
+        "video": "untitled (9).mp4",
         "force_rate": 0,
         "custom_width": 0,
         "custom_height": 0,
@@ -9022,7 +9022,7 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "Video - ES MEDIA (2560p, av01.0.12M.08.0.111, facebook) via VidBee.mp4",
+            "filename": "untitled (9).mp4",
             "type": "input",
             "format": "video/mp4",
             "force_rate": 0,
@@ -9056,7 +9056,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 128,
+      "order": 130,
       "mode": 0,
       "inputs": [
         {
@@ -9104,7 +9104,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 140,
+      "order": 142,
       "mode": 0,
       "inputs": [
         {
@@ -9165,7 +9165,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 141,
+      "order": 143,
       "mode": 0,
       "inputs": [
         {
@@ -9213,7 +9213,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 142,
+      "order": 144,
       "mode": 0,
       "inputs": [
         {
@@ -9259,7 +9259,7 @@
         118
       ],
       "flags": {},
-      "order": 176,
+      "order": 178,
       "mode": 0,
       "inputs": [
         {
@@ -9326,7 +9326,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 189,
+      "order": 191,
       "mode": 0,
       "inputs": [
         {
@@ -9387,7 +9387,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 169,
+      "order": 171,
       "mode": 4,
       "inputs": [
         {
@@ -9508,7 +9508,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 178,
+      "order": 180,
       "mode": 0,
       "inputs": [
         {
@@ -9583,7 +9583,7 @@
             "format": "video/h264-mp4",
             "frame_rate": 24,
             "workflow": "Pose_00002.png",
-            "fullpath": "/var/folders/l2/qt431d5n5cq2nl1m7xr6rffc0000gn/T/latentsync_9eeaa60e/Pose_00002.mp4"
+            "fullpath": "/var/folders/l2/qt431d5n5cq2nl1m7xr6rffc0000gn/T/latentsync_8888d650/Pose_00002.mp4"
           }
         }
       },
@@ -9608,7 +9608,7 @@
             "format": "video/h264-mp4",
             "frame_rate": 24,
             "workflow": "Pose_00002.png",
-            "fullpath": "/var/folders/l2/qt431d5n5cq2nl1m7xr6rffc0000gn/T/latentsync_9eeaa60e/Pose_00002.mp4"
+            "fullpath": "/var/folders/l2/qt431d5n5cq2nl1m7xr6rffc0000gn/T/latentsync_8888d650/Pose_00002.mp4"
           }
         }
       }
@@ -9681,7 +9681,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 203,
+      "order": 205,
       "mode": 0,
       "inputs": [
         {
@@ -9815,7 +9815,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 200,
+      "order": 202,
       "mode": 0,
       "inputs": [
         {
@@ -9919,7 +9919,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 129,
+      "order": 131,
       "mode": 0,
       "inputs": [
         {
@@ -10041,7 +10041,7 @@
         346
       ],
       "flags": {},
-      "order": 161,
+      "order": 163,
       "mode": 4,
       "inputs": [
         {
@@ -10118,7 +10118,7 @@
         285.07668178175936
       ],
       "flags": {},
-      "order": 133,
+      "order": 135,
       "mode": 0,
       "inputs": [
         {
@@ -10157,7 +10157,7 @@
         552.3289347218806
       ],
       "flags": {},
-      "order": 190,
+      "order": 192,
       "mode": 0,
       "inputs": [
         {
@@ -10174,7 +10174,7 @@
         }
       ],
       "outputs": [],
-      "title": "Preview Animation 361x360x640",
+      "title": "Preview Animation 241x360x640",
       "properties": {
         "Node name for S&R": "PreviewAnimation",
         "ue_properties": {
@@ -10202,7 +10202,7 @@
         330
       ],
       "flags": {},
-      "order": 163,
+      "order": 165,
       "mode": 0,
       "inputs": [
         {
@@ -10367,10 +10367,10 @@
       ],
       "size": [
         1313.0437311779483,
-        1324.0000000000005
+        1396.0000000000005
       ],
       "flags": {},
-      "order": 202,
+      "order": 204,
       "mode": 0,
       "inputs": [
         {
@@ -10446,7 +10446,7 @@
         186
       ],
       "flags": {},
-      "order": 170,
+      "order": 172,
       "mode": 0,
       "inputs": [
         {
@@ -10598,7 +10598,7 @@
         270
       ],
       "flags": {},
-      "order": 180,
+      "order": 182,
       "mode": 0,
       "inputs": [
         {
@@ -10667,7 +10667,7 @@
         552.3289347218806
       ],
       "flags": {},
-      "order": 179,
+      "order": 181,
       "mode": 0,
       "inputs": [
         {
@@ -10684,7 +10684,7 @@
         }
       ],
       "outputs": [],
-      "title": "Preview Animation 361x360x640",
+      "title": "Preview Animation 241x360x640",
       "properties": {
         "Node name for S&R": "PreviewAnimation",
         "ue_properties": {
@@ -10699,6 +10699,69 @@
       "widgets_values_named": {
         "fps": 8
       }
+    },
+    {
+      "id": 5390,
+      "type": "PixaromaRunTimer",
+      "pos": [
+        -6736.905643762911,
+        3221.2616351392558
+      ],
+      "size": [
+        183,
+        61
+      ],
+      "flags": {
+        "no_title": true
+      },
+      "order": 101,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        },
+        "Node name for S&R": "PixaromaRunTimer",
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "897ff97cbfed587744864505733dda0a4785b336",
+        "runTimerLastMs": 67145
+      },
+      "color": "#1d1d1d",
+      "bgcolor": "#2a2a2a"
+    },
+    {
+      "id": 5391,
+      "type": "PixaromaMonitor",
+      "pos": [
+        -6530.241767587292,
+        3150.3026027538467
+      ],
+      "size": [
+        305,
+        139
+      ],
+      "flags": {
+        "no_title": true
+      },
+      "order": 102,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        },
+        "Node name for S&R": "PixaromaMonitor",
+        "cnr_id": "ComfyUI-Pixaroma",
+        "ver": "897ff97cbfed587744864505733dda0a4785b336"
+      },
+      "color": "#1d1d1d",
+      "bgcolor": "#2a2a2a"
     }
   ],
   "links": [
@@ -12404,7 +12467,7 @@
         "version": 1,
         "state": {
           "lastGroupId": 189,
-          "lastNodeId": 5389,
+          "lastNodeId": 5391,
           "lastLinkId": 14027,
           "lastRerouteId": 0
         },
@@ -12966,7 +13029,7 @@
         "version": 1,
         "state": {
           "lastGroupId": 189,
-          "lastNodeId": 5389,
+          "lastNodeId": 5391,
           "lastLinkId": 14027,
           "lastRerouteId": 0
         },
@@ -14116,10 +14179,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.25645755179614527,
+      "scale": 0.3308701208445354,
       "offset": [
-        7782.026612031023,
-        -1496.9659110175508
+        7194.989939386618,
+        -2038.5913659968965
       ]
     },
     "frontendVersion": "1.53.6",
